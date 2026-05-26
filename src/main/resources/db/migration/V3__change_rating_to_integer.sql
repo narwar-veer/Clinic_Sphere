@@ -1,0 +1,2 @@
+ALTER TABLE appointments
+    ALTER COLUMN rating TYPE INTEGER USING rating::INTEGER;

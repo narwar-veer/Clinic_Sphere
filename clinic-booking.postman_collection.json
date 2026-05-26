@@ -1,0 +1,371 @@
+{
+  "info": {
+    "name": "Clinic Booking API",
+    "_postman_id": "c2d57493-ec0b-4d7d-a8af-c99e9f1a35d3",
+    "description": "Collection generated from Spring controllers in this project.",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [
+    { "key": "baseUrl", "value": "http://localhost:8085" },
+    { "key": "token", "value": "" },
+    { "key": "clinicId", "value": "1" },
+    { "key": "slotId", "value": "1" },
+    { "key": "appointmentId", "value": "1" },
+    { "key": "patientId", "value": "1" },
+    { "key": "date", "value": "2026-03-20" },
+    { "key": "fromDate", "value": "2026-03-20" },
+    { "key": "toDate", "value": "2026-03-27" },
+    { "key": "time", "value": "10:00" }
+  ],
+  "item": [
+    {
+      "name": "Health",
+      "item": [
+        {
+          "name": "GET /api/health",
+          "request": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/health"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Public APIs",
+      "item": [
+        {
+          "name": "GET /api/doctor",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{baseUrl}}/api/doctor?page=0&size=20",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "doctor"],
+              "query": [
+                { "key": "page", "value": "0" },
+                { "key": "size", "value": "20" }
+              ]
+            }
+          }
+        },
+        {
+          "name": "GET /api/clinic",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{baseUrl}}/api/clinic?page=0&size=20",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "clinic"],
+              "query": [
+                { "key": "page", "value": "0" },
+                { "key": "size", "value": "20" }
+              ]
+            }
+          }
+        },
+        {
+          "name": "GET /api/slots",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{baseUrl}}/api/slots?date={{date}}&page=0&size=20",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "slots"],
+              "query": [
+                { "key": "date", "value": "{{date}}" },
+                { "key": "page", "value": "0" },
+                { "key": "size", "value": "20" }
+              ]
+            }
+          }
+        },
+        {
+          "name": "GET /api/slots/availability",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{baseUrl}}/api/slots/availability?fromDate={{fromDate}}&toDate={{toDate}}&page=0&size=20",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "slots", "availability"],
+              "query": [
+                { "key": "fromDate", "value": "{{fromDate}}" },
+                { "key": "toDate", "value": "{{toDate}}" },
+                { "key": "page", "value": "0" },
+                { "key": "size", "value": "20" }
+              ]
+            }
+          }
+        },
+        {
+          "name": "POST /api/appointments",
+          "request": {
+            "method": "POST",
+            "header": [
+              { "key": "Content-Type", "value": "application/json" }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"Test Patient\",\n  \"phone\": \"+911234567890\",\n  \"age\": 30,\n  \"gender\": \"MALE\",\n  \"symptoms\": \"Fever and cough\",\n  \"slotId\": {{slotId}}\n}"
+            },
+            "url": "{{baseUrl}}/api/appointments"
+          }
+        },
+        {
+          "name": "POST /api/appointments/:id/testimonial",
+          "request": {
+            "method": "POST",
+            "header": [
+              { "key": "Content-Type", "value": "application/json" }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"testimonial\": \"Very good consultation\",\n  \"rating\": 5\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/appointments/{{appointmentId}}/testimonial",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "appointments", "{{appointmentId}}", "testimonial"]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Admin APIs (JWT)",
+      "auth": {
+        "type": "bearer",
+        "bearer": [
+          { "key": "token", "value": "{{token}}", "type": "string" }
+        ]
+      },
+      "item": [
+        {
+          "name": "POST /api/admin/login",
+          "request": {
+            "method": "POST",
+            "header": [
+              { "key": "Content-Type", "value": "application/json" }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"username\": \"admin\",\n  \"password\": \"admin123\"\n}"
+            },
+            "url": "{{baseUrl}}/api/admin/login"
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "let jsonData = {};",
+                  "try { jsonData = pm.response.json(); } catch (e) {}",
+                  "if (jsonData.token) { pm.collectionVariables.set('token', jsonData.token); }"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "POST /api/admin/logout",
+          "request": {
+            "method": "POST",
+            "url": "{{baseUrl}}/api/admin/logout"
+          }
+        },
+        {
+          "name": "GET /api/admin/appointments",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{baseUrl}}/api/admin/appointments?page=0&size=20&date={{date}}&time={{time}}&name=&phone=&status=BOOKED&visited=",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "admin", "appointments"],
+              "query": [
+                { "key": "page", "value": "0" },
+                { "key": "size", "value": "20" },
+                { "key": "date", "value": "{{date}}" },
+                { "key": "time", "value": "{{time}}" },
+                { "key": "name", "value": "" },
+                { "key": "phone", "value": "" },
+                { "key": "status", "value": "BOOKED" },
+                { "key": "visited", "value": "" }
+              ]
+            }
+          }
+        },
+        {
+          "name": "PUT /api/admin/appointments/:id",
+          "request": {
+            "method": "PUT",
+            "header": [
+              { "key": "Content-Type", "value": "application/json" }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"status\": \"VISITED\"\n}"
+            },
+            "url": "{{baseUrl}}/api/admin/appointments/{{appointmentId}}"
+          }
+        },
+        {
+          "name": "GET /api/admin/appointments/export",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{baseUrl}}/api/admin/appointments/export?date={{date}}&time={{time}}&name=&phone=&status=BOOKED&visited=",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "admin", "appointments", "export"],
+              "query": [
+                { "key": "date", "value": "{{date}}" },
+                { "key": "time", "value": "{{time}}" },
+                { "key": "name", "value": "" },
+                { "key": "phone", "value": "" },
+                { "key": "status", "value": "BOOKED" },
+                { "key": "visited", "value": "" }
+              ]
+            }
+          }
+        },
+        {
+          "name": "GET /api/admin/profile",
+          "request": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/admin/profile"
+          }
+        },
+        {
+          "name": "PUT /api/admin/profile",
+          "request": {
+            "method": "PUT",
+            "header": [
+              { "key": "Content-Type", "value": "application/json" }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"Dr. Example\",\n  \"photo\": \"https://example.com/photo.jpg\",\n  \"qualifications\": \"MBBS, MD\",\n  \"specialization\": \"General Physician\",\n  \"experienceYears\": 8,\n  \"registrationNumber\": \"REG12345\",\n  \"biography\": \"Experienced clinician\",\n  \"awards\": \"Best Doctor 2025\"\n}"
+            },
+            "url": "{{baseUrl}}/api/admin/profile"
+          }
+        },
+        {
+          "name": "GET /api/admin/slot-config",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{baseUrl}}/api/admin/slot-config?clinicId={{clinicId}}",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "admin", "slot-config"],
+              "query": [
+                { "key": "clinicId", "value": "{{clinicId}}" }
+              ]
+            }
+          }
+        },
+        {
+          "name": "PUT /api/admin/slot-config",
+          "request": {
+            "method": "PUT",
+            "header": [
+              { "key": "Content-Type", "value": "application/json" }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"slotDurationMinutes\": 15,\n  \"maxPatientsPerSlot\": 3\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/admin/slot-config?clinicId={{clinicId}}&effectiveDate={{date}}",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "admin", "slot-config"],
+              "query": [
+                { "key": "clinicId", "value": "{{clinicId}}" },
+                { "key": "effectiveDate", "value": "{{date}}" }
+              ]
+            }
+          }
+        },
+        {
+          "name": "PUT /api/admin/slot-capacity",
+          "request": {
+            "method": "PUT",
+            "header": [
+              { "key": "Content-Type", "value": "application/json" }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"maxPatientsPerSlot\": 4\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/admin/slot-capacity?clinicId={{clinicId}}&effectiveDate={{date}}",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "admin", "slot-capacity"],
+              "query": [
+                { "key": "clinicId", "value": "{{clinicId}}" },
+                { "key": "effectiveDate", "value": "{{date}}" }
+              ]
+            }
+          }
+        },
+        {
+          "name": "PUT /api/admin/slots/:id/block",
+          "request": {
+            "method": "PUT",
+            "url": {
+              "raw": "{{baseUrl}}/api/admin/slots/{{slotId}}/block?blocked=true",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "admin", "slots", "{{slotId}}", "block"],
+              "query": [
+                { "key": "blocked", "value": "true" }
+              ]
+            }
+          }
+        },
+        {
+          "name": "PUT /api/admin/slots/block-date",
+          "request": {
+            "method": "PUT",
+            "url": {
+              "raw": "{{baseUrl}}/api/admin/slots/block-date?clinicId={{clinicId}}&date={{date}}&blocked=true",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "admin", "slots", "block-date"],
+              "query": [
+                { "key": "clinicId", "value": "{{clinicId}}" },
+                { "key": "date", "value": "{{date}}" },
+                { "key": "blocked", "value": "true" }
+              ]
+            }
+          }
+        },
+        {
+          "name": "GET /api/admin/patients/:id/history",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{baseUrl}}/api/admin/patients/{{patientId}}/history?page=0&size=20",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "admin", "patients", "{{patientId}}", "history"],
+              "query": [
+                { "key": "page", "value": "0" },
+                { "key": "size", "value": "20" }
+              ]
+            }
+          }
+        },
+        {
+          "name": "POST /api/admin/patients/:id/history",
+          "request": {
+            "method": "POST",
+            "header": [
+              { "key": "Content-Type", "value": "application/json" }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"appointmentId\": {{appointmentId}},\n  \"diagnosis\": \"Viral fever\",\n  \"prescriptionNotes\": \"Rest and hydration\",\n  \"referred_by\": \"Dr. Senior\"\n}"
+            },
+            "url": "{{baseUrl}}/api/admin/patients/{{patientId}}/history"
+          }
+        }
+      ]
+    }
+  ]
+}
