@@ -21,29 +21,42 @@ public class DataSeeder implements CommandLineRunner {
     private final DoctorRepository doctorRepository;
     private final PasswordEncoder passwordEncoder;
 
-    @Value("${seed.admin.username:narwar_veer}")
+    @Value("${seed.admin.enabled:false}")
+    private boolean adminSeedEnabled;
+
+    @Value("${seed.admin.username:}")
     private String adminUsername;
 
-    @Value("${seed.admin.password:Narwar123}")
+    @Value("${seed.admin.password:}")
     private String adminPassword;
 
     @Override
     public void run(String... args) {
+        if (!adminSeedEnabled) {
+            return;
+        }
+
+        if (adminUsername == null || adminUsername.isBlank() || adminPassword == null || adminPassword.isBlank()) {
+            throw new IllegalStateException("Admin seeding enabled but credentials are missing");
+        }
+
         if (adminRepository.findByUsername(adminUsername).isPresent()) {
             return;
         }
+
         Doctor doctor = doctorRepository.findById(1L)
                 .orElseGet(() -> doctorRepository.findAll().stream().findFirst().orElse(null));
         if (doctor == null) {
             log.warn("Skipping admin seeding because no doctor exists");
             return;
         }
+
         Admin admin = new Admin();
-        admin.setUsername(adminUsername);
+        admin.setUsername(adminUsername.trim());
         admin.setPasswordHash(passwordEncoder.encode(adminPassword));
         admin.setRole(AdminRole.ROLE_ADMIN);
         admin.setDoctor(doctor);
         adminRepository.save(admin);
-        log.info("Seeded default admin username={}", adminUsername);
+        log.info("Seeded bootstrap admin username={}", adminUsername);
     }
 }

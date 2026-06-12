@@ -1,6 +1,7 @@
 package com.clinic.repository;
 
 import com.clinic.entity.MedicalRecord;
+import java.util.Optional;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.EntityGraph;
@@ -12,4 +13,6 @@ public interface MedicalRecordRepository extends JpaRepository<MedicalRecord, Lo
     Page<MedicalRecord> findByPatientIdOrderByCreatedAtDesc(Long patientId, Pageable pageable);
 
     boolean existsByAppointmentId(Long appointmentId);
+
+    Optional<MedicalRecord> findByAppointmentId(Long appointmentId);
 }

@@ -1,29 +1,31 @@
-# syntax=docker/dockerfile:1
-
 FROM maven:3.9.9-eclipse-temurin-21 AS builder
+
 WORKDIR /app
 
-# Cache dependencies first
 COPY pom.xml .
-RUN mvn -q -DskipTests dependency:go-offline
 
-# Build backend jar
+RUN --mount=type=cache,target=/root/.m2 \
+    mvn -q -DskipTests dependency:go-offline
+
 COPY src ./src
-RUN mvn -q -DskipTests clean package
 
-FROM eclipse-temurin:21-jre-jammy AS runtime
+RUN --mount=type=cache,target=/root/.m2 \
+    mvn -q -DskipTests clean package
+
+FROM eclipse-temurin:21-jre-jammy
+
 WORKDIR /app
 
-# App defaults (override at runtime with -e)
-ENV SERVER_PORT=8081
 ENV TZ=Asia/Kolkata
-ENV JAVA_OPTS=""
+ENV JAVA_TOOL_OPTIONS="-XX:+UseContainerSupport -XX:MaxRAMPercentage=75.0"
 
-RUN useradd -r -u 1001 spring
+RUN groupadd -r spring && useradd -r -u 1001 -g spring spring
 
-COPY --from=builder /app/target/clinic-booking-backend-*.jar /app/app.jar
+COPY --from=builder --chown=spring:spring \
+    /app/target/*.jar app.jar
 
 USER spring
-EXPOSE 8081
 
-ENTRYPOINT ["sh", "-c", "java $JAVA_OPTS -jar /app/app.jar"]
+EXPOSE 8082
+
+ENTRYPOINT ["java", "-jar", "app.jar"]

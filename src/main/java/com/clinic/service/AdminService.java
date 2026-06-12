@@ -5,22 +5,40 @@ import com.clinic.dto.response.AdminLoginResponse;
 import com.clinic.exception.UnauthorizedException;
 import com.clinic.security.AdminPrincipal;
 import com.clinic.security.JwtService;
-import lombok.RequiredArgsConstructor;
+import io.micrometer.core.instrument.Counter;
+import io.micrometer.core.instrument.MeterRegistry;
+import java.util.Map;
+import java.util.LinkedHashMap;
+import org.springframework.security.authentication.AnonymousAuthenticationToken;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.BadCredentialsException;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
-import org.springframework.security.authentication.AnonymousAuthenticationToken;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Service;
 
 @Service
-@RequiredArgsConstructor
 public class AdminService {
 
     private final AuthenticationManager authenticationManager;
     private final JwtService jwtService;
     private final AdminSessionService adminSessionService;
+    private final AuditLogService auditLogService;
+    private final Counter loginSuccessCounter;
+    private final Counter loginFailureCounter;
+
+    public AdminService(AuthenticationManager authenticationManager,
+                        JwtService jwtService,
+                        AdminSessionService adminSessionService,
+                        AuditLogService auditLogService,
+                        MeterRegistry meterRegistry) {
+        this.authenticationManager = authenticationManager;
+        this.jwtService = jwtService;
+        this.adminSessionService = adminSessionService;
+        this.auditLogService = auditLogService;
+        this.loginSuccessCounter = Counter.builder("clinic.auth.login.success").register(meterRegistry);
+        this.loginFailureCounter = Counter.builder("clinic.auth.login.failure").register(meterRegistry);
+    }
 
     public AdminLoginResponse login(AdminLoginRequest request) {
         try {
@@ -33,12 +51,25 @@ public class AdminService {
             if (tokenId == null || tokenId.isBlank()) {
                 throw new UnauthorizedException("Failed to create authenticated session");
             }
+
             adminSessionService.registerSession(
                     tokenId,
                     principal.getUsername(),
                     principal.getDoctorId(),
                     jwtService.extractExpiration(token)
             );
+
+            loginSuccessCounter.increment();
+            Map<String, Object> details = new LinkedHashMap<>();
+            details.put("doctorId", principal.getDoctorId());
+            details.put("tokenId", tokenId);
+            auditLogService.logEvent(
+                    "ADMIN_LOGIN_SUCCESS",
+                    principal.getUsername(),
+                    "ADMIN",
+                    principal.getAdminId().toString(),
+                    details);
+
             return AdminLoginResponse.builder()
                     .token(token)
                     .username(principal.getUsername())
@@ -46,22 +77,34 @@ public class AdminService {
                     .doctorId(principal.getDoctorId())
                     .build();
         } catch (BadCredentialsException ex) {
+            loginFailureCounter.increment();
+            auditLogService.logEvent(
+                    "ADMIN_LOGIN_FAILURE",
+                    request.getUsername(),
+                    "ADMIN",
+                    "unknown",
+                    Map.of("reason", "bad_credentials"));
             throw new UnauthorizedException("Invalid username or password");
         }
     }
 
     public void logout(String authorizationHeader) {
         String token = extractBearerToken(authorizationHeader);
-        if (token == null) {
-            throw new UnauthorizedException("Authentication token is required");
-        }
-        try {
-            String tokenId = jwtService.extractTokenId(token);
-            if (tokenId != null && !tokenId.isBlank()) {
-                adminSessionService.revokeSession(tokenId);
+        if (token != null) {
+            try {
+                String tokenId = jwtService.extractTokenId(token);
+                if (tokenId != null && !tokenId.isBlank()) {
+                    adminSessionService.revokeSession(tokenId);
+                    auditLogService.logEvent(
+                            "ADMIN_LOGOUT",
+                            getAuthenticatedUsernameOrUnknown(),
+                            "SESSION",
+                            tokenId,
+                            Map.of());
+                }
+            } catch (IllegalArgumentException ignored) {
+                // idempotent logout: always return success
             }
-        } catch (IllegalArgumentException ex) {
-            throw new UnauthorizedException("Invalid authentication token");
         }
         SecurityContextHolder.clearContext();
     }
@@ -79,6 +122,14 @@ public class AdminService {
             return adminPrincipal.getDoctorId();
         }
         throw new UnauthorizedException("Unable to resolve authenticated admin");
+    }
+
+    private String getAuthenticatedUsernameOrUnknown() {
+        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+        if (authentication != null && authentication.getPrincipal() instanceof AdminPrincipal principal) {
+            return principal.getUsername();
+        }
+        return "unknown";
     }
 
     private String extractBearerToken(String authorizationHeader) {

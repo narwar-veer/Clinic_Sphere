@@ -14,11 +14,14 @@ import com.clinic.dto.response.SlotConfigResponse;
 import com.clinic.dto.response.SlotResponse;
 import com.clinic.entity.AppointmentStatus;
 import com.clinic.service.AdminService;
+import com.clinic.service.AppTime;
 import com.clinic.service.AppointmentExportService;
 import com.clinic.service.AppointmentService;
 import com.clinic.service.DoctorService;
 import com.clinic.service.SlotService;
 import jakarta.validation.Valid;
+import jakarta.validation.constraints.Max;
+import jakarta.validation.constraints.Min;
 import java.time.LocalDate;
 import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
@@ -33,9 +36,9 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestHeader;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RequestHeader;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
@@ -48,6 +51,7 @@ public class AdminController {
     private final AppointmentExportService appointmentExportService;
     private final DoctorService doctorService;
     private final SlotService slotService;
+    private final AppTime appTime;
 
     @PostMapping("/login")
     public AdminLoginResponse login(@Valid @RequestBody AdminLoginRequest request) {
@@ -62,8 +66,8 @@ public class AdminController {
 
     @GetMapping("/appointments")
     public PageResponse<AppointmentResponse> getAppointments(
-            @RequestParam(defaultValue = "0") int page,
-            @RequestParam(defaultValue = "20") int size,
+            @RequestParam(defaultValue = "0") @Min(0) int page,
+            @RequestParam(defaultValue = "20") @Min(1) @Max(200) int size,
             @RequestParam(required = false) @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) LocalDate date,
             @RequestParam(required = false) @DateTimeFormat(pattern = "HH:mm") LocalTime time,
             @RequestParam(required = false) String name,
@@ -96,11 +100,10 @@ public class AdminController {
         Long doctorId = adminService.getAuthenticatedDoctorId();
         byte[] file = appointmentExportService.exportDoctorAppointments(doctorId, date, time, name, phone, status, visited);
 
-        String filename = "appointments-" + LocalDate.now().format(DateTimeFormatter.BASIC_ISO_DATE) + ".xlsx";
+        String filename = "appointments-" + appTime.today().format(DateTimeFormatter.BASIC_ISO_DATE) + ".xlsx";
         return ResponseEntity.ok()
                 .header(HttpHeaders.CONTENT_DISPOSITION, "attachment; filename=" + filename)
-                .contentType(MediaType.parseMediaType(
-                        "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"))
+                .contentType(MediaType.parseMediaType("application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"))
                 .contentLength(file.length)
                 .body(new ByteArrayResource(file));
     }

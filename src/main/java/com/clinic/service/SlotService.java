@@ -16,19 +16,17 @@ import com.clinic.exception.UnauthorizedException;
 import com.clinic.mapper.SlotMapper;
 import com.clinic.repository.ClinicRepository;
 import com.clinic.repository.ClinicTimingRepository;
+import com.clinic.repository.DateAvailabilityProjection;
 import com.clinic.repository.SlotConfigRepository;
 import com.clinic.repository.SlotRepository;
 import java.time.LocalDate;
 import java.time.LocalTime;
 import java.util.ArrayList;
-import java.util.LinkedHashMap;
-import java.util.List;
 import java.util.Map;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.dao.DataIntegrityViolationException;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.data.domain.Page;
-import org.springframework.data.domain.PageImpl;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
@@ -49,11 +47,17 @@ public class SlotService {
     private final SlotMapper slotMapper;
     private final PageResponseFactory pageResponseFactory;
     private final BookingWindowValidator bookingWindowValidator;
+    private final PaginationValidator paginationValidator;
+    private final AppTime appTime;
+    private final AuditLogService auditLogService;
+
+    @Value("${app.slot.generation.max-days-per-request:31}")
+    private long maxDaysPerRequest;
 
     @Transactional
     public void generateSlotsForDate(LocalDate date) {
         short dayOfWeek = (short) date.getDayOfWeek().getValue();
-        List<ClinicTiming> timings = clinicTimingRepository.findByDayOfWeekAndIsClosedFalse(dayOfWeek);
+        var timings = clinicTimingRepository.findByDayOfWeekAndIsClosedFalse(dayOfWeek);
 
         for (ClinicTiming timing : timings) {
             if (timing.getStartTime() == null || timing.getEndTime() == null) {
@@ -63,17 +67,38 @@ public class SlotService {
             if (slotConfig == null) {
                 continue;
             }
-            List<TimeRange> ranges = buildRanges(timing);
-            for (TimeRange range : ranges) {
+
+            for (TimeRange range : buildRanges(timing)) {
                 createSlotsForRange(date, timing.getClinic(), slotConfig, range.start(), range.end());
             }
         }
     }
 
     @Transactional
+    public int generateSlotsForRange(LocalDate fromDateInclusive, LocalDate toDateInclusive) {
+        if (toDateInclusive.isBefore(fromDateInclusive)) {
+            return 0;
+        }
+        long days = fromDateInclusive.datesUntil(toDateInclusive.plusDays(1)).count();
+        if (days > maxDaysPerRequest) {
+            throw new BadRequestException("Date range too large for slot generation");
+        }
+
+        int generatedDays = 0;
+        LocalDate date = fromDateInclusive;
+        while (!date.isAfter(toDateInclusive)) {
+            generateSlotsForDate(date);
+            generatedDays++;
+            date = date.plusDays(1);
+        }
+        return generatedDays;
+    }
+
+    @Transactional(readOnly = true)
     public PageResponse<SlotResponse> getSlots(LocalDate date, int page, int size) {
         bookingWindowValidator.validateDate(date);
-        generateSlotsForDate(date);
+        paginationValidator.validate(page, size);
+
         Pageable pageable = PageRequest.of(page, size, Sort.by("startTime").ascending().and(Sort.by("id").ascending()));
         Page<SlotResponse> mapped = slotRepository.findBySlotDate(date, pageable).map(slotMapper::toResponse);
         return pageResponseFactory.fromPage(mapped);
@@ -112,7 +137,18 @@ public class SlotService {
         }
         config.setMaxPatientsPerSlot(request.getMaxPatientsPerSlot());
         config = slotConfigRepository.save(config);
+
         applyCapacityFromDate(clinic.getId(), effectiveDate, request.getMaxPatientsPerSlot());
+
+        auditLogService.logEvent(
+                "SLOT_CONFIG_UPDATED",
+                "doctor:" + doctorId,
+                "CLINIC",
+                clinicId.toString(),
+                Map.of(
+                        "slotDurationMinutes", config.getSlotDurationMinutes(),
+                        "maxPatientsPerSlot", config.getMaxPatientsPerSlot()));
+
         return toSlotConfigResponse(config);
     }
 
@@ -135,8 +171,16 @@ public class SlotService {
         config.setMaxPatientsPerSlot(maxPatientsPerSlot);
         slotConfigRepository.save(config);
 
-        LocalDate fromDate = effectiveDate == null ? LocalDate.now() : effectiveDate;
+        LocalDate fromDate = effectiveDate == null ? appTime.today() : effectiveDate;
         int updated = applyCapacityFromDate(clinic.getId(), fromDate, maxPatientsPerSlot);
+
+        auditLogService.logEvent(
+                "SLOT_CAPACITY_UPDATED",
+                "doctor:" + doctorId,
+                "CLINIC",
+                clinicId.toString(),
+                Map.of("maxPatientsPerSlot", maxPatientsPerSlot, "effectiveDate", fromDate.toString(), "updatedSlots", updated));
+
         return new MessageResponse(
                 "Capacity updated to " + maxPatientsPerSlot + " for " + updated + " slot(s) from " + fromDate + " onward");
     }
@@ -148,8 +192,20 @@ public class SlotService {
         if (!slot.getClinic().getDoctor().getId().equals(doctorId)) {
             throw new UnauthorizedException("You are not allowed to block this slot");
         }
+        if (blocked && slot.getBookedCount() > 0) {
+            throw new BadRequestException("Cannot block a slot that already has bookings");
+        }
+
         slot.setIsBlocked(blocked);
         slot = slotRepository.save(slot);
+
+        auditLogService.logEvent(
+                blocked ? "SLOT_BLOCKED" : "SLOT_UNBLOCKED",
+                "doctor:" + doctorId,
+                "SLOT",
+                slotId.toString(),
+                Map.of("slotDate", slot.getSlotDate().toString(), "startTime", slot.getStartTime().toString()));
+
         return slotMapper.toResponse(slot);
     }
 
@@ -159,23 +215,39 @@ public class SlotService {
         Clinic clinic = clinicRepository.findByIdAndDoctorId(clinicId, doctorId)
                 .orElseThrow(() -> new ResourceNotFoundException("Clinic not found"));
 
-        generateSlotsForDate(date);
+        if (blocked) {
+            long booked = slotRepository.countBookedSlotsOnDate(clinic.getId(), date);
+            if (booked > 0) {
+                throw new BadRequestException("Cannot block date with existing booked slots");
+            }
+        }
+
         int updated = slotRepository.updateBlockedByClinicIdAndSlotDate(clinic.getId(), date, blocked);
         if (updated == 0) {
             throw new BadRequestException("No slots found for selected date");
         }
+
         String action = blocked ? "blocked" : "unblocked";
+        auditLogService.logEvent(
+                blocked ? "DATE_BLOCKED" : "DATE_UNBLOCKED",
+                "doctor:" + doctorId,
+                "CLINIC",
+                clinicId.toString(),
+                Map.of("date", date.toString(), "updatedSlots", updated));
+
         return new MessageResponse("Successfully " + action + " " + updated + " slots for " + date);
     }
 
-    @Transactional
+    @Transactional(readOnly = true)
     public PageResponse<SlotDateAvailabilityResponse> getDateAvailability(
             LocalDate fromDate,
             LocalDate toDate,
             int page,
             int size
     ) {
-        LocalDate today = LocalDate.now();
+        paginationValidator.validate(page, size);
+
+        LocalDate today = appTime.today();
         LocalDate from = fromDate == null ? today : fromDate;
         LocalDate to = toDate == null ? today.plusMonths(BookingWindowValidator.MAX_ADVANCE_MONTHS) : toDate;
 
@@ -185,48 +257,31 @@ public class SlotService {
             throw new BadRequestException("toDate must be after or equal to fromDate");
         }
 
-        List<LocalDate> dates = from.datesUntil(to.plusDays(1)).toList();
-        for (LocalDate date : dates) {
-            generateSlotsForDate(date);
+        long days = from.datesUntil(to.plusDays(1)).count();
+        if (days > maxDaysPerRequest) {
+            throw new BadRequestException("Date range too large");
         }
 
-        List<Slot> slots = slotRepository.findBySlotDateBetweenOrderBySlotDateAscStartTimeAsc(from, to);
-        Map<LocalDate, MutableDateAvailability> availabilityByDate = new LinkedHashMap<>();
-        for (LocalDate date : dates) {
-            availabilityByDate.put(date, new MutableDateAvailability(date));
-        }
-
-        for (Slot slot : slots) {
-            MutableDateAvailability availability = availabilityByDate.get(slot.getSlotDate());
-            if (availability == null) {
-                continue;
-            }
-            availability.totalSlots++;
-            availability.slotsLeft += slot.getMaxPatients() - slot.getBookedCount();
-        }
-
-        List<SlotDateAvailabilityResponse> aggregated = availabilityByDate.values().stream()
-                .map(value -> SlotDateAvailabilityResponse.builder()
-                        .date(value.date)
-                        .totalSlots(value.totalSlots)
-                        .slotsLeft(value.slotsLeft)
-                        .build())
-                .toList();
-
-        int fromIndex = Math.min(page * size, aggregated.size());
-        int toIndex = Math.min(fromIndex + size, aggregated.size());
-        List<SlotDateAvailabilityResponse> content = aggregated.subList(fromIndex, toIndex);
-
-        Page<SlotDateAvailabilityResponse> pageResult = new PageImpl<>(content, PageRequest.of(page, size), aggregated.size());
-        return pageResponseFactory.fromPage(pageResult);
+        Pageable pageable = PageRequest.of(page, size);
+        Page<SlotDateAvailabilityResponse> mapped = slotRepository.findDateAvailability(from, to, pageable)
+                .map(this::toDateAvailabilityResponse);
+        return pageResponseFactory.fromPage(mapped);
     }
 
-    private List<TimeRange> buildRanges(ClinicTiming timing) {
+    private SlotDateAvailabilityResponse toDateAvailabilityResponse(DateAvailabilityProjection projection) {
+        return SlotDateAvailabilityResponse.builder()
+                .date(projection.getDate())
+                .totalSlots(projection.getTotalSlots() == null ? 0 : projection.getTotalSlots().intValue())
+                .slotsLeft(projection.getSlotsLeft() == null ? 0 : projection.getSlotsLeft().intValue())
+                .build();
+    }
+
+    private java.util.List<TimeRange> buildRanges(ClinicTiming timing) {
         LocalTime start = timing.getStartTime();
         LocalTime end = timing.getEndTime();
         LocalTime breakStart = timing.getBreakStartTime();
         LocalTime breakEnd = timing.getBreakEndTime();
-        List<TimeRange> ranges = new ArrayList<>();
+        var ranges = new ArrayList<TimeRange>();
 
         boolean hasValidBreak = breakStart != null
                 && breakEnd != null
@@ -250,40 +305,17 @@ public class SlotService {
 
         while (!current.plusMinutes(slotDuration).isAfter(rangeEnd)) {
             LocalTime slotEnd = current.plusMinutes(slotDuration);
-            tryCreateSlot(date, clinic, config, current, slotEnd);
+            slotRepository.insertIfAbsent(clinic.getId(), date, current, slotEnd, config.getMaxPatientsPerSlot());
             current = slotEnd;
         }
     }
 
-    private void tryCreateSlot(LocalDate date, Clinic clinic, SlotConfig config, LocalTime startTime, LocalTime endTime) {
-        if (slotRepository.existsByClinicIdAndSlotDateAndStartTime(clinic.getId(), date, startTime)) {
-            return;
-        }
-
-        Slot slot = new Slot();
-        slot.setClinic(clinic);
-        slot.setSlotDate(date);
-        slot.setStartTime(startTime);
-        slot.setEndTime(endTime);
-        slot.setMaxPatients(config.getMaxPatientsPerSlot());
-        slot.setBookedCount(0);
-        slot.setIsBlocked(false);
-        try {
-            slotRepository.save(slot);
-        } catch (DataIntegrityViolationException ex) {
-            log.debug("Ignoring duplicate slot generation for clinicId={} date={} startTime={}", clinic.getId(), date, startTime);
-        }
-    }
-
     private int applyCapacityFromDate(Long clinicId, LocalDate effectiveDate, Integer capacity) {
-        LocalDate today = LocalDate.now();
+        LocalDate today = appTime.today();
         LocalDate fromDate = effectiveDate == null ? today : effectiveDate;
         bookingWindowValidator.validateDate(fromDate);
 
-        // Ensure target day slots exist before applying updated capacity.
-        generateSlotsForDate(fromDate);
-
-        LocalTime fromTime = fromDate.equals(today) ? LocalTime.now() : LocalTime.MIN;
+        LocalTime fromTime = fromDate.equals(today) ? appTime.nowDateTime().toLocalTime() : LocalTime.MIN;
 
         long conflicts = slotRepository.countConflictsForDateFromTime(clinicId, fromDate, fromTime, capacity)
                 + slotRepository.countConflictsAfterDate(clinicId, fromDate, capacity);
@@ -307,15 +339,5 @@ public class SlotService {
                 .slotDurationMinutes(config.getSlotDurationMinutes())
                 .maxPatientsPerSlot(config.getMaxPatientsPerSlot())
                 .build();
-    }
-
-    private static class MutableDateAvailability {
-        private final LocalDate date;
-        private int totalSlots;
-        private int slotsLeft;
-
-        private MutableDateAvailability(LocalDate date) {
-            this.date = date;
-        }
     }
 }

@@ -19,9 +19,11 @@ public class ClinicService {
     private final ClinicRepository clinicRepository;
     private final ClinicMapper clinicMapper;
     private final PageResponseFactory pageResponseFactory;
+    private final PaginationValidator paginationValidator;
 
     @Transactional(readOnly = true)
     public PageResponse<ClinicResponse> getClinics(int page, int size) {
+        paginationValidator.validate(page, size);
         Pageable pageable = PageRequest.of(page, size, Sort.by("clinicName").ascending());
         Page<ClinicResponse> mapped = clinicRepository.findAll(pageable).map(clinicMapper::toResponse);
         return pageResponseFactory.fromPage(mapped);

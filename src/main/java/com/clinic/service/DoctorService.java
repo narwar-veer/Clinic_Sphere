@@ -23,8 +23,10 @@ public class DoctorService {
     private final DoctorRepository doctorRepository;
     private final DoctorMapper doctorMapper;
     private final PageResponseFactory pageResponseFactory;
+    private final PaginationValidator paginationValidator;
 
     public PageResponse<DoctorResponse> getDoctors(int page, int size) {
+        paginationValidator.validate(page, size);
         Pageable pageable = PageRequest.of(page, size, Sort.by("name").ascending());
         Page<DoctorResponse> mapped = doctorRepository.findAll(pageable).map(doctorMapper::toResponse);
         return pageResponseFactory.fromPage(mapped);

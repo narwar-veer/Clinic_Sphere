@@ -1,6 +1,7 @@
 package com.clinic.service;
 
 import com.clinic.exception.BadRequestException;
+import java.time.Clock;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.LocalTime;
@@ -12,14 +13,19 @@ import org.springframework.stereotype.Component;
 public class BookingWindowValidator {
 
     public static final int MAX_ADVANCE_MONTHS = 1;
-    private final ZoneId bookingZoneId;
 
-    public BookingWindowValidator(@Value("${app.booking.time-zone:Asia/Kolkata}") String bookingTimeZone) {
+    private final ZoneId bookingZoneId;
+    private final Clock appClock;
+
+    public BookingWindowValidator(
+            @Value("${app.booking.time-zone:Asia/Kolkata}") String bookingTimeZone,
+            Clock appClock) {
         this.bookingZoneId = ZoneId.of(bookingTimeZone);
+        this.appClock = appClock;
     }
 
     public void validateDate(LocalDate date) {
-        LocalDate today = LocalDate.now(bookingZoneId);
+        LocalDate today = LocalDate.now(appClock.withZone(bookingZoneId));
         LocalDate maxBookableDate = today.plusMonths(MAX_ADVANCE_MONTHS);
 
         if (date.isBefore(today)) {
@@ -33,7 +39,7 @@ public class BookingWindowValidator {
     public void validateSlotDateTime(LocalDate slotDate, LocalTime slotStartTime) {
         validateDate(slotDate);
         LocalDateTime slotDateTime = LocalDateTime.of(slotDate, slotStartTime);
-        if (slotDateTime.isBefore(LocalDateTime.now(bookingZoneId))) {
+        if (slotDateTime.isBefore(LocalDateTime.now(appClock.withZone(bookingZoneId)))) {
             throw new BadRequestException("Past date/time selection is not allowed");
         }
     }

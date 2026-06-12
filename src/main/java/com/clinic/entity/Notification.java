@@ -14,6 +14,7 @@ import jakarta.persistence.Table;
 import java.time.LocalDateTime;
 import lombok.Getter;
 import lombok.Setter;
+import org.hibernate.annotations.CreationTimestamp;
 
 @Getter
 @Setter
@@ -37,6 +38,9 @@ public class Notification {
     @Column(nullable = false, length = 20)
     private NotificationStatus status;
 
+    @Column(name = "idempotency_key", nullable = false, length = 120)
+    private String idempotencyKey;
+
     @Column(name = "sent_at")
     private LocalDateTime sentAt;
 
@@ -45,4 +49,8 @@ public class Notification {
 
     @Column(name = "error_message", columnDefinition = "TEXT")
     private String errorMessage;
+
+    @CreationTimestamp
+    @Column(name = "created_at", nullable = false, updatable = false)
+    private LocalDateTime createdAt;
 }

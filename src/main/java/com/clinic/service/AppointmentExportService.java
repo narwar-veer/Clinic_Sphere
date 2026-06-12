@@ -8,12 +8,14 @@ import java.io.IOException;
 import java.time.LocalDate;
 import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
-import java.util.List;
 import lombok.RequiredArgsConstructor;
 import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.ss.usermodel.Sheet;
 import org.apache.poi.ss.usermodel.Workbook;
-import org.apache.poi.xssf.usermodel.XSSFWorkbook;
+import org.apache.poi.xssf.streaming.SXSSFWorkbook;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -39,34 +41,38 @@ public class AppointmentExportService {
             Boolean visited
     ) {
         var specification = AppointmentSpecifications.forDoctorAppointments(doctorId, date, time, name, phone, status, visited);
-        List<Appointment> appointments = appointmentRepository.findAll(specification, Sort.by("createdAt").descending());
 
-        try (Workbook workbook = new XSSFWorkbook(); ByteArrayOutputStream outputStream = new ByteArrayOutputStream()) {
+        try (Workbook workbook = new SXSSFWorkbook(200); ByteArrayOutputStream outputStream = new ByteArrayOutputStream()) {
             Sheet sheet = workbook.createSheet("Appointments");
             createHeader(sheet);
 
             int rowIndex = 1;
-            for (Appointment appointment : appointments) {
-                Row row = sheet.createRow(rowIndex++);
-                row.createCell(0).setCellValue(appointment.getPatient().getName());
-                row.createCell(1).setCellValue(appointment.getPatient().getPhone());
-                row.createCell(2).setCellValue(appointment.getPatient().getAge());
-                row.createCell(3).setCellValue(appointment.getSlot().getSlotDate().format(DATE_FORMAT));
-                row.createCell(4).setCellValue(appointment.getSlot().getStartTime().format(TIME_FORMAT));
-                row.createCell(5).setCellValue(appointment.getStatus().name());
-                row.createCell(6).setCellValue(
-                        appointment.getVisitedAt() == null ? "" : appointment.getVisitedAt().format(DATETIME_FORMAT));
-                row.createCell(7).setCellValue(appointment.getRating() == null ? "" : appointment.getRating().toString());
-                row.createCell(8).setCellValue(nullSafe(appointment.getTestimonial()));
-                row.createCell(9).setCellValue(nullSafe(appointment.getSymptoms()));
-                row.createCell(10).setCellValue(appointment.getCreatedAt().format(DATETIME_FORMAT));
-            }
+            int page = 0;
+            Page<Appointment> result;
+            do {
+                Pageable pageable = PageRequest.of(page, 500, Sort.by("createdAt").descending());
+                result = appointmentRepository.findAll(specification, pageable);
 
-            for (int i = 0; i < 11; i++) {
-                sheet.autoSizeColumn(i);
-            }
+                for (Appointment appointment : result.getContent()) {
+                    Row row = sheet.createRow(rowIndex++);
+                    row.createCell(0).setCellValue(safeForExcel(appointment.getPatient().getName()));
+                    row.createCell(1).setCellValue(safeForExcel(appointment.getPatient().getPhone()));
+                    row.createCell(2).setCellValue(appointment.getPatient().getAge());
+                    row.createCell(3).setCellValue(appointment.getSlot().getSlotDate().format(DATE_FORMAT));
+                    row.createCell(4).setCellValue(appointment.getSlot().getStartTime().format(TIME_FORMAT));
+                    row.createCell(5).setCellValue(appointment.getStatus().name());
+                    row.createCell(6).setCellValue(
+                            appointment.getVisitedAt() == null ? "" : appointment.getVisitedAt().format(DATETIME_FORMAT));
+                    row.createCell(7).setCellValue(safeForExcel(nullSafe(appointment.getSymptoms())));
+                    row.createCell(8).setCellValue(appointment.getCreatedAt().format(DATETIME_FORMAT));
+                }
+                page++;
+            } while (result.hasNext());
 
             workbook.write(outputStream);
+            if (workbook instanceof SXSSFWorkbook sxssfWorkbook) {
+                sxssfWorkbook.dispose();
+            }
             return outputStream.toByteArray();
         } catch (IOException ex) {
             throw new IllegalStateException("Failed to export appointments", ex);
@@ -82,10 +88,19 @@ public class AppointmentExportService {
         header.createCell(4).setCellValue("Slot");
         header.createCell(5).setCellValue("Status");
         header.createCell(6).setCellValue("Visited At");
-        header.createCell(7).setCellValue("Rating");
-        header.createCell(8).setCellValue("Testimonial");
-        header.createCell(9).setCellValue("Symptoms");
-        header.createCell(10).setCellValue("Booked At");
+        header.createCell(7).setCellValue("Symptoms");
+        header.createCell(8).setCellValue("Booked At");
+    }
+
+    private String safeForExcel(String value) {
+        if (value == null || value.isEmpty()) {
+            return "";
+        }
+        char first = value.charAt(0);
+        if (first == '=' || first == '+' || first == '-' || first == '@') {
+            return "'" + value;
+        }
+        return value;
     }
 
     private String nullSafe(String value) {
