@@ -6,6 +6,8 @@ import com.clinic.dto.response.PageResponse;
 import com.clinic.service.AdminService;
 import com.clinic.service.PatientHistoryService;
 import jakarta.validation.Valid;
+import jakarta.validation.constraints.Max;
+import jakarta.validation.constraints.Min;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -26,10 +28,11 @@ public class PatientHistoryController {
     @GetMapping
     public PageResponse<MedicalRecordResponse> getHistory(
             @PathVariable("id") Long patientId,
-            @RequestParam(defaultValue = "0") int page,
-            @RequestParam(defaultValue = "20") int size
+            @RequestParam(defaultValue = "0") @Min(0) int page,
+            @RequestParam(defaultValue = "20") @Min(1) @Max(200) int size
     ) {
-        return patientHistoryService.getPatientHistory(patientId, page, size);
+        Long doctorId = adminService.getAuthenticatedDoctorId();
+        return patientHistoryService.getPatientHistory(patientId, doctorId, page, size);
     }
 
     @PostMapping

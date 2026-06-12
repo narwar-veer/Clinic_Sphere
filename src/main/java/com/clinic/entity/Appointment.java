@@ -11,6 +11,7 @@ import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 import lombok.Getter;
 import lombok.Setter;
@@ -41,14 +42,14 @@ public class Appointment {
     @Column(nullable = false, length = 20)
     private AppointmentStatus status;
 
+    @Column(name = "booking_date", nullable = false)
+    private LocalDate bookingDate;
+
+    @Column(name = "idempotency_key", unique = true, length = 120)
+    private String idempotencyKey;
+
     @Column(name = "visited_at")
     private LocalDateTime visitedAt;
-
-    @Column(columnDefinition = "TEXT")
-    private String testimonial;
-
-    @Column
-    private Integer rating;
 
     @Column(name = "created_at", nullable = false, updatable = false)
     @CreationTimestamp

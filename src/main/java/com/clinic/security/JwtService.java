@@ -1,19 +1,19 @@
 package com.clinic.security;
 
-import com.fasterxml.jackson.core.type.TypeReference;
-import com.fasterxml.jackson.databind.ObjectMapper;
+import io.jsonwebtoken.Claims;
+import io.jsonwebtoken.JwtException;
+import io.jsonwebtoken.Jwts;
+import io.jsonwebtoken.io.Decoders;
+import io.jsonwebtoken.security.Keys;
+import jakarta.annotation.PostConstruct;
 import java.nio.charset.StandardCharsets;
-import java.security.MessageDigest;
+import java.time.Clock;
 import java.time.Instant;
 import java.time.LocalDateTime;
 import java.time.ZoneId;
-import java.util.Base64;
-import java.util.LinkedHashMap;
-import java.util.Map;
+import java.util.Date;
 import java.util.UUID;
-import javax.crypto.Mac;
-import javax.crypto.spec.SecretKeySpec;
-import jakarta.annotation.PostConstruct;
+import javax.crypto.SecretKey;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -22,149 +22,137 @@ import org.springframework.stereotype.Service;
 @Slf4j
 @Service
 public class JwtService {
-    private static final String DEFAULT_JWT_SECRET = "change-this-secret-key-with-at-least-32-characters";
-    private static final long DEFAULT_EXPIRATION_MS = 86_400_000L;
-    private static final String HMAC_ALGORITHM = "HmacSHA256";
-    private static final Base64.Encoder URL_ENCODER = Base64.getUrlEncoder().withoutPadding();
-    private static final Base64.Decoder URL_DECODER = Base64.getUrlDecoder();
-    private static final ObjectMapper OBJECT_MAPPER = new ObjectMapper();
 
-    @Value("${app.jwt.secret:change-this-secret-key-with-at-least-32-characters}")
+    private static final String TOKEN_TYPE = "access";
+    private static final String CLAIM_TYPE = "type";
+    private static final String CLAIM_ROLE = "role";
+    private static final String CLAIM_DOCTOR_ID = "doctorId";
+    private static final String CLAIM_ADMIN_ID = "adminId";
+
+    private final Clock appClock;
+    private final ZoneId appZoneId;
+
+    @Value("${app.jwt.secret}")
     private String secret;
 
     @Value("${app.jwt.expiration-ms:86400000}")
-    private String expirationMsValue;
+    private long expirationMs;
+
+    @Value("${app.jwt.issuer:clinic-app}")
+    private String issuer;
+
+    @Value("${app.jwt.audience:clinic-api}")
+    private String audience;
+
+    @Value("${app.jwt.clock-skew-seconds:30}")
+    private long clockSkewSeconds;
+
+    private SecretKey signingKey;
+
+    public JwtService(Clock appClock, ZoneId appZoneId) {
+        this.appClock = appClock;
+        this.appZoneId = appZoneId;
+    }
 
     @PostConstruct
-    void logStartup() {
-        log.info("JwtService initialized in safe mode");
+    void validateJwtConfig() {
+        if (secret == null || secret.isBlank()) {
+            throw new IllegalStateException("JWT secret is required");
+        }
+
+        byte[] keyBytes;
+        try {
+            keyBytes = Decoders.BASE64.decode(secret.trim());
+        } catch (RuntimeException ignored) {
+            keyBytes = secret.trim().getBytes(StandardCharsets.UTF_8);
+        }
+
+        if (keyBytes.length < 32) {
+            throw new IllegalStateException("JWT secret must be at least 32 bytes");
+        }
+
+        signingKey = Keys.hmacShaKeyFor(keyBytes);
+        log.info("JwtService initialized issuer={} audience={} expirationMs={}", issuer, audience, expirationMs);
     }
 
     public String generateToken(AdminPrincipal principal) {
-        long nowMs = System.currentTimeMillis();
-        long expMs = nowMs + resolveExpirationMs();
+        Instant now = Instant.now(appClock);
+        Instant expiresAt = now.plusMillis(expirationMs);
 
-        Map<String, Object> header = Map.of("alg", "HS256", "typ", "JWT");
-        Map<String, Object> payload = new LinkedHashMap<>();
-        payload.put("sub", principal.getUsername());
-        payload.put("jti", UUID.randomUUID().toString());
-        payload.put("iat", nowMs / 1000);
-        payload.put("exp", expMs / 1000);
-        payload.put("doctorId", principal.getDoctorId());
-        payload.put("role", principal.getAuthorities().iterator().next().getAuthority());
-
-        String encodedHeader = encodeJson(header);
-        String encodedPayload = encodeJson(payload);
-        String signingInput = encodedHeader + "." + encodedPayload;
-        String signature = sign(signingInput);
-        return signingInput + "." + signature;
+        return Jwts.builder()
+                .subject(principal.getUsername())
+                .issuer(issuer)
+                .audience().add(audience).and()
+                .id(UUID.randomUUID().toString())
+                .issuedAt(Date.from(now))
+                .notBefore(Date.from(now.minusSeconds(1)))
+                .expiration(Date.from(expiresAt))
+                .claim(CLAIM_TYPE, TOKEN_TYPE)
+                .claim(CLAIM_ADMIN_ID, principal.getAdminId())
+                .claim(CLAIM_DOCTOR_ID, principal.getDoctorId())
+                .claim(CLAIM_ROLE, principal.getAuthorities().iterator().next().getAuthority())
+                .signWith(signingKey)
+                .compact();
     }
 
-    public String extractUsername(String token) {
-        return asString(parseAndValidatePayload(token).get("sub"));
+    public JwtPrincipalClaims parsePrincipalClaims(String token) {
+        Claims claims = parseClaims(token);
+        String type = claims.get(CLAIM_TYPE, String.class);
+        if (!TOKEN_TYPE.equals(type)) {
+            throw new IllegalArgumentException("Invalid token type");
+        }
+        Long adminId = claims.get(CLAIM_ADMIN_ID, Long.class);
+        Long doctorId = claims.get(CLAIM_DOCTOR_ID, Long.class);
+        String role = claims.get(CLAIM_ROLE, String.class);
+        String username = claims.getSubject();
+        String tokenId = claims.getId();
+        Date expiration = claims.getExpiration();
+
+        if (adminId == null || doctorId == null || role == null || username == null || tokenId == null || expiration == null) {
+            throw new IllegalArgumentException("Missing required token claims");
+        }
+
+        return new JwtPrincipalClaims(adminId, doctorId, username, role, tokenId, expiration.toInstant());
     }
 
     public String extractTokenId(String token) {
-        return asString(parseAndValidatePayload(token).get("jti"));
+        return parseClaims(token).getId();
+    }
+
+    public String extractUsername(String token) {
+        return parseClaims(token).getSubject();
     }
 
     public LocalDateTime extractExpiration(String token) {
-        long expEpochSec = asLong(parseAndValidatePayload(token).get("exp"));
-        return LocalDateTime.ofInstant(Instant.ofEpochSecond(expEpochSec), ZoneId.systemDefault());
+        return LocalDateTime.ofInstant(parseClaims(token).getExpiration().toInstant(), appZoneId);
     }
 
     public boolean isTokenValid(String token, UserDetails userDetails) {
         try {
-            Map<String, Object> payload = parseAndValidatePayload(token);
-            String username = asString(payload.get("sub"));
-            long exp = asLong(payload.get("exp"));
-            return username.equals(userDetails.getUsername()) && exp > Instant.now().getEpochSecond();
-        } catch (Exception ex) {
+            Claims claims = parseClaims(token);
+            String username = claims.getSubject();
+            return username != null
+                    && username.equals(userDetails.getUsername())
+                    && claims.getExpiration() != null
+                    && claims.getExpiration().toInstant().isAfter(Instant.now(appClock));
+        } catch (RuntimeException ex) {
             return false;
         }
     }
 
-    private Map<String, Object> parseAndValidatePayload(String token) {
-        if (token == null || token.isBlank()) {
-            throw new IllegalArgumentException("JWT token is blank");
-        }
-        String[] parts = token.split("\\.");
-        if (parts.length != 3) {
-            throw new IllegalArgumentException("JWT token format is invalid");
-        }
-
-        String signingInput = parts[0] + "." + parts[1];
-        String expectedSignature = sign(signingInput);
-        if (!MessageDigest.isEqual(
-                expectedSignature.getBytes(StandardCharsets.UTF_8),
-                parts[2].getBytes(StandardCharsets.UTF_8)
-        )) {
-            throw new IllegalArgumentException("JWT signature is invalid");
-        }
-
+    private Claims parseClaims(String token) {
         try {
-            return OBJECT_MAPPER.readValue(URL_DECODER.decode(parts[1]), new TypeReference<>() {});
-        } catch (Exception ex) {
-            throw new IllegalArgumentException("JWT payload is invalid", ex);
+            return Jwts.parser()
+                    .verifyWith((javax.crypto.SecretKey) signingKey)
+                    .requireIssuer(issuer)
+                    .requireAudience(audience)
+                    .clock(() -> Date.from(Instant.now(appClock)))
+                    .clockSkewSeconds(clockSkewSeconds)
+                    .build()
+                    .parseSignedClaims(token)
+                    .getPayload();
+        } catch (JwtException | IllegalArgumentException ex) {
+            throw new IllegalArgumentException("Invalid JWT", ex);
         }
-    }
-
-    private String encodeJson(Map<String, Object> value) {
-        try {
-            return URL_ENCODER.encodeToString(OBJECT_MAPPER.writeValueAsBytes(value));
-        } catch (Exception ex) {
-            throw new IllegalStateException("Failed to serialize JWT section", ex);
-        }
-    }
-
-    private String sign(String input) {
-        try {
-            Mac mac = Mac.getInstance(HMAC_ALGORITHM);
-            mac.init(new SecretKeySpec(resolveSecretBytes(), HMAC_ALGORITHM));
-            return URL_ENCODER.encodeToString(mac.doFinal(input.getBytes(StandardCharsets.UTF_8)));
-        } catch (Exception ex) {
-            throw new IllegalStateException("Failed to sign JWT", ex);
-        }
-    }
-
-    private byte[] resolveSecretBytes() {
-        String value = secret;
-        if (value == null || value.trim().isEmpty()) {
-            value = DEFAULT_JWT_SECRET;
-            log.warn("JWT secret is blank. Falling back to default secret.");
-        } else {
-            value = value.trim();
-        }
-        return value.getBytes(StandardCharsets.UTF_8);
-    }
-
-    private long resolveExpirationMs() {
-        String raw = expirationMsValue;
-        if (raw == null || raw.trim().isEmpty()) {
-            return DEFAULT_EXPIRATION_MS;
-        }
-        try {
-            return Long.parseLong(raw.trim());
-        } catch (NumberFormatException ex) {
-            log.warn("Invalid JWT expiration '{}'. Falling back to {}.", raw, DEFAULT_EXPIRATION_MS);
-            return DEFAULT_EXPIRATION_MS;
-        }
-    }
-
-    private String asString(Object value) {
-        if (value == null) {
-            throw new IllegalArgumentException("Missing JWT claim");
-        }
-        return String.valueOf(value);
-    }
-
-    private long asLong(Object value) {
-        if (value instanceof Number number) {
-            return number.longValue();
-        }
-        if (value instanceof String stringValue) {
-            return Long.parseLong(stringValue);
-        }
-        throw new IllegalArgumentException("Invalid JWT numeric claim");
     }
 }

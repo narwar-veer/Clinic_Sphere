@@ -10,7 +10,6 @@ public class DoctorResponse {
     private String name;
     private String photo;
     private String qualifications;
-    private String degrees;
     private String specialization;
     private Integer experienceYears;
     private String registrationNumber;

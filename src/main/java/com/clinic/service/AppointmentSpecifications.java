@@ -38,9 +38,9 @@ public final class AppointmentSpecifications {
                     cb.like(cb.lower(root.get("patient").get("name")), normalized));
         }
         if (phone != null && !phone.isBlank()) {
-            String normalized = "%" + phone.trim().toLowerCase() + "%";
+            String normalized = "%" + phone.trim() + "%";
             specification = specification.and((root, query, cb) ->
-                    cb.like(cb.lower(root.get("patient").get("phone")), normalized));
+                    cb.like(root.get("patient").get("phone"), normalized));
         }
         if (visited != null) {
             if (visited) {

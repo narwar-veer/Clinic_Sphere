@@ -12,9 +12,9 @@
     { "key": "slotId", "value": "1" },
     { "key": "appointmentId", "value": "1" },
     { "key": "patientId", "value": "1" },
-    { "key": "date", "value": "2026-03-20" },
-    { "key": "fromDate", "value": "2026-03-20" },
-    { "key": "toDate", "value": "2026-03-27" },
+    { "key": "date", "value": "2026-05-27" },
+    { "key": "fromDate", "value": "2026-05-27" },
+    { "key": "toDate", "value": "2026-06-03" },
     { "key": "time", "value": "10:00" }
   ],
   "item": [
@@ -26,6 +26,13 @@
           "request": {
             "method": "GET",
             "url": "{{baseUrl}}/api/health"
+          }
+        },
+        {
+          "name": "GET /actuator/health",
+          "request": {
+            "method": "GET",
+            "url": "{{baseUrl}}/actuator/health"
           }
         }
       ]
@@ -108,24 +115,6 @@
               "raw": "{\n  \"name\": \"Test Patient\",\n  \"phone\": \"+911234567890\",\n  \"age\": 30,\n  \"gender\": \"MALE\",\n  \"symptoms\": \"Fever and cough\",\n  \"slotId\": {{slotId}}\n}"
             },
             "url": "{{baseUrl}}/api/appointments"
-          }
-        },
-        {
-          "name": "POST /api/appointments/:id/testimonial",
-          "request": {
-            "method": "POST",
-            "header": [
-              { "key": "Content-Type", "value": "application/json" }
-            ],
-            "body": {
-              "mode": "raw",
-              "raw": "{\n  \"testimonial\": \"Very good consultation\",\n  \"rating\": 5\n}"
-            },
-            "url": {
-              "raw": "{{baseUrl}}/api/appointments/{{appointmentId}}/testimonial",
-              "host": ["{{baseUrl}}"],
-              "path": ["api", "appointments", "{{appointmentId}}", "testimonial"]
-            }
           }
         }
       ]

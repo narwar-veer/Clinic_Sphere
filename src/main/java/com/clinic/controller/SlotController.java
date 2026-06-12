@@ -4,6 +4,8 @@ import com.clinic.dto.response.PageResponse;
 import com.clinic.dto.response.SlotDateAvailabilityResponse;
 import com.clinic.dto.response.SlotResponse;
 import com.clinic.service.SlotService;
+import jakarta.validation.constraints.Max;
+import jakarta.validation.constraints.Min;
 import java.time.LocalDate;
 import lombok.RequiredArgsConstructor;
 import org.springframework.format.annotation.DateTimeFormat;
@@ -24,8 +26,8 @@ public class SlotController {
     @GetMapping
     public PageResponse<SlotResponse> getSlots(
             @RequestParam @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) LocalDate date,
-            @RequestParam(defaultValue = "0") int page,
-            @RequestParam(defaultValue = "20") int size
+            @RequestParam(defaultValue = "0") @Min(0) int page,
+            @RequestParam(defaultValue = "20") @Min(1) @Max(200) int size
     ) {
         return slotService.getSlots(date, page, size);
     }
@@ -34,8 +36,8 @@ public class SlotController {
     public PageResponse<SlotDateAvailabilityResponse> getDateAvailability(
             @RequestParam(required = false) @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) LocalDate fromDate,
             @RequestParam(required = false) @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) LocalDate toDate,
-            @RequestParam(defaultValue = "0") int page,
-            @RequestParam(defaultValue = "20") int size
+            @RequestParam(defaultValue = "0") @Min(0) int page,
+            @RequestParam(defaultValue = "20") @Min(1) @Max(200) int size
     ) {
         return slotService.getDateAvailability(fromDate, toDate, page, size);
     }

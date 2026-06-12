@@ -27,7 +27,5 @@ public class AppointmentResponse {
     private String symptoms;
     private AppointmentStatus status;
     private LocalDateTime visitedAt;
-    private String testimonial;
-    private Integer rating;
     private LocalDateTime createdAt;
 }

@@ -10,7 +10,6 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.context.SecurityContextHolder;
-import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.web.authentication.WebAuthenticationDetailsSource;
 import org.springframework.stereotype.Component;
 import org.springframework.web.filter.OncePerRequestFilter;
@@ -21,7 +20,6 @@ import org.springframework.web.filter.OncePerRequestFilter;
 public class JwtAuthenticationFilter extends OncePerRequestFilter {
 
     private final JwtService jwtService;
-    private final AdminDetailsService adminDetailsService;
     private final AdminSessionService adminSessionService;
 
     @Override
@@ -35,28 +33,19 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
 
         String token = authHeader.substring(7);
         try {
-            String username = jwtService.extractUsername(token);
-            String tokenId = jwtService.extractTokenId(token);
-            if (username != null
-                    && tokenId != null
-                    && adminSessionService.validateAndTouchSession(tokenId)
-                    && SecurityContextHolder.getContext().getAuthentication() == null) {
-                AdminPrincipal adminPrincipal = (AdminPrincipal) adminDetailsService.loadUserByUsername(username);
-                if (jwtService.isTokenValid(token, adminPrincipal)) {
-                    UsernamePasswordAuthenticationToken authenticationToken =
-                            new UsernamePasswordAuthenticationToken(
-                                    adminPrincipal,
-                                    null,
-                                    adminPrincipal.getAuthorities()
-                            );
-                    authenticationToken.setDetails(new WebAuthenticationDetailsSource().buildDetails(request));
-                    SecurityContextHolder.getContext().setAuthentication(authenticationToken);
-                }
+            JwtPrincipalClaims claims = jwtService.parsePrincipalClaims(token);
+            if (SecurityContextHolder.getContext().getAuthentication() == null
+                    && adminSessionService.validateSession(claims.tokenId(), claims.expiresAt())) {
+
+                AdminPrincipal principal = AdminPrincipal.fromToken(
+                        claims.adminId(), claims.doctorId(), claims.username(), claims.role());
+                UsernamePasswordAuthenticationToken authenticationToken =
+                        new UsernamePasswordAuthenticationToken(principal, null, principal.getAuthorities());
+                authenticationToken.setDetails(new WebAuthenticationDetailsSource().buildDetails(request));
+                SecurityContextHolder.getContext().setAuthentication(authenticationToken);
             }
-        } catch (IllegalArgumentException | UsernameNotFoundException ex) {
-            // Any token parsing / user lookup error should fail authentication silently,
-            // not break request handling with a 500.
-            log.warn("Ignoring invalid JWT authentication: {}", ex.getMessage());
+        } catch (IllegalArgumentException ex) {
+            log.debug("JWT rejected: {}", ex.getMessage());
         }
 
         filterChain.doFilter(request, response);
