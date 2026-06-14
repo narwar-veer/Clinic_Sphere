@@ -1,10 +1,9 @@
 pipeline {
 agent any
 
-```
 environment {
     APP_NAME = 'clinic-booking-backend'
-    IMAGE_NAME = "${APP_NAME}:${env.BUILD_NUMBER}"
+    IMAGE_NAME = 'clinic-booking-backend'
     MAVEN_HOME = 'C:\\Users\\hp\\tools\\apache-maven-3.9.9'
 }
 
@@ -19,7 +18,7 @@ stages {
     stage('Diagnostics') {
         steps {
             bat 'echo ===== JAVA ====='
-            bat 'where java'
+            bat 'where java || echo Java not found'
             bat 'java -version'
 
             bat 'echo ===== MAVEN ====='
@@ -27,7 +26,7 @@ stages {
             bat '"%MAVEN_HOME%\\bin\\mvn.cmd" -v'
 
             bat 'echo ===== DOCKER ====='
-            bat 'where docker'
+            bat 'where docker || echo Docker not found'
             bat 'docker --version'
         }
     }
@@ -46,7 +45,7 @@ stages {
 
     stage('Build Docker Image') {
         steps {
-            bat 'docker build -t %IMAGE_NAME% .'
+            bat 'docker build -t %IMAGE_NAME%:%BUILD_NUMBER% .'
         }
     }
 
@@ -54,7 +53,7 @@ stages {
         steps {
             bat '''
             docker rm -f clinic-booking-test >nul 2>&1
-            docker run -d --name clinic-booking-test -p 8082:8082 %IMAGE_NAME%
+            docker run -d --name clinic-booking-test -p 8082:8082 %IMAGE_NAME%:%BUILD_NUMBER%
             timeout /t 20 /nobreak
             '''
         }
@@ -77,7 +76,14 @@ post {
     always {
         bat 'docker rm -f clinic-booking-test >nul 2>&1'
     }
+
+    success {
+        echo 'Build completed successfully.'
+    }
+
+    failure {
+        echo 'Build failed. Check logs above.'
+    }
 }
-```
 
 }
