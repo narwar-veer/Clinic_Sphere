@@ -8,5 +8,6 @@ public class ClinicBookingApplication {
 
     public static void main(String[] args) {
         SpringApplication.run(ClinicBookingApplication.class, args);
-    }
+        System.out.println("Application Started");
+        }
 }
