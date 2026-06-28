@@ -1,0 +1,214 @@
+{
+  "projectRoot": "D:\\Desktop\\Clinic_Sphere",
+  "batchFiles": [
+    {
+      "path": "src/main/java/com/clinic/controller/AdminController.java",
+      "language": "java",
+      "sizeLines": 167,
+      "fileCategory": "code"
+    },
+    {
+      "path": "src/main/java/com/clinic/controller/SlotController.java",
+      "language": "java",
+      "sizeLines": 43,
+      "fileCategory": "code"
+    },
+    {
+      "path": "src/main/java/com/clinic/dto/request/AdminLoginRequest.java",
+      "language": "java",
+      "sizeLines": 16,
+      "fileCategory": "code"
+    },
+    {
+      "path": "src/main/java/com/clinic/dto/request/SlotCapacityUpdateRequest.java",
+      "language": "java",
+      "sizeLines": 15,
+      "fileCategory": "code"
+    },
+    {
+      "path": "src/main/java/com/clinic/dto/request/SlotConfigUpdateRequest.java",
+      "language": "java",
+      "sizeLines": 18,
+      "fileCategory": "code"
+    },
+    {
+      "path": "src/main/java/com/clinic/dto/response/AdminLoginResponse.java",
+      "language": "java",
+      "sizeLines": 13,
+      "fileCategory": "code"
+    },
+    {
+      "path": "src/main/java/com/clinic/dto/response/MessageResponse.java",
+      "language": "java",
+      "sizeLines": 10,
+      "fileCategory": "code"
+    },
+    {
+      "path": "src/main/java/com/clinic/dto/response/SlotConfigResponse.java",
+      "language": "java",
+      "sizeLines": 13,
+      "fileCategory": "code"
+    },
+    {
+      "path": "src/main/java/com/clinic/dto/response/SlotDateAvailabilityResponse.java",
+      "language": "java",
+      "sizeLines": 13,
+      "fileCategory": "code"
+    },
+    {
+      "path": "src/main/java/com/clinic/dto/response/SlotResponse.java",
+      "language": "java",
+      "sizeLines": 23,
+      "fileCategory": "code"
+    },
+    {
+      "path": "src/main/java/com/clinic/entity/ClinicTiming.java",
+      "language": "java",
+      "sizeLines": 47,
+      "fileCategory": "code"
+    },
+    {
+      "path": "src/main/java/com/clinic/entity/SlotConfig.java",
+      "language": "java",
+      "sizeLines": 34,
+      "fileCategory": "code"
+    },
+    {
+      "path": "src/main/java/com/clinic/mapper/SlotMapper.java",
+      "language": "java",
+      "sizeLines": 18,
+      "fileCategory": "code"
+    },
+    {
+      "path": "src/main/java/com/clinic/repository/ClinicTimingRepository.java",
+      "language": "java",
+      "sizeLines": 13,
+      "fileCategory": "code"
+    },
+    {
+      "path": "src/main/java/com/clinic/repository/DateAvailabilityProjection.java",
+      "language": "java",
+      "sizeLines": 9,
+      "fileCategory": "code"
+    },
+    {
+      "path": "src/main/java/com/clinic/repository/SlotConfigRepository.java",
+      "language": "java",
+      "sizeLines": 10,
+      "fileCategory": "code"
+    },
+    {
+      "path": "src/main/java/com/clinic/security/JwtService.java",
+      "language": "java",
+      "sizeLines": 158,
+      "fileCategory": "code"
+    },
+    {
+      "path": "src/main/java/com/clinic/service/AdminService.java",
+      "language": "java",
+      "sizeLines": 145,
+      "fileCategory": "code"
+    },
+    {
+      "path": "src/main/java/com/clinic/service/AppTime.java",
+      "language": "java",
+      "sizeLines": 36,
+      "fileCategory": "code"
+    },
+    {
+      "path": "src/main/java/com/clinic/service/SlotService.java",
+      "language": "java",
+      "sizeLines": 343,
+      "fileCategory": "code"
+    },
+    {
+      "path": "src/test/java/com/clinic/service/AdminServiceTest.java",
+      "language": "java",
+      "sizeLines": 29,
+      "fileCategory": "code"
+    }
+  ],
+  "batchImportData": {
+    "src/main/java/com/clinic/controller/AdminController.java": [
+      "src/main/java/com/clinic/dto/request/AdminAppointmentUpdateRequest.java",
+      "src/main/java/com/clinic/dto/request/AdminLoginRequest.java",
+      "src/main/java/com/clinic/dto/request/DoctorProfileUpdateRequest.java",
+      "src/main/java/com/clinic/dto/request/SlotCapacityUpdateRequest.java",
+      "src/main/java/com/clinic/dto/request/SlotConfigUpdateRequest.java",
+      "src/main/java/com/clinic/dto/response/AdminLoginResponse.java",
+      "src/main/java/com/clinic/dto/response/AppointmentResponse.java",
+      "src/main/java/com/clinic/dto/response/DoctorResponse.java",
+      "src/main/java/com/clinic/dto/response/MessageResponse.java",
+      "src/main/java/com/clinic/dto/response/PageResponse.java",
+      "src/main/java/com/clinic/dto/response/SlotConfigResponse.java",
+      "src/main/java/com/clinic/dto/response/SlotResponse.java",
+      "src/main/java/com/clinic/entity/AppointmentStatus.java",
+      "src/main/java/com/clinic/service/AdminService.java",
+      "src/main/java/com/clinic/service/AppointmentExportService.java",
+      "src/main/java/com/clinic/service/AppointmentService.java",
+      "src/main/java/com/clinic/service/AppTime.java",
+      "src/main/java/com/clinic/service/DoctorService.java",
+      "src/main/java/com/clinic/service/SlotService.java"
+    ],
+    "src/main/java/com/clinic/controller/SlotController.java": [
+      "src/main/java/com/clinic/dto/response/PageResponse.java",
+      "src/main/java/com/clinic/dto/response/SlotDateAvailabilityResponse.java",
+      "src/main/java/com/clinic/dto/response/SlotResponse.java",
+      "src/main/java/com/clinic/service/SlotService.java"
+    ],
+    "src/main/java/com/clinic/dto/request/AdminLoginRequest.java": [],
+    "src/main/java/com/clinic/dto/request/SlotCapacityUpdateRequest.java": [],
+    "src/main/java/com/clinic/dto/request/SlotConfigUpdateRequest.java": [],
+    "src/main/java/com/clinic/dto/response/AdminLoginResponse.java": [],
+    "src/main/java/com/clinic/dto/response/MessageResponse.java": [],
+    "src/main/java/com/clinic/dto/response/SlotConfigResponse.java": [],
+    "src/main/java/com/clinic/dto/response/SlotDateAvailabilityResponse.java": [],
+    "src/main/java/com/clinic/dto/response/SlotResponse.java": [],
+    "src/main/java/com/clinic/entity/ClinicTiming.java": [],
+    "src/main/java/com/clinic/entity/SlotConfig.java": [],
+    "src/main/java/com/clinic/mapper/SlotMapper.java": [
+      "src/main/java/com/clinic/dto/response/SlotResponse.java",
+      "src/main/java/com/clinic/entity/Slot.java"
+    ],
+    "src/main/java/com/clinic/repository/ClinicTimingRepository.java": [
+      "src/main/java/com/clinic/entity/ClinicTiming.java"
+    ],
+    "src/main/java/com/clinic/repository/DateAvailabilityProjection.java": [],
+    "src/main/java/com/clinic/repository/SlotConfigRepository.java": [
+      "src/main/java/com/clinic/entity/SlotConfig.java"
+    ],
+    "src/main/java/com/clinic/security/JwtService.java": [],
+    "src/main/java/com/clinic/service/AdminService.java": [
+      "src/main/java/com/clinic/dto/request/AdminLoginRequest.java",
+      "src/main/java/com/clinic/dto/response/AdminLoginResponse.java",
+      "src/main/java/com/clinic/exception/UnauthorizedException.java",
+      "src/main/java/com/clinic/security/AdminPrincipal.java",
+      "src/main/java/com/clinic/security/JwtService.java"
+    ],
+    "src/main/java/com/clinic/service/AppTime.java": [],
+    "src/main/java/com/clinic/service/SlotService.java": [
+      "src/main/java/com/clinic/dto/request/SlotConfigUpdateRequest.java",
+      "src/main/java/com/clinic/dto/response/MessageResponse.java",
+      "src/main/java/com/clinic/dto/response/PageResponse.java",
+      "src/main/java/com/clinic/dto/response/SlotConfigResponse.java",
+      "src/main/java/com/clinic/dto/response/SlotDateAvailabilityResponse.java",
+      "src/main/java/com/clinic/dto/response/SlotResponse.java",
+      "src/main/java/com/clinic/entity/Clinic.java",
+      "src/main/java/com/clinic/entity/ClinicTiming.java",
+      "src/main/java/com/clinic/entity/Slot.java",
+      "src/main/java/com/clinic/entity/SlotConfig.java",
+      "src/main/java/com/clinic/exception/BadRequestException.java",
+      "src/main/java/com/clinic/exception/ResourceNotFoundException.java",
+      "src/main/java/com/clinic/exception/UnauthorizedException.java",
+      "src/main/java/com/clinic/mapper/SlotMapper.java",
+      "src/main/java/com/clinic/repository/ClinicRepository.java",
+      "src/main/java/com/clinic/repository/ClinicTimingRepository.java",
+      "src/main/java/com/clinic/repository/DateAvailabilityProjection.java",
+      "src/main/java/com/clinic/repository/SlotConfigRepository.java",
+      "src/main/java/com/clinic/repository/SlotRepository.java"
+    ],
+    "src/test/java/com/clinic/service/AdminServiceTest.java": [
+      "src/main/java/com/clinic/security/JwtService.java"
+    ]
+  }
+}

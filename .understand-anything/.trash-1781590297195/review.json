@@ -1,0 +1,37 @@
+{
+  "issues": [],
+  "warnings": [
+    "Node 'table:src/main/resources/db/migration/V1__create_clinic_schema.sql' has no edges (orphan)",
+    "Node 'table:src/main/resources/db/migration/V2__add_visit_and_testimonial_columns.sql' has no edges (orphan)",
+    "Node 'table:src/main/resources/db/migration/V3__change_rating_to_integer.sql' has no edges (orphan)",
+    "Node 'table:src/main/resources/db/migration/V4__doctor_awards_and_appointment_statuses.sql' has no edges (orphan)",
+    "Node 'table:src/main/resources/db/migration/V5__session_security_and_status_updates.sql' has no edges (orphan)",
+    "Node 'table:src/main/resources/db/migration/V6__production_hardening.sql' has no edges (orphan)",
+    "Node 'file:.understand-anything/.understandignore' has no edges (orphan)",
+    "Node 'file:src/main/java/com/clinic/security/JwtPrincipalClaims.java' has no edges (orphan)",
+    "Node 'file:src/main/java/com/clinic/service/AppointmentNotificationOutboxPayload.java' has no edges (orphan)",
+    "Node 'file:src/test/resources/mockito-extensions/org.mockito.plugins.MockMaker' has no edges (orphan)"
+  ],
+  "stats": {
+    "totalNodes": 390,
+    "totalEdges": 470,
+    "totalLayers": 6,
+    "tourSteps": 5,
+    "nodeTypes": {
+      "file": 113,
+      "function": 161,
+      "class": 103,
+      "service": 2,
+      "table": 6,
+      "config": 4,
+      "pipeline": 1
+    },
+    "edgeTypes": {
+      "contains": 264,
+      "imports": 197,
+      "deploys": 3,
+      "configures": 4,
+      "tested_by": 2
+    }
+  }
+}

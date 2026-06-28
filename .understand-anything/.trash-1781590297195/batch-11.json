@@ -1,0 +1,83 @@
+{
+  "nodes": [
+    {
+      "id": "table:src/main/resources/db/migration/V1__create_clinic_schema.sql",
+      "type": "table",
+      "name": "V1__create_clinic_schema.sql",
+      "filePath": "src/main/resources/db/migration/V1__create_clinic_schema.sql",
+      "summary": "SQL script for database migrations, managing schema tables or seeding initial data.",
+      "tags": [
+        "data",
+        "sql",
+        "utility"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "table:src/main/resources/db/migration/V2__add_visit_and_testimonial_columns.sql",
+      "type": "table",
+      "name": "V2__add_visit_and_testimonial_columns.sql",
+      "filePath": "src/main/resources/db/migration/V2__add_visit_and_testimonial_columns.sql",
+      "summary": "SQL script for database migrations, managing schema tables or seeding initial data.",
+      "tags": [
+        "data",
+        "sql",
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "table:src/main/resources/db/migration/V3__change_rating_to_integer.sql",
+      "type": "table",
+      "name": "V3__change_rating_to_integer.sql",
+      "filePath": "src/main/resources/db/migration/V3__change_rating_to_integer.sql",
+      "summary": "SQL script for database migrations, managing schema tables or seeding initial data.",
+      "tags": [
+        "data",
+        "sql",
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "table:src/main/resources/db/migration/V4__doctor_awards_and_appointment_statuses.sql",
+      "type": "table",
+      "name": "V4__doctor_awards_and_appointment_statuses.sql",
+      "filePath": "src/main/resources/db/migration/V4__doctor_awards_and_appointment_statuses.sql",
+      "summary": "SQL script for database migrations, managing schema tables or seeding initial data.",
+      "tags": [
+        "data",
+        "sql",
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "table:src/main/resources/db/migration/V5__session_security_and_status_updates.sql",
+      "type": "table",
+      "name": "V5__session_security_and_status_updates.sql",
+      "filePath": "src/main/resources/db/migration/V5__session_security_and_status_updates.sql",
+      "summary": "SQL script for database migrations, managing schema tables or seeding initial data.",
+      "tags": [
+        "data",
+        "sql",
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "table:src/main/resources/db/migration/V6__production_hardening.sql",
+      "type": "table",
+      "name": "V6__production_hardening.sql",
+      "filePath": "src/main/resources/db/migration/V6__production_hardening.sql",
+      "summary": "SQL script for database migrations, managing schema tables or seeding initial data.",
+      "tags": [
+        "data",
+        "sql",
+        "utility"
+      ],
+      "complexity": "moderate"
+    }
+  ],
+  "edges": []
+}

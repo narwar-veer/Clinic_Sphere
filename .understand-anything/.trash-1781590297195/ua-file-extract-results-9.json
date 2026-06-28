@@ -1,0 +1,203 @@
+{
+  "scriptCompleted": true,
+  "filesAnalyzed": 3,
+  "filesSkipped": [],
+  "results": [
+    {
+      "path": "src/main/java/com/clinic/entity/AuditLog.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 45,
+      "nonEmptyLines": 35,
+      "classes": [
+        {
+          "name": "AuditLog",
+          "startLine": 14,
+          "endLine": 45,
+          "methods": [],
+          "properties": [
+            "id",
+            "eventType",
+            "actor",
+            "entityType",
+            "entityId",
+            "requestId",
+            "detailsJson",
+            "createdAt"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "AuditLog",
+          "line": 14,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "src/main/java/com/clinic/repository/AuditLogRepository.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 7,
+      "nonEmptyLines": 5,
+      "classes": [
+        {
+          "name": "AuditLogRepository",
+          "startLine": 6,
+          "endLine": 7,
+          "methods": [],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "AuditLogRepository",
+          "line": 6,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "src/main/java/com/clinic/service/AuditLogService.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 46,
+      "nonEmptyLines": 41,
+      "functions": [
+        {
+          "name": "logEvent",
+          "startLine": 23,
+          "endLine": 33,
+          "params": [
+            "eventType",
+            "actor",
+            "entityType",
+            "entityId",
+            "details"
+          ]
+        },
+        {
+          "name": "toJson",
+          "startLine": 35,
+          "endLine": 45,
+          "params": [
+            "details"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "AuditLogService",
+          "startLine": 15,
+          "endLine": 46,
+          "methods": [
+            "logEvent",
+            "toJson"
+          ],
+          "properties": [
+            "auditLogRepository",
+            "objectMapper"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "logEvent",
+          "line": 23,
+          "isDefault": false
+        },
+        {
+          "name": "AuditLogService",
+          "line": 15,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "logEvent",
+          "callee": "new AuditLog",
+          "lineNumber": 25
+        },
+        {
+          "caller": "logEvent",
+          "callee": "auditLog.setEventType",
+          "lineNumber": 26
+        },
+        {
+          "caller": "logEvent",
+          "callee": "auditLog.setActor",
+          "lineNumber": 27
+        },
+        {
+          "caller": "logEvent",
+          "callee": "auditLog.setEntityType",
+          "lineNumber": 28
+        },
+        {
+          "caller": "logEvent",
+          "callee": "auditLog.setEntityId",
+          "lineNumber": 29
+        },
+        {
+          "caller": "logEvent",
+          "callee": "auditLog.setRequestId",
+          "lineNumber": 30
+        },
+        {
+          "caller": "logEvent",
+          "callee": "MDC.get",
+          "lineNumber": 30
+        },
+        {
+          "caller": "logEvent",
+          "callee": "auditLog.setDetailsJson",
+          "lineNumber": 31
+        },
+        {
+          "caller": "logEvent",
+          "callee": "toJson",
+          "lineNumber": 31
+        },
+        {
+          "caller": "logEvent",
+          "callee": "auditLogRepository.save",
+          "lineNumber": 32
+        },
+        {
+          "caller": "toJson",
+          "callee": "details.isEmpty",
+          "lineNumber": 36
+        },
+        {
+          "caller": "toJson",
+          "callee": "objectMapper.writeValueAsString",
+          "lineNumber": 40
+        },
+        {
+          "caller": "toJson",
+          "callee": "log.warn",
+          "lineNumber": 42
+        }
+      ],
+      "metrics": {
+        "importCount": 2,
+        "exportCount": 2,
+        "functionCount": 2,
+        "classCount": 1
+      }
+    }
+  ]
+}

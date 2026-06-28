@@ -1,0 +1,803 @@
+{
+  "scriptCompleted": true,
+  "filesAnalyzed": 6,
+  "filesSkipped": [],
+  "results": [
+    {
+      "path": "src/main/java/com/clinic/entity/Notification.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 56,
+      "nonEmptyLines": 45,
+      "classes": [
+        {
+          "name": "Notification",
+          "startLine": 19,
+          "endLine": 56,
+          "methods": [],
+          "properties": [
+            "id",
+            "appointment",
+            "type",
+            "status",
+            "idempotencyKey",
+            "sentAt",
+            "providerMessageId",
+            "errorMessage",
+            "createdAt"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "Notification",
+          "line": 19,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "src/main/java/com/clinic/entity/NotificationStatus.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 7,
+      "nonEmptyLines": 6,
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "src/main/java/com/clinic/entity/NotificationType.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 6,
+      "nonEmptyLines": 5,
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "src/main/java/com/clinic/exception/ResourceNotFoundException.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 7,
+      "nonEmptyLines": 6,
+      "functions": [
+        {
+          "name": "ResourceNotFoundException",
+          "startLine": 4,
+          "endLine": 6,
+          "params": [
+            "message"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "ResourceNotFoundException",
+          "startLine": 3,
+          "endLine": 7,
+          "methods": [
+            "ResourceNotFoundException"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "ResourceNotFoundException",
+          "line": 4,
+          "isDefault": false
+        },
+        {
+          "name": "ResourceNotFoundException",
+          "line": 3,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 2,
+        "functionCount": 1,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "src/main/java/com/clinic/repository/NotificationRepository.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 11,
+      "nonEmptyLines": 8,
+      "classes": [
+        {
+          "name": "NotificationRepository",
+          "startLine": 8,
+          "endLine": 11,
+          "methods": [
+            "findByTypeAndIdempotencyKey"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "NotificationRepository",
+          "line": 8,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 2,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "src/main/java/com/clinic/service/NotificationService.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 215,
+      "nonEmptyLines": 188,
+      "functions": [
+        {
+          "name": "deliverAppointmentConfirmation",
+          "startLine": 57,
+          "endLine": 64,
+          "params": [
+            "appointmentId",
+            "outboxKey"
+          ]
+        },
+        {
+          "name": "buildAppointmentMessage",
+          "startLine": 66,
+          "endLine": 78,
+          "params": [
+            "appointment"
+          ]
+        },
+        {
+          "name": "sendSmsNotification",
+          "startLine": 80,
+          "endLine": 98,
+          "params": [
+            "appointment",
+            "message",
+            "idempotencyKey"
+          ]
+        },
+        {
+          "name": "sendWhatsAppNotification",
+          "startLine": 100,
+          "endLine": 118,
+          "params": [
+            "appointment",
+            "message",
+            "idempotencyKey"
+          ]
+        },
+        {
+          "name": "sendTwilioWithRetry",
+          "startLine": 120,
+          "endLine": 144,
+          "params": [
+            "toPhone",
+            "message",
+            "idempotencyKey"
+          ]
+        },
+        {
+          "name": "sendWhatsAppWithRetry",
+          "startLine": 146,
+          "endLine": 173,
+          "params": [
+            "toPhone",
+            "message",
+            "idempotencyKey"
+          ]
+        },
+        {
+          "name": "sleepBackoff",
+          "startLine": 175,
+          "endLine": 182,
+          "params": [
+            "attempt"
+          ]
+        },
+        {
+          "name": "getOrCreateNotification",
+          "startLine": 184,
+          "endLine": 194,
+          "params": [
+            "appointment",
+            "type",
+            "idempotencyKey"
+          ]
+        },
+        {
+          "name": "markSent",
+          "startLine": 196,
+          "endLine": 203,
+          "params": [
+            "notification",
+            "providerId"
+          ]
+        },
+        {
+          "name": "markFailed",
+          "startLine": 205,
+          "endLine": 210,
+          "params": [
+            "notification",
+            "ex"
+          ]
+        },
+        {
+          "name": "encodeFormValue",
+          "startLine": 212,
+          "endLine": 214,
+          "params": [
+            "value"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "NotificationService",
+          "startLine": 23,
+          "endLine": 215,
+          "methods": [
+            "deliverAppointmentConfirmation",
+            "buildAppointmentMessage",
+            "sendSmsNotification",
+            "sendWhatsAppNotification",
+            "sendTwilioWithRetry",
+            "sendWhatsAppWithRetry",
+            "sleepBackoff",
+            "getOrCreateNotification",
+            "markSent",
+            "markFailed",
+            "encodeFormValue"
+          ],
+          "properties": [
+            "appointmentRepository",
+            "notificationRepository",
+            "restClientBuilder",
+            "appTime",
+            "twilioEnabled",
+            "twilioAccountSid",
+            "twilioAuthToken",
+            "twilioFromPhone",
+            "whatsappEnabled",
+            "whatsappApiUrl",
+            "whatsappToken",
+            "whatsappFromNumber"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "deliverAppointmentConfirmation",
+          "line": 57,
+          "isDefault": false
+        },
+        {
+          "name": "NotificationService",
+          "line": 23,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "deliverAppointmentConfirmation",
+          "callee": "appointmentRepository.findById(appointmentId).orElseThrow",
+          "lineNumber": 58
+        },
+        {
+          "caller": "deliverAppointmentConfirmation",
+          "callee": "appointmentRepository.findById",
+          "lineNumber": 58
+        },
+        {
+          "caller": "deliverAppointmentConfirmation",
+          "callee": "new ResourceNotFoundException",
+          "lineNumber": 59
+        },
+        {
+          "caller": "deliverAppointmentConfirmation",
+          "callee": "buildAppointmentMessage",
+          "lineNumber": 61
+        },
+        {
+          "caller": "deliverAppointmentConfirmation",
+          "callee": "sendSmsNotification",
+          "lineNumber": 62
+        },
+        {
+          "caller": "deliverAppointmentConfirmation",
+          "callee": "sendWhatsAppNotification",
+          "lineNumber": 63
+        },
+        {
+          "caller": "buildAppointmentMessage",
+          "callee": "DateTimeFormatter.ofPattern",
+          "lineNumber": 67
+        },
+        {
+          "caller": "buildAppointmentMessage",
+          "callee": "DateTimeFormatter.ofPattern",
+          "lineNumber": 68
+        },
+        {
+          "caller": "buildAppointmentMessage",
+          "callee": "appointment.getSlot().getClinic().getDoctor().getName",
+          "lineNumber": 70
+        },
+        {
+          "caller": "buildAppointmentMessage",
+          "callee": "appointment.getSlot().getClinic().getDoctor",
+          "lineNumber": 70
+        },
+        {
+          "caller": "buildAppointmentMessage",
+          "callee": "appointment.getSlot().getClinic",
+          "lineNumber": 70
+        },
+        {
+          "caller": "buildAppointmentMessage",
+          "callee": "appointment.getSlot",
+          "lineNumber": 70
+        },
+        {
+          "caller": "buildAppointmentMessage",
+          "callee": "appointment.getSlot().getSlotDate().format",
+          "lineNumber": 72
+        },
+        {
+          "caller": "buildAppointmentMessage",
+          "callee": "appointment.getSlot().getSlotDate",
+          "lineNumber": 72
+        },
+        {
+          "caller": "buildAppointmentMessage",
+          "callee": "appointment.getSlot",
+          "lineNumber": 72
+        },
+        {
+          "caller": "buildAppointmentMessage",
+          "callee": "appointment.getSlot().getStartTime().format",
+          "lineNumber": 74
+        },
+        {
+          "caller": "buildAppointmentMessage",
+          "callee": "appointment.getSlot().getStartTime",
+          "lineNumber": 74
+        },
+        {
+          "caller": "buildAppointmentMessage",
+          "callee": "appointment.getSlot",
+          "lineNumber": 74
+        },
+        {
+          "caller": "buildAppointmentMessage",
+          "callee": "appointment.getSlot().getEndTime().format",
+          "lineNumber": 76
+        },
+        {
+          "caller": "buildAppointmentMessage",
+          "callee": "appointment.getSlot().getEndTime",
+          "lineNumber": 76
+        },
+        {
+          "caller": "buildAppointmentMessage",
+          "callee": "appointment.getSlot",
+          "lineNumber": 76
+        },
+        {
+          "caller": "sendSmsNotification",
+          "callee": "getOrCreateNotification",
+          "lineNumber": 81
+        },
+        {
+          "caller": "sendSmsNotification",
+          "callee": "notification.getStatus",
+          "lineNumber": 82
+        },
+        {
+          "caller": "sendSmsNotification",
+          "callee": "markSent",
+          "lineNumber": 88
+        },
+        {
+          "caller": "sendSmsNotification",
+          "callee": "sendTwilioWithRetry",
+          "lineNumber": 92
+        },
+        {
+          "caller": "sendSmsNotification",
+          "callee": "appointment.getPatient().getPhone",
+          "lineNumber": 92
+        },
+        {
+          "caller": "sendSmsNotification",
+          "callee": "appointment.getPatient",
+          "lineNumber": 92
+        },
+        {
+          "caller": "sendSmsNotification",
+          "callee": "markSent",
+          "lineNumber": 93
+        },
+        {
+          "caller": "sendSmsNotification",
+          "callee": "markFailed",
+          "lineNumber": 95
+        },
+        {
+          "caller": "sendWhatsAppNotification",
+          "callee": "getOrCreateNotification",
+          "lineNumber": 101
+        },
+        {
+          "caller": "sendWhatsAppNotification",
+          "callee": "notification.getStatus",
+          "lineNumber": 102
+        },
+        {
+          "caller": "sendWhatsAppNotification",
+          "callee": "markSent",
+          "lineNumber": 108
+        },
+        {
+          "caller": "sendWhatsAppNotification",
+          "callee": "sendWhatsAppWithRetry",
+          "lineNumber": 112
+        },
+        {
+          "caller": "sendWhatsAppNotification",
+          "callee": "appointment.getPatient().getPhone",
+          "lineNumber": 112
+        },
+        {
+          "caller": "sendWhatsAppNotification",
+          "callee": "appointment.getPatient",
+          "lineNumber": 112
+        },
+        {
+          "caller": "sendWhatsAppNotification",
+          "callee": "markSent",
+          "lineNumber": 113
+        },
+        {
+          "caller": "sendWhatsAppNotification",
+          "callee": "markFailed",
+          "lineNumber": 115
+        },
+        {
+          "caller": "sendTwilioWithRetry",
+          "callee": "restClientBuilder.baseUrl(\"https://api.twilio.com\").build",
+          "lineNumber": 121
+        },
+        {
+          "caller": "sendTwilioWithRetry",
+          "callee": "restClientBuilder.baseUrl",
+          "lineNumber": 121
+        },
+        {
+          "caller": "sendTwilioWithRetry",
+          "callee": "client.post()\n                        .uri(\"/2010-04-01/Accounts/{sid}/Messages.json\", twilioAccountSid)\n                        .headers(headers -> {\n                            headers.setBasicAuth(twilioAccountSid, twilioAuthToken);\n                            headers.add(\"Idempotency-Key\", idempotencyKey);\n                        })\n                        .contentType(MediaType.APPLICATION_FORM_URLENCODED)\n                        .body(\"To=\" + encodeFormValue(toPhone)\n                                + \"&From=\" + encodeFormValue(twilioFromPhone)\n                                + \"&Body=\" + encodeFormValue(message))\n                        .retrieve().toBodilessEntity",
+          "lineNumber": 125
+        },
+        {
+          "caller": "sendTwilioWithRetry",
+          "callee": "client.post()\n                        .uri(\"/2010-04-01/Accounts/{sid}/Messages.json\", twilioAccountSid)\n                        .headers(headers -> {\n                            headers.setBasicAuth(twilioAccountSid, twilioAuthToken);\n                            headers.add(\"Idempotency-Key\", idempotencyKey);\n                        })\n                        .contentType(MediaType.APPLICATION_FORM_URLENCODED)\n                        .body(\"To=\" + encodeFormValue(toPhone)\n                                + \"&From=\" + encodeFormValue(twilioFromPhone)\n                                + \"&Body=\" + encodeFormValue(message)).retrieve",
+          "lineNumber": 125
+        },
+        {
+          "caller": "sendTwilioWithRetry",
+          "callee": "client.post()\n                        .uri(\"/2010-04-01/Accounts/{sid}/Messages.json\", twilioAccountSid)\n                        .headers(headers -> {\n                            headers.setBasicAuth(twilioAccountSid, twilioAuthToken);\n                            headers.add(\"Idempotency-Key\", idempotencyKey);\n                        })\n                        .contentType(MediaType.APPLICATION_FORM_URLENCODED).body",
+          "lineNumber": 125
+        },
+        {
+          "caller": "sendTwilioWithRetry",
+          "callee": "client.post()\n                        .uri(\"/2010-04-01/Accounts/{sid}/Messages.json\", twilioAccountSid)\n                        .headers(headers -> {\n                            headers.setBasicAuth(twilioAccountSid, twilioAuthToken);\n                            headers.add(\"Idempotency-Key\", idempotencyKey);\n                        }).contentType",
+          "lineNumber": 125
+        },
+        {
+          "caller": "sendTwilioWithRetry",
+          "callee": "client.post()\n                        .uri(\"/2010-04-01/Accounts/{sid}/Messages.json\", twilioAccountSid).headers",
+          "lineNumber": 125
+        },
+        {
+          "caller": "sendTwilioWithRetry",
+          "callee": "client.post().uri",
+          "lineNumber": 125
+        },
+        {
+          "caller": "sendTwilioWithRetry",
+          "callee": "client.post",
+          "lineNumber": 125
+        },
+        {
+          "caller": "sendTwilioWithRetry",
+          "callee": "headers.setBasicAuth",
+          "lineNumber": 128
+        },
+        {
+          "caller": "sendTwilioWithRetry",
+          "callee": "headers.add",
+          "lineNumber": 129
+        },
+        {
+          "caller": "sendTwilioWithRetry",
+          "callee": "encodeFormValue",
+          "lineNumber": 132
+        },
+        {
+          "caller": "sendTwilioWithRetry",
+          "callee": "encodeFormValue",
+          "lineNumber": 133
+        },
+        {
+          "caller": "sendTwilioWithRetry",
+          "callee": "encodeFormValue",
+          "lineNumber": 134
+        },
+        {
+          "caller": "sendTwilioWithRetry",
+          "callee": "sleepBackoff",
+          "lineNumber": 140
+        },
+        {
+          "caller": "sendTwilioWithRetry",
+          "callee": "new IllegalStateException",
+          "lineNumber": 143
+        },
+        {
+          "caller": "sendWhatsAppWithRetry",
+          "callee": "restClientBuilder.baseUrl(whatsappApiUrl).build",
+          "lineNumber": 147
+        },
+        {
+          "caller": "sendWhatsAppWithRetry",
+          "callee": "restClientBuilder.baseUrl",
+          "lineNumber": 147
+        },
+        {
+          "caller": "sendWhatsAppWithRetry",
+          "callee": "client.post()\n                        .uri(\"\")\n                        .headers(headers -> {\n                            headers.setBearerAuth(whatsappToken);\n                            headers.add(\"Idempotency-Key\", idempotencyKey);\n                        })\n                        .contentType(MediaType.APPLICATION_JSON)\n                        .body(Map.of(\n                                \"from\", whatsappFromNumber,\n                                \"to\", toPhone,\n                                \"type\", \"text\",\n                                \"text\", Map.of(\"body\", message)\n                        ))\n                        .retrieve().toBodilessEntity",
+          "lineNumber": 151
+        },
+        {
+          "caller": "sendWhatsAppWithRetry",
+          "callee": "client.post()\n                        .uri(\"\")\n                        .headers(headers -> {\n                            headers.setBearerAuth(whatsappToken);\n                            headers.add(\"Idempotency-Key\", idempotencyKey);\n                        })\n                        .contentType(MediaType.APPLICATION_JSON)\n                        .body(Map.of(\n                                \"from\", whatsappFromNumber,\n                                \"to\", toPhone,\n                                \"type\", \"text\",\n                                \"text\", Map.of(\"body\", message)\n                        )).retrieve",
+          "lineNumber": 151
+        },
+        {
+          "caller": "sendWhatsAppWithRetry",
+          "callee": "client.post()\n                        .uri(\"\")\n                        .headers(headers -> {\n                            headers.setBearerAuth(whatsappToken);\n                            headers.add(\"Idempotency-Key\", idempotencyKey);\n                        })\n                        .contentType(MediaType.APPLICATION_JSON).body",
+          "lineNumber": 151
+        },
+        {
+          "caller": "sendWhatsAppWithRetry",
+          "callee": "client.post()\n                        .uri(\"\")\n                        .headers(headers -> {\n                            headers.setBearerAuth(whatsappToken);\n                            headers.add(\"Idempotency-Key\", idempotencyKey);\n                        }).contentType",
+          "lineNumber": 151
+        },
+        {
+          "caller": "sendWhatsAppWithRetry",
+          "callee": "client.post()\n                        .uri(\"\").headers",
+          "lineNumber": 151
+        },
+        {
+          "caller": "sendWhatsAppWithRetry",
+          "callee": "client.post().uri",
+          "lineNumber": 151
+        },
+        {
+          "caller": "sendWhatsAppWithRetry",
+          "callee": "client.post",
+          "lineNumber": 151
+        },
+        {
+          "caller": "sendWhatsAppWithRetry",
+          "callee": "headers.setBearerAuth",
+          "lineNumber": 154
+        },
+        {
+          "caller": "sendWhatsAppWithRetry",
+          "callee": "headers.add",
+          "lineNumber": 155
+        },
+        {
+          "caller": "sendWhatsAppWithRetry",
+          "callee": "Map.of",
+          "lineNumber": 158
+        },
+        {
+          "caller": "sendWhatsAppWithRetry",
+          "callee": "Map.of",
+          "lineNumber": 162
+        },
+        {
+          "caller": "sendWhatsAppWithRetry",
+          "callee": "sleepBackoff",
+          "lineNumber": 169
+        },
+        {
+          "caller": "sendWhatsAppWithRetry",
+          "callee": "new IllegalStateException",
+          "lineNumber": 172
+        },
+        {
+          "caller": "sleepBackoff",
+          "callee": "Thread.sleep",
+          "lineNumber": 177
+        },
+        {
+          "caller": "sleepBackoff",
+          "callee": "Math.pow",
+          "lineNumber": 177
+        },
+        {
+          "caller": "sleepBackoff",
+          "callee": "Thread.currentThread().interrupt",
+          "lineNumber": 179
+        },
+        {
+          "caller": "sleepBackoff",
+          "callee": "Thread.currentThread",
+          "lineNumber": 179
+        },
+        {
+          "caller": "sleepBackoff",
+          "callee": "new IllegalStateException",
+          "lineNumber": 180
+        },
+        {
+          "caller": "getOrCreateNotification",
+          "callee": "notificationRepository.findByTypeAndIdempotencyKey(type, idempotencyKey).orElseGet",
+          "lineNumber": 185
+        },
+        {
+          "caller": "getOrCreateNotification",
+          "callee": "notificationRepository.findByTypeAndIdempotencyKey",
+          "lineNumber": 185
+        },
+        {
+          "caller": "getOrCreateNotification",
+          "callee": "new Notification",
+          "lineNumber": 187
+        },
+        {
+          "caller": "getOrCreateNotification",
+          "callee": "notification.setAppointment",
+          "lineNumber": 188
+        },
+        {
+          "caller": "getOrCreateNotification",
+          "callee": "notification.setType",
+          "lineNumber": 189
+        },
+        {
+          "caller": "getOrCreateNotification",
+          "callee": "notification.setStatus",
+          "lineNumber": 190
+        },
+        {
+          "caller": "getOrCreateNotification",
+          "callee": "notification.setIdempotencyKey",
+          "lineNumber": 191
+        },
+        {
+          "caller": "getOrCreateNotification",
+          "callee": "notificationRepository.save",
+          "lineNumber": 192
+        },
+        {
+          "caller": "markSent",
+          "callee": "notification.setStatus",
+          "lineNumber": 197
+        },
+        {
+          "caller": "markSent",
+          "callee": "notification.setProviderMessageId",
+          "lineNumber": 198
+        },
+        {
+          "caller": "markSent",
+          "callee": "notification.setErrorMessage",
+          "lineNumber": 199
+        },
+        {
+          "caller": "markSent",
+          "callee": "notification.setSentAt",
+          "lineNumber": 200
+        },
+        {
+          "caller": "markSent",
+          "callee": "appTime.nowDateTime",
+          "lineNumber": 200
+        },
+        {
+          "caller": "markSent",
+          "callee": "notificationRepository.save",
+          "lineNumber": 201
+        },
+        {
+          "caller": "markSent",
+          "callee": "log.info",
+          "lineNumber": 202
+        },
+        {
+          "caller": "markSent",
+          "callee": "notification.getId",
+          "lineNumber": 202
+        },
+        {
+          "caller": "markSent",
+          "callee": "notification.getType",
+          "lineNumber": 202
+        },
+        {
+          "caller": "markFailed",
+          "callee": "notification.setStatus",
+          "lineNumber": 206
+        },
+        {
+          "caller": "markFailed",
+          "callee": "notification.setErrorMessage",
+          "lineNumber": 207
+        },
+        {
+          "caller": "markFailed",
+          "callee": "ex.getMessage",
+          "lineNumber": 207
+        },
+        {
+          "caller": "markFailed",
+          "callee": "notificationRepository.save",
+          "lineNumber": 208
+        },
+        {
+          "caller": "markFailed",
+          "callee": "log.error",
+          "lineNumber": 209
+        },
+        {
+          "caller": "markFailed",
+          "callee": "notification.getId",
+          "lineNumber": 209
+        },
+        {
+          "caller": "markFailed",
+          "callee": "notification.getType",
+          "lineNumber": 209
+        },
+        {
+          "caller": "encodeFormValue",
+          "callee": "URLEncoder.encode",
+          "lineNumber": 213
+        }
+      ],
+      "metrics": {
+        "importCount": 7,
+        "exportCount": 2,
+        "functionCount": 11,
+        "classCount": 1
+      }
+    }
+  ]
+}

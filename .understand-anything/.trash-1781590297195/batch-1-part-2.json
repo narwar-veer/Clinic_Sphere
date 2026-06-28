@@ -1,0 +1,1435 @@
+{
+  "nodes": [
+    {
+      "id": "file:src/main/java/com/clinic/entity/SlotConfig.java",
+      "type": "file",
+      "name": "SlotConfig.java",
+      "filePath": "src/main/java/com/clinic/entity/SlotConfig.java",
+      "summary": "JPA Entity mapping the database table for SlotConfig.",
+      "tags": [
+        "code",
+        "java",
+        "data-model",
+        "database",
+        "jpa-entity"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:src/main/java/com/clinic/entity/SlotConfig.java:SlotConfig",
+      "type": "class",
+      "name": "SlotConfig",
+      "filePath": "src/main/java/com/clinic/entity/SlotConfig.java",
+      "lineRange": [
+        15,
+        34
+      ],
+      "summary": "Java class defining the SlotConfig component.",
+      "tags": [
+        "class",
+        "model",
+        "java"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:src/main/java/com/clinic/mapper/SlotMapper.java",
+      "type": "file",
+      "name": "SlotMapper.java",
+      "filePath": "src/main/java/com/clinic/mapper/SlotMapper.java",
+      "summary": "MapStruct mapper interface defining mapping rules between entity models and DTOs.",
+      "tags": [
+        "code",
+        "java",
+        "mapper",
+        "data-mapping",
+        "mapstruct"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:src/main/java/com/clinic/mapper/SlotMapper.java:SlotMapper",
+      "type": "class",
+      "name": "SlotMapper",
+      "filePath": "src/main/java/com/clinic/mapper/SlotMapper.java",
+      "lineRange": [
+        8,
+        18
+      ],
+      "summary": "Java class defining the SlotMapper component.",
+      "tags": [
+        "class",
+        "model",
+        "java"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:src/main/java/com/clinic/repository/ClinicTimingRepository.java",
+      "type": "file",
+      "name": "ClinicTimingRepository.java",
+      "filePath": "src/main/java/com/clinic/repository/ClinicTimingRepository.java",
+      "summary": "Spring Data JPA Repository providing database access for ClinicTiming entities.",
+      "tags": [
+        "code",
+        "java",
+        "repository",
+        "database",
+        "data-access"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:src/main/java/com/clinic/repository/ClinicTimingRepository.java:ClinicTimingRepository",
+      "type": "class",
+      "name": "ClinicTimingRepository",
+      "filePath": "src/main/java/com/clinic/repository/ClinicTimingRepository.java",
+      "lineRange": [
+        8,
+        13
+      ],
+      "summary": "Java class defining the ClinicTimingRepository component.",
+      "tags": [
+        "class",
+        "model",
+        "java"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:src/main/java/com/clinic/repository/DateAvailabilityProjection.java",
+      "type": "file",
+      "name": "DateAvailabilityProjection.java",
+      "filePath": "src/main/java/com/clinic/repository/DateAvailabilityProjection.java",
+      "summary": "Java class implementing helper logic or core functionality for DateAvailabilityProjection.",
+      "tags": [
+        "code",
+        "java",
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:src/main/java/com/clinic/repository/DateAvailabilityProjection.java:DateAvailabilityProjection",
+      "type": "class",
+      "name": "DateAvailabilityProjection",
+      "filePath": "src/main/java/com/clinic/repository/DateAvailabilityProjection.java",
+      "lineRange": [
+        5,
+        9
+      ],
+      "summary": "Java class defining the DateAvailabilityProjection component.",
+      "tags": [
+        "class",
+        "model",
+        "java"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:src/main/java/com/clinic/repository/SlotConfigRepository.java",
+      "type": "file",
+      "name": "SlotConfigRepository.java",
+      "filePath": "src/main/java/com/clinic/repository/SlotConfigRepository.java",
+      "summary": "Spring Data JPA Repository providing database access for SlotConfig entities.",
+      "tags": [
+        "code",
+        "java",
+        "repository",
+        "database",
+        "data-access"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:src/main/java/com/clinic/repository/SlotConfigRepository.java:SlotConfigRepository",
+      "type": "class",
+      "name": "SlotConfigRepository",
+      "filePath": "src/main/java/com/clinic/repository/SlotConfigRepository.java",
+      "lineRange": [
+        7,
+        10
+      ],
+      "summary": "Java class defining the SlotConfigRepository component.",
+      "tags": [
+        "class",
+        "model",
+        "java"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:src/main/java/com/clinic/security/JwtService.java",
+      "type": "file",
+      "name": "JwtService.java",
+      "filePath": "src/main/java/com/clinic/security/JwtService.java",
+      "summary": "Service class implementing business logic and transactional workflows for Jwt.",
+      "tags": [
+        "code",
+        "java",
+        "service-layer",
+        "business-logic",
+        "spring-boot"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:src/main/java/com/clinic/security/JwtService.java:JwtService",
+      "type": "function",
+      "name": "JwtService",
+      "filePath": "src/main/java/com/clinic/security/JwtService.java",
+      "lineRange": [
+        52,
+        55
+      ],
+      "summary": "Class method implementing JwtService functionality.",
+      "tags": [
+        "function",
+        "method",
+        "java"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/main/java/com/clinic/security/JwtService.java:validateJwtConfig",
+      "type": "function",
+      "name": "validateJwtConfig",
+      "filePath": "src/main/java/com/clinic/security/JwtService.java",
+      "lineRange": [
+        57,
+        76
+      ],
+      "summary": "Class method implementing validateJwtConfig functionality.",
+      "tags": [
+        "function",
+        "method",
+        "java"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:src/main/java/com/clinic/security/JwtService.java:generateToken",
+      "type": "function",
+      "name": "generateToken",
+      "filePath": "src/main/java/com/clinic/security/JwtService.java",
+      "lineRange": [
+        78,
+        96
+      ],
+      "summary": "Class method implementing generateToken functionality.",
+      "tags": [
+        "function",
+        "method",
+        "java"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:src/main/java/com/clinic/security/JwtService.java:parsePrincipalClaims",
+      "type": "function",
+      "name": "parsePrincipalClaims",
+      "filePath": "src/main/java/com/clinic/security/JwtService.java",
+      "lineRange": [
+        98,
+        116
+      ],
+      "summary": "Class method implementing parsePrincipalClaims functionality.",
+      "tags": [
+        "function",
+        "method",
+        "java"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:src/main/java/com/clinic/security/JwtService.java:extractTokenId",
+      "type": "function",
+      "name": "extractTokenId",
+      "filePath": "src/main/java/com/clinic/security/JwtService.java",
+      "lineRange": [
+        118,
+        120
+      ],
+      "summary": "Class method implementing extractTokenId functionality.",
+      "tags": [
+        "function",
+        "method",
+        "java"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/main/java/com/clinic/security/JwtService.java:extractUsername",
+      "type": "function",
+      "name": "extractUsername",
+      "filePath": "src/main/java/com/clinic/security/JwtService.java",
+      "lineRange": [
+        122,
+        124
+      ],
+      "summary": "Class method implementing extractUsername functionality.",
+      "tags": [
+        "function",
+        "method",
+        "java"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/main/java/com/clinic/security/JwtService.java:extractExpiration",
+      "type": "function",
+      "name": "extractExpiration",
+      "filePath": "src/main/java/com/clinic/security/JwtService.java",
+      "lineRange": [
+        126,
+        128
+      ],
+      "summary": "Class method implementing extractExpiration functionality.",
+      "tags": [
+        "function",
+        "method",
+        "java"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/main/java/com/clinic/security/JwtService.java:isTokenValid",
+      "type": "function",
+      "name": "isTokenValid",
+      "filePath": "src/main/java/com/clinic/security/JwtService.java",
+      "lineRange": [
+        130,
+        141
+      ],
+      "summary": "Class method implementing isTokenValid functionality.",
+      "tags": [
+        "function",
+        "method",
+        "java"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/main/java/com/clinic/security/JwtService.java:parseClaims",
+      "type": "function",
+      "name": "parseClaims",
+      "filePath": "src/main/java/com/clinic/security/JwtService.java",
+      "lineRange": [
+        143,
+        157
+      ],
+      "summary": "Class method implementing parseClaims functionality.",
+      "tags": [
+        "function",
+        "method",
+        "java"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:src/main/java/com/clinic/security/JwtService.java:JwtService",
+      "type": "class",
+      "name": "JwtService",
+      "filePath": "src/main/java/com/clinic/security/JwtService.java",
+      "lineRange": [
+        22,
+        158
+      ],
+      "summary": "Java class defining the JwtService component.",
+      "tags": [
+        "class",
+        "model",
+        "java"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:src/main/java/com/clinic/service/AdminService.java",
+      "type": "file",
+      "name": "AdminService.java",
+      "filePath": "src/main/java/com/clinic/service/AdminService.java",
+      "summary": "Service class implementing business logic and transactional workflows for Admin.",
+      "tags": [
+        "code",
+        "java",
+        "service-layer",
+        "business-logic",
+        "spring-boot"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:src/main/java/com/clinic/service/AdminService.java:AdminService",
+      "type": "function",
+      "name": "AdminService",
+      "filePath": "src/main/java/com/clinic/service/AdminService.java",
+      "lineRange": [
+        30,
+        41
+      ],
+      "summary": "Class method implementing AdminService functionality.",
+      "tags": [
+        "function",
+        "method",
+        "java"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/main/java/com/clinic/service/AdminService.java:login",
+      "type": "function",
+      "name": "login",
+      "filePath": "src/main/java/com/clinic/service/AdminService.java",
+      "lineRange": [
+        43,
+        89
+      ],
+      "summary": "Class method implementing login functionality.",
+      "tags": [
+        "function",
+        "method",
+        "java"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:src/main/java/com/clinic/service/AdminService.java:logout",
+      "type": "function",
+      "name": "logout",
+      "filePath": "src/main/java/com/clinic/service/AdminService.java",
+      "lineRange": [
+        91,
+        110
+      ],
+      "summary": "Class method implementing logout functionality.",
+      "tags": [
+        "function",
+        "method",
+        "java"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:src/main/java/com/clinic/service/AdminService.java:getAuthenticatedDoctorId",
+      "type": "function",
+      "name": "getAuthenticatedDoctorId",
+      "filePath": "src/main/java/com/clinic/service/AdminService.java",
+      "lineRange": [
+        112,
+        125
+      ],
+      "summary": "Class method implementing getAuthenticatedDoctorId functionality.",
+      "tags": [
+        "function",
+        "method",
+        "java"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/main/java/com/clinic/service/AdminService.java:getAuthenticatedUsernameOrUnknown",
+      "type": "function",
+      "name": "getAuthenticatedUsernameOrUnknown",
+      "filePath": "src/main/java/com/clinic/service/AdminService.java",
+      "lineRange": [
+        127,
+        133
+      ],
+      "summary": "Class method implementing getAuthenticatedUsernameOrUnknown functionality.",
+      "tags": [
+        "function",
+        "method",
+        "java"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/main/java/com/clinic/service/AdminService.java:extractBearerToken",
+      "type": "function",
+      "name": "extractBearerToken",
+      "filePath": "src/main/java/com/clinic/service/AdminService.java",
+      "lineRange": [
+        135,
+        144
+      ],
+      "summary": "Class method implementing extractBearerToken functionality.",
+      "tags": [
+        "function",
+        "method",
+        "java"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:src/main/java/com/clinic/service/AdminService.java:AdminService",
+      "type": "class",
+      "name": "AdminService",
+      "filePath": "src/main/java/com/clinic/service/AdminService.java",
+      "lineRange": [
+        20,
+        145
+      ],
+      "summary": "Java class defining the AdminService component.",
+      "tags": [
+        "class",
+        "model",
+        "java"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:src/main/java/com/clinic/service/AppTime.java",
+      "type": "file",
+      "name": "AppTime.java",
+      "filePath": "src/main/java/com/clinic/service/AppTime.java",
+      "summary": "Java class implementing helper logic or core functionality for AppTime.",
+      "tags": [
+        "code",
+        "java",
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/main/java/com/clinic/service/AppTime.java:nowInstant",
+      "type": "function",
+      "name": "nowInstant",
+      "filePath": "src/main/java/com/clinic/service/AppTime.java",
+      "lineRange": [
+        18,
+        20
+      ],
+      "summary": "Class method implementing nowInstant functionality.",
+      "tags": [
+        "function",
+        "method",
+        "java"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/main/java/com/clinic/service/AppTime.java:nowDateTime",
+      "type": "function",
+      "name": "nowDateTime",
+      "filePath": "src/main/java/com/clinic/service/AppTime.java",
+      "lineRange": [
+        22,
+        24
+      ],
+      "summary": "Class method implementing nowDateTime functionality.",
+      "tags": [
+        "function",
+        "method",
+        "java"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/main/java/com/clinic/service/AppTime.java:today",
+      "type": "function",
+      "name": "today",
+      "filePath": "src/main/java/com/clinic/service/AppTime.java",
+      "lineRange": [
+        26,
+        28
+      ],
+      "summary": "Class method implementing today functionality.",
+      "tags": [
+        "function",
+        "method",
+        "java"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/main/java/com/clinic/service/AppTime.java:zoneId",
+      "type": "function",
+      "name": "zoneId",
+      "filePath": "src/main/java/com/clinic/service/AppTime.java",
+      "lineRange": [
+        30,
+        32
+      ],
+      "summary": "Class method implementing zoneId functionality.",
+      "tags": [
+        "function",
+        "method",
+        "java"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/main/java/com/clinic/service/AppTime.java:clock",
+      "type": "function",
+      "name": "clock",
+      "filePath": "src/main/java/com/clinic/service/AppTime.java",
+      "lineRange": [
+        34,
+        36
+      ],
+      "summary": "Class method implementing clock functionality.",
+      "tags": [
+        "function",
+        "method",
+        "java"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:src/main/java/com/clinic/service/AppTime.java:AppTime",
+      "type": "class",
+      "name": "AppTime",
+      "filePath": "src/main/java/com/clinic/service/AppTime.java",
+      "lineRange": [
+        11,
+        37
+      ],
+      "summary": "Java class defining the AppTime component.",
+      "tags": [
+        "class",
+        "model",
+        "java"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:src/main/java/com/clinic/service/SlotService.java",
+      "type": "file",
+      "name": "SlotService.java",
+      "filePath": "src/main/java/com/clinic/service/SlotService.java",
+      "summary": "Service class implementing business logic and transactional workflows for Slot.",
+      "tags": [
+        "code",
+        "java",
+        "service-layer",
+        "business-logic",
+        "spring-boot"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:src/main/java/com/clinic/service/SlotService.java:generateSlotsForDate",
+      "type": "function",
+      "name": "generateSlotsForDate",
+      "filePath": "src/main/java/com/clinic/service/SlotService.java",
+      "lineRange": [
+        57,
+        75
+      ],
+      "summary": "Class method implementing generateSlotsForDate functionality.",
+      "tags": [
+        "function",
+        "method",
+        "java"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:src/main/java/com/clinic/service/SlotService.java:generateSlotsForRange",
+      "type": "function",
+      "name": "generateSlotsForRange",
+      "filePath": "src/main/java/com/clinic/service/SlotService.java",
+      "lineRange": [
+        77,
+        95
+      ],
+      "summary": "Class method implementing generateSlotsForRange functionality.",
+      "tags": [
+        "function",
+        "method",
+        "java"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:src/main/java/com/clinic/service/SlotService.java:getSlots",
+      "type": "function",
+      "name": "getSlots",
+      "filePath": "src/main/java/com/clinic/service/SlotService.java",
+      "lineRange": [
+        97,
+        105
+      ],
+      "summary": "Class method implementing getSlots functionality.",
+      "tags": [
+        "function",
+        "method",
+        "java"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/main/java/com/clinic/service/SlotService.java:getSlotConfig",
+      "type": "function",
+      "name": "getSlotConfig",
+      "filePath": "src/main/java/com/clinic/service/SlotService.java",
+      "lineRange": [
+        107,
+        114
+      ],
+      "summary": "Class method implementing getSlotConfig functionality.",
+      "tags": [
+        "function",
+        "method",
+        "java"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/main/java/com/clinic/service/SlotService.java:updateSlotConfig",
+      "type": "function",
+      "name": "updateSlotConfig",
+      "filePath": "src/main/java/com/clinic/service/SlotService.java",
+      "lineRange": [
+        116,
+        153
+      ],
+      "summary": "Class method implementing updateSlotConfig functionality.",
+      "tags": [
+        "function",
+        "method",
+        "java"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:src/main/java/com/clinic/service/SlotService.java:updateSlotCapacity",
+      "type": "function",
+      "name": "updateSlotCapacity",
+      "filePath": "src/main/java/com/clinic/service/SlotService.java",
+      "lineRange": [
+        155,
+        186
+      ],
+      "summary": "Class method implementing updateSlotCapacity functionality.",
+      "tags": [
+        "function",
+        "method",
+        "java"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:src/main/java/com/clinic/service/SlotService.java:setSlotBlocked",
+      "type": "function",
+      "name": "setSlotBlocked",
+      "filePath": "src/main/java/com/clinic/service/SlotService.java",
+      "lineRange": [
+        188,
+        210
+      ],
+      "summary": "Class method implementing setSlotBlocked functionality.",
+      "tags": [
+        "function",
+        "method",
+        "java"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:src/main/java/com/clinic/service/SlotService.java:setDateBlocked",
+      "type": "function",
+      "name": "setDateBlocked",
+      "filePath": "src/main/java/com/clinic/service/SlotService.java",
+      "lineRange": [
+        212,
+        239
+      ],
+      "summary": "Class method implementing setDateBlocked functionality.",
+      "tags": [
+        "function",
+        "method",
+        "java"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:src/main/java/com/clinic/service/SlotService.java:getDateAvailability",
+      "type": "function",
+      "name": "getDateAvailability",
+      "filePath": "src/main/java/com/clinic/service/SlotService.java",
+      "lineRange": [
+        241,
+        269
+      ],
+      "summary": "Class method implementing getDateAvailability functionality.",
+      "tags": [
+        "function",
+        "method",
+        "java"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:src/main/java/com/clinic/service/SlotService.java:toDateAvailabilityResponse",
+      "type": "function",
+      "name": "toDateAvailabilityResponse",
+      "filePath": "src/main/java/com/clinic/service/SlotService.java",
+      "lineRange": [
+        271,
+        277
+      ],
+      "summary": "Class method implementing toDateAvailabilityResponse functionality.",
+      "tags": [
+        "function",
+        "method",
+        "java"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/main/java/com/clinic/service/SlotService.java:buildRanges",
+      "type": "function",
+      "name": "buildRanges",
+      "filePath": "src/main/java/com/clinic/service/SlotService.java",
+      "lineRange": [
+        279,
+        300
+      ],
+      "summary": "Class method implementing buildRanges functionality.",
+      "tags": [
+        "function",
+        "method",
+        "java"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:src/main/java/com/clinic/service/SlotService.java:createSlotsForRange",
+      "type": "function",
+      "name": "createSlotsForRange",
+      "filePath": "src/main/java/com/clinic/service/SlotService.java",
+      "lineRange": [
+        302,
+        311
+      ],
+      "summary": "Class method implementing createSlotsForRange functionality.",
+      "tags": [
+        "function",
+        "method",
+        "java"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/main/java/com/clinic/service/SlotService.java:applyCapacityFromDate",
+      "type": "function",
+      "name": "applyCapacityFromDate",
+      "filePath": "src/main/java/com/clinic/service/SlotService.java",
+      "lineRange": [
+        313,
+        330
+      ],
+      "summary": "Class method implementing applyCapacityFromDate functionality.",
+      "tags": [
+        "function",
+        "method",
+        "java"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:src/main/java/com/clinic/service/SlotService.java:toSlotConfigResponse",
+      "type": "function",
+      "name": "toSlotConfigResponse",
+      "filePath": "src/main/java/com/clinic/service/SlotService.java",
+      "lineRange": [
+        335,
+        342
+      ],
+      "summary": "Class method implementing toSlotConfigResponse functionality.",
+      "tags": [
+        "function",
+        "method",
+        "java"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:src/main/java/com/clinic/service/SlotService.java:SlotService",
+      "type": "class",
+      "name": "SlotService",
+      "filePath": "src/main/java/com/clinic/service/SlotService.java",
+      "lineRange": [
+        36,
+        343
+      ],
+      "summary": "Java class defining the SlotService component.",
+      "tags": [
+        "class",
+        "model",
+        "java"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:src/test/java/com/clinic/service/AdminServiceTest.java",
+      "type": "file",
+      "name": "AdminServiceTest.java",
+      "filePath": "src/test/java/com/clinic/service/AdminServiceTest.java",
+      "summary": "Service class implementing business logic and transactional workflows for AdminServiceTest.java.",
+      "tags": [
+        "code",
+        "java",
+        "service-layer",
+        "business-logic",
+        "spring-boot"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/test/java/com/clinic/service/AdminServiceTest.java:logout_isIdempotentForMissingOrInvalidToken",
+      "type": "function",
+      "name": "logout_isIdempotentForMissingOrInvalidToken",
+      "filePath": "src/test/java/com/clinic/service/AdminServiceTest.java",
+      "lineRange": [
+        11,
+        29
+      ],
+      "summary": "Class method implementing logout_isIdempotentForMissingOrInvalidToken functionality.",
+      "tags": [
+        "function",
+        "method",
+        "java"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "class:src/test/java/com/clinic/service/AdminServiceTest.java:AdminServiceTest",
+      "type": "class",
+      "name": "AdminServiceTest",
+      "filePath": "src/test/java/com/clinic/service/AdminServiceTest.java",
+      "lineRange": [
+        9,
+        30
+      ],
+      "summary": "Java class defining the AdminServiceTest component.",
+      "tags": [
+        "class",
+        "model",
+        "java"
+      ],
+      "complexity": "simple"
+    }
+  ],
+  "edges": [
+    {
+      "source": "file:src/main/java/com/clinic/entity/SlotConfig.java",
+      "target": "class:src/main/java/com/clinic/entity/SlotConfig.java:SlotConfig",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/main/java/com/clinic/mapper/SlotMapper.java",
+      "target": "class:src/main/java/com/clinic/mapper/SlotMapper.java:SlotMapper",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/main/java/com/clinic/mapper/SlotMapper.java",
+      "target": "file:src/main/java/com/clinic/dto/response/SlotResponse.java",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/main/java/com/clinic/mapper/SlotMapper.java",
+      "target": "file:src/main/java/com/clinic/entity/Slot.java",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/main/java/com/clinic/repository/ClinicTimingRepository.java",
+      "target": "class:src/main/java/com/clinic/repository/ClinicTimingRepository.java:ClinicTimingRepository",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/main/java/com/clinic/repository/ClinicTimingRepository.java",
+      "target": "file:src/main/java/com/clinic/entity/ClinicTiming.java",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/main/java/com/clinic/repository/DateAvailabilityProjection.java",
+      "target": "class:src/main/java/com/clinic/repository/DateAvailabilityProjection.java:DateAvailabilityProjection",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/main/java/com/clinic/repository/SlotConfigRepository.java",
+      "target": "class:src/main/java/com/clinic/repository/SlotConfigRepository.java:SlotConfigRepository",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/main/java/com/clinic/repository/SlotConfigRepository.java",
+      "target": "file:src/main/java/com/clinic/entity/SlotConfig.java",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/main/java/com/clinic/security/JwtService.java",
+      "target": "function:src/main/java/com/clinic/security/JwtService.java:JwtService",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/main/java/com/clinic/security/JwtService.java",
+      "target": "function:src/main/java/com/clinic/security/JwtService.java:validateJwtConfig",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/main/java/com/clinic/security/JwtService.java",
+      "target": "function:src/main/java/com/clinic/security/JwtService.java:generateToken",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/main/java/com/clinic/security/JwtService.java",
+      "target": "function:src/main/java/com/clinic/security/JwtService.java:parsePrincipalClaims",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/main/java/com/clinic/security/JwtService.java",
+      "target": "function:src/main/java/com/clinic/security/JwtService.java:extractTokenId",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/main/java/com/clinic/security/JwtService.java",
+      "target": "function:src/main/java/com/clinic/security/JwtService.java:extractUsername",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/main/java/com/clinic/security/JwtService.java",
+      "target": "function:src/main/java/com/clinic/security/JwtService.java:extractExpiration",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/main/java/com/clinic/security/JwtService.java",
+      "target": "function:src/main/java/com/clinic/security/JwtService.java:isTokenValid",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/main/java/com/clinic/security/JwtService.java",
+      "target": "function:src/main/java/com/clinic/security/JwtService.java:parseClaims",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/main/java/com/clinic/security/JwtService.java",
+      "target": "class:src/main/java/com/clinic/security/JwtService.java:JwtService",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/main/java/com/clinic/service/AdminService.java",
+      "target": "function:src/main/java/com/clinic/service/AdminService.java:AdminService",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/main/java/com/clinic/service/AdminService.java",
+      "target": "function:src/main/java/com/clinic/service/AdminService.java:login",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/main/java/com/clinic/service/AdminService.java",
+      "target": "function:src/main/java/com/clinic/service/AdminService.java:logout",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/main/java/com/clinic/service/AdminService.java",
+      "target": "function:src/main/java/com/clinic/service/AdminService.java:getAuthenticatedDoctorId",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/main/java/com/clinic/service/AdminService.java",
+      "target": "function:src/main/java/com/clinic/service/AdminService.java:getAuthenticatedUsernameOrUnknown",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/main/java/com/clinic/service/AdminService.java",
+      "target": "function:src/main/java/com/clinic/service/AdminService.java:extractBearerToken",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/main/java/com/clinic/service/AdminService.java",
+      "target": "class:src/main/java/com/clinic/service/AdminService.java:AdminService",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/main/java/com/clinic/service/AdminService.java",
+      "target": "file:src/main/java/com/clinic/dto/request/AdminLoginRequest.java",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/main/java/com/clinic/service/AdminService.java",
+      "target": "file:src/main/java/com/clinic/dto/response/AdminLoginResponse.java",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/main/java/com/clinic/service/AdminService.java",
+      "target": "file:src/main/java/com/clinic/exception/UnauthorizedException.java",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/main/java/com/clinic/service/AdminService.java",
+      "target": "file:src/main/java/com/clinic/security/AdminPrincipal.java",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/main/java/com/clinic/service/AdminService.java",
+      "target": "file:src/main/java/com/clinic/security/JwtService.java",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/main/java/com/clinic/service/AppTime.java",
+      "target": "function:src/main/java/com/clinic/service/AppTime.java:nowInstant",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/main/java/com/clinic/service/AppTime.java",
+      "target": "function:src/main/java/com/clinic/service/AppTime.java:nowDateTime",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/main/java/com/clinic/service/AppTime.java",
+      "target": "function:src/main/java/com/clinic/service/AppTime.java:today",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/main/java/com/clinic/service/AppTime.java",
+      "target": "function:src/main/java/com/clinic/service/AppTime.java:zoneId",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/main/java/com/clinic/service/AppTime.java",
+      "target": "function:src/main/java/com/clinic/service/AppTime.java:clock",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/main/java/com/clinic/service/AppTime.java",
+      "target": "class:src/main/java/com/clinic/service/AppTime.java:AppTime",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/main/java/com/clinic/service/SlotService.java",
+      "target": "function:src/main/java/com/clinic/service/SlotService.java:generateSlotsForDate",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/main/java/com/clinic/service/SlotService.java",
+      "target": "function:src/main/java/com/clinic/service/SlotService.java:generateSlotsForRange",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/main/java/com/clinic/service/SlotService.java",
+      "target": "function:src/main/java/com/clinic/service/SlotService.java:getSlots",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/main/java/com/clinic/service/SlotService.java",
+      "target": "function:src/main/java/com/clinic/service/SlotService.java:getSlotConfig",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/main/java/com/clinic/service/SlotService.java",
+      "target": "function:src/main/java/com/clinic/service/SlotService.java:updateSlotConfig",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/main/java/com/clinic/service/SlotService.java",
+      "target": "function:src/main/java/com/clinic/service/SlotService.java:updateSlotCapacity",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/main/java/com/clinic/service/SlotService.java",
+      "target": "function:src/main/java/com/clinic/service/SlotService.java:setSlotBlocked",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/main/java/com/clinic/service/SlotService.java",
+      "target": "function:src/main/java/com/clinic/service/SlotService.java:setDateBlocked",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/main/java/com/clinic/service/SlotService.java",
+      "target": "function:src/main/java/com/clinic/service/SlotService.java:getDateAvailability",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/main/java/com/clinic/service/SlotService.java",
+      "target": "function:src/main/java/com/clinic/service/SlotService.java:toDateAvailabilityResponse",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/main/java/com/clinic/service/SlotService.java",
+      "target": "function:src/main/java/com/clinic/service/SlotService.java:buildRanges",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/main/java/com/clinic/service/SlotService.java",
+      "target": "function:src/main/java/com/clinic/service/SlotService.java:createSlotsForRange",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/main/java/com/clinic/service/SlotService.java",
+      "target": "function:src/main/java/com/clinic/service/SlotService.java:applyCapacityFromDate",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/main/java/com/clinic/service/SlotService.java",
+      "target": "function:src/main/java/com/clinic/service/SlotService.java:toSlotConfigResponse",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/main/java/com/clinic/service/SlotService.java",
+      "target": "class:src/main/java/com/clinic/service/SlotService.java:SlotService",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/main/java/com/clinic/service/SlotService.java",
+      "target": "file:src/main/java/com/clinic/dto/request/SlotConfigUpdateRequest.java",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/main/java/com/clinic/service/SlotService.java",
+      "target": "file:src/main/java/com/clinic/dto/response/MessageResponse.java",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/main/java/com/clinic/service/SlotService.java",
+      "target": "file:src/main/java/com/clinic/dto/response/PageResponse.java",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/main/java/com/clinic/service/SlotService.java",
+      "target": "file:src/main/java/com/clinic/dto/response/SlotConfigResponse.java",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/main/java/com/clinic/service/SlotService.java",
+      "target": "file:src/main/java/com/clinic/dto/response/SlotDateAvailabilityResponse.java",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/main/java/com/clinic/service/SlotService.java",
+      "target": "file:src/main/java/com/clinic/dto/response/SlotResponse.java",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/main/java/com/clinic/service/SlotService.java",
+      "target": "file:src/main/java/com/clinic/entity/Clinic.java",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/main/java/com/clinic/service/SlotService.java",
+      "target": "file:src/main/java/com/clinic/entity/ClinicTiming.java",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/main/java/com/clinic/service/SlotService.java",
+      "target": "file:src/main/java/com/clinic/entity/Slot.java",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/main/java/com/clinic/service/SlotService.java",
+      "target": "file:src/main/java/com/clinic/entity/SlotConfig.java",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/main/java/com/clinic/service/SlotService.java",
+      "target": "file:src/main/java/com/clinic/exception/BadRequestException.java",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/main/java/com/clinic/service/SlotService.java",
+      "target": "file:src/main/java/com/clinic/exception/ResourceNotFoundException.java",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/main/java/com/clinic/service/SlotService.java",
+      "target": "file:src/main/java/com/clinic/exception/UnauthorizedException.java",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/main/java/com/clinic/service/SlotService.java",
+      "target": "file:src/main/java/com/clinic/mapper/SlotMapper.java",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/main/java/com/clinic/service/SlotService.java",
+      "target": "file:src/main/java/com/clinic/repository/ClinicRepository.java",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/main/java/com/clinic/service/SlotService.java",
+      "target": "file:src/main/java/com/clinic/repository/ClinicTimingRepository.java",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/main/java/com/clinic/service/SlotService.java",
+      "target": "file:src/main/java/com/clinic/repository/DateAvailabilityProjection.java",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/main/java/com/clinic/service/SlotService.java",
+      "target": "file:src/main/java/com/clinic/repository/SlotConfigRepository.java",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/main/java/com/clinic/service/SlotService.java",
+      "target": "file:src/main/java/com/clinic/repository/SlotRepository.java",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/test/java/com/clinic/service/AdminServiceTest.java",
+      "target": "function:src/test/java/com/clinic/service/AdminServiceTest.java:logout_isIdempotentForMissingOrInvalidToken",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/test/java/com/clinic/service/AdminServiceTest.java",
+      "target": "class:src/test/java/com/clinic/service/AdminServiceTest.java:AdminServiceTest",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/test/java/com/clinic/service/AdminServiceTest.java",
+      "target": "file:src/main/java/com/clinic/security/JwtService.java",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    }
+  ]
+}

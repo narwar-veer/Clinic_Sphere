@@ -1,0 +1,92 @@
+version: '3.8'
+
+services:
+  # Redis service used for session caching and rate-limiting
+  redis:
+    image: redis:7-alpine
+    container_name: clinic-redis
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis_data:/data
+    restart: unless-stopped
+    networks:
+      - clinic-network
+
+  # Postgres service (Self-hosted)
+  postgres:
+    image: postgres:16-alpine
+    container_name: clinic-postgres
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_DB: clinic_booking
+      POSTGRES_USER: ${DB_USER}
+      POSTGRES_PASSWORD: ${DB_PASSWORD}
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    restart: unless-stopped
+    networks:
+      - clinic-network
+
+  # Spring Boot Backend App
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: clinic-backend
+    ports:
+      - "8082:8082"
+    depends_on:
+      - redis
+      - postgres
+    environment:
+      # Database Connection
+      - DB_URL=jdbc:postgresql://postgres:5432/clinic_booking
+      - DB_USER=${DB_USER}
+      - DB_PASSWORD=${DB_PASSWORD}
+      
+      # Redis Connection
+      - REDIS_HOST=redis
+      - REDIS_PORT=6379
+      
+      # JWT Settings
+      - JWT_SECRET=${JWT_SECRET}
+      - JWT_EXPIRATION_MS=${JWT_EXPIRATION_MS:-86400000}
+      
+      # Timezone settings
+      - APP_TIME_ZONE=${APP_TIME_ZONE:-Asia/Kolkata}
+      - BOOKING_TIME_ZONE=${BOOKING_TIME_ZONE:-Asia/Kolkata}
+      - APPOINTMENT_EOD_ZONE=${APPOINTMENT_EOD_ZONE:-Asia/Kolkata}
+      - APPOINTMENT_EOD_CRON=${APPOINTMENT_EOD_CRON:-0 10 * * * *}
+      
+      # Session & Security
+      - SESSION_INACTIVITY_TIMEOUT_MINUTES=${SESSION_INACTIVITY_TIMEOUT_MINUTES:-30}
+      - CORS_ALLOWED_ORIGINS=${CORS_ALLOWED_ORIGINS:-http://localhost:3000,http://localhost:5173,http://127.0.0.1:3000,http://127.0.0.1:5173}
+      
+      # Integrations (Twilio/WhatsApp)
+      - TWILIO_ENABLED=${TWILIO_ENABLED:-false}
+      - TWILIO_ACCOUNT_SID=${TWILIO_ACCOUNT_SID}
+      - TWILIO_AUTH_TOKEN=${TWILIO_AUTH_TOKEN}
+      - TWILIO_FROM_PHONE=${TWILIO_FROM_PHONE}
+      
+      - WHATSAPP_ENABLED=${WHATSAPP_ENABLED:-false}
+      - WHATSAPP_API_URL=${WHATSAPP_API_URL}
+      - WHATSAPP_TOKEN=${WHATSAPP_TOKEN}
+      - WHATSAPP_FROM_NUMBER=${WHATSAPP_FROM_NUMBER}
+      
+      # Database Admin Seeding
+      - SEED_ADMIN_ENABLED=${SEED_ADMIN_ENABLED:-true}
+      - SEED_ADMIN_USERNAME=${SEED_ADMIN_USERNAME:-admin}
+      - SEED_ADMIN_PASSWORD=${SEED_ADMIN_PASSWORD}
+    restart: unless-stopped
+    networks:
+      - clinic-network
+
+volumes:
+  postgres_data:
+  redis_data:
+
+networks:
+  clinic-network:
+    driver: bridge

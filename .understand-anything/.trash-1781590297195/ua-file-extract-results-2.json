@@ -1,0 +1,2690 @@
+{
+  "scriptCompleted": true,
+  "filesAnalyzed": 20,
+  "filesSkipped": [],
+  "results": [
+    {
+      "path": "src/main/java/com/clinic/controller/AppointmentController.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 31,
+      "nonEmptyLines": 27,
+      "functions": [
+        {
+          "name": "bookAppointment",
+          "startLine": 23,
+          "endLine": 30,
+          "params": [
+            "request",
+            "idempotencyKey"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "AppointmentController",
+          "startLine": 16,
+          "endLine": 31,
+          "methods": [
+            "bookAppointment"
+          ],
+          "properties": [
+            "appointmentService"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "bookAppointment",
+          "line": 23,
+          "isDefault": false
+        },
+        {
+          "name": "AppointmentController",
+          "line": 16,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "bookAppointment",
+          "callee": "appointmentService.bookAppointment",
+          "lineNumber": 29
+        }
+      ],
+      "metrics": {
+        "importCount": 3,
+        "exportCount": 2,
+        "functionCount": 1,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "src/main/java/com/clinic/dto/request/AdminAppointmentUpdateRequest.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 14,
+      "nonEmptyLines": 11,
+      "classes": [
+        {
+          "name": "AdminAppointmentUpdateRequest",
+          "startLine": 8,
+          "endLine": 14,
+          "methods": [],
+          "properties": [
+            "status"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "AdminAppointmentUpdateRequest",
+          "line": 8,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "src/main/java/com/clinic/dto/request/AppointmentBookingRequest.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 35,
+      "nonEmptyLines": 27,
+      "classes": [
+        {
+          "name": "AppointmentBookingRequest",
+          "startLine": 12,
+          "endLine": 35,
+          "methods": [],
+          "properties": [
+            "name",
+            "phone",
+            "age",
+            "gender",
+            "symptoms",
+            "slotId"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "AppointmentBookingRequest",
+          "line": 12,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "src/main/java/com/clinic/dto/response/AppointmentResponse.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 31,
+      "nonEmptyLines": 29,
+      "classes": [
+        {
+          "name": "AppointmentResponse",
+          "startLine": 11,
+          "endLine": 31,
+          "methods": [],
+          "properties": [
+            "id",
+            "patientId",
+            "patientName",
+            "patientPhone",
+            "patientAge",
+            "patientGender",
+            "slotId",
+            "clinicId",
+            "clinicName",
+            "doctorName",
+            "slotDate",
+            "slotStartTime",
+            "slotEndTime",
+            "symptoms",
+            "status",
+            "visitedAt",
+            "createdAt"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "AppointmentResponse",
+          "line": 11,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 2,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "src/main/java/com/clinic/entity/Appointment.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 57,
+      "nonEmptyLines": 46,
+      "classes": [
+        {
+          "name": "Appointment",
+          "startLine": 20,
+          "endLine": 57,
+          "methods": [],
+          "properties": [
+            "id",
+            "patient",
+            "slot",
+            "symptoms",
+            "status",
+            "bookingDate",
+            "idempotencyKey",
+            "visitedAt",
+            "createdAt"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "Appointment",
+          "line": 20,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "src/main/java/com/clinic/entity/AppointmentStatus.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 8,
+      "nonEmptyLines": 7,
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "src/main/java/com/clinic/entity/Gender.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 7,
+      "nonEmptyLines": 6,
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "src/main/java/com/clinic/entity/Patient.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 42,
+      "nonEmptyLines": 34,
+      "classes": [
+        {
+          "name": "Patient",
+          "startLine": 16,
+          "endLine": 42,
+          "methods": [],
+          "properties": [
+            "id",
+            "name",
+            "phone",
+            "age",
+            "gender",
+            "createdAt"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "Patient",
+          "line": 16,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "src/main/java/com/clinic/entity/Slot.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 48,
+      "nonEmptyLines": 38,
+      "classes": [
+        {
+          "name": "Slot",
+          "startLine": 17,
+          "endLine": 48,
+          "methods": [],
+          "properties": [
+            "id",
+            "clinic",
+            "slotDate",
+            "startTime",
+            "endTime",
+            "maxPatients",
+            "bookedCount",
+            "isBlocked"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "Slot",
+          "line": 17,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "src/main/java/com/clinic/exception/ConflictException.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 8,
+      "nonEmptyLines": 6,
+      "functions": [
+        {
+          "name": "ConflictException",
+          "startLine": 5,
+          "endLine": 7,
+          "params": [
+            "message"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "ConflictException",
+          "startLine": 3,
+          "endLine": 8,
+          "methods": [
+            "ConflictException"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "ConflictException",
+          "line": 5,
+          "isDefault": false
+        },
+        {
+          "name": "ConflictException",
+          "line": 3,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 2,
+        "functionCount": 1,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "src/main/java/com/clinic/exception/SlotFullException.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 7,
+      "nonEmptyLines": 6,
+      "functions": [
+        {
+          "name": "SlotFullException",
+          "startLine": 4,
+          "endLine": 6,
+          "params": [
+            "message"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "SlotFullException",
+          "startLine": 3,
+          "endLine": 7,
+          "methods": [
+            "SlotFullException"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "SlotFullException",
+          "line": 4,
+          "isDefault": false
+        },
+        {
+          "name": "SlotFullException",
+          "line": 3,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 2,
+        "functionCount": 1,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "src/main/java/com/clinic/mapper/AppointmentMapper.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 24,
+      "nonEmptyLines": 21,
+      "classes": [
+        {
+          "name": "AppointmentMapper",
+          "startLine": 8,
+          "endLine": 24,
+          "methods": [
+            "toResponse"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "AppointmentMapper",
+          "line": 8,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 2,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "src/main/java/com/clinic/repository/AppointmentRepository.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 71,
+      "nonEmptyLines": 61,
+      "classes": [
+        {
+          "name": "AppointmentRepository",
+          "startLine": 21,
+          "endLine": 71,
+          "methods": [
+            "findById",
+            "findByIdForUpdate",
+            "findAll",
+            "findAll",
+            "findFirstByPatientIdAndSlotSlotDateAndStatusNotOrderBySlotStartTimeAsc",
+            "findByIdempotencyKey",
+            "existsByPatientIdAndDoctorId",
+            "bulkUpdateStatusBeforeDate"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "AppointmentRepository",
+          "line": 21,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 2,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "src/main/java/com/clinic/repository/PatientRepository.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 29,
+      "nonEmptyLines": 25,
+      "classes": [
+        {
+          "name": "PatientRepository",
+          "startLine": 12,
+          "endLine": 29,
+          "methods": [
+            "findFirstByPhoneAndNameIgnoreCaseAndAgeAndGenderOrderByCreatedAtDesc",
+            "findByIdentityForUpdate"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "PatientRepository",
+          "line": 12,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 2,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "src/main/java/com/clinic/repository/SlotRepository.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 139,
+      "nonEmptyLines": 124,
+      "classes": [
+        {
+          "name": "SlotRepository",
+          "startLine": 18,
+          "endLine": 139,
+          "methods": [
+            "findByIdForUpdate",
+            "findBySlotDate",
+            "findBySlotDateBetweenOrderBySlotDateAscStartTimeAsc",
+            "findGeneratedDatesBetween",
+            "updateBlockedByClinicIdAndSlotDate",
+            "updateCapacityForDateFromTime",
+            "updateCapacityAfterDate",
+            "countConflictsForDateFromTime",
+            "countConflictsAfterDate",
+            "findById",
+            "countBookedSlotsOnDate",
+            "insertIfAbsent",
+            "findDateAvailability"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "SlotRepository",
+          "line": 18,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "src/main/java/com/clinic/service/AppointmentExportService.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 109,
+      "nonEmptyLines": 97,
+      "functions": [
+        {
+          "name": "exportDoctorAppointments",
+          "startLine": 33,
+          "endLine": 80,
+          "params": [
+            "doctorId",
+            "date",
+            "time",
+            "name",
+            "phone",
+            "status",
+            "visited"
+          ]
+        },
+        {
+          "name": "createHeader",
+          "startLine": 82,
+          "endLine": 93,
+          "params": [
+            "sheet"
+          ]
+        },
+        {
+          "name": "safeForExcel",
+          "startLine": 95,
+          "endLine": 104,
+          "params": [
+            "value"
+          ]
+        },
+        {
+          "name": "nullSafe",
+          "startLine": 106,
+          "endLine": 108,
+          "params": [
+            "value"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "AppointmentExportService",
+          "startLine": 23,
+          "endLine": 109,
+          "methods": [
+            "exportDoctorAppointments",
+            "createHeader",
+            "safeForExcel",
+            "nullSafe"
+          ],
+          "properties": [
+            "DATE_FORMAT",
+            "TIME_FORMAT",
+            "DATETIME_FORMAT",
+            "appointmentRepository"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "exportDoctorAppointments",
+          "line": 33,
+          "isDefault": false
+        },
+        {
+          "name": "AppointmentExportService",
+          "line": 23,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "exportDoctorAppointments",
+          "callee": "AppointmentSpecifications.forDoctorAppointments",
+          "lineNumber": 43
+        },
+        {
+          "caller": "exportDoctorAppointments",
+          "callee": "new SXSSFWorkbook",
+          "lineNumber": 45
+        },
+        {
+          "caller": "exportDoctorAppointments",
+          "callee": "new ByteArrayOutputStream",
+          "lineNumber": 45
+        },
+        {
+          "caller": "exportDoctorAppointments",
+          "callee": "workbook.createSheet",
+          "lineNumber": 46
+        },
+        {
+          "caller": "exportDoctorAppointments",
+          "callee": "createHeader",
+          "lineNumber": 47
+        },
+        {
+          "caller": "exportDoctorAppointments",
+          "callee": "PageRequest.of",
+          "lineNumber": 53
+        },
+        {
+          "caller": "exportDoctorAppointments",
+          "callee": "Sort.by(\"createdAt\").descending",
+          "lineNumber": 53
+        },
+        {
+          "caller": "exportDoctorAppointments",
+          "callee": "Sort.by",
+          "lineNumber": 53
+        },
+        {
+          "caller": "exportDoctorAppointments",
+          "callee": "appointmentRepository.findAll",
+          "lineNumber": 54
+        },
+        {
+          "caller": "exportDoctorAppointments",
+          "callee": "result.getContent",
+          "lineNumber": 56
+        },
+        {
+          "caller": "exportDoctorAppointments",
+          "callee": "sheet.createRow",
+          "lineNumber": 57
+        },
+        {
+          "caller": "exportDoctorAppointments",
+          "callee": "row.createCell(0).setCellValue",
+          "lineNumber": 58
+        },
+        {
+          "caller": "exportDoctorAppointments",
+          "callee": "row.createCell",
+          "lineNumber": 58
+        },
+        {
+          "caller": "exportDoctorAppointments",
+          "callee": "safeForExcel",
+          "lineNumber": 58
+        },
+        {
+          "caller": "exportDoctorAppointments",
+          "callee": "appointment.getPatient().getName",
+          "lineNumber": 58
+        },
+        {
+          "caller": "exportDoctorAppointments",
+          "callee": "appointment.getPatient",
+          "lineNumber": 58
+        },
+        {
+          "caller": "exportDoctorAppointments",
+          "callee": "row.createCell(1).setCellValue",
+          "lineNumber": 59
+        },
+        {
+          "caller": "exportDoctorAppointments",
+          "callee": "row.createCell",
+          "lineNumber": 59
+        },
+        {
+          "caller": "exportDoctorAppointments",
+          "callee": "safeForExcel",
+          "lineNumber": 59
+        },
+        {
+          "caller": "exportDoctorAppointments",
+          "callee": "appointment.getPatient().getPhone",
+          "lineNumber": 59
+        },
+        {
+          "caller": "exportDoctorAppointments",
+          "callee": "appointment.getPatient",
+          "lineNumber": 59
+        },
+        {
+          "caller": "exportDoctorAppointments",
+          "callee": "row.createCell(2).setCellValue",
+          "lineNumber": 60
+        },
+        {
+          "caller": "exportDoctorAppointments",
+          "callee": "row.createCell",
+          "lineNumber": 60
+        },
+        {
+          "caller": "exportDoctorAppointments",
+          "callee": "appointment.getPatient().getAge",
+          "lineNumber": 60
+        },
+        {
+          "caller": "exportDoctorAppointments",
+          "callee": "appointment.getPatient",
+          "lineNumber": 60
+        },
+        {
+          "caller": "exportDoctorAppointments",
+          "callee": "row.createCell(3).setCellValue",
+          "lineNumber": 61
+        },
+        {
+          "caller": "exportDoctorAppointments",
+          "callee": "row.createCell",
+          "lineNumber": 61
+        },
+        {
+          "caller": "exportDoctorAppointments",
+          "callee": "appointment.getSlot().getSlotDate().format",
+          "lineNumber": 61
+        },
+        {
+          "caller": "exportDoctorAppointments",
+          "callee": "appointment.getSlot().getSlotDate",
+          "lineNumber": 61
+        },
+        {
+          "caller": "exportDoctorAppointments",
+          "callee": "appointment.getSlot",
+          "lineNumber": 61
+        },
+        {
+          "caller": "exportDoctorAppointments",
+          "callee": "row.createCell(4).setCellValue",
+          "lineNumber": 62
+        },
+        {
+          "caller": "exportDoctorAppointments",
+          "callee": "row.createCell",
+          "lineNumber": 62
+        },
+        {
+          "caller": "exportDoctorAppointments",
+          "callee": "appointment.getSlot().getStartTime().format",
+          "lineNumber": 62
+        },
+        {
+          "caller": "exportDoctorAppointments",
+          "callee": "appointment.getSlot().getStartTime",
+          "lineNumber": 62
+        },
+        {
+          "caller": "exportDoctorAppointments",
+          "callee": "appointment.getSlot",
+          "lineNumber": 62
+        },
+        {
+          "caller": "exportDoctorAppointments",
+          "callee": "row.createCell(5).setCellValue",
+          "lineNumber": 63
+        },
+        {
+          "caller": "exportDoctorAppointments",
+          "callee": "row.createCell",
+          "lineNumber": 63
+        },
+        {
+          "caller": "exportDoctorAppointments",
+          "callee": "appointment.getStatus().name",
+          "lineNumber": 63
+        },
+        {
+          "caller": "exportDoctorAppointments",
+          "callee": "appointment.getStatus",
+          "lineNumber": 63
+        },
+        {
+          "caller": "exportDoctorAppointments",
+          "callee": "row.createCell(6).setCellValue",
+          "lineNumber": 64
+        },
+        {
+          "caller": "exportDoctorAppointments",
+          "callee": "row.createCell",
+          "lineNumber": 64
+        },
+        {
+          "caller": "exportDoctorAppointments",
+          "callee": "appointment.getVisitedAt",
+          "lineNumber": 65
+        },
+        {
+          "caller": "exportDoctorAppointments",
+          "callee": "appointment.getVisitedAt().format",
+          "lineNumber": 65
+        },
+        {
+          "caller": "exportDoctorAppointments",
+          "callee": "appointment.getVisitedAt",
+          "lineNumber": 65
+        },
+        {
+          "caller": "exportDoctorAppointments",
+          "callee": "row.createCell(7).setCellValue",
+          "lineNumber": 66
+        },
+        {
+          "caller": "exportDoctorAppointments",
+          "callee": "row.createCell",
+          "lineNumber": 66
+        },
+        {
+          "caller": "exportDoctorAppointments",
+          "callee": "safeForExcel",
+          "lineNumber": 66
+        },
+        {
+          "caller": "exportDoctorAppointments",
+          "callee": "nullSafe",
+          "lineNumber": 66
+        },
+        {
+          "caller": "exportDoctorAppointments",
+          "callee": "appointment.getSymptoms",
+          "lineNumber": 66
+        },
+        {
+          "caller": "exportDoctorAppointments",
+          "callee": "row.createCell(8).setCellValue",
+          "lineNumber": 67
+        },
+        {
+          "caller": "exportDoctorAppointments",
+          "callee": "row.createCell",
+          "lineNumber": 67
+        },
+        {
+          "caller": "exportDoctorAppointments",
+          "callee": "appointment.getCreatedAt().format",
+          "lineNumber": 67
+        },
+        {
+          "caller": "exportDoctorAppointments",
+          "callee": "appointment.getCreatedAt",
+          "lineNumber": 67
+        },
+        {
+          "caller": "exportDoctorAppointments",
+          "callee": "result.hasNext",
+          "lineNumber": 70
+        },
+        {
+          "caller": "exportDoctorAppointments",
+          "callee": "workbook.write",
+          "lineNumber": 72
+        },
+        {
+          "caller": "exportDoctorAppointments",
+          "callee": "sxssfWorkbook.dispose",
+          "lineNumber": 74
+        },
+        {
+          "caller": "exportDoctorAppointments",
+          "callee": "outputStream.toByteArray",
+          "lineNumber": 76
+        },
+        {
+          "caller": "exportDoctorAppointments",
+          "callee": "new IllegalStateException",
+          "lineNumber": 78
+        },
+        {
+          "caller": "createHeader",
+          "callee": "sheet.createRow",
+          "lineNumber": 83
+        },
+        {
+          "caller": "createHeader",
+          "callee": "header.createCell(0).setCellValue",
+          "lineNumber": 84
+        },
+        {
+          "caller": "createHeader",
+          "callee": "header.createCell",
+          "lineNumber": 84
+        },
+        {
+          "caller": "createHeader",
+          "callee": "header.createCell(1).setCellValue",
+          "lineNumber": 85
+        },
+        {
+          "caller": "createHeader",
+          "callee": "header.createCell",
+          "lineNumber": 85
+        },
+        {
+          "caller": "createHeader",
+          "callee": "header.createCell(2).setCellValue",
+          "lineNumber": 86
+        },
+        {
+          "caller": "createHeader",
+          "callee": "header.createCell",
+          "lineNumber": 86
+        },
+        {
+          "caller": "createHeader",
+          "callee": "header.createCell(3).setCellValue",
+          "lineNumber": 87
+        },
+        {
+          "caller": "createHeader",
+          "callee": "header.createCell",
+          "lineNumber": 87
+        },
+        {
+          "caller": "createHeader",
+          "callee": "header.createCell(4).setCellValue",
+          "lineNumber": 88
+        },
+        {
+          "caller": "createHeader",
+          "callee": "header.createCell",
+          "lineNumber": 88
+        },
+        {
+          "caller": "createHeader",
+          "callee": "header.createCell(5).setCellValue",
+          "lineNumber": 89
+        },
+        {
+          "caller": "createHeader",
+          "callee": "header.createCell",
+          "lineNumber": 89
+        },
+        {
+          "caller": "createHeader",
+          "callee": "header.createCell(6).setCellValue",
+          "lineNumber": 90
+        },
+        {
+          "caller": "createHeader",
+          "callee": "header.createCell",
+          "lineNumber": 90
+        },
+        {
+          "caller": "createHeader",
+          "callee": "header.createCell(7).setCellValue",
+          "lineNumber": 91
+        },
+        {
+          "caller": "createHeader",
+          "callee": "header.createCell",
+          "lineNumber": 91
+        },
+        {
+          "caller": "createHeader",
+          "callee": "header.createCell(8).setCellValue",
+          "lineNumber": 92
+        },
+        {
+          "caller": "createHeader",
+          "callee": "header.createCell",
+          "lineNumber": 92
+        },
+        {
+          "caller": "safeForExcel",
+          "callee": "value.isEmpty",
+          "lineNumber": 96
+        },
+        {
+          "caller": "safeForExcel",
+          "callee": "value.charAt",
+          "lineNumber": 99
+        }
+      ],
+      "metrics": {
+        "importCount": 3,
+        "exportCount": 2,
+        "functionCount": 4,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "src/main/java/com/clinic/service/AppointmentService.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 246,
+      "nonEmptyLines": 216,
+      "functions": [
+        {
+          "name": "bookAppointment",
+          "startLine": 55,
+          "endLine": 116,
+          "params": [
+            "request",
+            "idempotencyKey"
+          ]
+        },
+        {
+          "name": "getAdminAppointments",
+          "startLine": 118,
+          "endLine": 135,
+          "params": [
+            "doctorId",
+            "page",
+            "size",
+            "date",
+            "time",
+            "name",
+            "phone",
+            "status",
+            "visited"
+          ]
+        },
+        {
+          "name": "updateAppointmentStatus",
+          "startLine": 137,
+          "endLine": 186,
+          "params": [
+            "doctorId",
+            "appointmentId",
+            "request"
+          ]
+        },
+        {
+          "name": "findOrCreatePatient",
+          "startLine": 188,
+          "endLine": 210,
+          "params": [
+            "request"
+          ]
+        },
+        {
+          "name": "ensureNoDuplicateBookingForDate",
+          "startLine": 212,
+          "endLine": 226,
+          "params": [
+            "patientId",
+            "slotDate"
+          ]
+        },
+        {
+          "name": "trimToNull",
+          "startLine": 228,
+          "endLine": 234,
+          "params": [
+            "value"
+          ]
+        },
+        {
+          "name": "normalizeIdempotencyKey",
+          "startLine": 236,
+          "endLine": 245,
+          "params": [
+            "idempotencyKey"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "AppointmentService",
+          "startLine": 36,
+          "endLine": 246,
+          "methods": [
+            "bookAppointment",
+            "getAdminAppointments",
+            "updateAppointmentStatus",
+            "findOrCreatePatient",
+            "ensureNoDuplicateBookingForDate",
+            "trimToNull",
+            "normalizeIdempotencyKey"
+          ],
+          "properties": [
+            "DATE_FORMAT",
+            "TIME_FORMAT",
+            "slotRepository",
+            "patientRepository",
+            "appointmentRepository",
+            "appointmentMapper",
+            "pageResponseFactory",
+            "bookingWindowValidator",
+            "paginationValidator",
+            "outboxService",
+            "auditLogService",
+            "appTime",
+            "meterRegistry"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "bookAppointment",
+          "line": 55,
+          "isDefault": false
+        },
+        {
+          "name": "getAdminAppointments",
+          "line": 118,
+          "isDefault": false
+        },
+        {
+          "name": "updateAppointmentStatus",
+          "line": 137,
+          "isDefault": false
+        },
+        {
+          "name": "AppointmentService",
+          "line": 36,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "bookAppointment",
+          "callee": "Timer.start",
+          "lineNumber": 57
+        },
+        {
+          "caller": "bookAppointment",
+          "callee": "normalizeIdempotencyKey",
+          "lineNumber": 59
+        },
+        {
+          "caller": "bookAppointment",
+          "callee": "appointmentRepository.findByIdempotencyKey(normalizedIdempotencyKey).orElse",
+          "lineNumber": 61
+        },
+        {
+          "caller": "bookAppointment",
+          "callee": "appointmentRepository.findByIdempotencyKey",
+          "lineNumber": 61
+        },
+        {
+          "caller": "bookAppointment",
+          "callee": "appointmentMapper.toResponse",
+          "lineNumber": 63
+        },
+        {
+          "caller": "bookAppointment",
+          "callee": "slotRepository.findByIdForUpdate(request.getSlotId()).orElseThrow",
+          "lineNumber": 67
+        },
+        {
+          "caller": "bookAppointment",
+          "callee": "slotRepository.findByIdForUpdate",
+          "lineNumber": 67
+        },
+        {
+          "caller": "bookAppointment",
+          "callee": "request.getSlotId",
+          "lineNumber": 67
+        },
+        {
+          "caller": "bookAppointment",
+          "callee": "new ResourceNotFoundException",
+          "lineNumber": 68
+        },
+        {
+          "caller": "bookAppointment",
+          "callee": "bookingWindowValidator.validateSlotDateTime",
+          "lineNumber": 69
+        },
+        {
+          "caller": "bookAppointment",
+          "callee": "slot.getSlotDate",
+          "lineNumber": 69
+        },
+        {
+          "caller": "bookAppointment",
+          "callee": "slot.getStartTime",
+          "lineNumber": 69
+        },
+        {
+          "caller": "bookAppointment",
+          "callee": "Boolean.TRUE.equals",
+          "lineNumber": 71
+        },
+        {
+          "caller": "bookAppointment",
+          "callee": "slot.getIsBlocked",
+          "lineNumber": 71
+        },
+        {
+          "caller": "bookAppointment",
+          "callee": "new BadRequestException",
+          "lineNumber": 72
+        },
+        {
+          "caller": "bookAppointment",
+          "callee": "slot.getBookedCount",
+          "lineNumber": 74
+        },
+        {
+          "caller": "bookAppointment",
+          "callee": "slot.getMaxPatients",
+          "lineNumber": 74
+        },
+        {
+          "caller": "bookAppointment",
+          "callee": "new SlotFullException",
+          "lineNumber": 75
+        },
+        {
+          "caller": "bookAppointment",
+          "callee": "findOrCreatePatient",
+          "lineNumber": 78
+        },
+        {
+          "caller": "bookAppointment",
+          "callee": "ensureNoDuplicateBookingForDate",
+          "lineNumber": 79
+        },
+        {
+          "caller": "bookAppointment",
+          "callee": "patient.getId",
+          "lineNumber": 79
+        },
+        {
+          "caller": "bookAppointment",
+          "callee": "slot.getSlotDate",
+          "lineNumber": 79
+        },
+        {
+          "caller": "bookAppointment",
+          "callee": "new Appointment",
+          "lineNumber": 81
+        },
+        {
+          "caller": "bookAppointment",
+          "callee": "appointment.setPatient",
+          "lineNumber": 82
+        },
+        {
+          "caller": "bookAppointment",
+          "callee": "appointment.setSlot",
+          "lineNumber": 83
+        },
+        {
+          "caller": "bookAppointment",
+          "callee": "appointment.setSymptoms",
+          "lineNumber": 84
+        },
+        {
+          "caller": "bookAppointment",
+          "callee": "trimToNull",
+          "lineNumber": 84
+        },
+        {
+          "caller": "bookAppointment",
+          "callee": "request.getSymptoms",
+          "lineNumber": 84
+        },
+        {
+          "caller": "bookAppointment",
+          "callee": "appointment.setStatus",
+          "lineNumber": 85
+        },
+        {
+          "caller": "bookAppointment",
+          "callee": "appointment.setBookingDate",
+          "lineNumber": 86
+        },
+        {
+          "caller": "bookAppointment",
+          "callee": "slot.getSlotDate",
+          "lineNumber": 86
+        },
+        {
+          "caller": "bookAppointment",
+          "callee": "appointment.setIdempotencyKey",
+          "lineNumber": 87
+        },
+        {
+          "caller": "bookAppointment",
+          "callee": "appointmentRepository.saveAndFlush",
+          "lineNumber": 89
+        },
+        {
+          "caller": "bookAppointment",
+          "callee": "slot.setBookedCount",
+          "lineNumber": 91
+        },
+        {
+          "caller": "bookAppointment",
+          "callee": "slot.getBookedCount",
+          "lineNumber": 91
+        },
+        {
+          "caller": "bookAppointment",
+          "callee": "slotRepository.save",
+          "lineNumber": 92
+        },
+        {
+          "caller": "bookAppointment",
+          "callee": "outboxService.enqueue",
+          "lineNumber": 94
+        },
+        {
+          "caller": "bookAppointment",
+          "callee": "appointment.getId().toString",
+          "lineNumber": 96
+        },
+        {
+          "caller": "bookAppointment",
+          "callee": "appointment.getId",
+          "lineNumber": 96
+        },
+        {
+          "caller": "bookAppointment",
+          "callee": "new AppointmentNotificationOutboxPayload",
+          "lineNumber": 98
+        },
+        {
+          "caller": "bookAppointment",
+          "callee": "appointment.getId",
+          "lineNumber": 98
+        },
+        {
+          "caller": "bookAppointment",
+          "callee": "auditLogService.logEvent",
+          "lineNumber": 100
+        },
+        {
+          "caller": "bookAppointment",
+          "callee": "appointment.getId().toString",
+          "lineNumber": 104
+        },
+        {
+          "caller": "bookAppointment",
+          "callee": "appointment.getId",
+          "lineNumber": 104
+        },
+        {
+          "caller": "bookAppointment",
+          "callee": "Map.of",
+          "lineNumber": 105
+        },
+        {
+          "caller": "bookAppointment",
+          "callee": "slot.getId",
+          "lineNumber": 106
+        },
+        {
+          "caller": "bookAppointment",
+          "callee": "patient.getId",
+          "lineNumber": 107
+        },
+        {
+          "caller": "bookAppointment",
+          "callee": "appointmentMapper.toResponse",
+          "lineNumber": 110
+        },
+        {
+          "caller": "bookAppointment",
+          "callee": "new ConflictException",
+          "lineNumber": 112
+        },
+        {
+          "caller": "bookAppointment",
+          "callee": "timer.stop",
+          "lineNumber": 114
+        },
+        {
+          "caller": "bookAppointment",
+          "callee": "Timer.builder(\"clinic.booking.latency\").register",
+          "lineNumber": 114
+        },
+        {
+          "caller": "bookAppointment",
+          "callee": "Timer.builder",
+          "lineNumber": 114
+        },
+        {
+          "caller": "getAdminAppointments",
+          "callee": "paginationValidator.validate",
+          "lineNumber": 130
+        },
+        {
+          "caller": "getAdminAppointments",
+          "callee": "PageRequest.of",
+          "lineNumber": 131
+        },
+        {
+          "caller": "getAdminAppointments",
+          "callee": "Sort.by(\"createdAt\").descending",
+          "lineNumber": 131
+        },
+        {
+          "caller": "getAdminAppointments",
+          "callee": "Sort.by",
+          "lineNumber": 131
+        },
+        {
+          "caller": "getAdminAppointments",
+          "callee": "AppointmentSpecifications.forDoctorAppointments",
+          "lineNumber": 132
+        },
+        {
+          "caller": "getAdminAppointments",
+          "callee": "appointmentRepository.findAll(specification, pageable).map",
+          "lineNumber": 133
+        },
+        {
+          "caller": "getAdminAppointments",
+          "callee": "appointmentRepository.findAll",
+          "lineNumber": 133
+        },
+        {
+          "caller": "getAdminAppointments",
+          "callee": "pageResponseFactory.fromPage",
+          "lineNumber": 134
+        },
+        {
+          "caller": "updateAppointmentStatus",
+          "callee": "appointmentRepository.findByIdForUpdate(appointmentId).orElseThrow",
+          "lineNumber": 139
+        },
+        {
+          "caller": "updateAppointmentStatus",
+          "callee": "appointmentRepository.findByIdForUpdate",
+          "lineNumber": 139
+        },
+        {
+          "caller": "updateAppointmentStatus",
+          "callee": "new ResourceNotFoundException",
+          "lineNumber": 140
+        },
+        {
+          "caller": "updateAppointmentStatus",
+          "callee": "appointment.getSlot().getClinic().getDoctor().getId().equals",
+          "lineNumber": 141
+        },
+        {
+          "caller": "updateAppointmentStatus",
+          "callee": "appointment.getSlot().getClinic().getDoctor().getId",
+          "lineNumber": 141
+        },
+        {
+          "caller": "updateAppointmentStatus",
+          "callee": "appointment.getSlot().getClinic().getDoctor",
+          "lineNumber": 141
+        },
+        {
+          "caller": "updateAppointmentStatus",
+          "callee": "appointment.getSlot().getClinic",
+          "lineNumber": 141
+        },
+        {
+          "caller": "updateAppointmentStatus",
+          "callee": "appointment.getSlot",
+          "lineNumber": 141
+        },
+        {
+          "caller": "updateAppointmentStatus",
+          "callee": "new UnauthorizedException",
+          "lineNumber": 142
+        },
+        {
+          "caller": "updateAppointmentStatus",
+          "callee": "appointment.getStatus",
+          "lineNumber": 145
+        },
+        {
+          "caller": "updateAppointmentStatus",
+          "callee": "request.getStatus",
+          "lineNumber": 146
+        },
+        {
+          "caller": "updateAppointmentStatus",
+          "callee": "appointmentMapper.toResponse",
+          "lineNumber": 149
+        },
+        {
+          "caller": "updateAppointmentStatus",
+          "callee": "new BadRequestException",
+          "lineNumber": 153
+        },
+        {
+          "caller": "updateAppointmentStatus",
+          "callee": "slotRepository.findByIdForUpdate(appointment.getSlot().getId()).orElseThrow",
+          "lineNumber": 156
+        },
+        {
+          "caller": "updateAppointmentStatus",
+          "callee": "slotRepository.findByIdForUpdate",
+          "lineNumber": 156
+        },
+        {
+          "caller": "updateAppointmentStatus",
+          "callee": "appointment.getSlot().getId",
+          "lineNumber": 156
+        },
+        {
+          "caller": "updateAppointmentStatus",
+          "callee": "appointment.getSlot",
+          "lineNumber": 156
+        },
+        {
+          "caller": "updateAppointmentStatus",
+          "callee": "new ResourceNotFoundException",
+          "lineNumber": 157
+        },
+        {
+          "caller": "updateAppointmentStatus",
+          "callee": "slot.getBookedCount",
+          "lineNumber": 160
+        },
+        {
+          "caller": "updateAppointmentStatus",
+          "callee": "slot.setBookedCount",
+          "lineNumber": 161
+        },
+        {
+          "caller": "updateAppointmentStatus",
+          "callee": "slot.getBookedCount",
+          "lineNumber": 161
+        },
+        {
+          "caller": "updateAppointmentStatus",
+          "callee": "slot.getBookedCount",
+          "lineNumber": 164
+        },
+        {
+          "caller": "updateAppointmentStatus",
+          "callee": "slot.getMaxPatients",
+          "lineNumber": 164
+        },
+        {
+          "caller": "updateAppointmentStatus",
+          "callee": "new SlotFullException",
+          "lineNumber": 165
+        },
+        {
+          "caller": "updateAppointmentStatus",
+          "callee": "slot.setBookedCount",
+          "lineNumber": 167
+        },
+        {
+          "caller": "updateAppointmentStatus",
+          "callee": "slot.getBookedCount",
+          "lineNumber": 167
+        },
+        {
+          "caller": "updateAppointmentStatus",
+          "callee": "appointment.setStatus",
+          "lineNumber": 170
+        },
+        {
+          "caller": "updateAppointmentStatus",
+          "callee": "appointment.getVisitedAt",
+          "lineNumber": 171
+        },
+        {
+          "caller": "updateAppointmentStatus",
+          "callee": "appointment.setVisitedAt",
+          "lineNumber": 172
+        },
+        {
+          "caller": "updateAppointmentStatus",
+          "callee": "appTime.nowDateTime",
+          "lineNumber": 172
+        },
+        {
+          "caller": "updateAppointmentStatus",
+          "callee": "slotRepository.save",
+          "lineNumber": 175
+        },
+        {
+          "caller": "updateAppointmentStatus",
+          "callee": "appointmentRepository.save",
+          "lineNumber": 176
+        },
+        {
+          "caller": "updateAppointmentStatus",
+          "callee": "auditLogService.logEvent",
+          "lineNumber": 178
+        },
+        {
+          "caller": "updateAppointmentStatus",
+          "callee": "appointment.getId().toString",
+          "lineNumber": 182
+        },
+        {
+          "caller": "updateAppointmentStatus",
+          "callee": "appointment.getId",
+          "lineNumber": 182
+        },
+        {
+          "caller": "updateAppointmentStatus",
+          "callee": "Map.of",
+          "lineNumber": 183
+        },
+        {
+          "caller": "updateAppointmentStatus",
+          "callee": "previousStatus.name",
+          "lineNumber": 183
+        },
+        {
+          "caller": "updateAppointmentStatus",
+          "callee": "nextStatus.name",
+          "lineNumber": 183
+        },
+        {
+          "caller": "updateAppointmentStatus",
+          "callee": "appointmentMapper.toResponse",
+          "lineNumber": 185
+        },
+        {
+          "caller": "findOrCreatePatient",
+          "callee": "request.getName().trim",
+          "lineNumber": 189
+        },
+        {
+          "caller": "findOrCreatePatient",
+          "callee": "request.getName",
+          "lineNumber": 189
+        },
+        {
+          "caller": "findOrCreatePatient",
+          "callee": "request.getPhone().trim",
+          "lineNumber": 190
+        },
+        {
+          "caller": "findOrCreatePatient",
+          "callee": "request.getPhone",
+          "lineNumber": 190
+        },
+        {
+          "caller": "findOrCreatePatient",
+          "callee": "patientRepository.findByIdentityForUpdate(normalizedPhone, normalizedName, request.getAge(), request.getGender()).orElseGet",
+          "lineNumber": 192
+        },
+        {
+          "caller": "findOrCreatePatient",
+          "callee": "patientRepository.findByIdentityForUpdate",
+          "lineNumber": 192
+        },
+        {
+          "caller": "findOrCreatePatient",
+          "callee": "request.getAge",
+          "lineNumber": 192
+        },
+        {
+          "caller": "findOrCreatePatient",
+          "callee": "request.getGender",
+          "lineNumber": 192
+        },
+        {
+          "caller": "findOrCreatePatient",
+          "callee": "new Patient",
+          "lineNumber": 194
+        },
+        {
+          "caller": "findOrCreatePatient",
+          "callee": "patient.setName",
+          "lineNumber": 195
+        },
+        {
+          "caller": "findOrCreatePatient",
+          "callee": "patient.setPhone",
+          "lineNumber": 196
+        },
+        {
+          "caller": "findOrCreatePatient",
+          "callee": "patient.setAge",
+          "lineNumber": 197
+        },
+        {
+          "caller": "findOrCreatePatient",
+          "callee": "request.getAge",
+          "lineNumber": 197
+        },
+        {
+          "caller": "findOrCreatePatient",
+          "callee": "patient.setGender",
+          "lineNumber": 198
+        },
+        {
+          "caller": "findOrCreatePatient",
+          "callee": "request.getGender",
+          "lineNumber": 198
+        },
+        {
+          "caller": "findOrCreatePatient",
+          "callee": "patientRepository.saveAndFlush",
+          "lineNumber": 200
+        },
+        {
+          "caller": "findOrCreatePatient",
+          "callee": "patientRepository.findFirstByPhoneAndNameIgnoreCaseAndAgeAndGenderOrderByCreatedAtDesc(\n                                        normalizedPhone,\n                                        normalizedName,\n                                        request.getAge(),\n                                        request.getGender()).orElseThrow",
+          "lineNumber": 202
+        },
+        {
+          "caller": "findOrCreatePatient",
+          "callee": "patientRepository.findFirstByPhoneAndNameIgnoreCaseAndAgeAndGenderOrderByCreatedAtDesc",
+          "lineNumber": 202
+        },
+        {
+          "caller": "findOrCreatePatient",
+          "callee": "request.getAge",
+          "lineNumber": 205
+        },
+        {
+          "caller": "findOrCreatePatient",
+          "callee": "request.getGender",
+          "lineNumber": 206
+        },
+        {
+          "caller": "findOrCreatePatient",
+          "callee": "new ConflictException",
+          "lineNumber": 207
+        },
+        {
+          "caller": "ensureNoDuplicateBookingForDate",
+          "callee": "appointmentRepository\n                .findFirstByPatientIdAndSlotSlotDateAndStatusNotOrderBySlotStartTimeAsc(\n                        patientId,\n                        slotDate,\n                        AppointmentStatus.CANCELLED\n                ).ifPresent",
+          "lineNumber": 213
+        },
+        {
+          "caller": "ensureNoDuplicateBookingForDate",
+          "callee": "appointmentRepository.findFirstByPatientIdAndSlotSlotDateAndStatusNotOrderBySlotStartTimeAsc",
+          "lineNumber": 213
+        },
+        {
+          "caller": "ensureNoDuplicateBookingForDate",
+          "callee": "existing.getSlot().getSlotDate().format",
+          "lineNumber": 220
+        },
+        {
+          "caller": "ensureNoDuplicateBookingForDate",
+          "callee": "existing.getSlot().getSlotDate",
+          "lineNumber": 220
+        },
+        {
+          "caller": "ensureNoDuplicateBookingForDate",
+          "callee": "existing.getSlot",
+          "lineNumber": 220
+        },
+        {
+          "caller": "ensureNoDuplicateBookingForDate",
+          "callee": "existing.getSlot().getStartTime().format",
+          "lineNumber": 221
+        },
+        {
+          "caller": "ensureNoDuplicateBookingForDate",
+          "callee": "existing.getSlot().getStartTime",
+          "lineNumber": 221
+        },
+        {
+          "caller": "ensureNoDuplicateBookingForDate",
+          "callee": "existing.getSlot",
+          "lineNumber": 221
+        },
+        {
+          "caller": "ensureNoDuplicateBookingForDate",
+          "callee": "existing.getSlot().getEndTime().format",
+          "lineNumber": 222
+        },
+        {
+          "caller": "ensureNoDuplicateBookingForDate",
+          "callee": "existing.getSlot().getEndTime",
+          "lineNumber": 222
+        },
+        {
+          "caller": "ensureNoDuplicateBookingForDate",
+          "callee": "existing.getSlot",
+          "lineNumber": 222
+        },
+        {
+          "caller": "ensureNoDuplicateBookingForDate",
+          "callee": "new BadRequestException",
+          "lineNumber": 223
+        },
+        {
+          "caller": "trimToNull",
+          "callee": "value.trim",
+          "lineNumber": 232
+        },
+        {
+          "caller": "trimToNull",
+          "callee": "trimmed.isEmpty",
+          "lineNumber": 233
+        },
+        {
+          "caller": "normalizeIdempotencyKey",
+          "callee": "trimToNull",
+          "lineNumber": 237
+        },
+        {
+          "caller": "normalizeIdempotencyKey",
+          "callee": "normalized.length",
+          "lineNumber": 241
+        },
+        {
+          "caller": "normalizeIdempotencyKey",
+          "callee": "new BadRequestException",
+          "lineNumber": 242
+        }
+      ],
+      "metrics": {
+        "importCount": 17,
+        "exportCount": 4,
+        "functionCount": 7,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "src/main/java/com/clinic/service/AppointmentSpecifications.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 54,
+      "nonEmptyLines": 49,
+      "functions": [
+        {
+          "name": "AppointmentSpecifications",
+          "startLine": 11,
+          "endLine": 12,
+          "params": []
+        },
+        {
+          "name": "forDoctorAppointments",
+          "startLine": 14,
+          "endLine": 53,
+          "params": [
+            "doctorId",
+            "date",
+            "time",
+            "name",
+            "phone",
+            "status",
+            "visited"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "AppointmentSpecifications",
+          "startLine": 9,
+          "endLine": 54,
+          "methods": [
+            "AppointmentSpecifications",
+            "forDoctorAppointments"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "forDoctorAppointments",
+          "line": 14,
+          "isDefault": false
+        },
+        {
+          "name": "AppointmentSpecifications",
+          "line": 9,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "forDoctorAppointments",
+          "callee": "cb.equal",
+          "lineNumber": 24
+        },
+        {
+          "caller": "forDoctorAppointments",
+          "callee": "root.get(\"slot\").get(\"clinic\").get(\"doctor\").get",
+          "lineNumber": 24
+        },
+        {
+          "caller": "forDoctorAppointments",
+          "callee": "root.get(\"slot\").get(\"clinic\").get",
+          "lineNumber": 24
+        },
+        {
+          "caller": "forDoctorAppointments",
+          "callee": "root.get(\"slot\").get",
+          "lineNumber": 24
+        },
+        {
+          "caller": "forDoctorAppointments",
+          "callee": "root.get",
+          "lineNumber": 24
+        },
+        {
+          "caller": "forDoctorAppointments",
+          "callee": "specification.and",
+          "lineNumber": 27
+        },
+        {
+          "caller": "forDoctorAppointments",
+          "callee": "cb.equal",
+          "lineNumber": 27
+        },
+        {
+          "caller": "forDoctorAppointments",
+          "callee": "root.get(\"slot\").get",
+          "lineNumber": 27
+        },
+        {
+          "caller": "forDoctorAppointments",
+          "callee": "root.get",
+          "lineNumber": 27
+        },
+        {
+          "caller": "forDoctorAppointments",
+          "callee": "specification.and",
+          "lineNumber": 30
+        },
+        {
+          "caller": "forDoctorAppointments",
+          "callee": "cb.equal",
+          "lineNumber": 30
+        },
+        {
+          "caller": "forDoctorAppointments",
+          "callee": "root.get(\"slot\").get",
+          "lineNumber": 30
+        },
+        {
+          "caller": "forDoctorAppointments",
+          "callee": "root.get",
+          "lineNumber": 30
+        },
+        {
+          "caller": "forDoctorAppointments",
+          "callee": "specification.and",
+          "lineNumber": 33
+        },
+        {
+          "caller": "forDoctorAppointments",
+          "callee": "cb.equal",
+          "lineNumber": 33
+        },
+        {
+          "caller": "forDoctorAppointments",
+          "callee": "root.get",
+          "lineNumber": 33
+        },
+        {
+          "caller": "forDoctorAppointments",
+          "callee": "name.isBlank",
+          "lineNumber": 35
+        },
+        {
+          "caller": "forDoctorAppointments",
+          "callee": "name.trim().toLowerCase",
+          "lineNumber": 36
+        },
+        {
+          "caller": "forDoctorAppointments",
+          "callee": "name.trim",
+          "lineNumber": 36
+        },
+        {
+          "caller": "forDoctorAppointments",
+          "callee": "specification.and",
+          "lineNumber": 37
+        },
+        {
+          "caller": "forDoctorAppointments",
+          "callee": "cb.like",
+          "lineNumber": 38
+        },
+        {
+          "caller": "forDoctorAppointments",
+          "callee": "cb.lower",
+          "lineNumber": 38
+        },
+        {
+          "caller": "forDoctorAppointments",
+          "callee": "root.get(\"patient\").get",
+          "lineNumber": 38
+        },
+        {
+          "caller": "forDoctorAppointments",
+          "callee": "root.get",
+          "lineNumber": 38
+        },
+        {
+          "caller": "forDoctorAppointments",
+          "callee": "phone.isBlank",
+          "lineNumber": 40
+        },
+        {
+          "caller": "forDoctorAppointments",
+          "callee": "phone.trim",
+          "lineNumber": 41
+        },
+        {
+          "caller": "forDoctorAppointments",
+          "callee": "specification.and",
+          "lineNumber": 42
+        },
+        {
+          "caller": "forDoctorAppointments",
+          "callee": "cb.like",
+          "lineNumber": 43
+        },
+        {
+          "caller": "forDoctorAppointments",
+          "callee": "root.get(\"patient\").get",
+          "lineNumber": 43
+        },
+        {
+          "caller": "forDoctorAppointments",
+          "callee": "root.get",
+          "lineNumber": 43
+        },
+        {
+          "caller": "forDoctorAppointments",
+          "callee": "specification.and",
+          "lineNumber": 47
+        },
+        {
+          "caller": "forDoctorAppointments",
+          "callee": "cb.isNotNull",
+          "lineNumber": 47
+        },
+        {
+          "caller": "forDoctorAppointments",
+          "callee": "root.get",
+          "lineNumber": 47
+        },
+        {
+          "caller": "forDoctorAppointments",
+          "callee": "specification.and",
+          "lineNumber": 49
+        },
+        {
+          "caller": "forDoctorAppointments",
+          "callee": "cb.isNull",
+          "lineNumber": 49
+        },
+        {
+          "caller": "forDoctorAppointments",
+          "callee": "root.get",
+          "lineNumber": 49
+        }
+      ],
+      "metrics": {
+        "importCount": 2,
+        "exportCount": 2,
+        "functionCount": 2,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "src/main/java/com/clinic/service/AppointmentStatusAutomationService.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 34,
+      "nonEmptyLines": 30,
+      "functions": [
+        {
+          "name": "markBookedAsNotVisitedAfterEod",
+          "startLine": 19,
+          "endLine": 33,
+          "params": []
+        }
+      ],
+      "classes": [
+        {
+          "name": "AppointmentStatusAutomationService",
+          "startLine": 11,
+          "endLine": 34,
+          "methods": [
+            "markBookedAsNotVisitedAfterEod"
+          ],
+          "properties": [
+            "appointmentRepository",
+            "appTime"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "markBookedAsNotVisitedAfterEod",
+          "line": 19,
+          "isDefault": false
+        },
+        {
+          "name": "AppointmentStatusAutomationService",
+          "line": 11,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "markBookedAsNotVisitedAfterEod",
+          "callee": "appointmentRepository.bulkUpdateStatusBeforeDate",
+          "lineNumber": 25
+        },
+        {
+          "caller": "markBookedAsNotVisitedAfterEod",
+          "callee": "AppointmentStatus.BOOKED.name",
+          "lineNumber": 26
+        },
+        {
+          "caller": "markBookedAsNotVisitedAfterEod",
+          "callee": "AppointmentStatus.NOT_VISITED.name",
+          "lineNumber": 27
+        },
+        {
+          "caller": "markBookedAsNotVisitedAfterEod",
+          "callee": "appTime.today",
+          "lineNumber": 28
+        },
+        {
+          "caller": "markBookedAsNotVisitedAfterEod",
+          "callee": "log.info",
+          "lineNumber": 31
+        }
+      ],
+      "metrics": {
+        "importCount": 2,
+        "exportCount": 2,
+        "functionCount": 1,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "src/test/java/com/clinic/service/AppointmentServiceConcurrencyTest.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 151,
+      "nonEmptyLines": 135,
+      "functions": [
+        {
+          "name": "concurrentBooking_onlyOneSucceeds_otherGetsConflict",
+          "startLine": 32,
+          "endLine": 150,
+          "params": []
+        }
+      ],
+      "classes": [
+        {
+          "name": "AppointmentServiceConcurrencyTest",
+          "startLine": 30,
+          "endLine": 151,
+          "methods": [
+            "concurrentBooking_onlyOneSucceeds_otherGetsConflict"
+          ],
+          "properties": []
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "concurrentBooking_onlyOneSucceeds_otherGetsConflict",
+          "callee": "Mockito.mock",
+          "lineNumber": 34
+        },
+        {
+          "caller": "concurrentBooking_onlyOneSucceeds_otherGetsConflict",
+          "callee": "Mockito.mock",
+          "lineNumber": 35
+        },
+        {
+          "caller": "concurrentBooking_onlyOneSucceeds_otherGetsConflict",
+          "callee": "Mockito.mock",
+          "lineNumber": 36
+        },
+        {
+          "caller": "concurrentBooking_onlyOneSucceeds_otherGetsConflict",
+          "callee": "Mockito.mock",
+          "lineNumber": 37
+        },
+        {
+          "caller": "concurrentBooking_onlyOneSucceeds_otherGetsConflict",
+          "callee": "Mockito.mock",
+          "lineNumber": 38
+        },
+        {
+          "caller": "concurrentBooking_onlyOneSucceeds_otherGetsConflict",
+          "callee": "Mockito.mock",
+          "lineNumber": 39
+        },
+        {
+          "caller": "concurrentBooking_onlyOneSucceeds_otherGetsConflict",
+          "callee": "Mockito.mock",
+          "lineNumber": 40
+        },
+        {
+          "caller": "concurrentBooking_onlyOneSucceeds_otherGetsConflict",
+          "callee": "Mockito.mock",
+          "lineNumber": 41
+        },
+        {
+          "caller": "concurrentBooking_onlyOneSucceeds_otherGetsConflict",
+          "callee": "Mockito.mock",
+          "lineNumber": 42
+        },
+        {
+          "caller": "concurrentBooking_onlyOneSucceeds_otherGetsConflict",
+          "callee": "Mockito.mock",
+          "lineNumber": 43
+        },
+        {
+          "caller": "concurrentBooking_onlyOneSucceeds_otherGetsConflict",
+          "callee": "new AppointmentService",
+          "lineNumber": 45
+        },
+        {
+          "caller": "concurrentBooking_onlyOneSucceeds_otherGetsConflict",
+          "callee": "new SimpleMeterRegistry",
+          "lineNumber": 56
+        },
+        {
+          "caller": "concurrentBooking_onlyOneSucceeds_otherGetsConflict",
+          "callee": "new Slot",
+          "lineNumber": 58
+        },
+        {
+          "caller": "concurrentBooking_onlyOneSucceeds_otherGetsConflict",
+          "callee": "slot.setId",
+          "lineNumber": 59
+        },
+        {
+          "caller": "concurrentBooking_onlyOneSucceeds_otherGetsConflict",
+          "callee": "slot.setSlotDate",
+          "lineNumber": 60
+        },
+        {
+          "caller": "concurrentBooking_onlyOneSucceeds_otherGetsConflict",
+          "callee": "LocalDate.of",
+          "lineNumber": 60
+        },
+        {
+          "caller": "concurrentBooking_onlyOneSucceeds_otherGetsConflict",
+          "callee": "slot.setStartTime",
+          "lineNumber": 61
+        },
+        {
+          "caller": "concurrentBooking_onlyOneSucceeds_otherGetsConflict",
+          "callee": "LocalTime.of",
+          "lineNumber": 61
+        },
+        {
+          "caller": "concurrentBooking_onlyOneSucceeds_otherGetsConflict",
+          "callee": "slot.setMaxPatients",
+          "lineNumber": 62
+        },
+        {
+          "caller": "concurrentBooking_onlyOneSucceeds_otherGetsConflict",
+          "callee": "slot.setBookedCount",
+          "lineNumber": 63
+        },
+        {
+          "caller": "concurrentBooking_onlyOneSucceeds_otherGetsConflict",
+          "callee": "slot.setIsBlocked",
+          "lineNumber": 64
+        },
+        {
+          "caller": "concurrentBooking_onlyOneSucceeds_otherGetsConflict",
+          "callee": "new Patient",
+          "lineNumber": 66
+        },
+        {
+          "caller": "concurrentBooking_onlyOneSucceeds_otherGetsConflict",
+          "callee": "patient.setId",
+          "lineNumber": 67
+        },
+        {
+          "caller": "concurrentBooking_onlyOneSucceeds_otherGetsConflict",
+          "callee": "patient.setPhone",
+          "lineNumber": 68
+        },
+        {
+          "caller": "concurrentBooking_onlyOneSucceeds_otherGetsConflict",
+          "callee": "patient.setName",
+          "lineNumber": 69
+        },
+        {
+          "caller": "concurrentBooking_onlyOneSucceeds_otherGetsConflict",
+          "callee": "patient.setAge",
+          "lineNumber": 70
+        },
+        {
+          "caller": "concurrentBooking_onlyOneSucceeds_otherGetsConflict",
+          "callee": "patient.setGender",
+          "lineNumber": 71
+        },
+        {
+          "caller": "concurrentBooking_onlyOneSucceeds_otherGetsConflict",
+          "callee": "Mockito.when(slotRepository.findByIdForUpdate(11L)).thenReturn",
+          "lineNumber": 73
+        },
+        {
+          "caller": "concurrentBooking_onlyOneSucceeds_otherGetsConflict",
+          "callee": "Mockito.when",
+          "lineNumber": 73
+        },
+        {
+          "caller": "concurrentBooking_onlyOneSucceeds_otherGetsConflict",
+          "callee": "slotRepository.findByIdForUpdate",
+          "lineNumber": 73
+        },
+        {
+          "caller": "concurrentBooking_onlyOneSucceeds_otherGetsConflict",
+          "callee": "Optional.of",
+          "lineNumber": 73
+        },
+        {
+          "caller": "concurrentBooking_onlyOneSucceeds_otherGetsConflict",
+          "callee": "Mockito.when(patientRepository.findByIdentityForUpdate(\"+919999999999\", \"John\", 30, Gender.MALE)).thenReturn",
+          "lineNumber": 74
+        },
+        {
+          "caller": "concurrentBooking_onlyOneSucceeds_otherGetsConflict",
+          "callee": "Mockito.when",
+          "lineNumber": 74
+        },
+        {
+          "caller": "concurrentBooking_onlyOneSucceeds_otherGetsConflict",
+          "callee": "patientRepository.findByIdentityForUpdate",
+          "lineNumber": 74
+        },
+        {
+          "caller": "concurrentBooking_onlyOneSucceeds_otherGetsConflict",
+          "callee": "Optional.of",
+          "lineNumber": 75
+        },
+        {
+          "caller": "concurrentBooking_onlyOneSucceeds_otherGetsConflict",
+          "callee": "Mockito.when(appointmentRepository.findFirstByPatientIdAndSlotSlotDateAndStatusNotOrderBySlotStartTimeAsc(\n                        5L,\n                        LocalDate.of(2026, 5, 28),\n                        AppointmentStatus.CANCELLED)).thenReturn",
+          "lineNumber": 76
+        },
+        {
+          "caller": "concurrentBooking_onlyOneSucceeds_otherGetsConflict",
+          "callee": "Mockito.when",
+          "lineNumber": 76
+        },
+        {
+          "caller": "concurrentBooking_onlyOneSucceeds_otherGetsConflict",
+          "callee": "appointmentRepository.findFirstByPatientIdAndSlotSlotDateAndStatusNotOrderBySlotStartTimeAsc",
+          "lineNumber": 76
+        },
+        {
+          "caller": "concurrentBooking_onlyOneSucceeds_otherGetsConflict",
+          "callee": "LocalDate.of",
+          "lineNumber": 78
+        },
+        {
+          "caller": "concurrentBooking_onlyOneSucceeds_otherGetsConflict",
+          "callee": "Optional.empty",
+          "lineNumber": 80
+        },
+        {
+          "caller": "concurrentBooking_onlyOneSucceeds_otherGetsConflict",
+          "callee": "new AtomicInteger",
+          "lineNumber": 82
+        },
+        {
+          "caller": "concurrentBooking_onlyOneSucceeds_otherGetsConflict",
+          "callee": "Mockito.when(appointmentRepository.saveAndFlush(Mockito.any(Appointment.class))).thenAnswer",
+          "lineNumber": 83
+        },
+        {
+          "caller": "concurrentBooking_onlyOneSucceeds_otherGetsConflict",
+          "callee": "Mockito.when",
+          "lineNumber": 83
+        },
+        {
+          "caller": "concurrentBooking_onlyOneSucceeds_otherGetsConflict",
+          "callee": "appointmentRepository.saveAndFlush",
+          "lineNumber": 83
+        },
+        {
+          "caller": "concurrentBooking_onlyOneSucceeds_otherGetsConflict",
+          "callee": "Mockito.any",
+          "lineNumber": 83
+        },
+        {
+          "caller": "concurrentBooking_onlyOneSucceeds_otherGetsConflict",
+          "callee": "saveCounter.incrementAndGet",
+          "lineNumber": 84
+        },
+        {
+          "caller": "concurrentBooking_onlyOneSucceeds_otherGetsConflict",
+          "callee": "invocation.getArgument",
+          "lineNumber": 86
+        },
+        {
+          "caller": "concurrentBooking_onlyOneSucceeds_otherGetsConflict",
+          "callee": "appointment.setId",
+          "lineNumber": 87
+        },
+        {
+          "caller": "concurrentBooking_onlyOneSucceeds_otherGetsConflict",
+          "callee": "new DataIntegrityViolationException",
+          "lineNumber": 90
+        },
+        {
+          "caller": "concurrentBooking_onlyOneSucceeds_otherGetsConflict",
+          "callee": "Mockito.when(slotRepository.save(Mockito.any(Slot.class))).thenAnswer",
+          "lineNumber": 93
+        },
+        {
+          "caller": "concurrentBooking_onlyOneSucceeds_otherGetsConflict",
+          "callee": "Mockito.when",
+          "lineNumber": 93
+        },
+        {
+          "caller": "concurrentBooking_onlyOneSucceeds_otherGetsConflict",
+          "callee": "slotRepository.save",
+          "lineNumber": 93
+        },
+        {
+          "caller": "concurrentBooking_onlyOneSucceeds_otherGetsConflict",
+          "callee": "Mockito.any",
+          "lineNumber": 93
+        },
+        {
+          "caller": "concurrentBooking_onlyOneSucceeds_otherGetsConflict",
+          "callee": "invocation.getArgument",
+          "lineNumber": 93
+        },
+        {
+          "caller": "concurrentBooking_onlyOneSucceeds_otherGetsConflict",
+          "callee": "Mockito.when(outboxService.enqueue(Mockito.anyString(), Mockito.anyString(), Mockito.anyString(), Mockito.any())).thenReturn",
+          "lineNumber": 94
+        },
+        {
+          "caller": "concurrentBooking_onlyOneSucceeds_otherGetsConflict",
+          "callee": "Mockito.when",
+          "lineNumber": 94
+        },
+        {
+          "caller": "concurrentBooking_onlyOneSucceeds_otherGetsConflict",
+          "callee": "outboxService.enqueue",
+          "lineNumber": 94
+        },
+        {
+          "caller": "concurrentBooking_onlyOneSucceeds_otherGetsConflict",
+          "callee": "Mockito.anyString",
+          "lineNumber": 94
+        },
+        {
+          "caller": "concurrentBooking_onlyOneSucceeds_otherGetsConflict",
+          "callee": "Mockito.anyString",
+          "lineNumber": 94
+        },
+        {
+          "caller": "concurrentBooking_onlyOneSucceeds_otherGetsConflict",
+          "callee": "Mockito.anyString",
+          "lineNumber": 94
+        },
+        {
+          "caller": "concurrentBooking_onlyOneSucceeds_otherGetsConflict",
+          "callee": "Mockito.any",
+          "lineNumber": 94
+        },
+        {
+          "caller": "concurrentBooking_onlyOneSucceeds_otherGetsConflict",
+          "callee": "Mockito.when(appointmentMapper.toResponse(Mockito.any(Appointment.class))).thenAnswer",
+          "lineNumber": 96
+        },
+        {
+          "caller": "concurrentBooking_onlyOneSucceeds_otherGetsConflict",
+          "callee": "Mockito.when",
+          "lineNumber": 96
+        },
+        {
+          "caller": "concurrentBooking_onlyOneSucceeds_otherGetsConflict",
+          "callee": "appointmentMapper.toResponse",
+          "lineNumber": 96
+        },
+        {
+          "caller": "concurrentBooking_onlyOneSucceeds_otherGetsConflict",
+          "callee": "Mockito.any",
+          "lineNumber": 96
+        },
+        {
+          "caller": "concurrentBooking_onlyOneSucceeds_otherGetsConflict",
+          "callee": "invocation.getArgument",
+          "lineNumber": 97
+        },
+        {
+          "caller": "concurrentBooking_onlyOneSucceeds_otherGetsConflict",
+          "callee": "new AppointmentResponse",
+          "lineNumber": 98
+        },
+        {
+          "caller": "concurrentBooking_onlyOneSucceeds_otherGetsConflict",
+          "callee": "response.setId",
+          "lineNumber": 99
+        },
+        {
+          "caller": "concurrentBooking_onlyOneSucceeds_otherGetsConflict",
+          "callee": "appointment.getId",
+          "lineNumber": 99
+        },
+        {
+          "caller": "concurrentBooking_onlyOneSucceeds_otherGetsConflict",
+          "callee": "new AppointmentBookingRequest",
+          "lineNumber": 103
+        },
+        {
+          "caller": "concurrentBooking_onlyOneSucceeds_otherGetsConflict",
+          "callee": "request.setSlotId",
+          "lineNumber": 104
+        },
+        {
+          "caller": "concurrentBooking_onlyOneSucceeds_otherGetsConflict",
+          "callee": "request.setName",
+          "lineNumber": 105
+        },
+        {
+          "caller": "concurrentBooking_onlyOneSucceeds_otherGetsConflict",
+          "callee": "request.setPhone",
+          "lineNumber": 106
+        },
+        {
+          "caller": "concurrentBooking_onlyOneSucceeds_otherGetsConflict",
+          "callee": "request.setAge",
+          "lineNumber": 107
+        },
+        {
+          "caller": "concurrentBooking_onlyOneSucceeds_otherGetsConflict",
+          "callee": "request.setGender",
+          "lineNumber": 108
+        },
+        {
+          "caller": "concurrentBooking_onlyOneSucceeds_otherGetsConflict",
+          "callee": "new CountDownLatch",
+          "lineNumber": 110
+        },
+        {
+          "caller": "concurrentBooking_onlyOneSucceeds_otherGetsConflict",
+          "callee": "Executors.newFixedThreadPool",
+          "lineNumber": 111
+        },
+        {
+          "caller": "concurrentBooking_onlyOneSucceeds_otherGetsConflict",
+          "callee": "start.await",
+          "lineNumber": 114
+        },
+        {
+          "caller": "concurrentBooking_onlyOneSucceeds_otherGetsConflict",
+          "callee": "appointmentService.bookAppointment",
+          "lineNumber": 115
+        },
+        {
+          "caller": "concurrentBooking_onlyOneSucceeds_otherGetsConflict",
+          "callee": "start.await",
+          "lineNumber": 118
+        },
+        {
+          "caller": "concurrentBooking_onlyOneSucceeds_otherGetsConflict",
+          "callee": "appointmentService.bookAppointment",
+          "lineNumber": 119
+        },
+        {
+          "caller": "concurrentBooking_onlyOneSucceeds_otherGetsConflict",
+          "callee": "executor.submit",
+          "lineNumber": 122
+        },
+        {
+          "caller": "concurrentBooking_onlyOneSucceeds_otherGetsConflict",
+          "callee": "executor.submit",
+          "lineNumber": 123
+        },
+        {
+          "caller": "concurrentBooking_onlyOneSucceeds_otherGetsConflict",
+          "callee": "start.countDown",
+          "lineNumber": 124
+        },
+        {
+          "caller": "concurrentBooking_onlyOneSucceeds_otherGetsConflict",
+          "callee": "future.get",
+          "lineNumber": 130
+        },
+        {
+          "caller": "concurrentBooking_onlyOneSucceeds_otherGetsConflict",
+          "callee": "ex.getCause",
+          "lineNumber": 135
+        },
+        {
+          "caller": "concurrentBooking_onlyOneSucceeds_otherGetsConflict",
+          "callee": "ex.getCause",
+          "lineNumber": 135
+        },
+        {
+          "caller": "concurrentBooking_onlyOneSucceeds_otherGetsConflict",
+          "callee": "executor.shutdownNow",
+          "lineNumber": 144
+        },
+        {
+          "caller": "concurrentBooking_onlyOneSucceeds_otherGetsConflict",
+          "callee": "Assertions.assertEquals",
+          "lineNumber": 146
+        },
+        {
+          "caller": "concurrentBooking_onlyOneSucceeds_otherGetsConflict",
+          "callee": "Assertions.assertEquals",
+          "lineNumber": 147
+        },
+        {
+          "caller": "concurrentBooking_onlyOneSucceeds_otherGetsConflict",
+          "callee": "Mockito.verify(outboxService, Mockito.times(1)).enqueue",
+          "lineNumber": 148
+        },
+        {
+          "caller": "concurrentBooking_onlyOneSucceeds_otherGetsConflict",
+          "callee": "Mockito.verify",
+          "lineNumber": 148
+        },
+        {
+          "caller": "concurrentBooking_onlyOneSucceeds_otherGetsConflict",
+          "callee": "Mockito.times",
+          "lineNumber": 148
+        },
+        {
+          "caller": "concurrentBooking_onlyOneSucceeds_otherGetsConflict",
+          "callee": "Mockito.eq",
+          "lineNumber": 149
+        },
+        {
+          "caller": "concurrentBooking_onlyOneSucceeds_otherGetsConflict",
+          "callee": "Mockito.anyString",
+          "lineNumber": 149
+        },
+        {
+          "caller": "concurrentBooking_onlyOneSucceeds_otherGetsConflict",
+          "callee": "Mockito.eq",
+          "lineNumber": 149
+        },
+        {
+          "caller": "concurrentBooking_onlyOneSucceeds_otherGetsConflict",
+          "callee": "Mockito.any",
+          "lineNumber": 149
+        }
+      ],
+      "metrics": {
+        "importCount": 12,
+        "exportCount": 0,
+        "functionCount": 1,
+        "classCount": 1
+      }
+    }
+  ]
+}

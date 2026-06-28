@@ -1,0 +1,1090 @@
+{
+  "nodes": [
+    {
+      "id": "file:.understand-anything/.understandignore",
+      "type": "file",
+      "name": ".understandignore",
+      "filePath": ".understand-anything/.understandignore",
+      "summary": "code file providing functionality for the project.",
+      "tags": [
+        "code",
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:src/main/java/com/clinic/ClinicBookingApplication.java",
+      "type": "file",
+      "name": "ClinicBookingApplication.java",
+      "filePath": "src/main/java/com/clinic/ClinicBookingApplication.java",
+      "summary": "Java class implementing helper logic or core functionality for ClinicBookingApplication.",
+      "tags": [
+        "code",
+        "java",
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/main/java/com/clinic/ClinicBookingApplication.java:main",
+      "type": "function",
+      "name": "main",
+      "filePath": "src/main/java/com/clinic/ClinicBookingApplication.java",
+      "lineRange": [
+        9,
+        12
+      ],
+      "summary": "Class method implementing main functionality.",
+      "tags": [
+        "function",
+        "method",
+        "java"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:src/main/java/com/clinic/ClinicBookingApplication.java:ClinicBookingApplication",
+      "type": "class",
+      "name": "ClinicBookingApplication",
+      "filePath": "src/main/java/com/clinic/ClinicBookingApplication.java",
+      "lineRange": [
+        6,
+        13
+      ],
+      "summary": "Java class defining the ClinicBookingApplication component.",
+      "tags": [
+        "class",
+        "model",
+        "java"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:src/main/java/com/clinic/config/AsyncConfig.java",
+      "type": "file",
+      "name": "AsyncConfig.java",
+      "filePath": "src/main/java/com/clinic/config/AsyncConfig.java",
+      "summary": "Spring Configuration class managing bean definitions and setup configurations for the application.",
+      "tags": [
+        "code",
+        "java",
+        "configuration",
+        "setup"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/main/java/com/clinic/config/AsyncConfig.java:notificationExecutor",
+      "type": "function",
+      "name": "notificationExecutor",
+      "filePath": "src/main/java/com/clinic/config/AsyncConfig.java",
+      "lineRange": [
+        15,
+        24
+      ],
+      "summary": "Class method implementing notificationExecutor functionality.",
+      "tags": [
+        "function",
+        "method",
+        "java"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:src/main/java/com/clinic/config/AsyncConfig.java:AsyncConfig",
+      "type": "class",
+      "name": "AsyncConfig",
+      "filePath": "src/main/java/com/clinic/config/AsyncConfig.java",
+      "lineRange": [
+        10,
+        25
+      ],
+      "summary": "Java class defining the AsyncConfig component.",
+      "tags": [
+        "class",
+        "model",
+        "java"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:src/main/java/com/clinic/config/HttpClientConfig.java",
+      "type": "file",
+      "name": "HttpClientConfig.java",
+      "filePath": "src/main/java/com/clinic/config/HttpClientConfig.java",
+      "summary": "Spring Configuration class managing bean definitions and setup configurations for the application.",
+      "tags": [
+        "code",
+        "java",
+        "configuration",
+        "setup"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/main/java/com/clinic/config/HttpClientConfig.java:restClientBuilder",
+      "type": "function",
+      "name": "restClientBuilder",
+      "filePath": "src/main/java/com/clinic/config/HttpClientConfig.java",
+      "lineRange": [
+        14,
+        27
+      ],
+      "summary": "Class method implementing restClientBuilder functionality.",
+      "tags": [
+        "function",
+        "method",
+        "java"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:src/main/java/com/clinic/config/HttpClientConfig.java:HttpClientConfig",
+      "type": "class",
+      "name": "HttpClientConfig",
+      "filePath": "src/main/java/com/clinic/config/HttpClientConfig.java",
+      "lineRange": [
+        11,
+        28
+      ],
+      "summary": "Java class defining the HttpClientConfig component.",
+      "tags": [
+        "class",
+        "model",
+        "java"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:src/main/java/com/clinic/config/SchedulingConfig.java",
+      "type": "file",
+      "name": "SchedulingConfig.java",
+      "filePath": "src/main/java/com/clinic/config/SchedulingConfig.java",
+      "summary": "Spring Configuration class managing bean definitions and setup configurations for the application.",
+      "tags": [
+        "code",
+        "java",
+        "configuration",
+        "setup"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:src/main/java/com/clinic/config/SchedulingConfig.java:SchedulingConfig",
+      "type": "class",
+      "name": "SchedulingConfig",
+      "filePath": "src/main/java/com/clinic/config/SchedulingConfig.java",
+      "lineRange": [
+        6,
+        9
+      ],
+      "summary": "Java class defining the SchedulingConfig component.",
+      "tags": [
+        "class",
+        "model",
+        "java"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:src/main/java/com/clinic/config/TimeConfig.java",
+      "type": "file",
+      "name": "TimeConfig.java",
+      "filePath": "src/main/java/com/clinic/config/TimeConfig.java",
+      "summary": "Spring Configuration class managing bean definitions and setup configurations for the application.",
+      "tags": [
+        "code",
+        "java",
+        "configuration",
+        "setup"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/main/java/com/clinic/config/TimeConfig.java:appZoneId",
+      "type": "function",
+      "name": "appZoneId",
+      "filePath": "src/main/java/com/clinic/config/TimeConfig.java",
+      "lineRange": [
+        12,
+        15
+      ],
+      "summary": "Class method implementing appZoneId functionality.",
+      "tags": [
+        "function",
+        "method",
+        "java"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/main/java/com/clinic/config/TimeConfig.java:appClock",
+      "type": "function",
+      "name": "appClock",
+      "filePath": "src/main/java/com/clinic/config/TimeConfig.java",
+      "lineRange": [
+        17,
+        20
+      ],
+      "summary": "Class method implementing appClock functionality.",
+      "tags": [
+        "function",
+        "method",
+        "java"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:src/main/java/com/clinic/config/TimeConfig.java:TimeConfig",
+      "type": "class",
+      "name": "TimeConfig",
+      "filePath": "src/main/java/com/clinic/config/TimeConfig.java",
+      "lineRange": [
+        9,
+        21
+      ],
+      "summary": "Java class defining the TimeConfig component.",
+      "tags": [
+        "class",
+        "model",
+        "java"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:src/main/java/com/clinic/controller/HealthController.java",
+      "type": "file",
+      "name": "HealthController.java",
+      "filePath": "src/main/java/com/clinic/controller/HealthController.java",
+      "summary": "Spring REST Controller exposing API endpoints for Health operations.",
+      "tags": [
+        "code",
+        "java",
+        "api-handler",
+        "controller",
+        "spring-boot"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/main/java/com/clinic/controller/HealthController.java:health",
+      "type": "function",
+      "name": "health",
+      "filePath": "src/main/java/com/clinic/controller/HealthController.java",
+      "lineRange": [
+        12,
+        15
+      ],
+      "summary": "Class method implementing health functionality.",
+      "tags": [
+        "function",
+        "method",
+        "java"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:src/main/java/com/clinic/controller/HealthController.java:HealthController",
+      "type": "class",
+      "name": "HealthController",
+      "filePath": "src/main/java/com/clinic/controller/HealthController.java",
+      "lineRange": [
+        8,
+        16
+      ],
+      "summary": "Java class defining the HealthController component.",
+      "tags": [
+        "class",
+        "model",
+        "java"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:src/main/java/com/clinic/exception/GlobalExceptionHandler.java",
+      "type": "file",
+      "name": "GlobalExceptionHandler.java",
+      "filePath": "src/main/java/com/clinic/exception/GlobalExceptionHandler.java",
+      "summary": "Exception definition or global controller advice handling application-level errors.",
+      "tags": [
+        "code",
+        "java",
+        "exception-handling",
+        "error-handling"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:src/main/java/com/clinic/exception/GlobalExceptionHandler.java:handleNotFound",
+      "type": "function",
+      "name": "handleNotFound",
+      "filePath": "src/main/java/com/clinic/exception/GlobalExceptionHandler.java",
+      "lineRange": [
+        29,
+        32
+      ],
+      "summary": "Class method implementing handleNotFound functionality.",
+      "tags": [
+        "function",
+        "method",
+        "java"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/main/java/com/clinic/exception/GlobalExceptionHandler.java:handleSlotFull",
+      "type": "function",
+      "name": "handleSlotFull",
+      "filePath": "src/main/java/com/clinic/exception/GlobalExceptionHandler.java",
+      "lineRange": [
+        34,
+        37
+      ],
+      "summary": "Class method implementing handleSlotFull functionality.",
+      "tags": [
+        "function",
+        "method",
+        "java"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/main/java/com/clinic/exception/GlobalExceptionHandler.java:handleConflict",
+      "type": "function",
+      "name": "handleConflict",
+      "filePath": "src/main/java/com/clinic/exception/GlobalExceptionHandler.java",
+      "lineRange": [
+        39,
+        42
+      ],
+      "summary": "Class method implementing handleConflict functionality.",
+      "tags": [
+        "function",
+        "method",
+        "java"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/main/java/com/clinic/exception/GlobalExceptionHandler.java:handleBadRequest",
+      "type": "function",
+      "name": "handleBadRequest",
+      "filePath": "src/main/java/com/clinic/exception/GlobalExceptionHandler.java",
+      "lineRange": [
+        44,
+        47
+      ],
+      "summary": "Class method implementing handleBadRequest functionality.",
+      "tags": [
+        "function",
+        "method",
+        "java"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/main/java/com/clinic/exception/GlobalExceptionHandler.java:handleInvalidInput",
+      "type": "function",
+      "name": "handleInvalidInput",
+      "filePath": "src/main/java/com/clinic/exception/GlobalExceptionHandler.java",
+      "lineRange": [
+        49,
+        52
+      ],
+      "summary": "Class method implementing handleInvalidInput functionality.",
+      "tags": [
+        "function",
+        "method",
+        "java"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/main/java/com/clinic/exception/GlobalExceptionHandler.java:handleUnauthorized",
+      "type": "function",
+      "name": "handleUnauthorized",
+      "filePath": "src/main/java/com/clinic/exception/GlobalExceptionHandler.java",
+      "lineRange": [
+        54,
+        57
+      ],
+      "summary": "Class method implementing handleUnauthorized functionality.",
+      "tags": [
+        "function",
+        "method",
+        "java"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/main/java/com/clinic/exception/GlobalExceptionHandler.java:handleRateLimit",
+      "type": "function",
+      "name": "handleRateLimit",
+      "filePath": "src/main/java/com/clinic/exception/GlobalExceptionHandler.java",
+      "lineRange": [
+        59,
+        62
+      ],
+      "summary": "Class method implementing handleRateLimit functionality.",
+      "tags": [
+        "function",
+        "method",
+        "java"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/main/java/com/clinic/exception/GlobalExceptionHandler.java:handleValidation",
+      "type": "function",
+      "name": "handleValidation",
+      "filePath": "src/main/java/com/clinic/exception/GlobalExceptionHandler.java",
+      "lineRange": [
+        64,
+        71
+      ],
+      "summary": "Class method implementing handleValidation functionality.",
+      "tags": [
+        "function",
+        "method",
+        "java"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/main/java/com/clinic/exception/GlobalExceptionHandler.java:handleRequestBindingErrors",
+      "type": "function",
+      "name": "handleRequestBindingErrors",
+      "filePath": "src/main/java/com/clinic/exception/GlobalExceptionHandler.java",
+      "lineRange": [
+        73,
+        82
+      ],
+      "summary": "Class method implementing handleRequestBindingErrors functionality.",
+      "tags": [
+        "function",
+        "method",
+        "java"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/main/java/com/clinic/exception/GlobalExceptionHandler.java:handleGeneric",
+      "type": "function",
+      "name": "handleGeneric",
+      "filePath": "src/main/java/com/clinic/exception/GlobalExceptionHandler.java",
+      "lineRange": [
+        84,
+        88
+      ],
+      "summary": "Class method implementing handleGeneric functionality.",
+      "tags": [
+        "function",
+        "method",
+        "java"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/main/java/com/clinic/exception/GlobalExceptionHandler.java:build",
+      "type": "function",
+      "name": "build",
+      "filePath": "src/main/java/com/clinic/exception/GlobalExceptionHandler.java",
+      "lineRange": [
+        90,
+        105
+      ],
+      "summary": "Class method implementing build functionality.",
+      "tags": [
+        "function",
+        "method",
+        "java"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "class:src/main/java/com/clinic/exception/GlobalExceptionHandler.java:GlobalExceptionHandler",
+      "type": "class",
+      "name": "GlobalExceptionHandler",
+      "filePath": "src/main/java/com/clinic/exception/GlobalExceptionHandler.java",
+      "lineRange": [
+        22,
+        106
+      ],
+      "summary": "Java class defining the GlobalExceptionHandler component.",
+      "tags": [
+        "class",
+        "model",
+        "java"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:src/main/java/com/clinic/exception/InvalidInputException.java",
+      "type": "file",
+      "name": "InvalidInputException.java",
+      "filePath": "src/main/java/com/clinic/exception/InvalidInputException.java",
+      "summary": "Exception definition or global controller advice handling application-level errors.",
+      "tags": [
+        "code",
+        "java",
+        "exception-handling",
+        "error-handling"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/main/java/com/clinic/exception/InvalidInputException.java:InvalidInputException",
+      "type": "function",
+      "name": "InvalidInputException",
+      "filePath": "src/main/java/com/clinic/exception/InvalidInputException.java",
+      "lineRange": [
+        5,
+        7
+      ],
+      "summary": "Class method implementing InvalidInputException functionality.",
+      "tags": [
+        "function",
+        "method",
+        "java"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:src/main/java/com/clinic/exception/InvalidInputException.java:InvalidInputException",
+      "type": "class",
+      "name": "InvalidInputException",
+      "filePath": "src/main/java/com/clinic/exception/InvalidInputException.java",
+      "lineRange": [
+        3,
+        8
+      ],
+      "summary": "Java class defining the InvalidInputException component.",
+      "tags": [
+        "class",
+        "model",
+        "java"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:src/main/java/com/clinic/exception/RateLimitExceededException.java",
+      "type": "file",
+      "name": "RateLimitExceededException.java",
+      "filePath": "src/main/java/com/clinic/exception/RateLimitExceededException.java",
+      "summary": "Exception definition or global controller advice handling application-level errors.",
+      "tags": [
+        "code",
+        "java",
+        "exception-handling",
+        "error-handling"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/main/java/com/clinic/exception/RateLimitExceededException.java:RateLimitExceededException",
+      "type": "function",
+      "name": "RateLimitExceededException",
+      "filePath": "src/main/java/com/clinic/exception/RateLimitExceededException.java",
+      "lineRange": [
+        5,
+        7
+      ],
+      "summary": "Class method implementing RateLimitExceededException functionality.",
+      "tags": [
+        "function",
+        "method",
+        "java"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:src/main/java/com/clinic/exception/RateLimitExceededException.java:RateLimitExceededException",
+      "type": "class",
+      "name": "RateLimitExceededException",
+      "filePath": "src/main/java/com/clinic/exception/RateLimitExceededException.java",
+      "lineRange": [
+        3,
+        8
+      ],
+      "summary": "Java class defining the RateLimitExceededException component.",
+      "tags": [
+        "class",
+        "model",
+        "java"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:src/main/java/com/clinic/security/JwtPrincipalClaims.java",
+      "type": "file",
+      "name": "JwtPrincipalClaims.java",
+      "filePath": "src/main/java/com/clinic/security/JwtPrincipalClaims.java",
+      "summary": "Spring Security filter, service, or configuration handling authentication and access control.",
+      "tags": [
+        "code",
+        "java",
+        "security",
+        "authentication",
+        "authorization"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:src/main/java/com/clinic/security/LoginRateLimitService.java",
+      "type": "file",
+      "name": "LoginRateLimitService.java",
+      "filePath": "src/main/java/com/clinic/security/LoginRateLimitService.java",
+      "summary": "Service class implementing business logic and transactional workflows for LoginRateLimit.",
+      "tags": [
+        "code",
+        "java",
+        "service-layer",
+        "business-logic",
+        "spring-boot"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/main/java/com/clinic/security/LoginRateLimitService.java:isAllowed",
+      "type": "function",
+      "name": "isAllowed",
+      "filePath": "src/main/java/com/clinic/security/LoginRateLimitService.java",
+      "lineRange": [
+        16,
+        27
+      ],
+      "summary": "Class method implementing isAllowed functionality.",
+      "tags": [
+        "function",
+        "method",
+        "java"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:src/main/java/com/clinic/security/LoginRateLimitService.java:LoginRateLimitService",
+      "type": "class",
+      "name": "LoginRateLimitService",
+      "filePath": "src/main/java/com/clinic/security/LoginRateLimitService.java",
+      "lineRange": [
+        9,
+        28
+      ],
+      "summary": "Java class defining the LoginRateLimitService component.",
+      "tags": [
+        "class",
+        "model",
+        "java"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:src/main/java/com/clinic/security/RequestContextLoggingFilter.java",
+      "type": "file",
+      "name": "RequestContextLoggingFilter.java",
+      "filePath": "src/main/java/com/clinic/security/RequestContextLoggingFilter.java",
+      "summary": "Spring Security filter, service, or configuration handling authentication and access control.",
+      "tags": [
+        "code",
+        "java",
+        "security",
+        "authentication",
+        "authorization"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:src/main/java/com/clinic/security/RequestContextLoggingFilter.java:RequestContextLoggingFilter",
+      "type": "function",
+      "name": "RequestContextLoggingFilter",
+      "filePath": "src/main/java/com/clinic/security/RequestContextLoggingFilter.java",
+      "lineRange": [
+        26,
+        30
+      ],
+      "summary": "Class method implementing RequestContextLoggingFilter functionality.",
+      "tags": [
+        "function",
+        "method",
+        "java"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/main/java/com/clinic/security/RequestContextLoggingFilter.java:doFilterInternal",
+      "type": "function",
+      "name": "doFilterInternal",
+      "filePath": "src/main/java/com/clinic/security/RequestContextLoggingFilter.java",
+      "lineRange": [
+        32,
+        53
+      ],
+      "summary": "Class method implementing doFilterInternal functionality.",
+      "tags": [
+        "function",
+        "method",
+        "java"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "class:src/main/java/com/clinic/security/RequestContextLoggingFilter.java:RequestContextLoggingFilter",
+      "type": "class",
+      "name": "RequestContextLoggingFilter",
+      "filePath": "src/main/java/com/clinic/security/RequestContextLoggingFilter.java",
+      "lineRange": [
+        17,
+        54
+      ],
+      "summary": "Java class defining the RequestContextLoggingFilter component.",
+      "tags": [
+        "class",
+        "model",
+        "java"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:src/main/java/com/clinic/service/AppointmentNotificationOutboxPayload.java",
+      "type": "file",
+      "name": "AppointmentNotificationOutboxPayload.java",
+      "filePath": "src/main/java/com/clinic/service/AppointmentNotificationOutboxPayload.java",
+      "summary": "Java class implementing helper logic or core functionality for AppointmentNotificationOutboxPayload.",
+      "tags": [
+        "code",
+        "java",
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:src/main/java/com/clinic/service/SlotGenerationSchedulerService.java",
+      "type": "file",
+      "name": "SlotGenerationSchedulerService.java",
+      "filePath": "src/main/java/com/clinic/service/SlotGenerationSchedulerService.java",
+      "summary": "Service class implementing business logic and transactional workflows for SlotGenerationScheduler.",
+      "tags": [
+        "code",
+        "java",
+        "service-layer",
+        "business-logic",
+        "spring-boot"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/main/java/com/clinic/service/SlotGenerationSchedulerService.java:generateUpcomingSlots",
+      "type": "function",
+      "name": "generateUpcomingSlots",
+      "filePath": "src/main/java/com/clinic/service/SlotGenerationSchedulerService.java",
+      "lineRange": [
+        22,
+        29
+      ],
+      "summary": "Class method implementing generateUpcomingSlots functionality.",
+      "tags": [
+        "function",
+        "method",
+        "java"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:src/main/java/com/clinic/service/SlotGenerationSchedulerService.java:SlotGenerationSchedulerService",
+      "type": "class",
+      "name": "SlotGenerationSchedulerService",
+      "filePath": "src/main/java/com/clinic/service/SlotGenerationSchedulerService.java",
+      "lineRange": [
+        11,
+        30
+      ],
+      "summary": "Java class defining the SlotGenerationSchedulerService component.",
+      "tags": [
+        "class",
+        "model",
+        "java"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "config:src/main/resources/application.properties",
+      "type": "config",
+      "name": "application.properties",
+      "filePath": "src/main/resources/application.properties",
+      "summary": "config file providing functionality for the project.",
+      "tags": [
+        "config",
+        "properties",
+        "utility"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:src/test/resources/mockito-extensions/org.mockito.plugins.MockMaker",
+      "type": "file",
+      "name": "org.mockito.plugins.MockMaker",
+      "filePath": "src/test/resources/mockito-extensions/org.mockito.plugins.MockMaker",
+      "summary": "code file providing functionality for the project.",
+      "tags": [
+        "code",
+        "mockmaker",
+        "utility"
+      ],
+      "complexity": "simple"
+    }
+  ],
+  "edges": [
+    {
+      "source": "file:src/main/java/com/clinic/ClinicBookingApplication.java",
+      "target": "function:src/main/java/com/clinic/ClinicBookingApplication.java:main",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/main/java/com/clinic/ClinicBookingApplication.java",
+      "target": "class:src/main/java/com/clinic/ClinicBookingApplication.java:ClinicBookingApplication",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/main/java/com/clinic/config/AsyncConfig.java",
+      "target": "function:src/main/java/com/clinic/config/AsyncConfig.java:notificationExecutor",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/main/java/com/clinic/config/AsyncConfig.java",
+      "target": "class:src/main/java/com/clinic/config/AsyncConfig.java:AsyncConfig",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/main/java/com/clinic/config/HttpClientConfig.java",
+      "target": "function:src/main/java/com/clinic/config/HttpClientConfig.java:restClientBuilder",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/main/java/com/clinic/config/HttpClientConfig.java",
+      "target": "class:src/main/java/com/clinic/config/HttpClientConfig.java:HttpClientConfig",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/main/java/com/clinic/config/SchedulingConfig.java",
+      "target": "class:src/main/java/com/clinic/config/SchedulingConfig.java:SchedulingConfig",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/main/java/com/clinic/config/TimeConfig.java",
+      "target": "function:src/main/java/com/clinic/config/TimeConfig.java:appZoneId",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/main/java/com/clinic/config/TimeConfig.java",
+      "target": "function:src/main/java/com/clinic/config/TimeConfig.java:appClock",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/main/java/com/clinic/config/TimeConfig.java",
+      "target": "class:src/main/java/com/clinic/config/TimeConfig.java:TimeConfig",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/main/java/com/clinic/controller/HealthController.java",
+      "target": "function:src/main/java/com/clinic/controller/HealthController.java:health",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/main/java/com/clinic/controller/HealthController.java",
+      "target": "class:src/main/java/com/clinic/controller/HealthController.java:HealthController",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/main/java/com/clinic/exception/GlobalExceptionHandler.java",
+      "target": "function:src/main/java/com/clinic/exception/GlobalExceptionHandler.java:handleNotFound",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/main/java/com/clinic/exception/GlobalExceptionHandler.java",
+      "target": "function:src/main/java/com/clinic/exception/GlobalExceptionHandler.java:handleSlotFull",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/main/java/com/clinic/exception/GlobalExceptionHandler.java",
+      "target": "function:src/main/java/com/clinic/exception/GlobalExceptionHandler.java:handleConflict",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/main/java/com/clinic/exception/GlobalExceptionHandler.java",
+      "target": "function:src/main/java/com/clinic/exception/GlobalExceptionHandler.java:handleBadRequest",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/main/java/com/clinic/exception/GlobalExceptionHandler.java",
+      "target": "function:src/main/java/com/clinic/exception/GlobalExceptionHandler.java:handleInvalidInput",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/main/java/com/clinic/exception/GlobalExceptionHandler.java",
+      "target": "function:src/main/java/com/clinic/exception/GlobalExceptionHandler.java:handleUnauthorized",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/main/java/com/clinic/exception/GlobalExceptionHandler.java",
+      "target": "function:src/main/java/com/clinic/exception/GlobalExceptionHandler.java:handleRateLimit",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/main/java/com/clinic/exception/GlobalExceptionHandler.java",
+      "target": "function:src/main/java/com/clinic/exception/GlobalExceptionHandler.java:handleValidation",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/main/java/com/clinic/exception/GlobalExceptionHandler.java",
+      "target": "function:src/main/java/com/clinic/exception/GlobalExceptionHandler.java:handleRequestBindingErrors",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/main/java/com/clinic/exception/GlobalExceptionHandler.java",
+      "target": "function:src/main/java/com/clinic/exception/GlobalExceptionHandler.java:handleGeneric",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/main/java/com/clinic/exception/GlobalExceptionHandler.java",
+      "target": "function:src/main/java/com/clinic/exception/GlobalExceptionHandler.java:build",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/main/java/com/clinic/exception/GlobalExceptionHandler.java",
+      "target": "class:src/main/java/com/clinic/exception/GlobalExceptionHandler.java:GlobalExceptionHandler",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/main/java/com/clinic/exception/InvalidInputException.java",
+      "target": "function:src/main/java/com/clinic/exception/InvalidInputException.java:InvalidInputException",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/main/java/com/clinic/exception/InvalidInputException.java",
+      "target": "class:src/main/java/com/clinic/exception/InvalidInputException.java:InvalidInputException",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/main/java/com/clinic/exception/RateLimitExceededException.java",
+      "target": "function:src/main/java/com/clinic/exception/RateLimitExceededException.java:RateLimitExceededException",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/main/java/com/clinic/exception/RateLimitExceededException.java",
+      "target": "class:src/main/java/com/clinic/exception/RateLimitExceededException.java:RateLimitExceededException",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/main/java/com/clinic/security/LoginRateLimitService.java",
+      "target": "function:src/main/java/com/clinic/security/LoginRateLimitService.java:isAllowed",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/main/java/com/clinic/security/LoginRateLimitService.java",
+      "target": "class:src/main/java/com/clinic/security/LoginRateLimitService.java:LoginRateLimitService",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/main/java/com/clinic/security/RequestContextLoggingFilter.java",
+      "target": "function:src/main/java/com/clinic/security/RequestContextLoggingFilter.java:RequestContextLoggingFilter",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/main/java/com/clinic/security/RequestContextLoggingFilter.java",
+      "target": "function:src/main/java/com/clinic/security/RequestContextLoggingFilter.java:doFilterInternal",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/main/java/com/clinic/security/RequestContextLoggingFilter.java",
+      "target": "class:src/main/java/com/clinic/security/RequestContextLoggingFilter.java:RequestContextLoggingFilter",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/main/java/com/clinic/service/SlotGenerationSchedulerService.java",
+      "target": "function:src/main/java/com/clinic/service/SlotGenerationSchedulerService.java:generateUpcomingSlots",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/main/java/com/clinic/service/SlotGenerationSchedulerService.java",
+      "target": "class:src/main/java/com/clinic/service/SlotGenerationSchedulerService.java:SlotGenerationSchedulerService",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "config:src/main/resources/application.properties",
+      "target": "file:src/main/java/com/clinic/ClinicBookingApplication.java",
+      "type": "configures",
+      "direction": "forward",
+      "weight": 0.6
+    }
+  ]
+}

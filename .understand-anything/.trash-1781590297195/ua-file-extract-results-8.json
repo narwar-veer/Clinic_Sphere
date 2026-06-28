@@ -1,0 +1,520 @@
+{
+  "scriptCompleted": true,
+  "filesAnalyzed": 5,
+  "filesSkipped": [],
+  "results": [
+    {
+      "path": "src/main/java/com/clinic/entity/OutboxEvent.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 63,
+      "nonEmptyLines": 48,
+      "classes": [
+        {
+          "name": "OutboxEvent",
+          "startLine": 16,
+          "endLine": 63,
+          "methods": [],
+          "properties": [
+            "id",
+            "eventKey",
+            "aggregateType",
+            "aggregateId",
+            "eventType",
+            "payloadJson",
+            "status",
+            "retryCount",
+            "nextAttemptAt",
+            "lockedAt",
+            "processedAt",
+            "lastError",
+            "createdAt"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "OutboxEvent",
+          "line": 16,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "src/main/java/com/clinic/entity/OutboxStatus.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 9,
+      "nonEmptyLines": 8,
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "src/main/java/com/clinic/repository/OutboxEventRepository.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 33,
+      "nonEmptyLines": 28,
+      "classes": [
+        {
+          "name": "OutboxEventRepository",
+          "startLine": 13,
+          "endLine": 33,
+          "methods": [
+            "findByEventKey",
+            "lockNextBatch",
+            "markStatus"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "OutboxEventRepository",
+          "line": 13,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 2,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "src/main/java/com/clinic/service/OutboxDispatcherService.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 95,
+      "nonEmptyLines": 84,
+      "functions": [
+        {
+          "name": "pollAndDispatch",
+          "startLine": 39,
+          "endLine": 51,
+          "params": []
+        },
+        {
+          "name": "processEvent",
+          "startLine": 53,
+          "endLine": 94,
+          "params": [
+            "event"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "OutboxDispatcherService",
+          "startLine": 16,
+          "endLine": 95,
+          "methods": [
+            "pollAndDispatch",
+            "processEvent"
+          ],
+          "properties": [
+            "outboxEventRepository",
+            "notificationService",
+            "objectMapper",
+            "appTime",
+            "auditLogService",
+            "batchSize",
+            "maxRetries",
+            "baseRetrySeconds",
+            "lockMinutes"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "pollAndDispatch",
+          "line": 39,
+          "isDefault": false
+        },
+        {
+          "name": "OutboxDispatcherService",
+          "line": 16,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "pollAndDispatch",
+          "callee": "appTime.nowDateTime",
+          "lineNumber": 42
+        },
+        {
+          "caller": "pollAndDispatch",
+          "callee": "outboxEventRepository.lockNextBatch",
+          "lineNumber": 43
+        },
+        {
+          "caller": "pollAndDispatch",
+          "callee": "now.minusMinutes",
+          "lineNumber": 43
+        },
+        {
+          "caller": "pollAndDispatch",
+          "callee": "batch.isEmpty",
+          "lineNumber": 44
+        },
+        {
+          "caller": "pollAndDispatch",
+          "callee": "processEvent",
+          "lineNumber": 49
+        },
+        {
+          "caller": "processEvent",
+          "callee": "appTime.nowDateTime",
+          "lineNumber": 54
+        },
+        {
+          "caller": "processEvent",
+          "callee": "event.setStatus",
+          "lineNumber": 55
+        },
+        {
+          "caller": "processEvent",
+          "callee": "event.setLockedAt",
+          "lineNumber": 56
+        },
+        {
+          "caller": "processEvent",
+          "callee": "\"APPOINTMENT_CONFIRMATION\".equals",
+          "lineNumber": 59
+        },
+        {
+          "caller": "processEvent",
+          "callee": "event.getEventType",
+          "lineNumber": 59
+        },
+        {
+          "caller": "processEvent",
+          "callee": "objectMapper.readValue",
+          "lineNumber": 60
+        },
+        {
+          "caller": "processEvent",
+          "callee": "event.getPayloadJson",
+          "lineNumber": 61
+        },
+        {
+          "caller": "processEvent",
+          "callee": "notificationService.deliverAppointmentConfirmation",
+          "lineNumber": 62
+        },
+        {
+          "caller": "processEvent",
+          "callee": "payload.appointmentId",
+          "lineNumber": 62
+        },
+        {
+          "caller": "processEvent",
+          "callee": "event.getEventKey",
+          "lineNumber": 62
+        },
+        {
+          "caller": "processEvent",
+          "callee": "event.setStatus",
+          "lineNumber": 64
+        },
+        {
+          "caller": "processEvent",
+          "callee": "event.setProcessedAt",
+          "lineNumber": 65
+        },
+        {
+          "caller": "processEvent",
+          "callee": "event.setLastError",
+          "lineNumber": 66
+        },
+        {
+          "caller": "processEvent",
+          "callee": "event.setLockedAt",
+          "lineNumber": 67
+        },
+        {
+          "caller": "processEvent",
+          "callee": "outboxEventRepository.save",
+          "lineNumber": 68
+        },
+        {
+          "caller": "processEvent",
+          "callee": "event.getRetryCount",
+          "lineNumber": 70
+        },
+        {
+          "caller": "processEvent",
+          "callee": "event.setRetryCount",
+          "lineNumber": 71
+        },
+        {
+          "caller": "processEvent",
+          "callee": "event.setLastError",
+          "lineNumber": 72
+        },
+        {
+          "caller": "processEvent",
+          "callee": "ex.getMessage",
+          "lineNumber": 72
+        },
+        {
+          "caller": "processEvent",
+          "callee": "event.setLockedAt",
+          "lineNumber": 73
+        },
+        {
+          "caller": "processEvent",
+          "callee": "event.setStatus",
+          "lineNumber": 75
+        },
+        {
+          "caller": "processEvent",
+          "callee": "event.setProcessedAt",
+          "lineNumber": 76
+        },
+        {
+          "caller": "processEvent",
+          "callee": "event.setStatus",
+          "lineNumber": 78
+        },
+        {
+          "caller": "processEvent",
+          "callee": "event.setNextAttemptAt",
+          "lineNumber": 79
+        },
+        {
+          "caller": "processEvent",
+          "callee": "now.plusSeconds",
+          "lineNumber": 79
+        },
+        {
+          "caller": "processEvent",
+          "callee": "Math.pow",
+          "lineNumber": 79
+        },
+        {
+          "caller": "processEvent",
+          "callee": "outboxEventRepository.save",
+          "lineNumber": 81
+        },
+        {
+          "caller": "processEvent",
+          "callee": "auditLogService.logEvent",
+          "lineNumber": 82
+        },
+        {
+          "caller": "processEvent",
+          "callee": "event.getAggregateType",
+          "lineNumber": 85
+        },
+        {
+          "caller": "processEvent",
+          "callee": "event.getAggregateId",
+          "lineNumber": 86
+        },
+        {
+          "caller": "processEvent",
+          "callee": "java.util.Map.of",
+          "lineNumber": 87
+        },
+        {
+          "caller": "processEvent",
+          "callee": "event.getEventKey",
+          "lineNumber": 88
+        },
+        {
+          "caller": "processEvent",
+          "callee": "event.getEventType",
+          "lineNumber": 89
+        },
+        {
+          "caller": "processEvent",
+          "callee": "ex.getMessage",
+          "lineNumber": 91
+        },
+        {
+          "caller": "processEvent",
+          "callee": "ex.getMessage",
+          "lineNumber": 91
+        },
+        {
+          "caller": "processEvent",
+          "callee": "log.error",
+          "lineNumber": 92
+        },
+        {
+          "caller": "processEvent",
+          "callee": "event.getId",
+          "lineNumber": 92
+        }
+      ],
+      "metrics": {
+        "importCount": 3,
+        "exportCount": 2,
+        "functionCount": 2,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "src/main/java/com/clinic/service/OutboxService.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 43,
+      "nonEmptyLines": 38,
+      "functions": [
+        {
+          "name": "enqueue",
+          "startLine": 21,
+          "endLine": 34,
+          "params": [
+            "aggregateType",
+            "aggregateId",
+            "eventType",
+            "payload"
+          ]
+        },
+        {
+          "name": "toJson",
+          "startLine": 36,
+          "endLine": 42,
+          "params": [
+            "payload"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "OutboxService",
+          "startLine": 13,
+          "endLine": 43,
+          "methods": [
+            "enqueue",
+            "toJson"
+          ],
+          "properties": [
+            "outboxEventRepository",
+            "objectMapper",
+            "appTime"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "enqueue",
+          "line": 21,
+          "isDefault": false
+        },
+        {
+          "name": "OutboxService",
+          "line": 13,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "enqueue",
+          "callee": "new OutboxEvent",
+          "lineNumber": 23
+        },
+        {
+          "caller": "enqueue",
+          "callee": "event.setEventKey",
+          "lineNumber": 24
+        },
+        {
+          "caller": "enqueue",
+          "callee": "UUID.randomUUID().toString",
+          "lineNumber": 24
+        },
+        {
+          "caller": "enqueue",
+          "callee": "UUID.randomUUID",
+          "lineNumber": 24
+        },
+        {
+          "caller": "enqueue",
+          "callee": "event.setAggregateType",
+          "lineNumber": 25
+        },
+        {
+          "caller": "enqueue",
+          "callee": "event.setAggregateId",
+          "lineNumber": 26
+        },
+        {
+          "caller": "enqueue",
+          "callee": "event.setEventType",
+          "lineNumber": 27
+        },
+        {
+          "caller": "enqueue",
+          "callee": "event.setPayloadJson",
+          "lineNumber": 28
+        },
+        {
+          "caller": "enqueue",
+          "callee": "toJson",
+          "lineNumber": 28
+        },
+        {
+          "caller": "enqueue",
+          "callee": "event.setStatus",
+          "lineNumber": 29
+        },
+        {
+          "caller": "enqueue",
+          "callee": "event.setRetryCount",
+          "lineNumber": 30
+        },
+        {
+          "caller": "enqueue",
+          "callee": "event.setNextAttemptAt",
+          "lineNumber": 31
+        },
+        {
+          "caller": "enqueue",
+          "callee": "appTime.nowDateTime",
+          "lineNumber": 31
+        },
+        {
+          "caller": "enqueue",
+          "callee": "outboxEventRepository.save",
+          "lineNumber": 32
+        },
+        {
+          "caller": "enqueue",
+          "callee": "event.getEventKey",
+          "lineNumber": 33
+        },
+        {
+          "caller": "toJson",
+          "callee": "objectMapper.writeValueAsString",
+          "lineNumber": 38
+        },
+        {
+          "caller": "toJson",
+          "callee": "new IllegalStateException",
+          "lineNumber": 40
+        }
+      ],
+      "metrics": {
+        "importCount": 3,
+        "exportCount": 2,
+        "functionCount": 2,
+        "classCount": 1
+      }
+    }
+  ]
+}

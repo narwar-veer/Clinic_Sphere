@@ -1,0 +1,1012 @@
+{
+  "scriptCompleted": true,
+  "filesAnalyzed": 11,
+  "filesSkipped": [],
+  "results": [
+    {
+      "path": "src/main/java/com/clinic/controller/PatientHistoryController.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 46,
+      "nonEmptyLines": 41,
+      "functions": [
+        {
+          "name": "getHistory",
+          "startLine": 28,
+          "endLine": 36,
+          "params": [
+            "patientId",
+            "page",
+            "size"
+          ]
+        },
+        {
+          "name": "addHistory",
+          "startLine": 38,
+          "endLine": 45,
+          "params": [
+            "patientId",
+            "request"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "PatientHistoryController",
+          "startLine": 20,
+          "endLine": 46,
+          "methods": [
+            "getHistory",
+            "addHistory"
+          ],
+          "properties": [
+            "patientHistoryService",
+            "adminService"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "getHistory",
+          "line": 28,
+          "isDefault": false
+        },
+        {
+          "name": "addHistory",
+          "line": 38,
+          "isDefault": false
+        },
+        {
+          "name": "PatientHistoryController",
+          "line": 20,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "getHistory",
+          "callee": "adminService.getAuthenticatedDoctorId",
+          "lineNumber": 34
+        },
+        {
+          "caller": "getHistory",
+          "callee": "patientHistoryService.getPatientHistory",
+          "lineNumber": 35
+        },
+        {
+          "caller": "addHistory",
+          "callee": "adminService.getAuthenticatedDoctorId",
+          "lineNumber": 43
+        },
+        {
+          "caller": "addHistory",
+          "callee": "patientHistoryService.addMedicalRecord",
+          "lineNumber": 44
+        }
+      ],
+      "metrics": {
+        "importCount": 5,
+        "exportCount": 3,
+        "functionCount": 2,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "src/main/java/com/clinic/dto/request/MedicalRecordCreateRequest.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 23,
+      "nonEmptyLines": 17,
+      "classes": [
+        {
+          "name": "MedicalRecordCreateRequest",
+          "startLine": 9,
+          "endLine": 23,
+          "methods": [],
+          "properties": [
+            "appointmentId",
+            "diagnosis",
+            "prescriptionNotes",
+            "referredBy"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "MedicalRecordCreateRequest",
+          "line": 9,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "src/main/java/com/clinic/dto/response/MedicalRecordResponse.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 20,
+      "nonEmptyLines": 18,
+      "classes": [
+        {
+          "name": "MedicalRecordResponse",
+          "startLine": 7,
+          "endLine": 20,
+          "methods": [],
+          "properties": [
+            "id",
+            "patientId",
+            "doctorId",
+            "doctorName",
+            "appointmentId",
+            "diagnosis",
+            "prescriptionNotes",
+            "referredBy",
+            "createdAt",
+            "updatedAt"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "MedicalRecordResponse",
+          "line": 7,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "src/main/java/com/clinic/entity/MedicalRecord.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 57,
+      "nonEmptyLines": 46,
+      "classes": [
+        {
+          "name": "MedicalRecord",
+          "startLine": 19,
+          "endLine": 57,
+          "methods": [],
+          "properties": [
+            "id",
+            "patient",
+            "doctor",
+            "appointment",
+            "diagnosis",
+            "prescriptionNotes",
+            "referredBy",
+            "createdAt",
+            "updatedAt"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "MedicalRecord",
+          "line": 19,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "src/main/java/com/clinic/exception/BadRequestException.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 7,
+      "nonEmptyLines": 6,
+      "functions": [
+        {
+          "name": "BadRequestException",
+          "startLine": 4,
+          "endLine": 6,
+          "params": [
+            "message"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "BadRequestException",
+          "startLine": 3,
+          "endLine": 7,
+          "methods": [
+            "BadRequestException"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "BadRequestException",
+          "line": 4,
+          "isDefault": false
+        },
+        {
+          "name": "BadRequestException",
+          "line": 3,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 2,
+        "functionCount": 1,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "src/main/java/com/clinic/exception/UnauthorizedException.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 7,
+      "nonEmptyLines": 6,
+      "functions": [
+        {
+          "name": "UnauthorizedException",
+          "startLine": 4,
+          "endLine": 6,
+          "params": [
+            "message"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "UnauthorizedException",
+          "startLine": 3,
+          "endLine": 7,
+          "methods": [
+            "UnauthorizedException"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "UnauthorizedException",
+          "line": 4,
+          "isDefault": false
+        },
+        {
+          "name": "UnauthorizedException",
+          "line": 3,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 2,
+        "functionCount": 1,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "src/main/java/com/clinic/mapper/MedicalRecordMapper.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 16,
+      "nonEmptyLines": 13,
+      "classes": [
+        {
+          "name": "MedicalRecordMapper",
+          "startLine": 8,
+          "endLine": 16,
+          "methods": [
+            "toResponse"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "MedicalRecordMapper",
+          "line": 8,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 2,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "src/main/java/com/clinic/repository/MedicalRecordRepository.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 18,
+      "nonEmptyLines": 13,
+      "classes": [
+        {
+          "name": "MedicalRecordRepository",
+          "startLine": 10,
+          "endLine": 18,
+          "methods": [
+            "findByPatientIdOrderByCreatedAtDesc",
+            "existsByAppointmentId",
+            "findByAppointmentId"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "MedicalRecordRepository",
+          "line": 10,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "src/main/java/com/clinic/service/BookingWindowValidator.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 46,
+      "nonEmptyLines": 38,
+      "functions": [
+        {
+          "name": "BookingWindowValidator",
+          "startLine": 20,
+          "endLine": 25,
+          "params": [
+            "bookingTimeZone",
+            "appClock"
+          ]
+        },
+        {
+          "name": "validateDate",
+          "startLine": 27,
+          "endLine": 37,
+          "params": [
+            "date"
+          ]
+        },
+        {
+          "name": "validateSlotDateTime",
+          "startLine": 39,
+          "endLine": 45,
+          "params": [
+            "slotDate",
+            "slotStartTime"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "BookingWindowValidator",
+          "startLine": 12,
+          "endLine": 46,
+          "methods": [
+            "BookingWindowValidator",
+            "validateDate",
+            "validateSlotDateTime"
+          ],
+          "properties": [
+            "MAX_ADVANCE_MONTHS",
+            "bookingZoneId",
+            "appClock"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "MAX_ADVANCE_MONTHS",
+          "line": 15,
+          "isDefault": false
+        },
+        {
+          "name": "BookingWindowValidator",
+          "line": 20,
+          "isDefault": false
+        },
+        {
+          "name": "validateDate",
+          "line": 27,
+          "isDefault": false
+        },
+        {
+          "name": "validateSlotDateTime",
+          "line": 39,
+          "isDefault": false
+        },
+        {
+          "name": "BookingWindowValidator",
+          "line": 12,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "BookingWindowValidator",
+          "callee": "ZoneId.of",
+          "lineNumber": 23
+        },
+        {
+          "caller": "validateDate",
+          "callee": "LocalDate.now",
+          "lineNumber": 28
+        },
+        {
+          "caller": "validateDate",
+          "callee": "appClock.withZone",
+          "lineNumber": 28
+        },
+        {
+          "caller": "validateDate",
+          "callee": "today.plusMonths",
+          "lineNumber": 29
+        },
+        {
+          "caller": "validateDate",
+          "callee": "date.isBefore",
+          "lineNumber": 31
+        },
+        {
+          "caller": "validateDate",
+          "callee": "new BadRequestException",
+          "lineNumber": 32
+        },
+        {
+          "caller": "validateDate",
+          "callee": "date.isAfter",
+          "lineNumber": 34
+        },
+        {
+          "caller": "validateDate",
+          "callee": "new BadRequestException",
+          "lineNumber": 35
+        },
+        {
+          "caller": "validateSlotDateTime",
+          "callee": "validateDate",
+          "lineNumber": 40
+        },
+        {
+          "caller": "validateSlotDateTime",
+          "callee": "LocalDateTime.of",
+          "lineNumber": 41
+        },
+        {
+          "caller": "validateSlotDateTime",
+          "callee": "slotDateTime.isBefore",
+          "lineNumber": 42
+        },
+        {
+          "caller": "validateSlotDateTime",
+          "callee": "LocalDateTime.now",
+          "lineNumber": 42
+        },
+        {
+          "caller": "validateSlotDateTime",
+          "callee": "appClock.withZone",
+          "lineNumber": 42
+        },
+        {
+          "caller": "validateSlotDateTime",
+          "callee": "new BadRequestException",
+          "lineNumber": 43
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 5,
+        "functionCount": 3,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "src/main/java/com/clinic/service/PaginationValidator.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 19,
+      "nonEmptyLines": 15,
+      "functions": [
+        {
+          "name": "validate",
+          "startLine": 11,
+          "endLine": 18,
+          "params": [
+            "page",
+            "size"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "PaginationValidator",
+          "startLine": 6,
+          "endLine": 19,
+          "methods": [
+            "validate"
+          ],
+          "properties": [
+            "MAX_PAGE_SIZE"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "validate",
+          "line": 11,
+          "isDefault": false
+        },
+        {
+          "name": "PaginationValidator",
+          "line": 6,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "validate",
+          "callee": "new BadRequestException",
+          "lineNumber": 13
+        },
+        {
+          "caller": "validate",
+          "callee": "new BadRequestException",
+          "lineNumber": 16
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 2,
+        "functionCount": 1,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "src/main/java/com/clinic/service/PatientHistoryService.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 127,
+      "nonEmptyLines": 110,
+      "functions": [
+        {
+          "name": "getPatientHistory",
+          "startLine": 41,
+          "endLine": 65,
+          "params": [
+            "patientId",
+            "adminDoctorId",
+            "page",
+            "size"
+          ]
+        },
+        {
+          "name": "addMedicalRecord",
+          "startLine": 67,
+          "endLine": 118,
+          "params": [
+            "patientId",
+            "adminDoctorId",
+            "request"
+          ]
+        },
+        {
+          "name": "trimToNull",
+          "startLine": 120,
+          "endLine": 126,
+          "params": [
+            "value"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "PatientHistoryService",
+          "startLine": 28,
+          "endLine": 127,
+          "methods": [
+            "getPatientHistory",
+            "addMedicalRecord",
+            "trimToNull"
+          ],
+          "properties": [
+            "medicalRecordRepository",
+            "appointmentRepository",
+            "patientRepository",
+            "medicalRecordMapper",
+            "pageResponseFactory",
+            "paginationValidator",
+            "auditLogService",
+            "appTime"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "getPatientHistory",
+          "line": 41,
+          "isDefault": false
+        },
+        {
+          "name": "addMedicalRecord",
+          "line": 67,
+          "isDefault": false
+        },
+        {
+          "name": "PatientHistoryService",
+          "line": 28,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "getPatientHistory",
+          "callee": "paginationValidator.validate",
+          "lineNumber": 43
+        },
+        {
+          "caller": "getPatientHistory",
+          "callee": "patientRepository.existsById",
+          "lineNumber": 45
+        },
+        {
+          "caller": "getPatientHistory",
+          "callee": "new ResourceNotFoundException",
+          "lineNumber": 46
+        },
+        {
+          "caller": "getPatientHistory",
+          "callee": "appointmentRepository.existsByPatientIdAndDoctorId",
+          "lineNumber": 48
+        },
+        {
+          "caller": "getPatientHistory",
+          "callee": "new UnauthorizedException",
+          "lineNumber": 49
+        },
+        {
+          "caller": "getPatientHistory",
+          "callee": "PageRequest.of",
+          "lineNumber": 52
+        },
+        {
+          "caller": "getPatientHistory",
+          "callee": "Sort.by(\"createdAt\").descending",
+          "lineNumber": 52
+        },
+        {
+          "caller": "getPatientHistory",
+          "callee": "Sort.by",
+          "lineNumber": 52
+        },
+        {
+          "caller": "getPatientHistory",
+          "callee": "medicalRecordRepository\n                .findByPatientIdOrderByCreatedAtDesc(patientId, pageable).map",
+          "lineNumber": 53
+        },
+        {
+          "caller": "getPatientHistory",
+          "callee": "medicalRecordRepository.findByPatientIdOrderByCreatedAtDesc",
+          "lineNumber": 53
+        },
+        {
+          "caller": "getPatientHistory",
+          "callee": "auditLogService.logEvent",
+          "lineNumber": 57
+        },
+        {
+          "caller": "getPatientHistory",
+          "callee": "patientId.toString",
+          "lineNumber": 61
+        },
+        {
+          "caller": "getPatientHistory",
+          "callee": "Map.of",
+          "lineNumber": 62
+        },
+        {
+          "caller": "getPatientHistory",
+          "callee": "pageResponseFactory.fromPage",
+          "lineNumber": 64
+        },
+        {
+          "caller": "addMedicalRecord",
+          "callee": "patientRepository.findById(patientId).orElseThrow",
+          "lineNumber": 69
+        },
+        {
+          "caller": "addMedicalRecord",
+          "callee": "patientRepository.findById",
+          "lineNumber": 69
+        },
+        {
+          "caller": "addMedicalRecord",
+          "callee": "new ResourceNotFoundException",
+          "lineNumber": 70
+        },
+        {
+          "caller": "addMedicalRecord",
+          "callee": "appointmentRepository.findByIdForUpdate(request.getAppointmentId()).orElseThrow",
+          "lineNumber": 72
+        },
+        {
+          "caller": "addMedicalRecord",
+          "callee": "appointmentRepository.findByIdForUpdate",
+          "lineNumber": 72
+        },
+        {
+          "caller": "addMedicalRecord",
+          "callee": "request.getAppointmentId",
+          "lineNumber": 72
+        },
+        {
+          "caller": "addMedicalRecord",
+          "callee": "new ResourceNotFoundException",
+          "lineNumber": 73
+        },
+        {
+          "caller": "addMedicalRecord",
+          "callee": "appointment.getPatient().getId().equals",
+          "lineNumber": 75
+        },
+        {
+          "caller": "addMedicalRecord",
+          "callee": "appointment.getPatient().getId",
+          "lineNumber": 75
+        },
+        {
+          "caller": "addMedicalRecord",
+          "callee": "appointment.getPatient",
+          "lineNumber": 75
+        },
+        {
+          "caller": "addMedicalRecord",
+          "callee": "new BadRequestException",
+          "lineNumber": 76
+        },
+        {
+          "caller": "addMedicalRecord",
+          "callee": "appointment.getSlot().getClinic().getDoctor().getId",
+          "lineNumber": 79
+        },
+        {
+          "caller": "addMedicalRecord",
+          "callee": "appointment.getSlot().getClinic().getDoctor",
+          "lineNumber": 79
+        },
+        {
+          "caller": "addMedicalRecord",
+          "callee": "appointment.getSlot().getClinic",
+          "lineNumber": 79
+        },
+        {
+          "caller": "addMedicalRecord",
+          "callee": "appointment.getSlot",
+          "lineNumber": 79
+        },
+        {
+          "caller": "addMedicalRecord",
+          "callee": "appointmentDoctorId.equals",
+          "lineNumber": 80
+        },
+        {
+          "caller": "addMedicalRecord",
+          "callee": "new UnauthorizedException",
+          "lineNumber": 81
+        },
+        {
+          "caller": "addMedicalRecord",
+          "callee": "medicalRecordRepository.existsByAppointmentId",
+          "lineNumber": 86
+        },
+        {
+          "caller": "addMedicalRecord",
+          "callee": "appointment.getId",
+          "lineNumber": 86
+        },
+        {
+          "caller": "addMedicalRecord",
+          "callee": "new BadRequestException",
+          "lineNumber": 87
+        },
+        {
+          "caller": "addMedicalRecord",
+          "callee": "new MedicalRecord",
+          "lineNumber": 89
+        },
+        {
+          "caller": "addMedicalRecord",
+          "callee": "medicalRecord.setPatient",
+          "lineNumber": 90
+        },
+        {
+          "caller": "addMedicalRecord",
+          "callee": "medicalRecord.setDoctor",
+          "lineNumber": 91
+        },
+        {
+          "caller": "addMedicalRecord",
+          "callee": "appointment.getSlot().getClinic().getDoctor",
+          "lineNumber": 91
+        },
+        {
+          "caller": "addMedicalRecord",
+          "callee": "appointment.getSlot().getClinic",
+          "lineNumber": 91
+        },
+        {
+          "caller": "addMedicalRecord",
+          "callee": "appointment.getSlot",
+          "lineNumber": 91
+        },
+        {
+          "caller": "addMedicalRecord",
+          "callee": "medicalRecord.setAppointment",
+          "lineNumber": 92
+        },
+        {
+          "caller": "addMedicalRecord",
+          "callee": "medicalRecord.setDiagnosis",
+          "lineNumber": 93
+        },
+        {
+          "caller": "addMedicalRecord",
+          "callee": "request.getDiagnosis().trim",
+          "lineNumber": 93
+        },
+        {
+          "caller": "addMedicalRecord",
+          "callee": "request.getDiagnosis",
+          "lineNumber": 93
+        },
+        {
+          "caller": "addMedicalRecord",
+          "callee": "medicalRecord.setPrescriptionNotes",
+          "lineNumber": 94
+        },
+        {
+          "caller": "addMedicalRecord",
+          "callee": "trimToNull",
+          "lineNumber": 94
+        },
+        {
+          "caller": "addMedicalRecord",
+          "callee": "request.getPrescriptionNotes",
+          "lineNumber": 94
+        },
+        {
+          "caller": "addMedicalRecord",
+          "callee": "medicalRecord.setReferredBy",
+          "lineNumber": 95
+        },
+        {
+          "caller": "addMedicalRecord",
+          "callee": "trimToNull",
+          "lineNumber": 95
+        },
+        {
+          "caller": "addMedicalRecord",
+          "callee": "request.getReferredBy",
+          "lineNumber": 95
+        },
+        {
+          "caller": "addMedicalRecord",
+          "callee": "medicalRecordRepository.saveAndFlush",
+          "lineNumber": 96
+        },
+        {
+          "caller": "addMedicalRecord",
+          "callee": "medicalRecordRepository.findByAppointmentId(appointment.getId()).orElseThrow",
+          "lineNumber": 98
+        },
+        {
+          "caller": "addMedicalRecord",
+          "callee": "medicalRecordRepository.findByAppointmentId",
+          "lineNumber": 98
+        },
+        {
+          "caller": "addMedicalRecord",
+          "callee": "appointment.getId",
+          "lineNumber": 98
+        },
+        {
+          "caller": "addMedicalRecord",
+          "callee": "new ConflictException",
+          "lineNumber": 99
+        },
+        {
+          "caller": "addMedicalRecord",
+          "callee": "appointment.getStatus",
+          "lineNumber": 102
+        },
+        {
+          "caller": "addMedicalRecord",
+          "callee": "appointment.setStatus",
+          "lineNumber": 103
+        },
+        {
+          "caller": "addMedicalRecord",
+          "callee": "appointment.getVisitedAt",
+          "lineNumber": 104
+        },
+        {
+          "caller": "addMedicalRecord",
+          "callee": "appointment.setVisitedAt",
+          "lineNumber": 105
+        },
+        {
+          "caller": "addMedicalRecord",
+          "callee": "appTime.nowDateTime",
+          "lineNumber": 105
+        },
+        {
+          "caller": "addMedicalRecord",
+          "callee": "appointmentRepository.save",
+          "lineNumber": 107
+        },
+        {
+          "caller": "addMedicalRecord",
+          "callee": "auditLogService.logEvent",
+          "lineNumber": 110
+        },
+        {
+          "caller": "addMedicalRecord",
+          "callee": "medicalRecord.getId().toString",
+          "lineNumber": 114
+        },
+        {
+          "caller": "addMedicalRecord",
+          "callee": "medicalRecord.getId",
+          "lineNumber": 114
+        },
+        {
+          "caller": "addMedicalRecord",
+          "callee": "Map.of",
+          "lineNumber": 115
+        },
+        {
+          "caller": "addMedicalRecord",
+          "callee": "appointment.getId",
+          "lineNumber": 115
+        },
+        {
+          "caller": "addMedicalRecord",
+          "callee": "medicalRecordMapper.toResponse",
+          "lineNumber": 117
+        },
+        {
+          "caller": "trimToNull",
+          "callee": "value.trim",
+          "lineNumber": 124
+        },
+        {
+          "caller": "trimToNull",
+          "callee": "trimmed.isEmpty",
+          "lineNumber": 125
+        }
+      ],
+      "metrics": {
+        "importCount": 15,
+        "exportCount": 3,
+        "functionCount": 3,
+        "classCount": 1
+      }
+    }
+  ]
+}

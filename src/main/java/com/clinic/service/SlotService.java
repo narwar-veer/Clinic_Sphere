@@ -94,10 +94,11 @@ public class SlotService {
         return generatedDays;
     }
 
-    @Transactional(readOnly = true)
+    @Transactional
     public PageResponse<SlotResponse> getSlots(LocalDate date, int page, int size) {
         bookingWindowValidator.validateDate(date);
         paginationValidator.validate(page, size);
+        generateSlotsForDate(date);
 
         Pageable pageable = PageRequest.of(page, size, Sort.by("startTime").ascending().and(Sort.by("id").ascending()));
         Page<SlotResponse> mapped = slotRepository.findBySlotDate(date, pageable).map(slotMapper::toResponse);
@@ -238,7 +239,7 @@ public class SlotService {
         return new MessageResponse("Successfully " + action + " " + updated + " slots for " + date);
     }
 
-    @Transactional(readOnly = true)
+    @Transactional
     public PageResponse<SlotDateAvailabilityResponse> getDateAvailability(
             LocalDate fromDate,
             LocalDate toDate,
@@ -261,6 +262,8 @@ public class SlotService {
         if (days > maxDaysPerRequest) {
             throw new BadRequestException("Date range too large");
         }
+
+        generateSlotsForRange(from, to);
 
         Pageable pageable = PageRequest.of(page, size);
         Page<SlotDateAvailabilityResponse> mapped = slotRepository.findDateAvailability(from, to, pageable)

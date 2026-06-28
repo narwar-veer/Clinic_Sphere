@@ -1,0 +1,140 @@
+{
+  "projectRoot": "D:\\Desktop\\Clinic_Sphere",
+  "batchFiles": [
+    {
+      "path": "src/main/java/com/clinic/config/DataSeeder.java",
+      "language": "java",
+      "sizeLines": 61,
+      "fileCategory": "code"
+    },
+    {
+      "path": "src/main/java/com/clinic/controller/DoctorController.java",
+      "language": "java",
+      "sizeLines": 29,
+      "fileCategory": "code"
+    },
+    {
+      "path": "src/main/java/com/clinic/dto/request/DoctorProfileUpdateRequest.java",
+      "language": "java",
+      "sizeLines": 36,
+      "fileCategory": "code"
+    },
+    {
+      "path": "src/main/java/com/clinic/dto/response/DoctorResponse.java",
+      "language": "java",
+      "sizeLines": 18,
+      "fileCategory": "code"
+    },
+    {
+      "path": "src/main/java/com/clinic/entity/Admin.java",
+      "language": "java",
+      "sizeLines": 40,
+      "fileCategory": "code"
+    },
+    {
+      "path": "src/main/java/com/clinic/entity/AdminRole.java",
+      "language": "java",
+      "sizeLines": 5,
+      "fileCategory": "code"
+    },
+    {
+      "path": "src/main/java/com/clinic/entity/Doctor.java",
+      "language": "java",
+      "sizeLines": 56,
+      "fileCategory": "code"
+    },
+    {
+      "path": "src/main/java/com/clinic/mapper/DoctorMapper.java",
+      "language": "java",
+      "sizeLines": 13,
+      "fileCategory": "code"
+    },
+    {
+      "path": "src/main/java/com/clinic/repository/AdminRepository.java",
+      "language": "java",
+      "sizeLines": 10,
+      "fileCategory": "code"
+    },
+    {
+      "path": "src/main/java/com/clinic/repository/DoctorRepository.java",
+      "language": "java",
+      "sizeLines": 9,
+      "fileCategory": "code"
+    },
+    {
+      "path": "src/main/java/com/clinic/security/AdminDetailsService.java",
+      "language": "java",
+      "sizeLines": 23,
+      "fileCategory": "code"
+    },
+    {
+      "path": "src/main/java/com/clinic/security/AdminPrincipal.java",
+      "language": "java",
+      "sizeLines": 70,
+      "fileCategory": "code"
+    },
+    {
+      "path": "src/main/java/com/clinic/service/DoctorService.java",
+      "language": "java",
+      "sizeLines": 64,
+      "fileCategory": "code"
+    },
+    {
+      "path": "src/test/java/com/clinic/security/JwtServiceTest.java",
+      "language": "java",
+      "sizeLines": 65,
+      "fileCategory": "code"
+    }
+  ],
+  "batchImportData": {
+    "src/main/java/com/clinic/config/DataSeeder.java": [
+      "src/main/java/com/clinic/entity/Admin.java",
+      "src/main/java/com/clinic/entity/AdminRole.java",
+      "src/main/java/com/clinic/entity/Doctor.java",
+      "src/main/java/com/clinic/repository/AdminRepository.java",
+      "src/main/java/com/clinic/repository/DoctorRepository.java"
+    ],
+    "src/main/java/com/clinic/controller/DoctorController.java": [
+      "src/main/java/com/clinic/dto/response/DoctorResponse.java",
+      "src/main/java/com/clinic/dto/response/PageResponse.java",
+      "src/main/java/com/clinic/service/DoctorService.java"
+    ],
+    "src/main/java/com/clinic/dto/request/DoctorProfileUpdateRequest.java": [],
+    "src/main/java/com/clinic/dto/response/DoctorResponse.java": [],
+    "src/main/java/com/clinic/entity/Admin.java": [],
+    "src/main/java/com/clinic/entity/AdminRole.java": [],
+    "src/main/java/com/clinic/entity/Doctor.java": [],
+    "src/main/java/com/clinic/mapper/DoctorMapper.java": [
+      "src/main/java/com/clinic/dto/response/DoctorResponse.java",
+      "src/main/java/com/clinic/entity/Doctor.java"
+    ],
+    "src/main/java/com/clinic/repository/AdminRepository.java": [
+      "src/main/java/com/clinic/entity/Admin.java"
+    ],
+    "src/main/java/com/clinic/repository/DoctorRepository.java": [
+      "src/main/java/com/clinic/entity/Doctor.java"
+    ],
+    "src/main/java/com/clinic/security/AdminDetailsService.java": [
+      "src/main/java/com/clinic/entity/Admin.java",
+      "src/main/java/com/clinic/repository/AdminRepository.java"
+    ],
+    "src/main/java/com/clinic/security/AdminPrincipal.java": [
+      "src/main/java/com/clinic/entity/Admin.java"
+    ],
+    "src/main/java/com/clinic/service/DoctorService.java": [
+      "src/main/java/com/clinic/dto/request/DoctorProfileUpdateRequest.java",
+      "src/main/java/com/clinic/dto/response/DoctorResponse.java",
+      "src/main/java/com/clinic/dto/response/PageResponse.java",
+      "src/main/java/com/clinic/entity/Doctor.java",
+      "src/main/java/com/clinic/exception/BadRequestException.java",
+      "src/main/java/com/clinic/exception/ResourceNotFoundException.java",
+      "src/main/java/com/clinic/mapper/DoctorMapper.java",
+      "src/main/java/com/clinic/repository/DoctorRepository.java"
+    ],
+    "src/test/java/com/clinic/security/JwtServiceTest.java": [
+      "src/main/java/com/clinic/entity/Admin.java",
+      "src/main/java/com/clinic/entity/AdminRole.java",
+      "src/main/java/com/clinic/entity/Doctor.java"
+    ]
+  }
+}

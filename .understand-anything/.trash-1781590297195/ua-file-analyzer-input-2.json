@@ -1,0 +1,210 @@
+{
+  "projectRoot": "D:\\Desktop\\Clinic_Sphere",
+  "batchFiles": [
+    {
+      "path": "src/main/java/com/clinic/controller/AppointmentController.java",
+      "language": "java",
+      "sizeLines": 31,
+      "fileCategory": "code"
+    },
+    {
+      "path": "src/main/java/com/clinic/dto/request/AdminAppointmentUpdateRequest.java",
+      "language": "java",
+      "sizeLines": 14,
+      "fileCategory": "code"
+    },
+    {
+      "path": "src/main/java/com/clinic/dto/request/AppointmentBookingRequest.java",
+      "language": "java",
+      "sizeLines": 35,
+      "fileCategory": "code"
+    },
+    {
+      "path": "src/main/java/com/clinic/dto/response/AppointmentResponse.java",
+      "language": "java",
+      "sizeLines": 31,
+      "fileCategory": "code"
+    },
+    {
+      "path": "src/main/java/com/clinic/entity/Appointment.java",
+      "language": "java",
+      "sizeLines": 57,
+      "fileCategory": "code"
+    },
+    {
+      "path": "src/main/java/com/clinic/entity/AppointmentStatus.java",
+      "language": "java",
+      "sizeLines": 8,
+      "fileCategory": "code"
+    },
+    {
+      "path": "src/main/java/com/clinic/entity/Gender.java",
+      "language": "java",
+      "sizeLines": 7,
+      "fileCategory": "code"
+    },
+    {
+      "path": "src/main/java/com/clinic/entity/Patient.java",
+      "language": "java",
+      "sizeLines": 42,
+      "fileCategory": "code"
+    },
+    {
+      "path": "src/main/java/com/clinic/entity/Slot.java",
+      "language": "java",
+      "sizeLines": 48,
+      "fileCategory": "code"
+    },
+    {
+      "path": "src/main/java/com/clinic/exception/ConflictException.java",
+      "language": "java",
+      "sizeLines": 7,
+      "fileCategory": "code"
+    },
+    {
+      "path": "src/main/java/com/clinic/exception/SlotFullException.java",
+      "language": "java",
+      "sizeLines": 7,
+      "fileCategory": "code"
+    },
+    {
+      "path": "src/main/java/com/clinic/mapper/AppointmentMapper.java",
+      "language": "java",
+      "sizeLines": 24,
+      "fileCategory": "code"
+    },
+    {
+      "path": "src/main/java/com/clinic/repository/AppointmentRepository.java",
+      "language": "java",
+      "sizeLines": 71,
+      "fileCategory": "code"
+    },
+    {
+      "path": "src/main/java/com/clinic/repository/PatientRepository.java",
+      "language": "java",
+      "sizeLines": 28,
+      "fileCategory": "code"
+    },
+    {
+      "path": "src/main/java/com/clinic/repository/SlotRepository.java",
+      "language": "java",
+      "sizeLines": 139,
+      "fileCategory": "code"
+    },
+    {
+      "path": "src/main/java/com/clinic/service/AppointmentExportService.java",
+      "language": "java",
+      "sizeLines": 109,
+      "fileCategory": "code"
+    },
+    {
+      "path": "src/main/java/com/clinic/service/AppointmentService.java",
+      "language": "java",
+      "sizeLines": 246,
+      "fileCategory": "code"
+    },
+    {
+      "path": "src/main/java/com/clinic/service/AppointmentSpecifications.java",
+      "language": "java",
+      "sizeLines": 54,
+      "fileCategory": "code"
+    },
+    {
+      "path": "src/main/java/com/clinic/service/AppointmentStatusAutomationService.java",
+      "language": "java",
+      "sizeLines": 33,
+      "fileCategory": "code"
+    },
+    {
+      "path": "src/test/java/com/clinic/service/AppointmentServiceConcurrencyTest.java",
+      "language": "java",
+      "sizeLines": 151,
+      "fileCategory": "code"
+    }
+  ],
+  "batchImportData": {
+    "src/main/java/com/clinic/controller/AppointmentController.java": [
+      "src/main/java/com/clinic/dto/request/AppointmentBookingRequest.java",
+      "src/main/java/com/clinic/dto/response/AppointmentResponse.java",
+      "src/main/java/com/clinic/service/AppointmentService.java"
+    ],
+    "src/main/java/com/clinic/dto/request/AdminAppointmentUpdateRequest.java": [
+      "src/main/java/com/clinic/entity/AppointmentStatus.java"
+    ],
+    "src/main/java/com/clinic/dto/request/AppointmentBookingRequest.java": [
+      "src/main/java/com/clinic/entity/Gender.java"
+    ],
+    "src/main/java/com/clinic/dto/response/AppointmentResponse.java": [
+      "src/main/java/com/clinic/entity/AppointmentStatus.java",
+      "src/main/java/com/clinic/entity/Gender.java"
+    ],
+    "src/main/java/com/clinic/entity/Appointment.java": [],
+    "src/main/java/com/clinic/entity/AppointmentStatus.java": [],
+    "src/main/java/com/clinic/entity/Gender.java": [],
+    "src/main/java/com/clinic/entity/Patient.java": [],
+    "src/main/java/com/clinic/entity/Slot.java": [],
+    "src/main/java/com/clinic/exception/ConflictException.java": [],
+    "src/main/java/com/clinic/exception/SlotFullException.java": [],
+    "src/main/java/com/clinic/mapper/AppointmentMapper.java": [
+      "src/main/java/com/clinic/dto/response/AppointmentResponse.java",
+      "src/main/java/com/clinic/entity/Appointment.java"
+    ],
+    "src/main/java/com/clinic/repository/AppointmentRepository.java": [
+      "src/main/java/com/clinic/entity/Appointment.java",
+      "src/main/java/com/clinic/entity/AppointmentStatus.java"
+    ],
+    "src/main/java/com/clinic/repository/PatientRepository.java": [
+      "src/main/java/com/clinic/entity/Gender.java",
+      "src/main/java/com/clinic/entity/Patient.java"
+    ],
+    "src/main/java/com/clinic/repository/SlotRepository.java": [
+      "src/main/java/com/clinic/entity/Slot.java"
+    ],
+    "src/main/java/com/clinic/service/AppointmentExportService.java": [
+      "src/main/java/com/clinic/entity/Appointment.java",
+      "src/main/java/com/clinic/entity/AppointmentStatus.java",
+      "src/main/java/com/clinic/repository/AppointmentRepository.java"
+    ],
+    "src/main/java/com/clinic/service/AppointmentService.java": [
+      "src/main/java/com/clinic/dto/request/AdminAppointmentUpdateRequest.java",
+      "src/main/java/com/clinic/dto/request/AppointmentBookingRequest.java",
+      "src/main/java/com/clinic/dto/response/AppointmentResponse.java",
+      "src/main/java/com/clinic/dto/response/PageResponse.java",
+      "src/main/java/com/clinic/entity/Appointment.java",
+      "src/main/java/com/clinic/entity/AppointmentStatus.java",
+      "src/main/java/com/clinic/entity/Patient.java",
+      "src/main/java/com/clinic/entity/Slot.java",
+      "src/main/java/com/clinic/exception/BadRequestException.java",
+      "src/main/java/com/clinic/exception/ConflictException.java",
+      "src/main/java/com/clinic/exception/ResourceNotFoundException.java",
+      "src/main/java/com/clinic/exception/SlotFullException.java",
+      "src/main/java/com/clinic/exception/UnauthorizedException.java",
+      "src/main/java/com/clinic/mapper/AppointmentMapper.java",
+      "src/main/java/com/clinic/repository/AppointmentRepository.java",
+      "src/main/java/com/clinic/repository/PatientRepository.java",
+      "src/main/java/com/clinic/repository/SlotRepository.java"
+    ],
+    "src/main/java/com/clinic/service/AppointmentSpecifications.java": [
+      "src/main/java/com/clinic/entity/Appointment.java",
+      "src/main/java/com/clinic/entity/AppointmentStatus.java"
+    ],
+    "src/main/java/com/clinic/service/AppointmentStatusAutomationService.java": [
+      "src/main/java/com/clinic/entity/AppointmentStatus.java",
+      "src/main/java/com/clinic/repository/AppointmentRepository.java"
+    ],
+    "src/test/java/com/clinic/service/AppointmentServiceConcurrencyTest.java": [
+      "src/main/java/com/clinic/dto/request/AppointmentBookingRequest.java",
+      "src/main/java/com/clinic/dto/response/AppointmentResponse.java",
+      "src/main/java/com/clinic/entity/Appointment.java",
+      "src/main/java/com/clinic/entity/AppointmentStatus.java",
+      "src/main/java/com/clinic/entity/Gender.java",
+      "src/main/java/com/clinic/entity/Patient.java",
+      "src/main/java/com/clinic/entity/Slot.java",
+      "src/main/java/com/clinic/exception/ConflictException.java",
+      "src/main/java/com/clinic/mapper/AppointmentMapper.java",
+      "src/main/java/com/clinic/repository/AppointmentRepository.java",
+      "src/main/java/com/clinic/repository/PatientRepository.java",
+      "src/main/java/com/clinic/repository/SlotRepository.java"
+    ]
+  }
+}
