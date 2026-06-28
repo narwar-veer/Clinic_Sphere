@@ -18,6 +18,7 @@ WORKDIR /app
 
 ENV TZ=Asia/Kolkata
 ENV JAVA_TOOL_OPTIONS="-XX:+UseContainerSupport -XX:MaxRAMPercentage=75.0"
+ENV SERVER_PORT=8082
 
 RUN groupadd -r spring && useradd -r -u 1001 -g spring spring
 

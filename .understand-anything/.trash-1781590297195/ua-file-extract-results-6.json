@@ -1,0 +1,438 @@
+{
+  "scriptCompleted": true,
+  "filesAnalyzed": 8,
+  "filesSkipped": [],
+  "results": [
+    {
+      "path": "src/main/java/com/clinic/controller/ClinicController.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 30,
+      "nonEmptyLines": 26,
+      "functions": [
+        {
+          "name": "getClinics",
+          "startLine": 23,
+          "endLine": 29,
+          "params": [
+            "page",
+            "size"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "ClinicController",
+          "startLine": 15,
+          "endLine": 30,
+          "methods": [
+            "getClinics"
+          ],
+          "properties": [
+            "clinicService"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "getClinics",
+          "line": 23,
+          "isDefault": false
+        },
+        {
+          "name": "ClinicController",
+          "line": 15,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "getClinics",
+          "callee": "clinicService.getClinics",
+          "lineNumber": 28
+        }
+      ],
+      "metrics": {
+        "importCount": 3,
+        "exportCount": 2,
+        "functionCount": 1,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "src/main/java/com/clinic/dto/response/ClinicResponse.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 18,
+      "nonEmptyLines": 16,
+      "classes": [
+        {
+          "name": "ClinicResponse",
+          "startLine": 6,
+          "endLine": 18,
+          "methods": [],
+          "properties": [
+            "id",
+            "doctorId",
+            "doctorName",
+            "clinicName",
+            "address",
+            "phone",
+            "whatsapp",
+            "email",
+            "mapLocation"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "ClinicResponse",
+          "line": 6,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "src/main/java/com/clinic/dto/response/PageResponse.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 15,
+      "nonEmptyLines": 13,
+      "classes": [
+        {
+          "name": "PageResponse",
+          "startLine": 7,
+          "endLine": 15,
+          "methods": [],
+          "properties": [
+            "content",
+            "page",
+            "size",
+            "totalElements",
+            "totalPages"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "PageResponse",
+          "line": 7,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "src/main/java/com/clinic/entity/Clinic.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 56,
+      "nonEmptyLines": 44,
+      "classes": [
+        {
+          "name": "Clinic",
+          "startLine": 19,
+          "endLine": 56,
+          "methods": [],
+          "properties": [
+            "id",
+            "doctor",
+            "clinicName",
+            "address",
+            "phone",
+            "whatsapp",
+            "email",
+            "mapLocation",
+            "timings",
+            "slotConfig"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "Clinic",
+          "line": 19,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "src/main/java/com/clinic/mapper/ClinicMapper.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 14,
+      "nonEmptyLines": 11,
+      "classes": [
+        {
+          "name": "ClinicMapper",
+          "startLine": 8,
+          "endLine": 14,
+          "methods": [
+            "toResponse"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "ClinicMapper",
+          "line": 8,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 2,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "src/main/java/com/clinic/repository/ClinicRepository.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 20,
+      "nonEmptyLines": 15,
+      "classes": [
+        {
+          "name": "ClinicRepository",
+          "startLine": 11,
+          "endLine": 20,
+          "methods": [
+            "findByDoctorId",
+            "findByIdAndDoctorId",
+            "findAll"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "ClinicRepository",
+          "line": 11,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "src/main/java/com/clinic/service/ClinicService.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 31,
+      "nonEmptyLines": 27,
+      "functions": [
+        {
+          "name": "getClinics",
+          "startLine": 24,
+          "endLine": 30,
+          "params": [
+            "page",
+            "size"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "ClinicService",
+          "startLine": 15,
+          "endLine": 31,
+          "methods": [
+            "getClinics"
+          ],
+          "properties": [
+            "clinicRepository",
+            "clinicMapper",
+            "pageResponseFactory",
+            "paginationValidator"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "getClinics",
+          "line": 24,
+          "isDefault": false
+        },
+        {
+          "name": "ClinicService",
+          "line": 15,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "getClinics",
+          "callee": "paginationValidator.validate",
+          "lineNumber": 26
+        },
+        {
+          "caller": "getClinics",
+          "callee": "PageRequest.of",
+          "lineNumber": 27
+        },
+        {
+          "caller": "getClinics",
+          "callee": "Sort.by(\"clinicName\").ascending",
+          "lineNumber": 27
+        },
+        {
+          "caller": "getClinics",
+          "callee": "Sort.by",
+          "lineNumber": 27
+        },
+        {
+          "caller": "getClinics",
+          "callee": "clinicRepository.findAll(pageable).map",
+          "lineNumber": 28
+        },
+        {
+          "caller": "getClinics",
+          "callee": "clinicRepository.findAll",
+          "lineNumber": 28
+        },
+        {
+          "caller": "getClinics",
+          "callee": "pageResponseFactory.fromPage",
+          "lineNumber": 29
+        }
+      ],
+      "metrics": {
+        "importCount": 4,
+        "exportCount": 2,
+        "functionCount": 1,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "src/main/java/com/clinic/service/PageResponseFactory.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 21,
+      "nonEmptyLines": 18,
+      "functions": [
+        {
+          "name": "fromPage",
+          "startLine": 11,
+          "endLine": 20,
+          "params": [
+            "page"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "PageResponseFactory",
+          "startLine": 8,
+          "endLine": 21,
+          "methods": [
+            "fromPage"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "fromPage",
+          "line": 11,
+          "isDefault": false
+        },
+        {
+          "name": "PageResponseFactory",
+          "line": 8,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "fromPage",
+          "callee": "page.getContent",
+          "lineNumber": 12
+        },
+        {
+          "caller": "fromPage",
+          "callee": "PageResponse.<T>builder()\n                .content(content)\n                .page(page.getNumber())\n                .size(page.getSize())\n                .totalElements(page.getTotalElements())\n                .totalPages(page.getTotalPages()).build",
+          "lineNumber": 13
+        },
+        {
+          "caller": "fromPage",
+          "callee": "PageResponse.<T>builder()\n                .content(content)\n                .page(page.getNumber())\n                .size(page.getSize())\n                .totalElements(page.getTotalElements()).totalPages",
+          "lineNumber": 13
+        },
+        {
+          "caller": "fromPage",
+          "callee": "PageResponse.<T>builder()\n                .content(content)\n                .page(page.getNumber())\n                .size(page.getSize()).totalElements",
+          "lineNumber": 13
+        },
+        {
+          "caller": "fromPage",
+          "callee": "PageResponse.<T>builder()\n                .content(content)\n                .page(page.getNumber()).size",
+          "lineNumber": 13
+        },
+        {
+          "caller": "fromPage",
+          "callee": "PageResponse.<T>builder()\n                .content(content).page",
+          "lineNumber": 13
+        },
+        {
+          "caller": "fromPage",
+          "callee": "PageResponse.<T>builder().content",
+          "lineNumber": 13
+        },
+        {
+          "caller": "fromPage",
+          "callee": "PageResponse.builder",
+          "lineNumber": 13
+        },
+        {
+          "caller": "fromPage",
+          "callee": "page.getNumber",
+          "lineNumber": 15
+        },
+        {
+          "caller": "fromPage",
+          "callee": "page.getSize",
+          "lineNumber": 16
+        },
+        {
+          "caller": "fromPage",
+          "callee": "page.getTotalElements",
+          "lineNumber": 17
+        },
+        {
+          "caller": "fromPage",
+          "callee": "page.getTotalPages",
+          "lineNumber": 18
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 2,
+        "functionCount": 1,
+        "classCount": 1
+      }
+    }
+  ]
+}

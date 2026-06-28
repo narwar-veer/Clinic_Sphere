@@ -1,0 +1,85 @@
+{
+  "nodes": [
+    {
+      "id": "config:.env",
+      "type": "config",
+      "name": ".env",
+      "filePath": ".env",
+      "summary": "Environment variables configuration file for local database, Redis, and security secrets.",
+      "tags": [
+        "config",
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "pipeline:Jenkinsfile",
+      "type": "pipeline",
+      "name": "Jenkinsfile",
+      "filePath": "Jenkinsfile",
+      "summary": "Jenkins CI/CD pipeline script automating build, test, and containerization stages.",
+      "tags": [
+        "jenkins",
+        "ci-cd",
+        "pipeline"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "config:clinic-booking.postman_collection.json",
+      "type": "config",
+      "name": "clinic-booking.postman_collection.json",
+      "filePath": "clinic-booking.postman_collection.json",
+      "summary": "config file providing functionality for the project.",
+      "tags": [
+        "config",
+        "json",
+        "utility"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "config:pom.xml",
+      "type": "config",
+      "name": "pom.xml",
+      "filePath": "pom.xml",
+      "summary": "Maven project configuration defining dependencies, properties, and build plugins for the clinic booking backend.",
+      "tags": [
+        "build-system",
+        "maven",
+        "configuration"
+      ],
+      "complexity": "moderate"
+    }
+  ],
+  "edges": [
+    {
+      "source": "config:.env",
+      "target": "file:src/main/java/com/clinic/ClinicBookingApplication.java",
+      "type": "configures",
+      "direction": "forward",
+      "weight": 0.6
+    },
+    {
+      "source": "pipeline:Jenkinsfile",
+      "target": "file:src/main/java/com/clinic/ClinicBookingApplication.java",
+      "type": "deploys",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "config:clinic-booking.postman_collection.json",
+      "target": "file:src/main/java/com/clinic/ClinicBookingApplication.java",
+      "type": "configures",
+      "direction": "forward",
+      "weight": 0.6
+    },
+    {
+      "source": "config:pom.xml",
+      "target": "file:src/main/java/com/clinic/ClinicBookingApplication.java",
+      "type": "configures",
+      "direction": "forward",
+      "weight": 0.6
+    }
+  ]
+}

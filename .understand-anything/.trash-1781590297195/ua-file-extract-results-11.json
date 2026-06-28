@@ -1,0 +1,439 @@
+{
+  "scriptCompleted": true,
+  "filesAnalyzed": 6,
+  "filesSkipped": [],
+  "results": [
+    {
+      "path": "src/main/resources/db/migration/V1__create_clinic_schema.sql",
+      "language": "sql",
+      "fileCategory": "data",
+      "totalLines": 127,
+      "nonEmptyLines": 113,
+      "definitions": [
+        {
+          "name": "doctors",
+          "kind": "table",
+          "fields": [
+            "id",
+            "name",
+            "photo",
+            "degrees",
+            "specialization",
+            "experience_years",
+            "registration_number",
+            "bio",
+            "created_at"
+          ],
+          "startLine": 1,
+          "endLine": 11
+        },
+        {
+          "name": "clinics",
+          "kind": "table",
+          "fields": [
+            "id",
+            "doctor_id",
+            "clinic_name",
+            "address",
+            "phone",
+            "whatsapp",
+            "email",
+            "map_location"
+          ],
+          "startLine": 13,
+          "endLine": 22
+        },
+        {
+          "name": "clinic_timings",
+          "kind": "table",
+          "fields": [
+            "id",
+            "clinic_id",
+            "day_of_week",
+            "start_time",
+            "end_time",
+            "break_start_time",
+            "break_end_time",
+            "is_closed"
+          ],
+          "startLine": 24,
+          "endLine": 34
+        },
+        {
+          "name": "slot_configs",
+          "kind": "table",
+          "fields": [
+            "id",
+            "clinic_id",
+            "slot_duration_minutes",
+            "max_patients_per_slot"
+          ],
+          "startLine": 36,
+          "endLine": 41
+        },
+        {
+          "name": "slots",
+          "kind": "table",
+          "fields": [
+            "id",
+            "clinic_id",
+            "slot_date",
+            "start_time",
+            "end_time",
+            "max_patients",
+            "booked_count",
+            "is_blocked"
+          ],
+          "startLine": 43,
+          "endLine": 53
+        },
+        {
+          "name": "patients",
+          "kind": "table",
+          "fields": [
+            "id",
+            "name",
+            "phone",
+            "age",
+            "gender",
+            "created_at"
+          ],
+          "startLine": 55,
+          "endLine": 62
+        },
+        {
+          "name": "appointments",
+          "kind": "table",
+          "fields": [
+            "id",
+            "patient_id",
+            "slot_id",
+            "symptoms",
+            "status",
+            "created_at"
+          ],
+          "startLine": 64,
+          "endLine": 71
+        },
+        {
+          "name": "medical_records",
+          "kind": "table",
+          "fields": [
+            "id",
+            "patient_id",
+            "doctor_id",
+            "appointment_id",
+            "diagnosis",
+            "prescription_notes",
+            "attachment_url",
+            "created_at",
+            "updated_at"
+          ],
+          "startLine": 73,
+          "endLine": 83
+        },
+        {
+          "name": "notifications",
+          "kind": "table",
+          "fields": [
+            "id",
+            "appointment_id",
+            "type",
+            "status",
+            "sent_at",
+            "provider_message_id",
+            "error_message"
+          ],
+          "startLine": 85,
+          "endLine": 93
+        },
+        {
+          "name": "admins",
+          "kind": "table",
+          "fields": [
+            "id",
+            "username",
+            "password_hash",
+            "role",
+            "doctor_id"
+          ],
+          "startLine": 95,
+          "endLine": 101
+        },
+        {
+          "name": "idx_slots_date_clinic",
+          "kind": "index",
+          "fields": [],
+          "startLine": 103,
+          "endLine": 103
+        },
+        {
+          "name": "idx_appointments_status",
+          "kind": "index",
+          "fields": [],
+          "startLine": 104,
+          "endLine": 104
+        },
+        {
+          "name": "idx_appointments_created",
+          "kind": "index",
+          "fields": [],
+          "startLine": 105,
+          "endLine": 105
+        },
+        {
+          "name": "idx_medical_records_patient",
+          "kind": "index",
+          "fields": [],
+          "startLine": 106,
+          "endLine": 106
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "definitionCount": 14
+      }
+    },
+    {
+      "path": "src/main/resources/db/migration/V2__add_visit_and_testimonial_columns.sql",
+      "language": "sql",
+      "fileCategory": "data",
+      "totalLines": 17,
+      "nonEmptyLines": 16,
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "definitionCount": 0
+      }
+    },
+    {
+      "path": "src/main/resources/db/migration/V3__change_rating_to_integer.sql",
+      "language": "sql",
+      "fileCategory": "data",
+      "totalLines": 2,
+      "nonEmptyLines": 2,
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "definitionCount": 0
+      }
+    },
+    {
+      "path": "src/main/resources/db/migration/V4__doctor_awards_and_appointment_statuses.sql",
+      "language": "sql",
+      "fileCategory": "data",
+      "totalLines": 21,
+      "nonEmptyLines": 16,
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "definitionCount": 0
+      }
+    },
+    {
+      "path": "src/main/resources/db/migration/V5__session_security_and_status_updates.sql",
+      "language": "sql",
+      "fileCategory": "data",
+      "totalLines": 37,
+      "nonEmptyLines": 29,
+      "definitions": [
+        {
+          "name": "admin_sessions",
+          "kind": "table",
+          "fields": [
+            "token_id",
+            "username",
+            "doctor_id",
+            "last_activity_at",
+            "expires_at",
+            "revoked_at",
+            "created_at"
+          ],
+          "startLine": 26,
+          "endLine": 34
+        },
+        {
+          "name": "idx_admin_sessions_expires_at",
+          "kind": "index",
+          "fields": [],
+          "startLine": 36,
+          "endLine": 36
+        },
+        {
+          "name": "idx_admin_sessions_doctor_id",
+          "kind": "index",
+          "fields": [],
+          "startLine": 37,
+          "endLine": 37
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "definitionCount": 3
+      }
+    },
+    {
+      "path": "src/main/resources/db/migration/V6__production_hardening.sql",
+      "language": "sql",
+      "fileCategory": "data",
+      "totalLines": 112,
+      "nonEmptyLines": 91,
+      "definitions": [
+        {
+          "name": "outbox_events",
+          "kind": "table",
+          "fields": [
+            "id",
+            "event_key",
+            "aggregate_type",
+            "aggregate_id",
+            "event_type",
+            "payload_json",
+            "status",
+            "retry_count",
+            "next_attempt_at",
+            "locked_at",
+            "processed_at",
+            "last_error",
+            "created_at"
+          ],
+          "startLine": 69,
+          "endLine": 84
+        },
+        {
+          "name": "audit_logs",
+          "kind": "table",
+          "fields": [
+            "id",
+            "event_type",
+            "actor",
+            "entity_type",
+            "entity_id",
+            "request_id",
+            "details_json",
+            "created_at"
+          ],
+          "startLine": 93,
+          "endLine": 102
+        },
+        {
+          "name": "idx_patients_phone",
+          "kind": "index",
+          "fields": [],
+          "startLine": 6,
+          "endLine": 6
+        },
+        {
+          "name": "uq_patients_identity",
+          "kind": "index",
+          "fields": [],
+          "startLine": 7,
+          "endLine": 7
+        },
+        {
+          "name": "uq_appointments_idempotency_key",
+          "kind": "index",
+          "fields": [],
+          "startLine": 23,
+          "endLine": 23
+        },
+        {
+          "name": "uq_appointments_patient_booking_date_active",
+          "kind": "index",
+          "fields": [],
+          "startLine": 27,
+          "endLine": 27
+        },
+        {
+          "name": "idx_appointments_doctor_booking_date",
+          "kind": "index",
+          "fields": [],
+          "startLine": 31,
+          "endLine": 31
+        },
+        {
+          "name": "idx_slots_date_time",
+          "kind": "index",
+          "fields": [],
+          "startLine": 48,
+          "endLine": 48
+        },
+        {
+          "name": "uq_notifications_type_idempotency",
+          "kind": "index",
+          "fields": [],
+          "startLine": 62,
+          "endLine": 62
+        },
+        {
+          "name": "idx_notifications_status_created",
+          "kind": "index",
+          "fields": [],
+          "startLine": 65,
+          "endLine": 65
+        },
+        {
+          "name": "idx_outbox_dispatch",
+          "kind": "index",
+          "fields": [],
+          "startLine": 86,
+          "endLine": 86
+        },
+        {
+          "name": "idx_outbox_created",
+          "kind": "index",
+          "fields": [],
+          "startLine": 89,
+          "endLine": 89
+        },
+        {
+          "name": "idx_audit_entity_time",
+          "kind": "index",
+          "fields": [],
+          "startLine": 104,
+          "endLine": 104
+        },
+        {
+          "name": "idx_audit_event_time",
+          "kind": "index",
+          "fields": [],
+          "startLine": 107,
+          "endLine": 107
+        },
+        {
+          "name": "idx_admin_sessions_revoked_at",
+          "kind": "index",
+          "fields": [],
+          "startLine": 111,
+          "endLine": 111
+        },
+        {
+          "name": "idx_admin_sessions_last_activity",
+          "kind": "index",
+          "fields": [],
+          "startLine": 112,
+          "endLine": 112
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "definitionCount": 16
+      }
+    }
+  ]
+}

@@ -1,0 +1,125 @@
+{
+  "scriptCompleted": true,
+  "filesAnalyzed": 2,
+  "filesSkipped": [],
+  "results": [
+    {
+      "path": ".dockerignore",
+      "language": "unknown",
+      "fileCategory": "infra",
+      "totalLines": 11,
+      "nonEmptyLines": 11,
+      "metrics": {}
+    },
+    {
+      "path": "Dockerfile",
+      "language": "dockerfile",
+      "fileCategory": "infra",
+      "totalLines": 31,
+      "nonEmptyLines": 18,
+      "services": [
+        {
+          "name": "builder",
+          "image": "maven:3.9.9-eclipse-temurin-21",
+          "ports": [],
+          "startLine": 1,
+          "endLine": 14
+        },
+        {
+          "name": "eclipse-temurin",
+          "image": "eclipse-temurin:21-jre-jammy",
+          "ports": [
+            8082
+          ],
+          "startLine": 15,
+          "endLine": 31
+        }
+      ],
+      "steps": [
+        {
+          "name": "FROM maven:3.9.9-eclipse-temurin-21 AS builder",
+          "startLine": 1,
+          "endLine": 1
+        },
+        {
+          "name": "WORKDIR /app",
+          "startLine": 3,
+          "endLine": 3
+        },
+        {
+          "name": "COPY pom.xml .",
+          "startLine": 5,
+          "endLine": 5
+        },
+        {
+          "name": "RUN --mount=type=cache,target=/root/.m2 \\",
+          "startLine": 7,
+          "endLine": 7
+        },
+        {
+          "name": "COPY src ./src",
+          "startLine": 10,
+          "endLine": 10
+        },
+        {
+          "name": "RUN --mount=type=cache,target=/root/.m2 \\",
+          "startLine": 12,
+          "endLine": 12
+        },
+        {
+          "name": "FROM eclipse-temurin:21-jre-jammy",
+          "startLine": 15,
+          "endLine": 15
+        },
+        {
+          "name": "WORKDIR /app",
+          "startLine": 17,
+          "endLine": 17
+        },
+        {
+          "name": "ENV TZ=Asia/Kolkata",
+          "startLine": 19,
+          "endLine": 19
+        },
+        {
+          "name": "ENV JAVA_TOOL_OPTIONS=\"-XX:+UseContainerSupport -XX:MaxRAMPercen",
+          "startLine": 20,
+          "endLine": 20
+        },
+        {
+          "name": "RUN groupadd -r spring && useradd -r -u 1001 -g spring spring",
+          "startLine": 22,
+          "endLine": 22
+        },
+        {
+          "name": "COPY --from=builder --chown=spring:spring \\",
+          "startLine": 24,
+          "endLine": 24
+        },
+        {
+          "name": "USER spring",
+          "startLine": 27,
+          "endLine": 27
+        },
+        {
+          "name": "EXPOSE 8082",
+          "startLine": 29,
+          "endLine": 29
+        },
+        {
+          "name": "ENTRYPOINT [\"java\", \"-jar\", \"app.jar\"]",
+          "startLine": 31,
+          "endLine": 31
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "serviceCount": 2,
+        "stepCount": 15
+      }
+    }
+  ]
+}

@@ -1,0 +1,35 @@
+{
+  "projectRoot": "D:\\Desktop\\Clinic_Sphere",
+  "batchFiles": [
+    {
+      "path": ".env",
+      "language": "config",
+      "sizeLines": 28,
+      "fileCategory": "config"
+    },
+    {
+      "path": "Jenkinsfile",
+      "language": "jenkinsfile",
+      "sizeLines": 89,
+      "fileCategory": "infra"
+    },
+    {
+      "path": "clinic-booking.postman_collection.json",
+      "language": "json",
+      "sizeLines": 360,
+      "fileCategory": "config"
+    },
+    {
+      "path": "pom.xml",
+      "language": "xml",
+      "sizeLines": 141,
+      "fileCategory": "config"
+    }
+  ],
+  "batchImportData": {
+    ".env": [],
+    "Jenkinsfile": [],
+    "clinic-booking.postman_collection.json": [],
+    "pom.xml": []
+  }
+}

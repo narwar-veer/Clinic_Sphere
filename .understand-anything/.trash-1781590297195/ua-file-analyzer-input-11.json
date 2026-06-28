@@ -1,0 +1,49 @@
+{
+  "projectRoot": "D:\\Desktop\\Clinic_Sphere",
+  "batchFiles": [
+    {
+      "path": "src/main/resources/db/migration/V1__create_clinic_schema.sql",
+      "language": "sql",
+      "sizeLines": 127,
+      "fileCategory": "data"
+    },
+    {
+      "path": "src/main/resources/db/migration/V2__add_visit_and_testimonial_columns.sql",
+      "language": "sql",
+      "sizeLines": 17,
+      "fileCategory": "data"
+    },
+    {
+      "path": "src/main/resources/db/migration/V3__change_rating_to_integer.sql",
+      "language": "sql",
+      "sizeLines": 2,
+      "fileCategory": "data"
+    },
+    {
+      "path": "src/main/resources/db/migration/V4__doctor_awards_and_appointment_statuses.sql",
+      "language": "sql",
+      "sizeLines": 21,
+      "fileCategory": "data"
+    },
+    {
+      "path": "src/main/resources/db/migration/V5__session_security_and_status_updates.sql",
+      "language": "sql",
+      "sizeLines": 37,
+      "fileCategory": "data"
+    },
+    {
+      "path": "src/main/resources/db/migration/V6__production_hardening.sql",
+      "language": "sql",
+      "sizeLines": 112,
+      "fileCategory": "data"
+    }
+  ],
+  "batchImportData": {
+    "src/main/resources/db/migration/V1__create_clinic_schema.sql": [],
+    "src/main/resources/db/migration/V2__add_visit_and_testimonial_columns.sql": [],
+    "src/main/resources/db/migration/V3__change_rating_to_integer.sql": [],
+    "src/main/resources/db/migration/V4__doctor_awards_and_appointment_statuses.sql": [],
+    "src/main/resources/db/migration/V5__session_security_and_status_updates.sql": [],
+    "src/main/resources/db/migration/V6__production_hardening.sql": []
+  }
+}

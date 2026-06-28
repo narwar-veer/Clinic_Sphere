@@ -3,3 +3,9 @@ bin/
 Users/
 .build/
 *.log
+
+# Environment variables & secrets (NEVER push to GitHub)
+.env
+.env.local
+.env.production
+DEPLOYMENT.md

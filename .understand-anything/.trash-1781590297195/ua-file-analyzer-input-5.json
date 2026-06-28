@@ -1,0 +1,90 @@
+{
+  "projectRoot": "D:\\Desktop\\Clinic_Sphere",
+  "batchFiles": [
+    {
+      "path": "src/main/java/com/clinic/config/SecurityConfig.java",
+      "language": "java",
+      "sizeLines": 118,
+      "fileCategory": "code"
+    },
+    {
+      "path": "src/main/java/com/clinic/entity/AdminSession.java",
+      "language": "java",
+      "sizeLines": 44,
+      "fileCategory": "code"
+    },
+    {
+      "path": "src/main/java/com/clinic/exception/ApiErrorResponse.java",
+      "language": "java",
+      "sizeLines": 17,
+      "fileCategory": "code"
+    },
+    {
+      "path": "src/main/java/com/clinic/repository/AdminSessionRepository.java",
+      "language": "java",
+      "sizeLines": 33,
+      "fileCategory": "code"
+    },
+    {
+      "path": "src/main/java/com/clinic/security/JsonAccessDeniedHandler.java",
+      "language": "java",
+      "sizeLines": 37,
+      "fileCategory": "code"
+    },
+    {
+      "path": "src/main/java/com/clinic/security/JsonAuthenticationEntryPoint.java",
+      "language": "java",
+      "sizeLines": 37,
+      "fileCategory": "code"
+    },
+    {
+      "path": "src/main/java/com/clinic/security/JwtAuthenticationFilter.java",
+      "language": "java",
+      "sizeLines": 52,
+      "fileCategory": "code"
+    },
+    {
+      "path": "src/main/java/com/clinic/security/LoginRateLimitFilter.java",
+      "language": "java",
+      "sizeLines": 69,
+      "fileCategory": "code"
+    },
+    {
+      "path": "src/main/java/com/clinic/service/AdminSessionService.java",
+      "language": "java",
+      "sizeLines": 154,
+      "fileCategory": "code"
+    }
+  ],
+  "batchImportData": {
+    "src/main/java/com/clinic/config/SecurityConfig.java": [
+      "src/main/java/com/clinic/security/AdminDetailsService.java",
+      "src/main/java/com/clinic/security/JsonAccessDeniedHandler.java",
+      "src/main/java/com/clinic/security/JsonAuthenticationEntryPoint.java",
+      "src/main/java/com/clinic/security/JwtAuthenticationFilter.java",
+      "src/main/java/com/clinic/security/LoginRateLimitFilter.java"
+    ],
+    "src/main/java/com/clinic/entity/AdminSession.java": [],
+    "src/main/java/com/clinic/exception/ApiErrorResponse.java": [],
+    "src/main/java/com/clinic/repository/AdminSessionRepository.java": [
+      "src/main/java/com/clinic/entity/AdminSession.java"
+    ],
+    "src/main/java/com/clinic/security/JsonAccessDeniedHandler.java": [
+      "src/main/java/com/clinic/exception/ApiErrorResponse.java"
+    ],
+    "src/main/java/com/clinic/security/JsonAuthenticationEntryPoint.java": [
+      "src/main/java/com/clinic/exception/ApiErrorResponse.java"
+    ],
+    "src/main/java/com/clinic/security/JwtAuthenticationFilter.java": [
+      "src/main/java/com/clinic/service/AdminSessionService.java"
+    ],
+    "src/main/java/com/clinic/security/LoginRateLimitFilter.java": [
+      "src/main/java/com/clinic/exception/ApiErrorResponse.java"
+    ],
+    "src/main/java/com/clinic/service/AdminSessionService.java": [
+      "src/main/java/com/clinic/entity/AdminSession.java",
+      "src/main/java/com/clinic/entity/Doctor.java",
+      "src/main/java/com/clinic/repository/AdminSessionRepository.java"
+    ]
+  }
+}

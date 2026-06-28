@@ -1,0 +1,1237 @@
+{
+  "scriptCompleted": true,
+  "filesAnalyzed": 17,
+  "filesSkipped": [],
+  "results": [
+    {
+      "path": ".understand-anything/.understandignore",
+      "language": "unknown",
+      "fileCategory": "code",
+      "totalLines": 19,
+      "nonEmptyLines": 16,
+      "metrics": {}
+    },
+    {
+      "path": "src/main/java/com/clinic/ClinicBookingApplication.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 13,
+      "nonEmptyLines": 10,
+      "functions": [
+        {
+          "name": "main",
+          "startLine": 9,
+          "endLine": 12,
+          "params": [
+            "args"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "ClinicBookingApplication",
+          "startLine": 6,
+          "endLine": 13,
+          "methods": [
+            "main"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "main",
+          "line": 9,
+          "isDefault": false
+        },
+        {
+          "name": "ClinicBookingApplication",
+          "line": 6,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "main",
+          "callee": "SpringApplication.run",
+          "lineNumber": 10
+        },
+        {
+          "caller": "main",
+          "callee": "System.out.println",
+          "lineNumber": 11
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 2,
+        "functionCount": 1,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "src/main/java/com/clinic/config/AsyncConfig.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 25,
+      "nonEmptyLines": 22,
+      "functions": [
+        {
+          "name": "notificationExecutor",
+          "startLine": 15,
+          "endLine": 24,
+          "params": []
+        }
+      ],
+      "classes": [
+        {
+          "name": "AsyncConfig",
+          "startLine": 10,
+          "endLine": 25,
+          "methods": [
+            "notificationExecutor"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "notificationExecutor",
+          "line": 15,
+          "isDefault": false
+        },
+        {
+          "name": "AsyncConfig",
+          "line": 10,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "notificationExecutor",
+          "callee": "new ThreadPoolTaskExecutor",
+          "lineNumber": 17
+        },
+        {
+          "caller": "notificationExecutor",
+          "callee": "executor.setCorePoolSize",
+          "lineNumber": 18
+        },
+        {
+          "caller": "notificationExecutor",
+          "callee": "executor.setMaxPoolSize",
+          "lineNumber": 19
+        },
+        {
+          "caller": "notificationExecutor",
+          "callee": "executor.setQueueCapacity",
+          "lineNumber": 20
+        },
+        {
+          "caller": "notificationExecutor",
+          "callee": "executor.setThreadNamePrefix",
+          "lineNumber": 21
+        },
+        {
+          "caller": "notificationExecutor",
+          "callee": "executor.initialize",
+          "lineNumber": 22
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 2,
+        "functionCount": 1,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "src/main/java/com/clinic/config/HttpClientConfig.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 28,
+      "nonEmptyLines": 22,
+      "functions": [
+        {
+          "name": "restClientBuilder",
+          "startLine": 14,
+          "endLine": 27,
+          "params": [
+            "connectTimeoutMs",
+            "readTimeoutMs"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "HttpClientConfig",
+          "startLine": 11,
+          "endLine": 28,
+          "methods": [
+            "restClientBuilder"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "restClientBuilder",
+          "line": 14,
+          "isDefault": false
+        },
+        {
+          "name": "HttpClientConfig",
+          "line": 11,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "restClientBuilder",
+          "callee": "HttpClient.newBuilder()\n                .connectTimeout(Duration.ofMillis(connectTimeoutMs)).build",
+          "lineNumber": 19
+        },
+        {
+          "caller": "restClientBuilder",
+          "callee": "HttpClient.newBuilder().connectTimeout",
+          "lineNumber": 19
+        },
+        {
+          "caller": "restClientBuilder",
+          "callee": "HttpClient.newBuilder",
+          "lineNumber": 19
+        },
+        {
+          "caller": "restClientBuilder",
+          "callee": "Duration.ofMillis",
+          "lineNumber": 20
+        },
+        {
+          "caller": "restClientBuilder",
+          "callee": "new JdkClientHttpRequestFactory",
+          "lineNumber": 23
+        },
+        {
+          "caller": "restClientBuilder",
+          "callee": "requestFactory.setReadTimeout",
+          "lineNumber": 24
+        },
+        {
+          "caller": "restClientBuilder",
+          "callee": "Duration.ofMillis",
+          "lineNumber": 24
+        },
+        {
+          "caller": "restClientBuilder",
+          "callee": "RestClient.builder().requestFactory",
+          "lineNumber": 26
+        },
+        {
+          "caller": "restClientBuilder",
+          "callee": "RestClient.builder",
+          "lineNumber": 26
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 2,
+        "functionCount": 1,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "src/main/java/com/clinic/config/SchedulingConfig.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 9,
+      "nonEmptyLines": 7,
+      "classes": [
+        {
+          "name": "SchedulingConfig",
+          "startLine": 6,
+          "endLine": 9,
+          "methods": [],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "SchedulingConfig",
+          "line": 6,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "src/main/java/com/clinic/config/TimeConfig.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 21,
+      "nonEmptyLines": 17,
+      "functions": [
+        {
+          "name": "appZoneId",
+          "startLine": 12,
+          "endLine": 15,
+          "params": [
+            "zoneId"
+          ]
+        },
+        {
+          "name": "appClock",
+          "startLine": 17,
+          "endLine": 20,
+          "params": [
+            "appZoneId"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "TimeConfig",
+          "startLine": 9,
+          "endLine": 21,
+          "methods": [
+            "appZoneId",
+            "appClock"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "appZoneId",
+          "line": 12,
+          "isDefault": false
+        },
+        {
+          "name": "appClock",
+          "line": 17,
+          "isDefault": false
+        },
+        {
+          "name": "TimeConfig",
+          "line": 9,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "appZoneId",
+          "callee": "ZoneId.of",
+          "lineNumber": 14
+        },
+        {
+          "caller": "appClock",
+          "callee": "Clock.system",
+          "lineNumber": 19
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 3,
+        "functionCount": 2,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "src/main/java/com/clinic/controller/HealthController.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 16,
+      "nonEmptyLines": 13,
+      "functions": [
+        {
+          "name": "health",
+          "startLine": 12,
+          "endLine": 15,
+          "params": []
+        }
+      ],
+      "classes": [
+        {
+          "name": "HealthController",
+          "startLine": 8,
+          "endLine": 16,
+          "methods": [
+            "health"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "health",
+          "line": 12,
+          "isDefault": false
+        },
+        {
+          "name": "HealthController",
+          "line": 8,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "health",
+          "callee": "Map.of",
+          "lineNumber": 14
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 2,
+        "functionCount": 1,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "src/main/java/com/clinic/exception/GlobalExceptionHandler.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 106,
+      "nonEmptyLines": 92,
+      "functions": [
+        {
+          "name": "handleNotFound",
+          "startLine": 29,
+          "endLine": 32,
+          "params": [
+            "ex",
+            "request"
+          ]
+        },
+        {
+          "name": "handleSlotFull",
+          "startLine": 34,
+          "endLine": 37,
+          "params": [
+            "ex",
+            "request"
+          ]
+        },
+        {
+          "name": "handleConflict",
+          "startLine": 39,
+          "endLine": 42,
+          "params": [
+            "ex",
+            "request"
+          ]
+        },
+        {
+          "name": "handleBadRequest",
+          "startLine": 44,
+          "endLine": 47,
+          "params": [
+            "ex",
+            "request"
+          ]
+        },
+        {
+          "name": "handleInvalidInput",
+          "startLine": 49,
+          "endLine": 52,
+          "params": [
+            "ex",
+            "request"
+          ]
+        },
+        {
+          "name": "handleUnauthorized",
+          "startLine": 54,
+          "endLine": 57,
+          "params": [
+            "ex",
+            "request"
+          ]
+        },
+        {
+          "name": "handleRateLimit",
+          "startLine": 59,
+          "endLine": 62,
+          "params": [
+            "ex",
+            "request"
+          ]
+        },
+        {
+          "name": "handleValidation",
+          "startLine": 64,
+          "endLine": 71,
+          "params": [
+            "ex",
+            "request"
+          ]
+        },
+        {
+          "name": "handleRequestBindingErrors",
+          "startLine": 73,
+          "endLine": 82,
+          "params": [
+            "ex",
+            "request"
+          ]
+        },
+        {
+          "name": "handleGeneric",
+          "startLine": 84,
+          "endLine": 88,
+          "params": [
+            "ex",
+            "request"
+          ]
+        },
+        {
+          "name": "build",
+          "startLine": 90,
+          "endLine": 105,
+          "params": [
+            "status",
+            "message",
+            "path",
+            "fieldErrors"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "GlobalExceptionHandler",
+          "startLine": 22,
+          "endLine": 106,
+          "methods": [
+            "handleNotFound",
+            "handleSlotFull",
+            "handleConflict",
+            "handleBadRequest",
+            "handleInvalidInput",
+            "handleUnauthorized",
+            "handleRateLimit",
+            "handleValidation",
+            "handleRequestBindingErrors",
+            "handleGeneric",
+            "build"
+          ],
+          "properties": [
+            "appClock"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "handleNotFound",
+          "line": 29,
+          "isDefault": false
+        },
+        {
+          "name": "handleSlotFull",
+          "line": 34,
+          "isDefault": false
+        },
+        {
+          "name": "handleConflict",
+          "line": 39,
+          "isDefault": false
+        },
+        {
+          "name": "handleBadRequest",
+          "line": 44,
+          "isDefault": false
+        },
+        {
+          "name": "handleInvalidInput",
+          "line": 49,
+          "isDefault": false
+        },
+        {
+          "name": "handleUnauthorized",
+          "line": 54,
+          "isDefault": false
+        },
+        {
+          "name": "handleRateLimit",
+          "line": 59,
+          "isDefault": false
+        },
+        {
+          "name": "handleValidation",
+          "line": 64,
+          "isDefault": false
+        },
+        {
+          "name": "handleRequestBindingErrors",
+          "line": 73,
+          "isDefault": false
+        },
+        {
+          "name": "handleGeneric",
+          "line": 84,
+          "isDefault": false
+        },
+        {
+          "name": "GlobalExceptionHandler",
+          "line": 22,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "handleNotFound",
+          "callee": "build",
+          "lineNumber": 31
+        },
+        {
+          "caller": "handleNotFound",
+          "callee": "ex.getMessage",
+          "lineNumber": 31
+        },
+        {
+          "caller": "handleNotFound",
+          "callee": "request.getRequestURI",
+          "lineNumber": 31
+        },
+        {
+          "caller": "handleSlotFull",
+          "callee": "build",
+          "lineNumber": 36
+        },
+        {
+          "caller": "handleSlotFull",
+          "callee": "ex.getMessage",
+          "lineNumber": 36
+        },
+        {
+          "caller": "handleSlotFull",
+          "callee": "request.getRequestURI",
+          "lineNumber": 36
+        },
+        {
+          "caller": "handleConflict",
+          "callee": "build",
+          "lineNumber": 41
+        },
+        {
+          "caller": "handleConflict",
+          "callee": "ex.getMessage",
+          "lineNumber": 41
+        },
+        {
+          "caller": "handleConflict",
+          "callee": "request.getRequestURI",
+          "lineNumber": 41
+        },
+        {
+          "caller": "handleBadRequest",
+          "callee": "build",
+          "lineNumber": 46
+        },
+        {
+          "caller": "handleBadRequest",
+          "callee": "ex.getMessage",
+          "lineNumber": 46
+        },
+        {
+          "caller": "handleBadRequest",
+          "callee": "request.getRequestURI",
+          "lineNumber": 46
+        },
+        {
+          "caller": "handleInvalidInput",
+          "callee": "build",
+          "lineNumber": 51
+        },
+        {
+          "caller": "handleInvalidInput",
+          "callee": "ex.getMessage",
+          "lineNumber": 51
+        },
+        {
+          "caller": "handleInvalidInput",
+          "callee": "request.getRequestURI",
+          "lineNumber": 51
+        },
+        {
+          "caller": "handleUnauthorized",
+          "callee": "build",
+          "lineNumber": 56
+        },
+        {
+          "caller": "handleUnauthorized",
+          "callee": "ex.getMessage",
+          "lineNumber": 56
+        },
+        {
+          "caller": "handleUnauthorized",
+          "callee": "request.getRequestURI",
+          "lineNumber": 56
+        },
+        {
+          "caller": "handleRateLimit",
+          "callee": "build",
+          "lineNumber": 61
+        },
+        {
+          "caller": "handleRateLimit",
+          "callee": "ex.getMessage",
+          "lineNumber": 61
+        },
+        {
+          "caller": "handleRateLimit",
+          "callee": "request.getRequestURI",
+          "lineNumber": 61
+        },
+        {
+          "caller": "handleValidation",
+          "callee": "new LinkedHashMap<>",
+          "lineNumber": 66
+        },
+        {
+          "caller": "handleValidation",
+          "callee": "ex.getBindingResult().getFieldErrors",
+          "lineNumber": 67
+        },
+        {
+          "caller": "handleValidation",
+          "callee": "ex.getBindingResult",
+          "lineNumber": 67
+        },
+        {
+          "caller": "handleValidation",
+          "callee": "fieldErrors.putIfAbsent",
+          "lineNumber": 68
+        },
+        {
+          "caller": "handleValidation",
+          "callee": "fieldError.getField",
+          "lineNumber": 68
+        },
+        {
+          "caller": "handleValidation",
+          "callee": "fieldError.getDefaultMessage",
+          "lineNumber": 68
+        },
+        {
+          "caller": "handleValidation",
+          "callee": "build",
+          "lineNumber": 70
+        },
+        {
+          "caller": "handleValidation",
+          "callee": "request.getRequestURI",
+          "lineNumber": 70
+        },
+        {
+          "caller": "handleRequestBindingErrors",
+          "callee": "build",
+          "lineNumber": 81
+        },
+        {
+          "caller": "handleRequestBindingErrors",
+          "callee": "request.getRequestURI",
+          "lineNumber": 81
+        },
+        {
+          "caller": "handleGeneric",
+          "callee": "log.error",
+          "lineNumber": 86
+        },
+        {
+          "caller": "handleGeneric",
+          "callee": "build",
+          "lineNumber": 87
+        },
+        {
+          "caller": "handleGeneric",
+          "callee": "request.getRequestURI",
+          "lineNumber": 87
+        },
+        {
+          "caller": "build",
+          "callee": "ApiErrorResponse.builder()\n                .timestamp(LocalDateTime.now(appClock))\n                .status(status.value())\n                .error(status.getReasonPhrase())\n                .message(message)\n                .path(path)\n                .fieldErrors(fieldErrors).build",
+          "lineNumber": 96
+        },
+        {
+          "caller": "build",
+          "callee": "ApiErrorResponse.builder()\n                .timestamp(LocalDateTime.now(appClock))\n                .status(status.value())\n                .error(status.getReasonPhrase())\n                .message(message)\n                .path(path).fieldErrors",
+          "lineNumber": 96
+        },
+        {
+          "caller": "build",
+          "callee": "ApiErrorResponse.builder()\n                .timestamp(LocalDateTime.now(appClock))\n                .status(status.value())\n                .error(status.getReasonPhrase())\n                .message(message).path",
+          "lineNumber": 96
+        },
+        {
+          "caller": "build",
+          "callee": "ApiErrorResponse.builder()\n                .timestamp(LocalDateTime.now(appClock))\n                .status(status.value())\n                .error(status.getReasonPhrase()).message",
+          "lineNumber": 96
+        },
+        {
+          "caller": "build",
+          "callee": "ApiErrorResponse.builder()\n                .timestamp(LocalDateTime.now(appClock))\n                .status(status.value()).error",
+          "lineNumber": 96
+        },
+        {
+          "caller": "build",
+          "callee": "ApiErrorResponse.builder()\n                .timestamp(LocalDateTime.now(appClock)).status",
+          "lineNumber": 96
+        },
+        {
+          "caller": "build",
+          "callee": "ApiErrorResponse.builder().timestamp",
+          "lineNumber": 96
+        },
+        {
+          "caller": "build",
+          "callee": "ApiErrorResponse.builder",
+          "lineNumber": 96
+        },
+        {
+          "caller": "build",
+          "callee": "LocalDateTime.now",
+          "lineNumber": 97
+        },
+        {
+          "caller": "build",
+          "callee": "status.value",
+          "lineNumber": 98
+        },
+        {
+          "caller": "build",
+          "callee": "status.getReasonPhrase",
+          "lineNumber": 99
+        },
+        {
+          "caller": "build",
+          "callee": "ResponseEntity.status(status).body",
+          "lineNumber": 104
+        },
+        {
+          "caller": "build",
+          "callee": "ResponseEntity.status",
+          "lineNumber": 104
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 11,
+        "functionCount": 11,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "src/main/java/com/clinic/exception/InvalidInputException.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 8,
+      "nonEmptyLines": 6,
+      "functions": [
+        {
+          "name": "InvalidInputException",
+          "startLine": 5,
+          "endLine": 7,
+          "params": [
+            "message"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "InvalidInputException",
+          "startLine": 3,
+          "endLine": 8,
+          "methods": [
+            "InvalidInputException"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "InvalidInputException",
+          "line": 5,
+          "isDefault": false
+        },
+        {
+          "name": "InvalidInputException",
+          "line": 3,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 2,
+        "functionCount": 1,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "src/main/java/com/clinic/exception/RateLimitExceededException.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 8,
+      "nonEmptyLines": 6,
+      "functions": [
+        {
+          "name": "RateLimitExceededException",
+          "startLine": 5,
+          "endLine": 7,
+          "params": [
+            "message"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "RateLimitExceededException",
+          "startLine": 3,
+          "endLine": 8,
+          "methods": [
+            "RateLimitExceededException"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "RateLimitExceededException",
+          "line": 5,
+          "isDefault": false
+        },
+        {
+          "name": "RateLimitExceededException",
+          "line": 3,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 2,
+        "functionCount": 1,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "src/main/java/com/clinic/security/JwtPrincipalClaims.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 13,
+      "nonEmptyLines": 11,
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "src/main/java/com/clinic/security/LoginRateLimitService.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 28,
+      "nonEmptyLines": 24,
+      "functions": [
+        {
+          "name": "isAllowed",
+          "startLine": 16,
+          "endLine": 27,
+          "params": [
+            "key",
+            "maxAttempts",
+            "window"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "LoginRateLimitService",
+          "startLine": 9,
+          "endLine": 28,
+          "methods": [
+            "isAllowed"
+          ],
+          "properties": [
+            "redisTemplate"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "isAllowed",
+          "line": 16,
+          "isDefault": false
+        },
+        {
+          "name": "LoginRateLimitService",
+          "line": 9,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "isAllowed",
+          "callee": "redisTemplate.opsForValue().increment",
+          "lineNumber": 18
+        },
+        {
+          "caller": "isAllowed",
+          "callee": "redisTemplate.opsForValue",
+          "lineNumber": 18
+        },
+        {
+          "caller": "isAllowed",
+          "callee": "redisTemplate.expire",
+          "lineNumber": 20
+        },
+        {
+          "caller": "isAllowed",
+          "callee": "log.error",
+          "lineNumber": 24
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 2,
+        "functionCount": 1,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "src/main/java/com/clinic/security/RequestContextLoggingFilter.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 54,
+      "nonEmptyLines": 49,
+      "functions": [
+        {
+          "name": "RequestContextLoggingFilter",
+          "startLine": 26,
+          "endLine": 30,
+          "params": [
+            "meterRegistry"
+          ]
+        },
+        {
+          "name": "doFilterInternal",
+          "startLine": 32,
+          "endLine": 53,
+          "params": [
+            "request",
+            "response",
+            "filterChain"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "RequestContextLoggingFilter",
+          "startLine": 17,
+          "endLine": 54,
+          "methods": [
+            "RequestContextLoggingFilter",
+            "doFilterInternal"
+          ],
+          "properties": [
+            "REQUEST_ID",
+            "TRACE_ID",
+            "requestCounter"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "RequestContextLoggingFilter",
+          "line": 26,
+          "isDefault": false
+        },
+        {
+          "name": "RequestContextLoggingFilter",
+          "line": 17,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "RequestContextLoggingFilter",
+          "callee": "Counter.builder(\"http.server.requests.total\")\n                .description(\"Total incoming requests\").register",
+          "lineNumber": 27
+        },
+        {
+          "caller": "RequestContextLoggingFilter",
+          "callee": "Counter.builder(\"http.server.requests.total\").description",
+          "lineNumber": 27
+        },
+        {
+          "caller": "RequestContextLoggingFilter",
+          "callee": "Counter.builder",
+          "lineNumber": 27
+        },
+        {
+          "caller": "doFilterInternal",
+          "callee": "request.getHeader",
+          "lineNumber": 35
+        },
+        {
+          "caller": "doFilterInternal",
+          "callee": "requestId.isBlank",
+          "lineNumber": 36
+        },
+        {
+          "caller": "doFilterInternal",
+          "callee": "java.util.UUID.randomUUID().toString",
+          "lineNumber": 37
+        },
+        {
+          "caller": "doFilterInternal",
+          "callee": "java.util.UUID.randomUUID",
+          "lineNumber": 37
+        },
+        {
+          "caller": "doFilterInternal",
+          "callee": "MDC.put",
+          "lineNumber": 39
+        },
+        {
+          "caller": "doFilterInternal",
+          "callee": "MDC.get",
+          "lineNumber": 40
+        },
+        {
+          "caller": "doFilterInternal",
+          "callee": "MDC.put",
+          "lineNumber": 42
+        },
+        {
+          "caller": "doFilterInternal",
+          "callee": "requestCounter.increment",
+          "lineNumber": 44
+        },
+        {
+          "caller": "doFilterInternal",
+          "callee": "filterChain.doFilter",
+          "lineNumber": 46
+        },
+        {
+          "caller": "doFilterInternal",
+          "callee": "MDC.remove",
+          "lineNumber": 48
+        },
+        {
+          "caller": "doFilterInternal",
+          "callee": "MDC.remove",
+          "lineNumber": 50
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 2,
+        "functionCount": 2,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "src/main/java/com/clinic/service/AppointmentNotificationOutboxPayload.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 4,
+      "nonEmptyLines": 3,
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "src/main/java/com/clinic/service/SlotGenerationSchedulerService.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 30,
+      "nonEmptyLines": 25,
+      "functions": [
+        {
+          "name": "generateUpcomingSlots",
+          "startLine": 22,
+          "endLine": 29,
+          "params": []
+        }
+      ],
+      "classes": [
+        {
+          "name": "SlotGenerationSchedulerService",
+          "startLine": 11,
+          "endLine": 30,
+          "methods": [
+            "generateUpcomingSlots"
+          ],
+          "properties": [
+            "slotService",
+            "appTime",
+            "maxDays"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "generateUpcomingSlots",
+          "line": 22,
+          "isDefault": false
+        },
+        {
+          "name": "SlotGenerationSchedulerService",
+          "line": 11,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "generateUpcomingSlots",
+          "callee": "appTime.today",
+          "lineNumber": 25
+        },
+        {
+          "caller": "generateUpcomingSlots",
+          "callee": "from.plusDays",
+          "lineNumber": 26
+        },
+        {
+          "caller": "generateUpcomingSlots",
+          "callee": "slotService.generateSlotsForRange",
+          "lineNumber": 27
+        },
+        {
+          "caller": "generateUpcomingSlots",
+          "callee": "log.info",
+          "lineNumber": 28
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 2,
+        "functionCount": 1,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "src/main/resources/application.properties",
+      "language": "properties",
+      "fileCategory": "config",
+      "totalLines": 63,
+      "nonEmptyLines": 52,
+      "metrics": {}
+    },
+    {
+      "path": "src/test/resources/mockito-extensions/org.mockito.plugins.MockMaker",
+      "language": "mockmaker",
+      "fileCategory": "code",
+      "totalLines": 1,
+      "nonEmptyLines": 1,
+      "metrics": {}
+    }
+  ]
+}

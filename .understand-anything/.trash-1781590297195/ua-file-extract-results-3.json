@@ -1,0 +1,1308 @@
+{
+  "scriptCompleted": true,
+  "filesAnalyzed": 14,
+  "filesSkipped": [],
+  "results": [
+    {
+      "path": "src/main/java/com/clinic/config/DataSeeder.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 62,
+      "nonEmptyLines": 51,
+      "functions": [
+        {
+          "name": "run",
+          "startLine": 33,
+          "endLine": 61,
+          "params": []
+        }
+      ],
+      "classes": [
+        {
+          "name": "DataSeeder",
+          "startLine": 15,
+          "endLine": 62,
+          "methods": [
+            "run"
+          ],
+          "properties": [
+            "adminRepository",
+            "doctorRepository",
+            "passwordEncoder",
+            "adminSeedEnabled",
+            "adminUsername",
+            "adminPassword"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "run",
+          "line": 33,
+          "isDefault": false
+        },
+        {
+          "name": "DataSeeder",
+          "line": 15,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "run",
+          "callee": "adminUsername.isBlank",
+          "lineNumber": 39
+        },
+        {
+          "caller": "run",
+          "callee": "adminPassword.isBlank",
+          "lineNumber": 39
+        },
+        {
+          "caller": "run",
+          "callee": "new IllegalStateException",
+          "lineNumber": 40
+        },
+        {
+          "caller": "run",
+          "callee": "adminRepository.findByUsername(adminUsername).isPresent",
+          "lineNumber": 43
+        },
+        {
+          "caller": "run",
+          "callee": "adminRepository.findByUsername",
+          "lineNumber": 43
+        },
+        {
+          "caller": "run",
+          "callee": "doctorRepository.findById(1L).orElseGet",
+          "lineNumber": 47
+        },
+        {
+          "caller": "run",
+          "callee": "doctorRepository.findById",
+          "lineNumber": 47
+        },
+        {
+          "caller": "run",
+          "callee": "doctorRepository.findAll().stream().findFirst().orElse",
+          "lineNumber": 48
+        },
+        {
+          "caller": "run",
+          "callee": "doctorRepository.findAll().stream().findFirst",
+          "lineNumber": 48
+        },
+        {
+          "caller": "run",
+          "callee": "doctorRepository.findAll().stream",
+          "lineNumber": 48
+        },
+        {
+          "caller": "run",
+          "callee": "doctorRepository.findAll",
+          "lineNumber": 48
+        },
+        {
+          "caller": "run",
+          "callee": "log.warn",
+          "lineNumber": 50
+        },
+        {
+          "caller": "run",
+          "callee": "new Admin",
+          "lineNumber": 54
+        },
+        {
+          "caller": "run",
+          "callee": "admin.setUsername",
+          "lineNumber": 55
+        },
+        {
+          "caller": "run",
+          "callee": "adminUsername.trim",
+          "lineNumber": 55
+        },
+        {
+          "caller": "run",
+          "callee": "admin.setPasswordHash",
+          "lineNumber": 56
+        },
+        {
+          "caller": "run",
+          "callee": "passwordEncoder.encode",
+          "lineNumber": 56
+        },
+        {
+          "caller": "run",
+          "callee": "admin.setRole",
+          "lineNumber": 57
+        },
+        {
+          "caller": "run",
+          "callee": "admin.setDoctor",
+          "lineNumber": 58
+        },
+        {
+          "caller": "run",
+          "callee": "adminRepository.save",
+          "lineNumber": 59
+        },
+        {
+          "caller": "run",
+          "callee": "log.info",
+          "lineNumber": 60
+        }
+      ],
+      "metrics": {
+        "importCount": 5,
+        "exportCount": 2,
+        "functionCount": 1,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "src/main/java/com/clinic/controller/DoctorController.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 30,
+      "nonEmptyLines": 26,
+      "functions": [
+        {
+          "name": "getDoctors",
+          "startLine": 23,
+          "endLine": 29,
+          "params": [
+            "page",
+            "size"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "DoctorController",
+          "startLine": 15,
+          "endLine": 30,
+          "methods": [
+            "getDoctors"
+          ],
+          "properties": [
+            "doctorService"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "getDoctors",
+          "line": 23,
+          "isDefault": false
+        },
+        {
+          "name": "DoctorController",
+          "line": 15,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "getDoctors",
+          "callee": "doctorService.getDoctors",
+          "lineNumber": 28
+        }
+      ],
+      "metrics": {
+        "importCount": 3,
+        "exportCount": 2,
+        "functionCount": 1,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "src/main/java/com/clinic/dto/request/DoctorProfileUpdateRequest.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 36,
+      "nonEmptyLines": 26,
+      "classes": [
+        {
+          "name": "DoctorProfileUpdateRequest",
+          "startLine": 10,
+          "endLine": 36,
+          "methods": [],
+          "properties": [
+            "name",
+            "photo",
+            "qualifications",
+            "specialization",
+            "experienceYears",
+            "registrationNumber",
+            "biography",
+            "awards"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "DoctorProfileUpdateRequest",
+          "line": 10,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "src/main/java/com/clinic/dto/response/DoctorResponse.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 18,
+      "nonEmptyLines": 16,
+      "classes": [
+        {
+          "name": "DoctorResponse",
+          "startLine": 6,
+          "endLine": 18,
+          "methods": [],
+          "properties": [
+            "id",
+            "name",
+            "photo",
+            "qualifications",
+            "specialization",
+            "experienceYears",
+            "registrationNumber",
+            "bio",
+            "awards"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "DoctorResponse",
+          "line": 6,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "src/main/java/com/clinic/entity/Admin.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 40,
+      "nonEmptyLines": 33,
+      "classes": [
+        {
+          "name": "Admin",
+          "startLine": 17,
+          "endLine": 40,
+          "methods": [],
+          "properties": [
+            "id",
+            "username",
+            "passwordHash",
+            "role",
+            "doctor"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "Admin",
+          "line": 17,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "src/main/java/com/clinic/entity/AdminRole.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 5,
+      "nonEmptyLines": 4,
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "src/main/java/com/clinic/entity/Doctor.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 56,
+      "nonEmptyLines": 43,
+      "classes": [
+        {
+          "name": "Doctor",
+          "startLine": 17,
+          "endLine": 56,
+          "methods": [],
+          "properties": [
+            "id",
+            "name",
+            "photo",
+            "degrees",
+            "specialization",
+            "experienceYears",
+            "registrationNumber",
+            "bio",
+            "awards",
+            "createdAt",
+            "clinics"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "Doctor",
+          "line": 17,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "src/main/java/com/clinic/mapper/DoctorMapper.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 13,
+      "nonEmptyLines": 10,
+      "classes": [
+        {
+          "name": "DoctorMapper",
+          "startLine": 8,
+          "endLine": 13,
+          "methods": [
+            "toResponse"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "DoctorMapper",
+          "line": 8,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 2,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "src/main/java/com/clinic/repository/AdminRepository.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 10,
+      "nonEmptyLines": 7,
+      "classes": [
+        {
+          "name": "AdminRepository",
+          "startLine": 7,
+          "endLine": 10,
+          "methods": [
+            "findByUsername"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "AdminRepository",
+          "line": 7,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "src/main/java/com/clinic/repository/DoctorRepository.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 9,
+      "nonEmptyLines": 6,
+      "classes": [
+        {
+          "name": "DoctorRepository",
+          "startLine": 6,
+          "endLine": 9,
+          "methods": [
+            "existsByRegistrationNumberAndIdNot"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "DoctorRepository",
+          "line": 6,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "src/main/java/com/clinic/security/AdminDetailsService.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 23,
+      "nonEmptyLines": 19,
+      "functions": [
+        {
+          "name": "loadUserByUsername",
+          "startLine": 17,
+          "endLine": 22,
+          "params": [
+            "username"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "AdminDetailsService",
+          "startLine": 11,
+          "endLine": 23,
+          "methods": [
+            "loadUserByUsername"
+          ],
+          "properties": [
+            "adminRepository"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "loadUserByUsername",
+          "line": 17,
+          "isDefault": false
+        },
+        {
+          "name": "AdminDetailsService",
+          "line": 11,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "loadUserByUsername",
+          "callee": "adminRepository.findByUsername(username).orElseThrow",
+          "lineNumber": 19
+        },
+        {
+          "caller": "loadUserByUsername",
+          "callee": "adminRepository.findByUsername",
+          "lineNumber": 19
+        },
+        {
+          "caller": "loadUserByUsername",
+          "callee": "new UsernameNotFoundException",
+          "lineNumber": 20
+        },
+        {
+          "caller": "loadUserByUsername",
+          "callee": "new AdminPrincipal",
+          "lineNumber": 21
+        }
+      ],
+      "metrics": {
+        "importCount": 2,
+        "exportCount": 2,
+        "functionCount": 1,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "src/main/java/com/clinic/security/AdminPrincipal.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 71,
+      "nonEmptyLines": 58,
+      "functions": [
+        {
+          "name": "AdminPrincipal",
+          "startLine": 20,
+          "endLine": 23,
+          "params": [
+            "admin"
+          ]
+        },
+        {
+          "name": "AdminPrincipal",
+          "startLine": 25,
+          "endLine": 31,
+          "params": [
+            "adminId",
+            "doctorId",
+            "username",
+            "password",
+            "role"
+          ]
+        },
+        {
+          "name": "fromToken",
+          "startLine": 33,
+          "endLine": 35,
+          "params": [
+            "adminId",
+            "doctorId",
+            "username",
+            "role"
+          ]
+        },
+        {
+          "name": "getAuthorities",
+          "startLine": 37,
+          "endLine": 40,
+          "params": []
+        },
+        {
+          "name": "getPassword",
+          "startLine": 42,
+          "endLine": 45,
+          "params": []
+        },
+        {
+          "name": "getUsername",
+          "startLine": 47,
+          "endLine": 50,
+          "params": []
+        },
+        {
+          "name": "isAccountNonExpired",
+          "startLine": 52,
+          "endLine": 55,
+          "params": []
+        },
+        {
+          "name": "isAccountNonLocked",
+          "startLine": 57,
+          "endLine": 60,
+          "params": []
+        },
+        {
+          "name": "isCredentialsNonExpired",
+          "startLine": 62,
+          "endLine": 65,
+          "params": []
+        },
+        {
+          "name": "isEnabled",
+          "startLine": 67,
+          "endLine": 70,
+          "params": []
+        }
+      ],
+      "classes": [
+        {
+          "name": "AdminPrincipal",
+          "startLine": 11,
+          "endLine": 71,
+          "methods": [
+            "AdminPrincipal",
+            "AdminPrincipal",
+            "fromToken",
+            "getAuthorities",
+            "getPassword",
+            "getUsername",
+            "isAccountNonExpired",
+            "isAccountNonLocked",
+            "isCredentialsNonExpired",
+            "isEnabled"
+          ],
+          "properties": [
+            "adminId",
+            "doctorId",
+            "username",
+            "password",
+            "authorities"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "AdminPrincipal",
+          "line": 20,
+          "isDefault": false
+        },
+        {
+          "name": "fromToken",
+          "line": 33,
+          "isDefault": false
+        },
+        {
+          "name": "getAuthorities",
+          "line": 37,
+          "isDefault": false
+        },
+        {
+          "name": "getPassword",
+          "line": 42,
+          "isDefault": false
+        },
+        {
+          "name": "getUsername",
+          "line": 47,
+          "isDefault": false
+        },
+        {
+          "name": "isAccountNonExpired",
+          "line": 52,
+          "isDefault": false
+        },
+        {
+          "name": "isAccountNonLocked",
+          "line": 57,
+          "isDefault": false
+        },
+        {
+          "name": "isCredentialsNonExpired",
+          "line": 62,
+          "isDefault": false
+        },
+        {
+          "name": "isEnabled",
+          "line": 67,
+          "isDefault": false
+        },
+        {
+          "name": "AdminPrincipal",
+          "line": 11,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "AdminPrincipal",
+          "callee": "admin.getId",
+          "lineNumber": 21
+        },
+        {
+          "caller": "AdminPrincipal",
+          "callee": "admin.getDoctor().getId",
+          "lineNumber": 21
+        },
+        {
+          "caller": "AdminPrincipal",
+          "callee": "admin.getDoctor",
+          "lineNumber": 21
+        },
+        {
+          "caller": "AdminPrincipal",
+          "callee": "admin.getUsername",
+          "lineNumber": 21
+        },
+        {
+          "caller": "AdminPrincipal",
+          "callee": "admin.getPasswordHash",
+          "lineNumber": 21
+        },
+        {
+          "caller": "AdminPrincipal",
+          "callee": "admin.getRole().name",
+          "lineNumber": 22
+        },
+        {
+          "caller": "AdminPrincipal",
+          "callee": "admin.getRole",
+          "lineNumber": 22
+        },
+        {
+          "caller": "AdminPrincipal",
+          "callee": "List.of",
+          "lineNumber": 30
+        },
+        {
+          "caller": "AdminPrincipal",
+          "callee": "new SimpleGrantedAuthority",
+          "lineNumber": 30
+        },
+        {
+          "caller": "fromToken",
+          "callee": "new AdminPrincipal",
+          "lineNumber": 34
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 10,
+        "functionCount": 10,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "src/main/java/com/clinic/service/DoctorService.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 64,
+      "nonEmptyLines": 55,
+      "functions": [
+        {
+          "name": "getDoctors",
+          "startLine": 28,
+          "endLine": 33,
+          "params": [
+            "page",
+            "size"
+          ]
+        },
+        {
+          "name": "getDoctorProfile",
+          "startLine": 35,
+          "endLine": 40,
+          "params": [
+            "doctorId"
+          ]
+        },
+        {
+          "name": "updateDoctorProfile",
+          "startLine": 42,
+          "endLine": 63,
+          "params": [
+            "doctorId",
+            "request"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "DoctorService",
+          "startLine": 19,
+          "endLine": 64,
+          "methods": [
+            "getDoctors",
+            "getDoctorProfile",
+            "updateDoctorProfile"
+          ],
+          "properties": [
+            "doctorRepository",
+            "doctorMapper",
+            "pageResponseFactory",
+            "paginationValidator"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "getDoctors",
+          "line": 28,
+          "isDefault": false
+        },
+        {
+          "name": "getDoctorProfile",
+          "line": 35,
+          "isDefault": false
+        },
+        {
+          "name": "updateDoctorProfile",
+          "line": 42,
+          "isDefault": false
+        },
+        {
+          "name": "DoctorService",
+          "line": 19,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "getDoctors",
+          "callee": "paginationValidator.validate",
+          "lineNumber": 29
+        },
+        {
+          "caller": "getDoctors",
+          "callee": "PageRequest.of",
+          "lineNumber": 30
+        },
+        {
+          "caller": "getDoctors",
+          "callee": "Sort.by(\"name\").ascending",
+          "lineNumber": 30
+        },
+        {
+          "caller": "getDoctors",
+          "callee": "Sort.by",
+          "lineNumber": 30
+        },
+        {
+          "caller": "getDoctors",
+          "callee": "doctorRepository.findAll(pageable).map",
+          "lineNumber": 31
+        },
+        {
+          "caller": "getDoctors",
+          "callee": "doctorRepository.findAll",
+          "lineNumber": 31
+        },
+        {
+          "caller": "getDoctors",
+          "callee": "pageResponseFactory.fromPage",
+          "lineNumber": 32
+        },
+        {
+          "caller": "getDoctorProfile",
+          "callee": "doctorRepository.findById(doctorId).orElseThrow",
+          "lineNumber": 37
+        },
+        {
+          "caller": "getDoctorProfile",
+          "callee": "doctorRepository.findById",
+          "lineNumber": 37
+        },
+        {
+          "caller": "getDoctorProfile",
+          "callee": "new ResourceNotFoundException",
+          "lineNumber": 38
+        },
+        {
+          "caller": "getDoctorProfile",
+          "callee": "doctorMapper.toResponse",
+          "lineNumber": 39
+        },
+        {
+          "caller": "updateDoctorProfile",
+          "callee": "doctorRepository.findById(doctorId).orElseThrow",
+          "lineNumber": 44
+        },
+        {
+          "caller": "updateDoctorProfile",
+          "callee": "doctorRepository.findById",
+          "lineNumber": 44
+        },
+        {
+          "caller": "updateDoctorProfile",
+          "callee": "new ResourceNotFoundException",
+          "lineNumber": 45
+        },
+        {
+          "caller": "updateDoctorProfile",
+          "callee": "request.getRegistrationNumber().trim",
+          "lineNumber": 47
+        },
+        {
+          "caller": "updateDoctorProfile",
+          "callee": "request.getRegistrationNumber",
+          "lineNumber": 47
+        },
+        {
+          "caller": "updateDoctorProfile",
+          "callee": "doctorRepository.existsByRegistrationNumberAndIdNot",
+          "lineNumber": 48
+        },
+        {
+          "caller": "updateDoctorProfile",
+          "callee": "new BadRequestException",
+          "lineNumber": 49
+        },
+        {
+          "caller": "updateDoctorProfile",
+          "callee": "doctor.setName",
+          "lineNumber": 52
+        },
+        {
+          "caller": "updateDoctorProfile",
+          "callee": "request.getName().trim",
+          "lineNumber": 52
+        },
+        {
+          "caller": "updateDoctorProfile",
+          "callee": "request.getName",
+          "lineNumber": 52
+        },
+        {
+          "caller": "updateDoctorProfile",
+          "callee": "doctor.setPhoto",
+          "lineNumber": 53
+        },
+        {
+          "caller": "updateDoctorProfile",
+          "callee": "request.getPhoto",
+          "lineNumber": 53
+        },
+        {
+          "caller": "updateDoctorProfile",
+          "callee": "doctor.setDegrees",
+          "lineNumber": 54
+        },
+        {
+          "caller": "updateDoctorProfile",
+          "callee": "request.getQualifications().trim",
+          "lineNumber": 54
+        },
+        {
+          "caller": "updateDoctorProfile",
+          "callee": "request.getQualifications",
+          "lineNumber": 54
+        },
+        {
+          "caller": "updateDoctorProfile",
+          "callee": "doctor.setSpecialization",
+          "lineNumber": 55
+        },
+        {
+          "caller": "updateDoctorProfile",
+          "callee": "request.getSpecialization().trim",
+          "lineNumber": 55
+        },
+        {
+          "caller": "updateDoctorProfile",
+          "callee": "request.getSpecialization",
+          "lineNumber": 55
+        },
+        {
+          "caller": "updateDoctorProfile",
+          "callee": "doctor.setExperienceYears",
+          "lineNumber": 56
+        },
+        {
+          "caller": "updateDoctorProfile",
+          "callee": "request.getExperienceYears",
+          "lineNumber": 56
+        },
+        {
+          "caller": "updateDoctorProfile",
+          "callee": "doctor.setRegistrationNumber",
+          "lineNumber": 57
+        },
+        {
+          "caller": "updateDoctorProfile",
+          "callee": "doctor.setBio",
+          "lineNumber": 58
+        },
+        {
+          "caller": "updateDoctorProfile",
+          "callee": "request.getBiography",
+          "lineNumber": 58
+        },
+        {
+          "caller": "updateDoctorProfile",
+          "callee": "doctor.setAwards",
+          "lineNumber": 59
+        },
+        {
+          "caller": "updateDoctorProfile",
+          "callee": "request.getAwards",
+          "lineNumber": 59
+        },
+        {
+          "caller": "updateDoctorProfile",
+          "callee": "doctorRepository.save",
+          "lineNumber": 61
+        },
+        {
+          "caller": "updateDoctorProfile",
+          "callee": "doctorMapper.toResponse",
+          "lineNumber": 62
+        }
+      ],
+      "metrics": {
+        "importCount": 8,
+        "exportCount": 4,
+        "functionCount": 3,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "src/test/java/com/clinic/security/JwtServiceTest.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 66,
+      "nonEmptyLines": 54,
+      "functions": [
+        {
+          "name": "setUp",
+          "startLine": 18,
+          "endLine": 28,
+          "params": []
+        },
+        {
+          "name": "generateAndParseToken_withRequiredClaims",
+          "startLine": 30,
+          "endLine": 42,
+          "params": []
+        },
+        {
+          "name": "parsePrincipalClaims_invalidSignature_throws",
+          "startLine": 44,
+          "endLine": 51,
+          "params": []
+        },
+        {
+          "name": "createPrincipal",
+          "startLine": 53,
+          "endLine": 65,
+          "params": []
+        }
+      ],
+      "classes": [
+        {
+          "name": "JwtServiceTest",
+          "startLine": 14,
+          "endLine": 66,
+          "methods": [
+            "setUp",
+            "generateAndParseToken_withRequiredClaims",
+            "parsePrincipalClaims_invalidSignature_throws",
+            "createPrincipal"
+          ],
+          "properties": [
+            "jwtService"
+          ]
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "setUp",
+          "callee": "Clock.fixed",
+          "lineNumber": 20
+        },
+        {
+          "caller": "setUp",
+          "callee": "Instant.parse",
+          "lineNumber": 20
+        },
+        {
+          "caller": "setUp",
+          "callee": "ZoneId.of",
+          "lineNumber": 20
+        },
+        {
+          "caller": "setUp",
+          "callee": "new JwtService",
+          "lineNumber": 21
+        },
+        {
+          "caller": "setUp",
+          "callee": "ZoneId.of",
+          "lineNumber": 21
+        },
+        {
+          "caller": "setUp",
+          "callee": "ReflectionTestUtils.setField",
+          "lineNumber": 22
+        },
+        {
+          "caller": "setUp",
+          "callee": "ReflectionTestUtils.setField",
+          "lineNumber": 23
+        },
+        {
+          "caller": "setUp",
+          "callee": "ReflectionTestUtils.setField",
+          "lineNumber": 24
+        },
+        {
+          "caller": "setUp",
+          "callee": "ReflectionTestUtils.setField",
+          "lineNumber": 25
+        },
+        {
+          "caller": "setUp",
+          "callee": "ReflectionTestUtils.setField",
+          "lineNumber": 26
+        },
+        {
+          "caller": "setUp",
+          "callee": "ReflectionTestUtils.invokeMethod",
+          "lineNumber": 27
+        },
+        {
+          "caller": "generateAndParseToken_withRequiredClaims",
+          "callee": "createPrincipal",
+          "lineNumber": 32
+        },
+        {
+          "caller": "generateAndParseToken_withRequiredClaims",
+          "callee": "jwtService.generateToken",
+          "lineNumber": 34
+        },
+        {
+          "caller": "generateAndParseToken_withRequiredClaims",
+          "callee": "jwtService.parsePrincipalClaims",
+          "lineNumber": 35
+        },
+        {
+          "caller": "generateAndParseToken_withRequiredClaims",
+          "callee": "Assertions.assertEquals",
+          "lineNumber": 37
+        },
+        {
+          "caller": "generateAndParseToken_withRequiredClaims",
+          "callee": "principal.getUsername",
+          "lineNumber": 37
+        },
+        {
+          "caller": "generateAndParseToken_withRequiredClaims",
+          "callee": "claims.username",
+          "lineNumber": 37
+        },
+        {
+          "caller": "generateAndParseToken_withRequiredClaims",
+          "callee": "Assertions.assertEquals",
+          "lineNumber": 38
+        },
+        {
+          "caller": "generateAndParseToken_withRequiredClaims",
+          "callee": "principal.getDoctorId",
+          "lineNumber": 38
+        },
+        {
+          "caller": "generateAndParseToken_withRequiredClaims",
+          "callee": "claims.doctorId",
+          "lineNumber": 38
+        },
+        {
+          "caller": "generateAndParseToken_withRequiredClaims",
+          "callee": "Assertions.assertEquals",
+          "lineNumber": 39
+        },
+        {
+          "caller": "generateAndParseToken_withRequiredClaims",
+          "callee": "principal.getAdminId",
+          "lineNumber": 39
+        },
+        {
+          "caller": "generateAndParseToken_withRequiredClaims",
+          "callee": "claims.adminId",
+          "lineNumber": 39
+        },
+        {
+          "caller": "generateAndParseToken_withRequiredClaims",
+          "callee": "Assertions.assertEquals",
+          "lineNumber": 40
+        },
+        {
+          "caller": "generateAndParseToken_withRequiredClaims",
+          "callee": "claims.role",
+          "lineNumber": 40
+        },
+        {
+          "caller": "generateAndParseToken_withRequiredClaims",
+          "callee": "Assertions.assertNotNull",
+          "lineNumber": 41
+        },
+        {
+          "caller": "generateAndParseToken_withRequiredClaims",
+          "callee": "claims.tokenId",
+          "lineNumber": 41
+        },
+        {
+          "caller": "parsePrincipalClaims_invalidSignature_throws",
+          "callee": "createPrincipal",
+          "lineNumber": 46
+        },
+        {
+          "caller": "parsePrincipalClaims_invalidSignature_throws",
+          "callee": "jwtService.generateToken",
+          "lineNumber": 47
+        },
+        {
+          "caller": "parsePrincipalClaims_invalidSignature_throws",
+          "callee": "token.substring",
+          "lineNumber": 48
+        },
+        {
+          "caller": "parsePrincipalClaims_invalidSignature_throws",
+          "callee": "token.length",
+          "lineNumber": 48
+        },
+        {
+          "caller": "parsePrincipalClaims_invalidSignature_throws",
+          "callee": "Assertions.assertThrows",
+          "lineNumber": 50
+        },
+        {
+          "caller": "parsePrincipalClaims_invalidSignature_throws",
+          "callee": "jwtService.parsePrincipalClaims",
+          "lineNumber": 50
+        },
+        {
+          "caller": "createPrincipal",
+          "callee": "new Doctor",
+          "lineNumber": 54
+        },
+        {
+          "caller": "createPrincipal",
+          "callee": "doctor.setId",
+          "lineNumber": 55
+        },
+        {
+          "caller": "createPrincipal",
+          "callee": "new Admin",
+          "lineNumber": 57
+        },
+        {
+          "caller": "createPrincipal",
+          "callee": "admin.setId",
+          "lineNumber": 58
+        },
+        {
+          "caller": "createPrincipal",
+          "callee": "admin.setDoctor",
+          "lineNumber": 59
+        },
+        {
+          "caller": "createPrincipal",
+          "callee": "admin.setUsername",
+          "lineNumber": 60
+        },
+        {
+          "caller": "createPrincipal",
+          "callee": "admin.setPasswordHash",
+          "lineNumber": 61
+        },
+        {
+          "caller": "createPrincipal",
+          "callee": "admin.setRole",
+          "lineNumber": 62
+        },
+        {
+          "caller": "createPrincipal",
+          "callee": "new AdminPrincipal",
+          "lineNumber": 64
+        }
+      ],
+      "metrics": {
+        "importCount": 3,
+        "exportCount": 0,
+        "functionCount": 4,
+        "classCount": 1
+      }
+    }
+  ]
+}

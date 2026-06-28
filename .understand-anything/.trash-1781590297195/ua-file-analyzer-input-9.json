@@ -1,0 +1,33 @@
+{
+  "projectRoot": "D:\\Desktop\\Clinic_Sphere",
+  "batchFiles": [
+    {
+      "path": "src/main/java/com/clinic/entity/AuditLog.java",
+      "language": "java",
+      "sizeLines": 44,
+      "fileCategory": "code"
+    },
+    {
+      "path": "src/main/java/com/clinic/repository/AuditLogRepository.java",
+      "language": "java",
+      "sizeLines": 6,
+      "fileCategory": "code"
+    },
+    {
+      "path": "src/main/java/com/clinic/service/AuditLogService.java",
+      "language": "java",
+      "sizeLines": 45,
+      "fileCategory": "code"
+    }
+  ],
+  "batchImportData": {
+    "src/main/java/com/clinic/entity/AuditLog.java": [],
+    "src/main/java/com/clinic/repository/AuditLogRepository.java": [
+      "src/main/java/com/clinic/entity/AuditLog.java"
+    ],
+    "src/main/java/com/clinic/service/AuditLogService.java": [
+      "src/main/java/com/clinic/entity/AuditLog.java",
+      "src/main/java/com/clinic/repository/AuditLogRepository.java"
+    ]
+  }
+}

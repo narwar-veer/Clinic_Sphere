@@ -1,0 +1,1706 @@
+{
+  "scriptCompleted": true,
+  "filesAnalyzed": 9,
+  "filesSkipped": [],
+  "results": [
+    {
+      "path": "src/main/java/com/clinic/config/SecurityConfig.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 118,
+      "nonEmptyLines": 106,
+      "functions": [
+        {
+          "name": "securityFilterChain",
+          "startLine": 39,
+          "endLine": 77,
+          "params": [
+            "http",
+            "jwtAuthenticationFilter",
+            "loginRateLimitFilter",
+            "authenticationProvider",
+            "authenticationEntryPoint",
+            "accessDeniedHandler"
+          ]
+        },
+        {
+          "name": "corsConfigurationSource",
+          "startLine": 79,
+          "endLine": 97,
+          "params": []
+        },
+        {
+          "name": "authenticationProvider",
+          "startLine": 99,
+          "endLine": 106,
+          "params": [
+            "adminDetailsService",
+            "passwordEncoder"
+          ]
+        },
+        {
+          "name": "passwordEncoder",
+          "startLine": 108,
+          "endLine": 111,
+          "params": []
+        },
+        {
+          "name": "authenticationManager",
+          "startLine": 113,
+          "endLine": 117,
+          "params": [
+            "authenticationConfiguration"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "SecurityConfig",
+          "startLine": 31,
+          "endLine": 118,
+          "methods": [
+            "securityFilterChain",
+            "corsConfigurationSource",
+            "authenticationProvider",
+            "passwordEncoder",
+            "authenticationManager"
+          ],
+          "properties": [
+            "allowedOrigins"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "securityFilterChain",
+          "line": 39,
+          "isDefault": false
+        },
+        {
+          "name": "corsConfigurationSource",
+          "line": 79,
+          "isDefault": false
+        },
+        {
+          "name": "authenticationProvider",
+          "line": 99,
+          "isDefault": false
+        },
+        {
+          "name": "passwordEncoder",
+          "line": 108,
+          "isDefault": false
+        },
+        {
+          "name": "authenticationManager",
+          "line": 113,
+          "isDefault": false
+        },
+        {
+          "name": "SecurityConfig",
+          "line": 31,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "securityFilterChain",
+          "callee": "http\n                .csrf(csrf -> csrf.disable())\n                .cors(cors -> cors.configurationSource(corsConfigurationSource()))\n                .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))\n                .exceptionHandling(ex -> ex\n                        .authenticationEntryPoint(authenticationEntryPoint)\n                        .accessDeniedHandler(accessDeniedHandler)\n                )\n                .authenticationProvider(authenticationProvider)\n                .authorizeHttpRequests(auth -> auth\n                        .requestMatchers(\"/\", \"/error\", \"/favicon.ico\").permitAll()\n                        .requestMatchers(HttpMethod.OPTIONS, \"/**\").permitAll()\n                        .requestMatchers(HttpMethod.GET,\n                                \"/api/doctor\",\n                                \"/api/clinic\",\n                                \"/api/slots\",\n                                \"/api/slots/availability\",\n                                \"/api/health\",\n                                \"/actuator/health\",\n                                \"/actuator/info\").permitAll()\n                        .requestMatchers(HttpMethod.POST,\n                                \"/api/appointments\",\n                                \"/api/admin/login\",\n                                \"/api/admin/logout\").permitAll()\n                        .anyRequest().authenticated()\n                )\n                .addFilterBefore(loginRateLimitFilter, UsernamePasswordAuthenticationFilter.class).addFilterBefore",
+          "lineNumber": 47
+        },
+        {
+          "caller": "securityFilterChain",
+          "callee": "http\n                .csrf(csrf -> csrf.disable())\n                .cors(cors -> cors.configurationSource(corsConfigurationSource()))\n                .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))\n                .exceptionHandling(ex -> ex\n                        .authenticationEntryPoint(authenticationEntryPoint)\n                        .accessDeniedHandler(accessDeniedHandler)\n                )\n                .authenticationProvider(authenticationProvider)\n                .authorizeHttpRequests(auth -> auth\n                        .requestMatchers(\"/\", \"/error\", \"/favicon.ico\").permitAll()\n                        .requestMatchers(HttpMethod.OPTIONS, \"/**\").permitAll()\n                        .requestMatchers(HttpMethod.GET,\n                                \"/api/doctor\",\n                                \"/api/clinic\",\n                                \"/api/slots\",\n                                \"/api/slots/availability\",\n                                \"/api/health\",\n                                \"/actuator/health\",\n                                \"/actuator/info\").permitAll()\n                        .requestMatchers(HttpMethod.POST,\n                                \"/api/appointments\",\n                                \"/api/admin/login\",\n                                \"/api/admin/logout\").permitAll()\n                        .anyRequest().authenticated()\n                ).addFilterBefore",
+          "lineNumber": 47
+        },
+        {
+          "caller": "securityFilterChain",
+          "callee": "http\n                .csrf(csrf -> csrf.disable())\n                .cors(cors -> cors.configurationSource(corsConfigurationSource()))\n                .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))\n                .exceptionHandling(ex -> ex\n                        .authenticationEntryPoint(authenticationEntryPoint)\n                        .accessDeniedHandler(accessDeniedHandler)\n                )\n                .authenticationProvider(authenticationProvider).authorizeHttpRequests",
+          "lineNumber": 47
+        },
+        {
+          "caller": "securityFilterChain",
+          "callee": "http\n                .csrf(csrf -> csrf.disable())\n                .cors(cors -> cors.configurationSource(corsConfigurationSource()))\n                .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))\n                .exceptionHandling(ex -> ex\n                        .authenticationEntryPoint(authenticationEntryPoint)\n                        .accessDeniedHandler(accessDeniedHandler)\n                ).authenticationProvider",
+          "lineNumber": 47
+        },
+        {
+          "caller": "securityFilterChain",
+          "callee": "http\n                .csrf(csrf -> csrf.disable())\n                .cors(cors -> cors.configurationSource(corsConfigurationSource()))\n                .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS)).exceptionHandling",
+          "lineNumber": 47
+        },
+        {
+          "caller": "securityFilterChain",
+          "callee": "http\n                .csrf(csrf -> csrf.disable())\n                .cors(cors -> cors.configurationSource(corsConfigurationSource())).sessionManagement",
+          "lineNumber": 47
+        },
+        {
+          "caller": "securityFilterChain",
+          "callee": "http\n                .csrf(csrf -> csrf.disable()).cors",
+          "lineNumber": 47
+        },
+        {
+          "caller": "securityFilterChain",
+          "callee": "http.csrf",
+          "lineNumber": 47
+        },
+        {
+          "caller": "securityFilterChain",
+          "callee": "csrf.disable",
+          "lineNumber": 48
+        },
+        {
+          "caller": "securityFilterChain",
+          "callee": "cors.configurationSource",
+          "lineNumber": 49
+        },
+        {
+          "caller": "securityFilterChain",
+          "callee": "corsConfigurationSource",
+          "lineNumber": 49
+        },
+        {
+          "caller": "securityFilterChain",
+          "callee": "session.sessionCreationPolicy",
+          "lineNumber": 50
+        },
+        {
+          "caller": "securityFilterChain",
+          "callee": "ex\n                        .authenticationEntryPoint(authenticationEntryPoint).accessDeniedHandler",
+          "lineNumber": 51
+        },
+        {
+          "caller": "securityFilterChain",
+          "callee": "ex.authenticationEntryPoint",
+          "lineNumber": 51
+        },
+        {
+          "caller": "securityFilterChain",
+          "callee": "auth\n                        .requestMatchers(\"/\", \"/error\", \"/favicon.ico\").permitAll()\n                        .requestMatchers(HttpMethod.OPTIONS, \"/**\").permitAll()\n                        .requestMatchers(HttpMethod.GET,\n                                \"/api/doctor\",\n                                \"/api/clinic\",\n                                \"/api/slots\",\n                                \"/api/slots/availability\",\n                                \"/api/health\",\n                                \"/actuator/health\",\n                                \"/actuator/info\").permitAll()\n                        .requestMatchers(HttpMethod.POST,\n                                \"/api/appointments\",\n                                \"/api/admin/login\",\n                                \"/api/admin/logout\").permitAll()\n                        .anyRequest().authenticated",
+          "lineNumber": 56
+        },
+        {
+          "caller": "securityFilterChain",
+          "callee": "auth\n                        .requestMatchers(\"/\", \"/error\", \"/favicon.ico\").permitAll()\n                        .requestMatchers(HttpMethod.OPTIONS, \"/**\").permitAll()\n                        .requestMatchers(HttpMethod.GET,\n                                \"/api/doctor\",\n                                \"/api/clinic\",\n                                \"/api/slots\",\n                                \"/api/slots/availability\",\n                                \"/api/health\",\n                                \"/actuator/health\",\n                                \"/actuator/info\").permitAll()\n                        .requestMatchers(HttpMethod.POST,\n                                \"/api/appointments\",\n                                \"/api/admin/login\",\n                                \"/api/admin/logout\").permitAll().anyRequest",
+          "lineNumber": 56
+        },
+        {
+          "caller": "securityFilterChain",
+          "callee": "auth\n                        .requestMatchers(\"/\", \"/error\", \"/favicon.ico\").permitAll()\n                        .requestMatchers(HttpMethod.OPTIONS, \"/**\").permitAll()\n                        .requestMatchers(HttpMethod.GET,\n                                \"/api/doctor\",\n                                \"/api/clinic\",\n                                \"/api/slots\",\n                                \"/api/slots/availability\",\n                                \"/api/health\",\n                                \"/actuator/health\",\n                                \"/actuator/info\").permitAll()\n                        .requestMatchers(HttpMethod.POST,\n                                \"/api/appointments\",\n                                \"/api/admin/login\",\n                                \"/api/admin/logout\").permitAll",
+          "lineNumber": 56
+        },
+        {
+          "caller": "securityFilterChain",
+          "callee": "auth\n                        .requestMatchers(\"/\", \"/error\", \"/favicon.ico\").permitAll()\n                        .requestMatchers(HttpMethod.OPTIONS, \"/**\").permitAll()\n                        .requestMatchers(HttpMethod.GET,\n                                \"/api/doctor\",\n                                \"/api/clinic\",\n                                \"/api/slots\",\n                                \"/api/slots/availability\",\n                                \"/api/health\",\n                                \"/actuator/health\",\n                                \"/actuator/info\").permitAll().requestMatchers",
+          "lineNumber": 56
+        },
+        {
+          "caller": "securityFilterChain",
+          "callee": "auth\n                        .requestMatchers(\"/\", \"/error\", \"/favicon.ico\").permitAll()\n                        .requestMatchers(HttpMethod.OPTIONS, \"/**\").permitAll()\n                        .requestMatchers(HttpMethod.GET,\n                                \"/api/doctor\",\n                                \"/api/clinic\",\n                                \"/api/slots\",\n                                \"/api/slots/availability\",\n                                \"/api/health\",\n                                \"/actuator/health\",\n                                \"/actuator/info\").permitAll",
+          "lineNumber": 56
+        },
+        {
+          "caller": "securityFilterChain",
+          "callee": "auth\n                        .requestMatchers(\"/\", \"/error\", \"/favicon.ico\").permitAll()\n                        .requestMatchers(HttpMethod.OPTIONS, \"/**\").permitAll().requestMatchers",
+          "lineNumber": 56
+        },
+        {
+          "caller": "securityFilterChain",
+          "callee": "auth\n                        .requestMatchers(\"/\", \"/error\", \"/favicon.ico\").permitAll()\n                        .requestMatchers(HttpMethod.OPTIONS, \"/**\").permitAll",
+          "lineNumber": 56
+        },
+        {
+          "caller": "securityFilterChain",
+          "callee": "auth\n                        .requestMatchers(\"/\", \"/error\", \"/favicon.ico\").permitAll().requestMatchers",
+          "lineNumber": 56
+        },
+        {
+          "caller": "securityFilterChain",
+          "callee": "auth\n                        .requestMatchers(\"/\", \"/error\", \"/favicon.ico\").permitAll",
+          "lineNumber": 56
+        },
+        {
+          "caller": "securityFilterChain",
+          "callee": "auth.requestMatchers",
+          "lineNumber": 56
+        },
+        {
+          "caller": "securityFilterChain",
+          "callee": "http.build",
+          "lineNumber": 76
+        },
+        {
+          "caller": "corsConfigurationSource",
+          "callee": "new CorsConfiguration",
+          "lineNumber": 81
+        },
+        {
+          "caller": "corsConfigurationSource",
+          "callee": "Arrays.stream(allowedOrigins.split(\",\"))\n                .map(String::trim)\n                .filter(s -> !s.isBlank()).collect",
+          "lineNumber": 83
+        },
+        {
+          "caller": "corsConfigurationSource",
+          "callee": "Arrays.stream(allowedOrigins.split(\",\"))\n                .map(String::trim).filter",
+          "lineNumber": 83
+        },
+        {
+          "caller": "corsConfigurationSource",
+          "callee": "Arrays.stream(allowedOrigins.split(\",\")).map",
+          "lineNumber": 83
+        },
+        {
+          "caller": "corsConfigurationSource",
+          "callee": "Arrays.stream",
+          "lineNumber": 83
+        },
+        {
+          "caller": "corsConfigurationSource",
+          "callee": "allowedOrigins.split",
+          "lineNumber": 83
+        },
+        {
+          "caller": "corsConfigurationSource",
+          "callee": "s.isBlank",
+          "lineNumber": 85
+        },
+        {
+          "caller": "corsConfigurationSource",
+          "callee": "Collectors.toList",
+          "lineNumber": 86
+        },
+        {
+          "caller": "corsConfigurationSource",
+          "callee": "configuration.setAllowedOrigins",
+          "lineNumber": 87
+        },
+        {
+          "caller": "corsConfigurationSource",
+          "callee": "configuration.setAllowedMethods",
+          "lineNumber": 88
+        },
+        {
+          "caller": "corsConfigurationSource",
+          "callee": "List.of",
+          "lineNumber": 88
+        },
+        {
+          "caller": "corsConfigurationSource",
+          "callee": "configuration.setAllowedHeaders",
+          "lineNumber": 89
+        },
+        {
+          "caller": "corsConfigurationSource",
+          "callee": "List.of",
+          "lineNumber": 89
+        },
+        {
+          "caller": "corsConfigurationSource",
+          "callee": "configuration.setExposedHeaders",
+          "lineNumber": 90
+        },
+        {
+          "caller": "corsConfigurationSource",
+          "callee": "List.of",
+          "lineNumber": 90
+        },
+        {
+          "caller": "corsConfigurationSource",
+          "callee": "configuration.setAllowCredentials",
+          "lineNumber": 91
+        },
+        {
+          "caller": "corsConfigurationSource",
+          "callee": "configuration.setMaxAge",
+          "lineNumber": 92
+        },
+        {
+          "caller": "corsConfigurationSource",
+          "callee": "new UrlBasedCorsConfigurationSource",
+          "lineNumber": 94
+        },
+        {
+          "caller": "corsConfigurationSource",
+          "callee": "source.registerCorsConfiguration",
+          "lineNumber": 95
+        },
+        {
+          "caller": "authenticationProvider",
+          "callee": "new DaoAuthenticationProvider",
+          "lineNumber": 102
+        },
+        {
+          "caller": "authenticationProvider",
+          "callee": "provider.setUserDetailsService",
+          "lineNumber": 103
+        },
+        {
+          "caller": "authenticationProvider",
+          "callee": "provider.setPasswordEncoder",
+          "lineNumber": 104
+        },
+        {
+          "caller": "passwordEncoder",
+          "callee": "new BCryptPasswordEncoder",
+          "lineNumber": 110
+        },
+        {
+          "caller": "authenticationManager",
+          "callee": "authenticationConfiguration.getAuthenticationManager",
+          "lineNumber": 116
+        }
+      ],
+      "metrics": {
+        "importCount": 5,
+        "exportCount": 6,
+        "functionCount": 5,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "src/main/java/com/clinic/entity/AdminSession.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 44,
+      "nonEmptyLines": 35,
+      "classes": [
+        {
+          "name": "AdminSession",
+          "startLine": 15,
+          "endLine": 44,
+          "methods": [],
+          "properties": [
+            "tokenId",
+            "username",
+            "doctor",
+            "lastActivityAt",
+            "expiresAt",
+            "revokedAt",
+            "createdAt"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "AdminSession",
+          "line": 15,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "src/main/java/com/clinic/exception/ApiErrorResponse.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 17,
+      "nonEmptyLines": 15,
+      "classes": [
+        {
+          "name": "ApiErrorResponse",
+          "startLine": 8,
+          "endLine": 17,
+          "methods": [],
+          "properties": [
+            "timestamp",
+            "status",
+            "error",
+            "message",
+            "path",
+            "fieldErrors"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "ApiErrorResponse",
+          "line": 8,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "src/main/java/com/clinic/repository/AdminSessionRepository.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 34,
+      "nonEmptyLines": 29,
+      "classes": [
+        {
+          "name": "AdminSessionRepository",
+          "startLine": 11,
+          "endLine": 34,
+          "methods": [
+            "findActiveById",
+            "revokeIfActive",
+            "deleteExpiredOrRevokedSessions"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "AdminSessionRepository",
+          "line": 11,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "src/main/java/com/clinic/security/JsonAccessDeniedHandler.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 38,
+      "nonEmptyLines": 34,
+      "functions": [
+        {
+          "name": "handle",
+          "startLine": 24,
+          "endLine": 37,
+          "params": [
+            "request",
+            "response",
+            "accessDeniedException"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "JsonAccessDeniedHandler",
+          "startLine": 17,
+          "endLine": 38,
+          "methods": [
+            "handle"
+          ],
+          "properties": [
+            "objectMapper",
+            "appClock"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "handle",
+          "line": 24,
+          "isDefault": false
+        },
+        {
+          "name": "JsonAccessDeniedHandler",
+          "line": 17,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "handle",
+          "callee": "ApiErrorResponse.builder()\n                .timestamp(LocalDateTime.now(appClock))\n                .status(HttpStatus.FORBIDDEN.value())\n                .error(HttpStatus.FORBIDDEN.getReasonPhrase())\n                .message(\"Access denied\")\n                .path(request.getRequestURI()).build",
+          "lineNumber": 27
+        },
+        {
+          "caller": "handle",
+          "callee": "ApiErrorResponse.builder()\n                .timestamp(LocalDateTime.now(appClock))\n                .status(HttpStatus.FORBIDDEN.value())\n                .error(HttpStatus.FORBIDDEN.getReasonPhrase())\n                .message(\"Access denied\").path",
+          "lineNumber": 27
+        },
+        {
+          "caller": "handle",
+          "callee": "ApiErrorResponse.builder()\n                .timestamp(LocalDateTime.now(appClock))\n                .status(HttpStatus.FORBIDDEN.value())\n                .error(HttpStatus.FORBIDDEN.getReasonPhrase()).message",
+          "lineNumber": 27
+        },
+        {
+          "caller": "handle",
+          "callee": "ApiErrorResponse.builder()\n                .timestamp(LocalDateTime.now(appClock))\n                .status(HttpStatus.FORBIDDEN.value()).error",
+          "lineNumber": 27
+        },
+        {
+          "caller": "handle",
+          "callee": "ApiErrorResponse.builder()\n                .timestamp(LocalDateTime.now(appClock)).status",
+          "lineNumber": 27
+        },
+        {
+          "caller": "handle",
+          "callee": "ApiErrorResponse.builder().timestamp",
+          "lineNumber": 27
+        },
+        {
+          "caller": "handle",
+          "callee": "ApiErrorResponse.builder",
+          "lineNumber": 27
+        },
+        {
+          "caller": "handle",
+          "callee": "LocalDateTime.now",
+          "lineNumber": 28
+        },
+        {
+          "caller": "handle",
+          "callee": "HttpStatus.FORBIDDEN.value",
+          "lineNumber": 29
+        },
+        {
+          "caller": "handle",
+          "callee": "HttpStatus.FORBIDDEN.getReasonPhrase",
+          "lineNumber": 30
+        },
+        {
+          "caller": "handle",
+          "callee": "request.getRequestURI",
+          "lineNumber": 32
+        },
+        {
+          "caller": "handle",
+          "callee": "response.setStatus",
+          "lineNumber": 34
+        },
+        {
+          "caller": "handle",
+          "callee": "HttpStatus.FORBIDDEN.value",
+          "lineNumber": 34
+        },
+        {
+          "caller": "handle",
+          "callee": "response.setContentType",
+          "lineNumber": 35
+        },
+        {
+          "caller": "handle",
+          "callee": "objectMapper.writeValue",
+          "lineNumber": 36
+        },
+        {
+          "caller": "handle",
+          "callee": "response.getOutputStream",
+          "lineNumber": 36
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 2,
+        "functionCount": 1,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "src/main/java/com/clinic/security/JsonAuthenticationEntryPoint.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 38,
+      "nonEmptyLines": 34,
+      "functions": [
+        {
+          "name": "commence",
+          "startLine": 24,
+          "endLine": 37,
+          "params": [
+            "request",
+            "response",
+            "authException"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "JsonAuthenticationEntryPoint",
+          "startLine": 17,
+          "endLine": 38,
+          "methods": [
+            "commence"
+          ],
+          "properties": [
+            "objectMapper",
+            "appClock"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "commence",
+          "line": 24,
+          "isDefault": false
+        },
+        {
+          "name": "JsonAuthenticationEntryPoint",
+          "line": 17,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "commence",
+          "callee": "ApiErrorResponse.builder()\n                .timestamp(LocalDateTime.now(appClock))\n                .status(HttpStatus.UNAUTHORIZED.value())\n                .error(HttpStatus.UNAUTHORIZED.getReasonPhrase())\n                .message(\"Authentication required\")\n                .path(request.getRequestURI()).build",
+          "lineNumber": 27
+        },
+        {
+          "caller": "commence",
+          "callee": "ApiErrorResponse.builder()\n                .timestamp(LocalDateTime.now(appClock))\n                .status(HttpStatus.UNAUTHORIZED.value())\n                .error(HttpStatus.UNAUTHORIZED.getReasonPhrase())\n                .message(\"Authentication required\").path",
+          "lineNumber": 27
+        },
+        {
+          "caller": "commence",
+          "callee": "ApiErrorResponse.builder()\n                .timestamp(LocalDateTime.now(appClock))\n                .status(HttpStatus.UNAUTHORIZED.value())\n                .error(HttpStatus.UNAUTHORIZED.getReasonPhrase()).message",
+          "lineNumber": 27
+        },
+        {
+          "caller": "commence",
+          "callee": "ApiErrorResponse.builder()\n                .timestamp(LocalDateTime.now(appClock))\n                .status(HttpStatus.UNAUTHORIZED.value()).error",
+          "lineNumber": 27
+        },
+        {
+          "caller": "commence",
+          "callee": "ApiErrorResponse.builder()\n                .timestamp(LocalDateTime.now(appClock)).status",
+          "lineNumber": 27
+        },
+        {
+          "caller": "commence",
+          "callee": "ApiErrorResponse.builder().timestamp",
+          "lineNumber": 27
+        },
+        {
+          "caller": "commence",
+          "callee": "ApiErrorResponse.builder",
+          "lineNumber": 27
+        },
+        {
+          "caller": "commence",
+          "callee": "LocalDateTime.now",
+          "lineNumber": 28
+        },
+        {
+          "caller": "commence",
+          "callee": "HttpStatus.UNAUTHORIZED.value",
+          "lineNumber": 29
+        },
+        {
+          "caller": "commence",
+          "callee": "HttpStatus.UNAUTHORIZED.getReasonPhrase",
+          "lineNumber": 30
+        },
+        {
+          "caller": "commence",
+          "callee": "request.getRequestURI",
+          "lineNumber": 32
+        },
+        {
+          "caller": "commence",
+          "callee": "response.setStatus",
+          "lineNumber": 34
+        },
+        {
+          "caller": "commence",
+          "callee": "HttpStatus.UNAUTHORIZED.value",
+          "lineNumber": 34
+        },
+        {
+          "caller": "commence",
+          "callee": "response.setContentType",
+          "lineNumber": 35
+        },
+        {
+          "caller": "commence",
+          "callee": "objectMapper.writeValue",
+          "lineNumber": 36
+        },
+        {
+          "caller": "commence",
+          "callee": "response.getOutputStream",
+          "lineNumber": 36
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 2,
+        "functionCount": 1,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "src/main/java/com/clinic/security/JwtAuthenticationFilter.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 53,
+      "nonEmptyLines": 46,
+      "functions": [
+        {
+          "name": "doFilterInternal",
+          "startLine": 25,
+          "endLine": 52,
+          "params": [
+            "request",
+            "response",
+            "filterChain"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "JwtAuthenticationFilter",
+          "startLine": 17,
+          "endLine": 53,
+          "methods": [
+            "doFilterInternal"
+          ],
+          "properties": [
+            "jwtService",
+            "adminSessionService"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "JwtAuthenticationFilter",
+          "line": 17,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "doFilterInternal",
+          "callee": "request.getHeader",
+          "lineNumber": 28
+        },
+        {
+          "caller": "doFilterInternal",
+          "callee": "authHeader.startsWith",
+          "lineNumber": 29
+        },
+        {
+          "caller": "doFilterInternal",
+          "callee": "filterChain.doFilter",
+          "lineNumber": 30
+        },
+        {
+          "caller": "doFilterInternal",
+          "callee": "authHeader.substring",
+          "lineNumber": 34
+        },
+        {
+          "caller": "doFilterInternal",
+          "callee": "jwtService.parsePrincipalClaims",
+          "lineNumber": 36
+        },
+        {
+          "caller": "doFilterInternal",
+          "callee": "SecurityContextHolder.getContext().getAuthentication",
+          "lineNumber": 37
+        },
+        {
+          "caller": "doFilterInternal",
+          "callee": "SecurityContextHolder.getContext",
+          "lineNumber": 37
+        },
+        {
+          "caller": "doFilterInternal",
+          "callee": "adminSessionService.validateSession",
+          "lineNumber": 38
+        },
+        {
+          "caller": "doFilterInternal",
+          "callee": "claims.tokenId",
+          "lineNumber": 38
+        },
+        {
+          "caller": "doFilterInternal",
+          "callee": "claims.expiresAt",
+          "lineNumber": 38
+        },
+        {
+          "caller": "doFilterInternal",
+          "callee": "AdminPrincipal.fromToken",
+          "lineNumber": 40
+        },
+        {
+          "caller": "doFilterInternal",
+          "callee": "claims.adminId",
+          "lineNumber": 41
+        },
+        {
+          "caller": "doFilterInternal",
+          "callee": "claims.doctorId",
+          "lineNumber": 41
+        },
+        {
+          "caller": "doFilterInternal",
+          "callee": "claims.username",
+          "lineNumber": 41
+        },
+        {
+          "caller": "doFilterInternal",
+          "callee": "claims.role",
+          "lineNumber": 41
+        },
+        {
+          "caller": "doFilterInternal",
+          "callee": "new UsernamePasswordAuthenticationToken",
+          "lineNumber": 43
+        },
+        {
+          "caller": "doFilterInternal",
+          "callee": "principal.getAuthorities",
+          "lineNumber": 43
+        },
+        {
+          "caller": "doFilterInternal",
+          "callee": "authenticationToken.setDetails",
+          "lineNumber": 44
+        },
+        {
+          "caller": "doFilterInternal",
+          "callee": "new WebAuthenticationDetailsSource().buildDetails",
+          "lineNumber": 44
+        },
+        {
+          "caller": "doFilterInternal",
+          "callee": "new WebAuthenticationDetailsSource",
+          "lineNumber": 44
+        },
+        {
+          "caller": "doFilterInternal",
+          "callee": "SecurityContextHolder.getContext().setAuthentication",
+          "lineNumber": 45
+        },
+        {
+          "caller": "doFilterInternal",
+          "callee": "SecurityContextHolder.getContext",
+          "lineNumber": 45
+        },
+        {
+          "caller": "doFilterInternal",
+          "callee": "log.debug",
+          "lineNumber": 48
+        },
+        {
+          "caller": "doFilterInternal",
+          "callee": "ex.getMessage",
+          "lineNumber": 48
+        },
+        {
+          "caller": "doFilterInternal",
+          "callee": "filterChain.doFilter",
+          "lineNumber": 51
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 1,
+        "functionCount": 1,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "src/main/java/com/clinic/security/LoginRateLimitFilter.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 70,
+      "nonEmptyLines": 60,
+      "functions": [
+        {
+          "name": "shouldNotFilter",
+          "startLine": 34,
+          "endLine": 38,
+          "params": [
+            "request"
+          ]
+        },
+        {
+          "name": "doFilterInternal",
+          "startLine": 40,
+          "endLine": 61,
+          "params": [
+            "request",
+            "response",
+            "filterChain"
+          ]
+        },
+        {
+          "name": "resolveClientIp",
+          "startLine": 63,
+          "endLine": 69,
+          "params": [
+            "request"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "LoginRateLimitFilter",
+          "startLine": 20,
+          "endLine": 70,
+          "methods": [
+            "shouldNotFilter",
+            "doFilterInternal",
+            "resolveClientIp"
+          ],
+          "properties": [
+            "loginRateLimitService",
+            "objectMapper",
+            "appClock",
+            "maxAttempts",
+            "windowSeconds"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "LoginRateLimitFilter",
+          "line": 20,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "shouldNotFilter",
+          "callee": "\"POST\".equalsIgnoreCase",
+          "lineNumber": 36
+        },
+        {
+          "caller": "shouldNotFilter",
+          "callee": "request.getMethod",
+          "lineNumber": 36
+        },
+        {
+          "caller": "shouldNotFilter",
+          "callee": "\"/api/admin/login\".equals",
+          "lineNumber": 37
+        },
+        {
+          "caller": "shouldNotFilter",
+          "callee": "request.getRequestURI",
+          "lineNumber": 37
+        },
+        {
+          "caller": "doFilterInternal",
+          "callee": "resolveClientIp",
+          "lineNumber": 43
+        },
+        {
+          "caller": "doFilterInternal",
+          "callee": "loginRateLimitService.isAllowed",
+          "lineNumber": 46
+        },
+        {
+          "caller": "doFilterInternal",
+          "callee": "Duration.ofSeconds",
+          "lineNumber": 46
+        },
+        {
+          "caller": "doFilterInternal",
+          "callee": "ApiErrorResponse.builder()\n                    .timestamp(LocalDateTime.now(appClock))\n                    .status(HttpStatus.TOO_MANY_REQUESTS.value())\n                    .error(HttpStatus.TOO_MANY_REQUESTS.getReasonPhrase())\n                    .message(\"Too many login attempts. Please retry later\")\n                    .path(request.getRequestURI()).build",
+          "lineNumber": 47
+        },
+        {
+          "caller": "doFilterInternal",
+          "callee": "ApiErrorResponse.builder()\n                    .timestamp(LocalDateTime.now(appClock))\n                    .status(HttpStatus.TOO_MANY_REQUESTS.value())\n                    .error(HttpStatus.TOO_MANY_REQUESTS.getReasonPhrase())\n                    .message(\"Too many login attempts. Please retry later\").path",
+          "lineNumber": 47
+        },
+        {
+          "caller": "doFilterInternal",
+          "callee": "ApiErrorResponse.builder()\n                    .timestamp(LocalDateTime.now(appClock))\n                    .status(HttpStatus.TOO_MANY_REQUESTS.value())\n                    .error(HttpStatus.TOO_MANY_REQUESTS.getReasonPhrase()).message",
+          "lineNumber": 47
+        },
+        {
+          "caller": "doFilterInternal",
+          "callee": "ApiErrorResponse.builder()\n                    .timestamp(LocalDateTime.now(appClock))\n                    .status(HttpStatus.TOO_MANY_REQUESTS.value()).error",
+          "lineNumber": 47
+        },
+        {
+          "caller": "doFilterInternal",
+          "callee": "ApiErrorResponse.builder()\n                    .timestamp(LocalDateTime.now(appClock)).status",
+          "lineNumber": 47
+        },
+        {
+          "caller": "doFilterInternal",
+          "callee": "ApiErrorResponse.builder().timestamp",
+          "lineNumber": 47
+        },
+        {
+          "caller": "doFilterInternal",
+          "callee": "ApiErrorResponse.builder",
+          "lineNumber": 47
+        },
+        {
+          "caller": "doFilterInternal",
+          "callee": "LocalDateTime.now",
+          "lineNumber": 48
+        },
+        {
+          "caller": "doFilterInternal",
+          "callee": "HttpStatus.TOO_MANY_REQUESTS.value",
+          "lineNumber": 49
+        },
+        {
+          "caller": "doFilterInternal",
+          "callee": "HttpStatus.TOO_MANY_REQUESTS.getReasonPhrase",
+          "lineNumber": 50
+        },
+        {
+          "caller": "doFilterInternal",
+          "callee": "request.getRequestURI",
+          "lineNumber": 52
+        },
+        {
+          "caller": "doFilterInternal",
+          "callee": "response.setStatus",
+          "lineNumber": 54
+        },
+        {
+          "caller": "doFilterInternal",
+          "callee": "HttpStatus.TOO_MANY_REQUESTS.value",
+          "lineNumber": 54
+        },
+        {
+          "caller": "doFilterInternal",
+          "callee": "response.setContentType",
+          "lineNumber": 55
+        },
+        {
+          "caller": "doFilterInternal",
+          "callee": "objectMapper.writeValue",
+          "lineNumber": 56
+        },
+        {
+          "caller": "doFilterInternal",
+          "callee": "response.getOutputStream",
+          "lineNumber": 56
+        },
+        {
+          "caller": "doFilterInternal",
+          "callee": "filterChain.doFilter",
+          "lineNumber": 60
+        },
+        {
+          "caller": "resolveClientIp",
+          "callee": "request.getHeader",
+          "lineNumber": 64
+        },
+        {
+          "caller": "resolveClientIp",
+          "callee": "forwardedFor.isBlank",
+          "lineNumber": 65
+        },
+        {
+          "caller": "resolveClientIp",
+          "callee": "forwardedFor.split(\",\")[0].trim",
+          "lineNumber": 66
+        },
+        {
+          "caller": "resolveClientIp",
+          "callee": "forwardedFor.split",
+          "lineNumber": 66
+        },
+        {
+          "caller": "resolveClientIp",
+          "callee": "request.getRemoteAddr",
+          "lineNumber": 68
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 1,
+        "functionCount": 3,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "src/main/java/com/clinic/service/AdminSessionService.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 155,
+      "nonEmptyLines": 132,
+      "functions": [
+        {
+          "name": "registerSession",
+          "startLine": 37,
+          "endLine": 50,
+          "params": [
+            "tokenId",
+            "username",
+            "doctorId",
+            "expiresAt"
+          ]
+        },
+        {
+          "name": "validateSession",
+          "startLine": 52,
+          "endLine": 82,
+          "params": [
+            "tokenId",
+            "tokenExpiresAt"
+          ]
+        },
+        {
+          "name": "revokeSession",
+          "startLine": 84,
+          "endLine": 101,
+          "params": [
+            "tokenId"
+          ]
+        },
+        {
+          "name": "cleanupExpiredSessions",
+          "startLine": 103,
+          "endLine": 111,
+          "params": []
+        },
+        {
+          "name": "hydrateFromDatabase",
+          "startLine": 113,
+          "endLine": 124,
+          "params": [
+            "tokenId",
+            "now"
+          ]
+        },
+        {
+          "name": "maybeTouchCache",
+          "startLine": 126,
+          "endLine": 135,
+          "params": [
+            "key",
+            "lastActivity",
+            "now",
+            "expiresAt"
+          ]
+        },
+        {
+          "name": "cacheSession",
+          "startLine": 137,
+          "endLine": 146,
+          "params": [
+            "tokenId",
+            "lastActivityAt",
+            "expiresAt"
+          ]
+        },
+        {
+          "name": "sessionKey",
+          "startLine": 148,
+          "endLine": 150,
+          "params": [
+            "tokenId"
+          ]
+        },
+        {
+          "name": "revokedKey",
+          "startLine": 152,
+          "endLine": 154,
+          "params": [
+            "tokenId"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "AdminSessionService",
+          "startLine": 18,
+          "endLine": 155,
+          "methods": [
+            "registerSession",
+            "validateSession",
+            "revokeSession",
+            "cleanupExpiredSessions",
+            "hydrateFromDatabase",
+            "maybeTouchCache",
+            "cacheSession",
+            "sessionKey",
+            "revokedKey"
+          ],
+          "properties": [
+            "SESSION_KEY_PREFIX",
+            "REVOKED_KEY_PREFIX",
+            "adminSessionRepository",
+            "entityManager",
+            "redisTemplate",
+            "appTime",
+            "inactivityTimeoutMinutes",
+            "touchThrottleSeconds"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "registerSession",
+          "line": 37,
+          "isDefault": false
+        },
+        {
+          "name": "validateSession",
+          "line": 52,
+          "isDefault": false
+        },
+        {
+          "name": "revokeSession",
+          "line": 84,
+          "isDefault": false
+        },
+        {
+          "name": "cleanupExpiredSessions",
+          "line": 103,
+          "isDefault": false
+        },
+        {
+          "name": "AdminSessionService",
+          "line": 18,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "registerSession",
+          "callee": "appTime.nowDateTime",
+          "lineNumber": 39
+        },
+        {
+          "caller": "registerSession",
+          "callee": "new AdminSession",
+          "lineNumber": 40
+        },
+        {
+          "caller": "registerSession",
+          "callee": "session.setTokenId",
+          "lineNumber": 41
+        },
+        {
+          "caller": "registerSession",
+          "callee": "session.setUsername",
+          "lineNumber": 42
+        },
+        {
+          "caller": "registerSession",
+          "callee": "session.setDoctor",
+          "lineNumber": 43
+        },
+        {
+          "caller": "registerSession",
+          "callee": "entityManager.getReference",
+          "lineNumber": 43
+        },
+        {
+          "caller": "registerSession",
+          "callee": "session.setLastActivityAt",
+          "lineNumber": 44
+        },
+        {
+          "caller": "registerSession",
+          "callee": "session.setExpiresAt",
+          "lineNumber": 45
+        },
+        {
+          "caller": "registerSession",
+          "callee": "session.setRevokedAt",
+          "lineNumber": 46
+        },
+        {
+          "caller": "registerSession",
+          "callee": "adminSessionRepository.save",
+          "lineNumber": 47
+        },
+        {
+          "caller": "registerSession",
+          "callee": "cacheSession",
+          "lineNumber": 49
+        },
+        {
+          "caller": "validateSession",
+          "callee": "appTime.nowDateTime",
+          "lineNumber": 53
+        },
+        {
+          "caller": "validateSession",
+          "callee": "Boolean.TRUE.equals",
+          "lineNumber": 54
+        },
+        {
+          "caller": "validateSession",
+          "callee": "redisTemplate.hasKey",
+          "lineNumber": 54
+        },
+        {
+          "caller": "validateSession",
+          "callee": "revokedKey",
+          "lineNumber": 54
+        },
+        {
+          "caller": "validateSession",
+          "callee": "sessionKey",
+          "lineNumber": 58
+        },
+        {
+          "caller": "validateSession",
+          "callee": "redisTemplate.opsForHash().get",
+          "lineNumber": 59
+        },
+        {
+          "caller": "validateSession",
+          "callee": "redisTemplate.opsForHash",
+          "lineNumber": 59
+        },
+        {
+          "caller": "validateSession",
+          "callee": "redisTemplate.opsForHash().get",
+          "lineNumber": 60
+        },
+        {
+          "caller": "validateSession",
+          "callee": "redisTemplate.opsForHash",
+          "lineNumber": 60
+        },
+        {
+          "caller": "validateSession",
+          "callee": "hydrateFromDatabase",
+          "lineNumber": 63
+        },
+        {
+          "caller": "validateSession",
+          "callee": "LocalDateTime.parse",
+          "lineNumber": 66
+        },
+        {
+          "caller": "validateSession",
+          "callee": "LocalDateTime.parse",
+          "lineNumber": 67
+        },
+        {
+          "caller": "validateSession",
+          "callee": "expiresAt.isAfter",
+          "lineNumber": 69
+        },
+        {
+          "caller": "validateSession",
+          "callee": "tokenExpiresAt.isAfter",
+          "lineNumber": 69
+        },
+        {
+          "caller": "validateSession",
+          "callee": "appTime.nowInstant",
+          "lineNumber": 69
+        },
+        {
+          "caller": "validateSession",
+          "callee": "revokeSession",
+          "lineNumber": 70
+        },
+        {
+          "caller": "validateSession",
+          "callee": "lastActivity.plusMinutes(inactivityTimeoutMinutes).isBefore",
+          "lineNumber": 74
+        },
+        {
+          "caller": "validateSession",
+          "callee": "lastActivity.plusMinutes",
+          "lineNumber": 74
+        },
+        {
+          "caller": "validateSession",
+          "callee": "revokeSession",
+          "lineNumber": 75
+        },
+        {
+          "caller": "validateSession",
+          "callee": "log.info",
+          "lineNumber": 76
+        },
+        {
+          "caller": "validateSession",
+          "callee": "maybeTouchCache",
+          "lineNumber": 80
+        },
+        {
+          "caller": "revokeSession",
+          "callee": "appTime.nowDateTime",
+          "lineNumber": 86
+        },
+        {
+          "caller": "revokeSession",
+          "callee": "adminSessionRepository.revokeIfActive",
+          "lineNumber": 87
+        },
+        {
+          "caller": "revokeSession",
+          "callee": "sessionKey",
+          "lineNumber": 89
+        },
+        {
+          "caller": "revokeSession",
+          "callee": "redisTemplate.opsForHash().get",
+          "lineNumber": 90
+        },
+        {
+          "caller": "revokeSession",
+          "callee": "redisTemplate.opsForHash",
+          "lineNumber": 90
+        },
+        {
+          "caller": "revokeSession",
+          "callee": "LocalDateTime.parse",
+          "lineNumber": 92
+        },
+        {
+          "caller": "revokeSession",
+          "callee": "Duration.between(now, expiresAt).plusMinutes",
+          "lineNumber": 93
+        },
+        {
+          "caller": "revokeSession",
+          "callee": "Duration.between",
+          "lineNumber": 93
+        },
+        {
+          "caller": "revokeSession",
+          "callee": "ttl.isNegative",
+          "lineNumber": 94
+        },
+        {
+          "caller": "revokeSession",
+          "callee": "ttl.isZero",
+          "lineNumber": 94
+        },
+        {
+          "caller": "revokeSession",
+          "callee": "redisTemplate.opsForValue().set",
+          "lineNumber": 95
+        },
+        {
+          "caller": "revokeSession",
+          "callee": "redisTemplate.opsForValue",
+          "lineNumber": 95
+        },
+        {
+          "caller": "revokeSession",
+          "callee": "revokedKey",
+          "lineNumber": 95
+        },
+        {
+          "caller": "revokeSession",
+          "callee": "redisTemplate.opsForValue().set",
+          "lineNumber": 98
+        },
+        {
+          "caller": "revokeSession",
+          "callee": "redisTemplate.opsForValue",
+          "lineNumber": 98
+        },
+        {
+          "caller": "revokeSession",
+          "callee": "revokedKey",
+          "lineNumber": 98
+        },
+        {
+          "caller": "revokeSession",
+          "callee": "Duration.ofMinutes",
+          "lineNumber": 98
+        },
+        {
+          "caller": "revokeSession",
+          "callee": "redisTemplate.delete",
+          "lineNumber": 100
+        },
+        {
+          "caller": "cleanupExpiredSessions",
+          "callee": "appTime.nowDateTime",
+          "lineNumber": 106
+        },
+        {
+          "caller": "cleanupExpiredSessions",
+          "callee": "adminSessionRepository.deleteExpiredOrRevokedSessions",
+          "lineNumber": 107
+        },
+        {
+          "caller": "cleanupExpiredSessions",
+          "callee": "now.minusDays",
+          "lineNumber": 107
+        },
+        {
+          "caller": "cleanupExpiredSessions",
+          "callee": "log.info",
+          "lineNumber": 109
+        },
+        {
+          "caller": "hydrateFromDatabase",
+          "callee": "adminSessionRepository.findActiveById(tokenId, now)\n                .map(session -> {\n                    if (session.getLastActivityAt().plusMinutes(inactivityTimeoutMinutes).isBefore(now)) {\n                        revokeSession(tokenId);\n                        return false;\n                    }\n                    cacheSession(tokenId, session.getLastActivityAt(), session.getExpiresAt());\n                    return true;\n                }).orElse",
+          "lineNumber": 114
+        },
+        {
+          "caller": "hydrateFromDatabase",
+          "callee": "adminSessionRepository.findActiveById(tokenId, now).map",
+          "lineNumber": 114
+        },
+        {
+          "caller": "hydrateFromDatabase",
+          "callee": "adminSessionRepository.findActiveById",
+          "lineNumber": 114
+        },
+        {
+          "caller": "hydrateFromDatabase",
+          "callee": "session.getLastActivityAt().plusMinutes(inactivityTimeoutMinutes).isBefore",
+          "lineNumber": 116
+        },
+        {
+          "caller": "hydrateFromDatabase",
+          "callee": "session.getLastActivityAt().plusMinutes",
+          "lineNumber": 116
+        },
+        {
+          "caller": "hydrateFromDatabase",
+          "callee": "session.getLastActivityAt",
+          "lineNumber": 116
+        },
+        {
+          "caller": "hydrateFromDatabase",
+          "callee": "revokeSession",
+          "lineNumber": 117
+        },
+        {
+          "caller": "hydrateFromDatabase",
+          "callee": "cacheSession",
+          "lineNumber": 120
+        },
+        {
+          "caller": "hydrateFromDatabase",
+          "callee": "session.getLastActivityAt",
+          "lineNumber": 120
+        },
+        {
+          "caller": "hydrateFromDatabase",
+          "callee": "session.getExpiresAt",
+          "lineNumber": 120
+        },
+        {
+          "caller": "maybeTouchCache",
+          "callee": "lastActivity.plusSeconds(touchThrottleSeconds).isAfter",
+          "lineNumber": 127
+        },
+        {
+          "caller": "maybeTouchCache",
+          "callee": "lastActivity.plusSeconds",
+          "lineNumber": 127
+        },
+        {
+          "caller": "maybeTouchCache",
+          "callee": "redisTemplate.opsForHash().put",
+          "lineNumber": 130
+        },
+        {
+          "caller": "maybeTouchCache",
+          "callee": "redisTemplate.opsForHash",
+          "lineNumber": 130
+        },
+        {
+          "caller": "maybeTouchCache",
+          "callee": "now.toString",
+          "lineNumber": 130
+        },
+        {
+          "caller": "maybeTouchCache",
+          "callee": "Duration.between(now, expiresAt).plusMinutes",
+          "lineNumber": 131
+        },
+        {
+          "caller": "maybeTouchCache",
+          "callee": "Duration.between",
+          "lineNumber": 131
+        },
+        {
+          "caller": "maybeTouchCache",
+          "callee": "ttl.isNegative",
+          "lineNumber": 132
+        },
+        {
+          "caller": "maybeTouchCache",
+          "callee": "ttl.isZero",
+          "lineNumber": 132
+        },
+        {
+          "caller": "maybeTouchCache",
+          "callee": "redisTemplate.expire",
+          "lineNumber": 133
+        },
+        {
+          "caller": "cacheSession",
+          "callee": "appTime.nowDateTime",
+          "lineNumber": 138
+        },
+        {
+          "caller": "cacheSession",
+          "callee": "sessionKey",
+          "lineNumber": 139
+        },
+        {
+          "caller": "cacheSession",
+          "callee": "redisTemplate.opsForHash().put",
+          "lineNumber": 140
+        },
+        {
+          "caller": "cacheSession",
+          "callee": "redisTemplate.opsForHash",
+          "lineNumber": 140
+        },
+        {
+          "caller": "cacheSession",
+          "callee": "lastActivityAt.toString",
+          "lineNumber": 140
+        },
+        {
+          "caller": "cacheSession",
+          "callee": "redisTemplate.opsForHash().put",
+          "lineNumber": 141
+        },
+        {
+          "caller": "cacheSession",
+          "callee": "redisTemplate.opsForHash",
+          "lineNumber": 141
+        },
+        {
+          "caller": "cacheSession",
+          "callee": "expiresAt.toString",
+          "lineNumber": 141
+        },
+        {
+          "caller": "cacheSession",
+          "callee": "Duration.between(now, expiresAt).plusMinutes",
+          "lineNumber": 142
+        },
+        {
+          "caller": "cacheSession",
+          "callee": "Duration.between",
+          "lineNumber": 142
+        },
+        {
+          "caller": "cacheSession",
+          "callee": "ttl.isNegative",
+          "lineNumber": 143
+        },
+        {
+          "caller": "cacheSession",
+          "callee": "ttl.isZero",
+          "lineNumber": 143
+        },
+        {
+          "caller": "cacheSession",
+          "callee": "redisTemplate.expire",
+          "lineNumber": 144
+        }
+      ],
+      "metrics": {
+        "importCount": 3,
+        "exportCount": 5,
+        "functionCount": 9,
+        "classCount": 1
+      }
+    }
+  ]
+}

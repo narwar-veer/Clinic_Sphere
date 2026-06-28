@@ -1,0 +1,79 @@
+{
+  "projectRoot": "D:\\Desktop\\Clinic_Sphere",
+  "batchFiles": [
+    {
+      "path": "src/main/java/com/clinic/controller/ClinicController.java",
+      "language": "java",
+      "sizeLines": 29,
+      "fileCategory": "code"
+    },
+    {
+      "path": "src/main/java/com/clinic/dto/response/ClinicResponse.java",
+      "language": "java",
+      "sizeLines": 18,
+      "fileCategory": "code"
+    },
+    {
+      "path": "src/main/java/com/clinic/dto/response/PageResponse.java",
+      "language": "java",
+      "sizeLines": 15,
+      "fileCategory": "code"
+    },
+    {
+      "path": "src/main/java/com/clinic/entity/Clinic.java",
+      "language": "java",
+      "sizeLines": 56,
+      "fileCategory": "code"
+    },
+    {
+      "path": "src/main/java/com/clinic/mapper/ClinicMapper.java",
+      "language": "java",
+      "sizeLines": 14,
+      "fileCategory": "code"
+    },
+    {
+      "path": "src/main/java/com/clinic/repository/ClinicRepository.java",
+      "language": "java",
+      "sizeLines": 20,
+      "fileCategory": "code"
+    },
+    {
+      "path": "src/main/java/com/clinic/service/ClinicService.java",
+      "language": "java",
+      "sizeLines": 31,
+      "fileCategory": "code"
+    },
+    {
+      "path": "src/main/java/com/clinic/service/PageResponseFactory.java",
+      "language": "java",
+      "sizeLines": 21,
+      "fileCategory": "code"
+    }
+  ],
+  "batchImportData": {
+    "src/main/java/com/clinic/controller/ClinicController.java": [
+      "src/main/java/com/clinic/dto/response/ClinicResponse.java",
+      "src/main/java/com/clinic/dto/response/PageResponse.java",
+      "src/main/java/com/clinic/service/ClinicService.java"
+    ],
+    "src/main/java/com/clinic/dto/response/ClinicResponse.java": [],
+    "src/main/java/com/clinic/dto/response/PageResponse.java": [],
+    "src/main/java/com/clinic/entity/Clinic.java": [],
+    "src/main/java/com/clinic/mapper/ClinicMapper.java": [
+      "src/main/java/com/clinic/dto/response/ClinicResponse.java",
+      "src/main/java/com/clinic/entity/Clinic.java"
+    ],
+    "src/main/java/com/clinic/repository/ClinicRepository.java": [
+      "src/main/java/com/clinic/entity/Clinic.java"
+    ],
+    "src/main/java/com/clinic/service/ClinicService.java": [
+      "src/main/java/com/clinic/dto/response/ClinicResponse.java",
+      "src/main/java/com/clinic/dto/response/PageResponse.java",
+      "src/main/java/com/clinic/mapper/ClinicMapper.java",
+      "src/main/java/com/clinic/repository/ClinicRepository.java"
+    ],
+    "src/main/java/com/clinic/service/PageResponseFactory.java": [
+      "src/main/java/com/clinic/dto/response/PageResponse.java"
+    ]
+  }
+}

@@ -1,0 +1,60 @@
+{
+  "projectRoot": "D:\\Desktop\\Clinic_Sphere",
+  "batchFiles": [
+    {
+      "path": "src/main/java/com/clinic/entity/Notification.java",
+      "language": "java",
+      "sizeLines": 56,
+      "fileCategory": "code"
+    },
+    {
+      "path": "src/main/java/com/clinic/entity/NotificationStatus.java",
+      "language": "java",
+      "sizeLines": 7,
+      "fileCategory": "code"
+    },
+    {
+      "path": "src/main/java/com/clinic/entity/NotificationType.java",
+      "language": "java",
+      "sizeLines": 6,
+      "fileCategory": "code"
+    },
+    {
+      "path": "src/main/java/com/clinic/exception/ResourceNotFoundException.java",
+      "language": "java",
+      "sizeLines": 7,
+      "fileCategory": "code"
+    },
+    {
+      "path": "src/main/java/com/clinic/repository/NotificationRepository.java",
+      "language": "java",
+      "sizeLines": 10,
+      "fileCategory": "code"
+    },
+    {
+      "path": "src/main/java/com/clinic/service/NotificationService.java",
+      "language": "java",
+      "sizeLines": 214,
+      "fileCategory": "code"
+    }
+  ],
+  "batchImportData": {
+    "src/main/java/com/clinic/entity/Notification.java": [],
+    "src/main/java/com/clinic/entity/NotificationStatus.java": [],
+    "src/main/java/com/clinic/entity/NotificationType.java": [],
+    "src/main/java/com/clinic/exception/ResourceNotFoundException.java": [],
+    "src/main/java/com/clinic/repository/NotificationRepository.java": [
+      "src/main/java/com/clinic/entity/Notification.java",
+      "src/main/java/com/clinic/entity/NotificationType.java"
+    ],
+    "src/main/java/com/clinic/service/NotificationService.java": [
+      "src/main/java/com/clinic/entity/Appointment.java",
+      "src/main/java/com/clinic/entity/Notification.java",
+      "src/main/java/com/clinic/entity/NotificationStatus.java",
+      "src/main/java/com/clinic/entity/NotificationType.java",
+      "src/main/java/com/clinic/exception/ResourceNotFoundException.java",
+      "src/main/java/com/clinic/repository/AppointmentRepository.java",
+      "src/main/java/com/clinic/repository/NotificationRepository.java"
+    ]
+  }
+}

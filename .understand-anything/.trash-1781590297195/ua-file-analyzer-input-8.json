@@ -1,0 +1,53 @@
+{
+  "projectRoot": "D:\\Desktop\\Clinic_Sphere",
+  "batchFiles": [
+    {
+      "path": "src/main/java/com/clinic/entity/OutboxEvent.java",
+      "language": "java",
+      "sizeLines": 62,
+      "fileCategory": "code"
+    },
+    {
+      "path": "src/main/java/com/clinic/entity/OutboxStatus.java",
+      "language": "java",
+      "sizeLines": 8,
+      "fileCategory": "code"
+    },
+    {
+      "path": "src/main/java/com/clinic/repository/OutboxEventRepository.java",
+      "language": "java",
+      "sizeLines": 32,
+      "fileCategory": "code"
+    },
+    {
+      "path": "src/main/java/com/clinic/service/OutboxDispatcherService.java",
+      "language": "java",
+      "sizeLines": 94,
+      "fileCategory": "code"
+    },
+    {
+      "path": "src/main/java/com/clinic/service/OutboxService.java",
+      "language": "java",
+      "sizeLines": 42,
+      "fileCategory": "code"
+    }
+  ],
+  "batchImportData": {
+    "src/main/java/com/clinic/entity/OutboxEvent.java": [],
+    "src/main/java/com/clinic/entity/OutboxStatus.java": [],
+    "src/main/java/com/clinic/repository/OutboxEventRepository.java": [
+      "src/main/java/com/clinic/entity/OutboxEvent.java",
+      "src/main/java/com/clinic/entity/OutboxStatus.java"
+    ],
+    "src/main/java/com/clinic/service/OutboxDispatcherService.java": [
+      "src/main/java/com/clinic/entity/OutboxEvent.java",
+      "src/main/java/com/clinic/entity/OutboxStatus.java",
+      "src/main/java/com/clinic/repository/OutboxEventRepository.java"
+    ],
+    "src/main/java/com/clinic/service/OutboxService.java": [
+      "src/main/java/com/clinic/entity/OutboxEvent.java",
+      "src/main/java/com/clinic/entity/OutboxStatus.java",
+      "src/main/java/com/clinic/repository/OutboxEventRepository.java"
+    ]
+  }
+}

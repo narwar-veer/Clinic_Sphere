@@ -1,0 +1,126 @@
+{
+  "projectRoot": "D:\\Desktop\\Clinic_Sphere",
+  "batchFiles": [
+    {
+      "path": ".understand-anything/.understandignore",
+      "language": "unknown",
+      "sizeLines": 19,
+      "fileCategory": "code"
+    },
+    {
+      "path": "src/main/java/com/clinic/ClinicBookingApplication.java",
+      "language": "java",
+      "sizeLines": 13,
+      "fileCategory": "code"
+    },
+    {
+      "path": "src/main/java/com/clinic/config/AsyncConfig.java",
+      "language": "java",
+      "sizeLines": 25,
+      "fileCategory": "code"
+    },
+    {
+      "path": "src/main/java/com/clinic/config/HttpClientConfig.java",
+      "language": "java",
+      "sizeLines": 27,
+      "fileCategory": "code"
+    },
+    {
+      "path": "src/main/java/com/clinic/config/SchedulingConfig.java",
+      "language": "java",
+      "sizeLines": 9,
+      "fileCategory": "code"
+    },
+    {
+      "path": "src/main/java/com/clinic/config/TimeConfig.java",
+      "language": "java",
+      "sizeLines": 20,
+      "fileCategory": "code"
+    },
+    {
+      "path": "src/main/java/com/clinic/controller/HealthController.java",
+      "language": "java",
+      "sizeLines": 16,
+      "fileCategory": "code"
+    },
+    {
+      "path": "src/main/java/com/clinic/exception/GlobalExceptionHandler.java",
+      "language": "java",
+      "sizeLines": 105,
+      "fileCategory": "code"
+    },
+    {
+      "path": "src/main/java/com/clinic/exception/InvalidInputException.java",
+      "language": "java",
+      "sizeLines": 7,
+      "fileCategory": "code"
+    },
+    {
+      "path": "src/main/java/com/clinic/exception/RateLimitExceededException.java",
+      "language": "java",
+      "sizeLines": 7,
+      "fileCategory": "code"
+    },
+    {
+      "path": "src/main/java/com/clinic/security/JwtPrincipalClaims.java",
+      "language": "java",
+      "sizeLines": 12,
+      "fileCategory": "code"
+    },
+    {
+      "path": "src/main/java/com/clinic/security/LoginRateLimitService.java",
+      "language": "java",
+      "sizeLines": 27,
+      "fileCategory": "code"
+    },
+    {
+      "path": "src/main/java/com/clinic/security/RequestContextLoggingFilter.java",
+      "language": "java",
+      "sizeLines": 53,
+      "fileCategory": "code"
+    },
+    {
+      "path": "src/main/java/com/clinic/service/AppointmentNotificationOutboxPayload.java",
+      "language": "java",
+      "sizeLines": 3,
+      "fileCategory": "code"
+    },
+    {
+      "path": "src/main/java/com/clinic/service/SlotGenerationSchedulerService.java",
+      "language": "java",
+      "sizeLines": 29,
+      "fileCategory": "code"
+    },
+    {
+      "path": "src/main/resources/application.properties",
+      "language": "properties",
+      "sizeLines": 63,
+      "fileCategory": "config"
+    },
+    {
+      "path": "src/test/resources/mockito-extensions/org.mockito.plugins.MockMaker",
+      "language": "mockmaker",
+      "sizeLines": 0,
+      "fileCategory": "code"
+    }
+  ],
+  "batchImportData": {
+    ".understand-anything/.understandignore": [],
+    "src/main/java/com/clinic/ClinicBookingApplication.java": [],
+    "src/main/java/com/clinic/config/AsyncConfig.java": [],
+    "src/main/java/com/clinic/config/HttpClientConfig.java": [],
+    "src/main/java/com/clinic/config/SchedulingConfig.java": [],
+    "src/main/java/com/clinic/config/TimeConfig.java": [],
+    "src/main/java/com/clinic/controller/HealthController.java": [],
+    "src/main/java/com/clinic/exception/GlobalExceptionHandler.java": [],
+    "src/main/java/com/clinic/exception/InvalidInputException.java": [],
+    "src/main/java/com/clinic/exception/RateLimitExceededException.java": [],
+    "src/main/java/com/clinic/security/JwtPrincipalClaims.java": [],
+    "src/main/java/com/clinic/security/LoginRateLimitService.java": [],
+    "src/main/java/com/clinic/security/RequestContextLoggingFilter.java": [],
+    "src/main/java/com/clinic/service/AppointmentNotificationOutboxPayload.java": [],
+    "src/main/java/com/clinic/service/SlotGenerationSchedulerService.java": [],
+    "src/main/resources/application.properties": [],
+    "src/test/resources/mockito-extensions/org.mockito.plugins.MockMaker": []
+  }
+}

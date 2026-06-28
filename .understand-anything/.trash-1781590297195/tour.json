@@ -1,0 +1,51 @@
+[
+  {
+    "order": 1,
+    "title": "Spring Boot Bootstrap & Entry Point",
+    "description": "ClinicBookingApplication is the main class that bootstraps the Spring application container and runs components initialization.",
+    "nodeIds": [
+      "file:src/main/java/com/clinic/ClinicBookingApplication.java"
+    ]
+  },
+  {
+    "order": 2,
+    "title": "Security Configuration & Filters",
+    "description": "SecurityConfig sets up security filters, authentication providers, CORS policy, and password encryption. JWT token parsing is handled in JwtAuthenticationFilter.",
+    "nodeIds": [
+      "file:src/main/java/com/clinic/config/SecurityConfig.java",
+      "file:src/main/java/com/clinic/security/JwtAuthenticationFilter.java",
+      "file:src/main/java/com/clinic/security/JwtService.java"
+    ]
+  },
+  {
+    "order": 3,
+    "title": "Database Entity Definitions",
+    "description": "Core domain entities like Clinic, Doctor, Patient, Slot, and Appointment define the data schema using JPA annotations.",
+    "nodeIds": [
+      "file:src/main/java/com/clinic/entity/Clinic.java",
+      "file:src/main/java/com/clinic/entity/Doctor.java",
+      "file:src/main/java/com/clinic/entity/Patient.java",
+      "file:src/main/java/com/clinic/entity/Slot.java",
+      "file:src/main/java/com/clinic/entity/Appointment.java"
+    ]
+  },
+  {
+    "order": 4,
+    "title": "REST API Controller endpoints",
+    "description": "Controllers process HTTP requests, validate request bodies, and delegate business workflows to services.",
+    "nodeIds": [
+      "file:src/main/java/com/clinic/controller/AppointmentController.java",
+      "file:src/main/java/com/clinic/controller/AdminController.java",
+      "file:src/main/java/com/clinic/controller/SlotController.java"
+    ]
+  },
+  {
+    "order": 5,
+    "title": "Service Implementation & Logic",
+    "description": "Service classes handle transactions, booking windows validation, doctor availability checks, and slot capacity allocations.",
+    "nodeIds": [
+      "file:src/main/java/com/clinic/service/AppointmentService.java",
+      "file:src/main/java/com/clinic/service/SlotService.java"
+    ]
+  }
+]

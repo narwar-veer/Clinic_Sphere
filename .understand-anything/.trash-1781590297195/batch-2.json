@@ -1,0 +1,1516 @@
+{
+  "nodes": [
+    {
+      "id": "file:src/main/java/com/clinic/controller/AppointmentController.java",
+      "type": "file",
+      "name": "AppointmentController.java",
+      "filePath": "src/main/java/com/clinic/controller/AppointmentController.java",
+      "summary": "Spring REST Controller exposing API endpoints for Appointment operations.",
+      "tags": [
+        "code",
+        "java",
+        "api-handler",
+        "controller",
+        "spring-boot"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/main/java/com/clinic/controller/AppointmentController.java:bookAppointment",
+      "type": "function",
+      "name": "bookAppointment",
+      "filePath": "src/main/java/com/clinic/controller/AppointmentController.java",
+      "lineRange": [
+        23,
+        30
+      ],
+      "summary": "Class method implementing bookAppointment functionality.",
+      "tags": [
+        "function",
+        "method",
+        "java"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:src/main/java/com/clinic/controller/AppointmentController.java:AppointmentController",
+      "type": "class",
+      "name": "AppointmentController",
+      "filePath": "src/main/java/com/clinic/controller/AppointmentController.java",
+      "lineRange": [
+        16,
+        31
+      ],
+      "summary": "Java class defining the AppointmentController component.",
+      "tags": [
+        "class",
+        "model",
+        "java"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:src/main/java/com/clinic/dto/request/AdminAppointmentUpdateRequest.java",
+      "type": "file",
+      "name": "AdminAppointmentUpdateRequest.java",
+      "filePath": "src/main/java/com/clinic/dto/request/AdminAppointmentUpdateRequest.java",
+      "summary": "Data Transfer Object (DTO) encapsulating request or response payload structure for API calls.",
+      "tags": [
+        "code",
+        "java",
+        "dto",
+        "serialization",
+        "data-transfer-object"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:src/main/java/com/clinic/dto/request/AdminAppointmentUpdateRequest.java:AdminAppointmentUpdateRequest",
+      "type": "class",
+      "name": "AdminAppointmentUpdateRequest",
+      "filePath": "src/main/java/com/clinic/dto/request/AdminAppointmentUpdateRequest.java",
+      "lineRange": [
+        8,
+        14
+      ],
+      "summary": "Java class defining the AdminAppointmentUpdateRequest component.",
+      "tags": [
+        "class",
+        "model",
+        "java"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:src/main/java/com/clinic/dto/request/AppointmentBookingRequest.java",
+      "type": "file",
+      "name": "AppointmentBookingRequest.java",
+      "filePath": "src/main/java/com/clinic/dto/request/AppointmentBookingRequest.java",
+      "summary": "Data Transfer Object (DTO) encapsulating request or response payload structure for API calls.",
+      "tags": [
+        "code",
+        "java",
+        "dto",
+        "serialization",
+        "data-transfer-object"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:src/main/java/com/clinic/dto/request/AppointmentBookingRequest.java:AppointmentBookingRequest",
+      "type": "class",
+      "name": "AppointmentBookingRequest",
+      "filePath": "src/main/java/com/clinic/dto/request/AppointmentBookingRequest.java",
+      "lineRange": [
+        12,
+        35
+      ],
+      "summary": "Java class defining the AppointmentBookingRequest component.",
+      "tags": [
+        "class",
+        "model",
+        "java"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:src/main/java/com/clinic/dto/response/AppointmentResponse.java",
+      "type": "file",
+      "name": "AppointmentResponse.java",
+      "filePath": "src/main/java/com/clinic/dto/response/AppointmentResponse.java",
+      "summary": "Data Transfer Object (DTO) encapsulating request or response payload structure for API calls.",
+      "tags": [
+        "code",
+        "java",
+        "dto",
+        "serialization",
+        "data-transfer-object"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:src/main/java/com/clinic/dto/response/AppointmentResponse.java:AppointmentResponse",
+      "type": "class",
+      "name": "AppointmentResponse",
+      "filePath": "src/main/java/com/clinic/dto/response/AppointmentResponse.java",
+      "lineRange": [
+        11,
+        31
+      ],
+      "summary": "Java class defining the AppointmentResponse component.",
+      "tags": [
+        "class",
+        "model",
+        "java"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:src/main/java/com/clinic/entity/Appointment.java",
+      "type": "file",
+      "name": "Appointment.java",
+      "filePath": "src/main/java/com/clinic/entity/Appointment.java",
+      "summary": "JPA Entity mapping the database table for Appointment.",
+      "tags": [
+        "code",
+        "java",
+        "data-model",
+        "database",
+        "jpa-entity"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "class:src/main/java/com/clinic/entity/Appointment.java:Appointment",
+      "type": "class",
+      "name": "Appointment",
+      "filePath": "src/main/java/com/clinic/entity/Appointment.java",
+      "lineRange": [
+        20,
+        57
+      ],
+      "summary": "Java class defining the Appointment component.",
+      "tags": [
+        "class",
+        "model",
+        "java"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:src/main/java/com/clinic/entity/AppointmentStatus.java",
+      "type": "file",
+      "name": "AppointmentStatus.java",
+      "filePath": "src/main/java/com/clinic/entity/AppointmentStatus.java",
+      "summary": "JPA Entity mapping the database table for AppointmentStatus.",
+      "tags": [
+        "code",
+        "java",
+        "data-model",
+        "database",
+        "jpa-entity"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:src/main/java/com/clinic/entity/Gender.java",
+      "type": "file",
+      "name": "Gender.java",
+      "filePath": "src/main/java/com/clinic/entity/Gender.java",
+      "summary": "JPA Entity mapping the database table for Gender.",
+      "tags": [
+        "code",
+        "java",
+        "data-model",
+        "database",
+        "jpa-entity"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:src/main/java/com/clinic/entity/Patient.java",
+      "type": "file",
+      "name": "Patient.java",
+      "filePath": "src/main/java/com/clinic/entity/Patient.java",
+      "summary": "JPA Entity mapping the database table for Patient.",
+      "tags": [
+        "code",
+        "java",
+        "data-model",
+        "database",
+        "jpa-entity"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:src/main/java/com/clinic/entity/Patient.java:Patient",
+      "type": "class",
+      "name": "Patient",
+      "filePath": "src/main/java/com/clinic/entity/Patient.java",
+      "lineRange": [
+        16,
+        42
+      ],
+      "summary": "Java class defining the Patient component.",
+      "tags": [
+        "class",
+        "model",
+        "java"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:src/main/java/com/clinic/entity/Slot.java",
+      "type": "file",
+      "name": "Slot.java",
+      "filePath": "src/main/java/com/clinic/entity/Slot.java",
+      "summary": "JPA Entity mapping the database table for Slot.",
+      "tags": [
+        "code",
+        "java",
+        "data-model",
+        "database",
+        "jpa-entity"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:src/main/java/com/clinic/entity/Slot.java:Slot",
+      "type": "class",
+      "name": "Slot",
+      "filePath": "src/main/java/com/clinic/entity/Slot.java",
+      "lineRange": [
+        17,
+        48
+      ],
+      "summary": "Java class defining the Slot component.",
+      "tags": [
+        "class",
+        "model",
+        "java"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:src/main/java/com/clinic/exception/ConflictException.java",
+      "type": "file",
+      "name": "ConflictException.java",
+      "filePath": "src/main/java/com/clinic/exception/ConflictException.java",
+      "summary": "Exception definition or global controller advice handling application-level errors.",
+      "tags": [
+        "code",
+        "java",
+        "exception-handling",
+        "error-handling"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/main/java/com/clinic/exception/ConflictException.java:ConflictException",
+      "type": "function",
+      "name": "ConflictException",
+      "filePath": "src/main/java/com/clinic/exception/ConflictException.java",
+      "lineRange": [
+        5,
+        7
+      ],
+      "summary": "Class method implementing ConflictException functionality.",
+      "tags": [
+        "function",
+        "method",
+        "java"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:src/main/java/com/clinic/exception/ConflictException.java:ConflictException",
+      "type": "class",
+      "name": "ConflictException",
+      "filePath": "src/main/java/com/clinic/exception/ConflictException.java",
+      "lineRange": [
+        3,
+        8
+      ],
+      "summary": "Java class defining the ConflictException component.",
+      "tags": [
+        "class",
+        "model",
+        "java"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:src/main/java/com/clinic/exception/SlotFullException.java",
+      "type": "file",
+      "name": "SlotFullException.java",
+      "filePath": "src/main/java/com/clinic/exception/SlotFullException.java",
+      "summary": "Exception definition or global controller advice handling application-level errors.",
+      "tags": [
+        "code",
+        "java",
+        "exception-handling",
+        "error-handling"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/main/java/com/clinic/exception/SlotFullException.java:SlotFullException",
+      "type": "function",
+      "name": "SlotFullException",
+      "filePath": "src/main/java/com/clinic/exception/SlotFullException.java",
+      "lineRange": [
+        4,
+        6
+      ],
+      "summary": "Class method implementing SlotFullException functionality.",
+      "tags": [
+        "function",
+        "method",
+        "java"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:src/main/java/com/clinic/exception/SlotFullException.java:SlotFullException",
+      "type": "class",
+      "name": "SlotFullException",
+      "filePath": "src/main/java/com/clinic/exception/SlotFullException.java",
+      "lineRange": [
+        3,
+        7
+      ],
+      "summary": "Java class defining the SlotFullException component.",
+      "tags": [
+        "class",
+        "model",
+        "java"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:src/main/java/com/clinic/mapper/AppointmentMapper.java",
+      "type": "file",
+      "name": "AppointmentMapper.java",
+      "filePath": "src/main/java/com/clinic/mapper/AppointmentMapper.java",
+      "summary": "MapStruct mapper interface defining mapping rules between entity models and DTOs.",
+      "tags": [
+        "code",
+        "java",
+        "mapper",
+        "data-mapping",
+        "mapstruct"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:src/main/java/com/clinic/mapper/AppointmentMapper.java:AppointmentMapper",
+      "type": "class",
+      "name": "AppointmentMapper",
+      "filePath": "src/main/java/com/clinic/mapper/AppointmentMapper.java",
+      "lineRange": [
+        8,
+        24
+      ],
+      "summary": "Java class defining the AppointmentMapper component.",
+      "tags": [
+        "class",
+        "model",
+        "java"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:src/main/java/com/clinic/repository/AppointmentRepository.java",
+      "type": "file",
+      "name": "AppointmentRepository.java",
+      "filePath": "src/main/java/com/clinic/repository/AppointmentRepository.java",
+      "summary": "Spring Data JPA Repository providing database access for Appointment entities.",
+      "tags": [
+        "code",
+        "java",
+        "repository",
+        "database",
+        "data-access"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "class:src/main/java/com/clinic/repository/AppointmentRepository.java:AppointmentRepository",
+      "type": "class",
+      "name": "AppointmentRepository",
+      "filePath": "src/main/java/com/clinic/repository/AppointmentRepository.java",
+      "lineRange": [
+        21,
+        71
+      ],
+      "summary": "Java class defining the AppointmentRepository component.",
+      "tags": [
+        "class",
+        "model",
+        "java"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:src/main/java/com/clinic/repository/PatientRepository.java",
+      "type": "file",
+      "name": "PatientRepository.java",
+      "filePath": "src/main/java/com/clinic/repository/PatientRepository.java",
+      "summary": "Spring Data JPA Repository providing database access for Patient entities.",
+      "tags": [
+        "code",
+        "java",
+        "repository",
+        "database",
+        "data-access"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:src/main/java/com/clinic/repository/PatientRepository.java:PatientRepository",
+      "type": "class",
+      "name": "PatientRepository",
+      "filePath": "src/main/java/com/clinic/repository/PatientRepository.java",
+      "lineRange": [
+        12,
+        29
+      ],
+      "summary": "Java class defining the PatientRepository component.",
+      "tags": [
+        "class",
+        "model",
+        "java"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:src/main/java/com/clinic/repository/SlotRepository.java",
+      "type": "file",
+      "name": "SlotRepository.java",
+      "filePath": "src/main/java/com/clinic/repository/SlotRepository.java",
+      "summary": "Spring Data JPA Repository providing database access for Slot entities.",
+      "tags": [
+        "code",
+        "java",
+        "repository",
+        "database",
+        "data-access"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "class:src/main/java/com/clinic/repository/SlotRepository.java:SlotRepository",
+      "type": "class",
+      "name": "SlotRepository",
+      "filePath": "src/main/java/com/clinic/repository/SlotRepository.java",
+      "lineRange": [
+        18,
+        139
+      ],
+      "summary": "Java class defining the SlotRepository component.",
+      "tags": [
+        "class",
+        "model",
+        "java"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:src/main/java/com/clinic/service/AppointmentExportService.java",
+      "type": "file",
+      "name": "AppointmentExportService.java",
+      "filePath": "src/main/java/com/clinic/service/AppointmentExportService.java",
+      "summary": "Service class implementing business logic and transactional workflows for AppointmentExport.",
+      "tags": [
+        "code",
+        "java",
+        "service-layer",
+        "business-logic",
+        "spring-boot"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:src/main/java/com/clinic/service/AppointmentExportService.java:exportDoctorAppointments",
+      "type": "function",
+      "name": "exportDoctorAppointments",
+      "filePath": "src/main/java/com/clinic/service/AppointmentExportService.java",
+      "lineRange": [
+        33,
+        80
+      ],
+      "summary": "Class method implementing exportDoctorAppointments functionality.",
+      "tags": [
+        "function",
+        "method",
+        "java"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:src/main/java/com/clinic/service/AppointmentExportService.java:createHeader",
+      "type": "function",
+      "name": "createHeader",
+      "filePath": "src/main/java/com/clinic/service/AppointmentExportService.java",
+      "lineRange": [
+        82,
+        93
+      ],
+      "summary": "Class method implementing createHeader functionality.",
+      "tags": [
+        "function",
+        "method",
+        "java"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/main/java/com/clinic/service/AppointmentExportService.java:safeForExcel",
+      "type": "function",
+      "name": "safeForExcel",
+      "filePath": "src/main/java/com/clinic/service/AppointmentExportService.java",
+      "lineRange": [
+        95,
+        104
+      ],
+      "summary": "Class method implementing safeForExcel functionality.",
+      "tags": [
+        "function",
+        "method",
+        "java"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/main/java/com/clinic/service/AppointmentExportService.java:nullSafe",
+      "type": "function",
+      "name": "nullSafe",
+      "filePath": "src/main/java/com/clinic/service/AppointmentExportService.java",
+      "lineRange": [
+        106,
+        108
+      ],
+      "summary": "Class method implementing nullSafe functionality.",
+      "tags": [
+        "function",
+        "method",
+        "java"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:src/main/java/com/clinic/service/AppointmentExportService.java:AppointmentExportService",
+      "type": "class",
+      "name": "AppointmentExportService",
+      "filePath": "src/main/java/com/clinic/service/AppointmentExportService.java",
+      "lineRange": [
+        23,
+        109
+      ],
+      "summary": "Java class defining the AppointmentExportService component.",
+      "tags": [
+        "class",
+        "model",
+        "java"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:src/main/java/com/clinic/service/AppointmentService.java",
+      "type": "file",
+      "name": "AppointmentService.java",
+      "filePath": "src/main/java/com/clinic/service/AppointmentService.java",
+      "summary": "Service class implementing business logic and transactional workflows for Appointment.",
+      "tags": [
+        "code",
+        "java",
+        "service-layer",
+        "business-logic",
+        "spring-boot"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:src/main/java/com/clinic/service/AppointmentService.java:bookAppointment",
+      "type": "function",
+      "name": "bookAppointment",
+      "filePath": "src/main/java/com/clinic/service/AppointmentService.java",
+      "lineRange": [
+        55,
+        116
+      ],
+      "summary": "Class method implementing bookAppointment functionality.",
+      "tags": [
+        "function",
+        "method",
+        "java"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:src/main/java/com/clinic/service/AppointmentService.java:getAdminAppointments",
+      "type": "function",
+      "name": "getAdminAppointments",
+      "filePath": "src/main/java/com/clinic/service/AppointmentService.java",
+      "lineRange": [
+        118,
+        135
+      ],
+      "summary": "Class method implementing getAdminAppointments functionality.",
+      "tags": [
+        "function",
+        "method",
+        "java"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:src/main/java/com/clinic/service/AppointmentService.java:updateAppointmentStatus",
+      "type": "function",
+      "name": "updateAppointmentStatus",
+      "filePath": "src/main/java/com/clinic/service/AppointmentService.java",
+      "lineRange": [
+        137,
+        186
+      ],
+      "summary": "Class method implementing updateAppointmentStatus functionality.",
+      "tags": [
+        "function",
+        "method",
+        "java"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:src/main/java/com/clinic/service/AppointmentService.java:findOrCreatePatient",
+      "type": "function",
+      "name": "findOrCreatePatient",
+      "filePath": "src/main/java/com/clinic/service/AppointmentService.java",
+      "lineRange": [
+        188,
+        210
+      ],
+      "summary": "Class method implementing findOrCreatePatient functionality.",
+      "tags": [
+        "function",
+        "method",
+        "java"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:src/main/java/com/clinic/service/AppointmentService.java:ensureNoDuplicateBookingForDate",
+      "type": "function",
+      "name": "ensureNoDuplicateBookingForDate",
+      "filePath": "src/main/java/com/clinic/service/AppointmentService.java",
+      "lineRange": [
+        212,
+        226
+      ],
+      "summary": "Class method implementing ensureNoDuplicateBookingForDate functionality.",
+      "tags": [
+        "function",
+        "method",
+        "java"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/main/java/com/clinic/service/AppointmentService.java:trimToNull",
+      "type": "function",
+      "name": "trimToNull",
+      "filePath": "src/main/java/com/clinic/service/AppointmentService.java",
+      "lineRange": [
+        228,
+        234
+      ],
+      "summary": "Class method implementing trimToNull functionality.",
+      "tags": [
+        "function",
+        "method",
+        "java"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/main/java/com/clinic/service/AppointmentService.java:normalizeIdempotencyKey",
+      "type": "function",
+      "name": "normalizeIdempotencyKey",
+      "filePath": "src/main/java/com/clinic/service/AppointmentService.java",
+      "lineRange": [
+        236,
+        245
+      ],
+      "summary": "Class method implementing normalizeIdempotencyKey functionality.",
+      "tags": [
+        "function",
+        "method",
+        "java"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:src/main/java/com/clinic/service/AppointmentService.java:AppointmentService",
+      "type": "class",
+      "name": "AppointmentService",
+      "filePath": "src/main/java/com/clinic/service/AppointmentService.java",
+      "lineRange": [
+        36,
+        246
+      ],
+      "summary": "Java class defining the AppointmentService component.",
+      "tags": [
+        "class",
+        "model",
+        "java"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:src/main/java/com/clinic/service/AppointmentSpecifications.java",
+      "type": "file",
+      "name": "AppointmentSpecifications.java",
+      "filePath": "src/main/java/com/clinic/service/AppointmentSpecifications.java",
+      "summary": "Java class implementing helper logic or core functionality for AppointmentSpecifications.",
+      "tags": [
+        "code",
+        "java",
+        "utility"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:src/main/java/com/clinic/service/AppointmentSpecifications.java:AppointmentSpecifications",
+      "type": "function",
+      "name": "AppointmentSpecifications",
+      "filePath": "src/main/java/com/clinic/service/AppointmentSpecifications.java",
+      "lineRange": [
+        11,
+        12
+      ],
+      "summary": "Class method implementing AppointmentSpecifications functionality.",
+      "tags": [
+        "function",
+        "method",
+        "java"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/main/java/com/clinic/service/AppointmentSpecifications.java:forDoctorAppointments",
+      "type": "function",
+      "name": "forDoctorAppointments",
+      "filePath": "src/main/java/com/clinic/service/AppointmentSpecifications.java",
+      "lineRange": [
+        14,
+        53
+      ],
+      "summary": "Class method implementing forDoctorAppointments functionality.",
+      "tags": [
+        "function",
+        "method",
+        "java"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "class:src/main/java/com/clinic/service/AppointmentSpecifications.java:AppointmentSpecifications",
+      "type": "class",
+      "name": "AppointmentSpecifications",
+      "filePath": "src/main/java/com/clinic/service/AppointmentSpecifications.java",
+      "lineRange": [
+        9,
+        54
+      ],
+      "summary": "Java class defining the AppointmentSpecifications component.",
+      "tags": [
+        "class",
+        "model",
+        "java"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:src/main/java/com/clinic/service/AppointmentStatusAutomationService.java",
+      "type": "file",
+      "name": "AppointmentStatusAutomationService.java",
+      "filePath": "src/main/java/com/clinic/service/AppointmentStatusAutomationService.java",
+      "summary": "Service class implementing business logic and transactional workflows for AppointmentStatusAutomation.",
+      "tags": [
+        "code",
+        "java",
+        "service-layer",
+        "business-logic",
+        "spring-boot"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/main/java/com/clinic/service/AppointmentStatusAutomationService.java:markBookedAsNotVisitedAfterEod",
+      "type": "function",
+      "name": "markBookedAsNotVisitedAfterEod",
+      "filePath": "src/main/java/com/clinic/service/AppointmentStatusAutomationService.java",
+      "lineRange": [
+        19,
+        33
+      ],
+      "summary": "Class method implementing markBookedAsNotVisitedAfterEod functionality.",
+      "tags": [
+        "function",
+        "method",
+        "java"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:src/main/java/com/clinic/service/AppointmentStatusAutomationService.java:AppointmentStatusAutomationService",
+      "type": "class",
+      "name": "AppointmentStatusAutomationService",
+      "filePath": "src/main/java/com/clinic/service/AppointmentStatusAutomationService.java",
+      "lineRange": [
+        11,
+        34
+      ],
+      "summary": "Java class defining the AppointmentStatusAutomationService component.",
+      "tags": [
+        "class",
+        "model",
+        "java"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:src/test/java/com/clinic/service/AppointmentServiceConcurrencyTest.java",
+      "type": "file",
+      "name": "AppointmentServiceConcurrencyTest.java",
+      "filePath": "src/test/java/com/clinic/service/AppointmentServiceConcurrencyTest.java",
+      "summary": "Service class implementing business logic and transactional workflows for AppointmentServiceConcurrencyTest.java.",
+      "tags": [
+        "code",
+        "java",
+        "service-layer",
+        "business-logic",
+        "spring-boot"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:src/test/java/com/clinic/service/AppointmentServiceConcurrencyTest.java:concurrentBooking_onlyOneSucceeds_otherGetsConflict",
+      "type": "function",
+      "name": "concurrentBooking_onlyOneSucceeds_otherGetsConflict",
+      "filePath": "src/test/java/com/clinic/service/AppointmentServiceConcurrencyTest.java",
+      "lineRange": [
+        32,
+        150
+      ],
+      "summary": "Class method implementing concurrentBooking_onlyOneSucceeds_otherGetsConflict functionality.",
+      "tags": [
+        "function",
+        "method",
+        "java"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "class:src/test/java/com/clinic/service/AppointmentServiceConcurrencyTest.java:AppointmentServiceConcurrencyTest",
+      "type": "class",
+      "name": "AppointmentServiceConcurrencyTest",
+      "filePath": "src/test/java/com/clinic/service/AppointmentServiceConcurrencyTest.java",
+      "lineRange": [
+        30,
+        151
+      ],
+      "summary": "Java class defining the AppointmentServiceConcurrencyTest component.",
+      "tags": [
+        "class",
+        "model",
+        "java"
+      ],
+      "complexity": "moderate"
+    }
+  ],
+  "edges": [
+    {
+      "source": "file:src/main/java/com/clinic/controller/AppointmentController.java",
+      "target": "function:src/main/java/com/clinic/controller/AppointmentController.java:bookAppointment",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/main/java/com/clinic/controller/AppointmentController.java",
+      "target": "class:src/main/java/com/clinic/controller/AppointmentController.java:AppointmentController",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/main/java/com/clinic/controller/AppointmentController.java",
+      "target": "file:src/main/java/com/clinic/dto/request/AppointmentBookingRequest.java",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/main/java/com/clinic/controller/AppointmentController.java",
+      "target": "file:src/main/java/com/clinic/dto/response/AppointmentResponse.java",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/main/java/com/clinic/controller/AppointmentController.java",
+      "target": "file:src/main/java/com/clinic/service/AppointmentService.java",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/main/java/com/clinic/dto/request/AdminAppointmentUpdateRequest.java",
+      "target": "class:src/main/java/com/clinic/dto/request/AdminAppointmentUpdateRequest.java:AdminAppointmentUpdateRequest",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/main/java/com/clinic/dto/request/AdminAppointmentUpdateRequest.java",
+      "target": "file:src/main/java/com/clinic/entity/AppointmentStatus.java",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/main/java/com/clinic/dto/request/AppointmentBookingRequest.java",
+      "target": "class:src/main/java/com/clinic/dto/request/AppointmentBookingRequest.java:AppointmentBookingRequest",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/main/java/com/clinic/dto/request/AppointmentBookingRequest.java",
+      "target": "file:src/main/java/com/clinic/entity/Gender.java",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/main/java/com/clinic/dto/response/AppointmentResponse.java",
+      "target": "class:src/main/java/com/clinic/dto/response/AppointmentResponse.java:AppointmentResponse",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/main/java/com/clinic/dto/response/AppointmentResponse.java",
+      "target": "file:src/main/java/com/clinic/entity/AppointmentStatus.java",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/main/java/com/clinic/dto/response/AppointmentResponse.java",
+      "target": "file:src/main/java/com/clinic/entity/Gender.java",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/main/java/com/clinic/entity/Appointment.java",
+      "target": "class:src/main/java/com/clinic/entity/Appointment.java:Appointment",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/main/java/com/clinic/entity/Patient.java",
+      "target": "class:src/main/java/com/clinic/entity/Patient.java:Patient",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/main/java/com/clinic/entity/Slot.java",
+      "target": "class:src/main/java/com/clinic/entity/Slot.java:Slot",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/main/java/com/clinic/exception/ConflictException.java",
+      "target": "function:src/main/java/com/clinic/exception/ConflictException.java:ConflictException",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/main/java/com/clinic/exception/ConflictException.java",
+      "target": "class:src/main/java/com/clinic/exception/ConflictException.java:ConflictException",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/main/java/com/clinic/exception/SlotFullException.java",
+      "target": "function:src/main/java/com/clinic/exception/SlotFullException.java:SlotFullException",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/main/java/com/clinic/exception/SlotFullException.java",
+      "target": "class:src/main/java/com/clinic/exception/SlotFullException.java:SlotFullException",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/main/java/com/clinic/mapper/AppointmentMapper.java",
+      "target": "class:src/main/java/com/clinic/mapper/AppointmentMapper.java:AppointmentMapper",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/main/java/com/clinic/mapper/AppointmentMapper.java",
+      "target": "file:src/main/java/com/clinic/dto/response/AppointmentResponse.java",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/main/java/com/clinic/mapper/AppointmentMapper.java",
+      "target": "file:src/main/java/com/clinic/entity/Appointment.java",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/main/java/com/clinic/repository/AppointmentRepository.java",
+      "target": "class:src/main/java/com/clinic/repository/AppointmentRepository.java:AppointmentRepository",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/main/java/com/clinic/repository/AppointmentRepository.java",
+      "target": "file:src/main/java/com/clinic/entity/Appointment.java",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/main/java/com/clinic/repository/AppointmentRepository.java",
+      "target": "file:src/main/java/com/clinic/entity/AppointmentStatus.java",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/main/java/com/clinic/repository/PatientRepository.java",
+      "target": "class:src/main/java/com/clinic/repository/PatientRepository.java:PatientRepository",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/main/java/com/clinic/repository/PatientRepository.java",
+      "target": "file:src/main/java/com/clinic/entity/Gender.java",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/main/java/com/clinic/repository/PatientRepository.java",
+      "target": "file:src/main/java/com/clinic/entity/Patient.java",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/main/java/com/clinic/repository/SlotRepository.java",
+      "target": "class:src/main/java/com/clinic/repository/SlotRepository.java:SlotRepository",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/main/java/com/clinic/repository/SlotRepository.java",
+      "target": "file:src/main/java/com/clinic/entity/Slot.java",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/main/java/com/clinic/service/AppointmentExportService.java",
+      "target": "function:src/main/java/com/clinic/service/AppointmentExportService.java:exportDoctorAppointments",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/main/java/com/clinic/service/AppointmentExportService.java",
+      "target": "function:src/main/java/com/clinic/service/AppointmentExportService.java:createHeader",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/main/java/com/clinic/service/AppointmentExportService.java",
+      "target": "function:src/main/java/com/clinic/service/AppointmentExportService.java:safeForExcel",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/main/java/com/clinic/service/AppointmentExportService.java",
+      "target": "function:src/main/java/com/clinic/service/AppointmentExportService.java:nullSafe",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/main/java/com/clinic/service/AppointmentExportService.java",
+      "target": "class:src/main/java/com/clinic/service/AppointmentExportService.java:AppointmentExportService",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/main/java/com/clinic/service/AppointmentExportService.java",
+      "target": "file:src/main/java/com/clinic/entity/Appointment.java",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/main/java/com/clinic/service/AppointmentExportService.java",
+      "target": "file:src/main/java/com/clinic/entity/AppointmentStatus.java",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/main/java/com/clinic/service/AppointmentExportService.java",
+      "target": "file:src/main/java/com/clinic/repository/AppointmentRepository.java",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/main/java/com/clinic/service/AppointmentService.java",
+      "target": "function:src/main/java/com/clinic/service/AppointmentService.java:bookAppointment",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/main/java/com/clinic/service/AppointmentService.java",
+      "target": "function:src/main/java/com/clinic/service/AppointmentService.java:getAdminAppointments",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/main/java/com/clinic/service/AppointmentService.java",
+      "target": "function:src/main/java/com/clinic/service/AppointmentService.java:updateAppointmentStatus",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/main/java/com/clinic/service/AppointmentService.java",
+      "target": "function:src/main/java/com/clinic/service/AppointmentService.java:findOrCreatePatient",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/main/java/com/clinic/service/AppointmentService.java",
+      "target": "function:src/main/java/com/clinic/service/AppointmentService.java:ensureNoDuplicateBookingForDate",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/main/java/com/clinic/service/AppointmentService.java",
+      "target": "function:src/main/java/com/clinic/service/AppointmentService.java:trimToNull",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/main/java/com/clinic/service/AppointmentService.java",
+      "target": "function:src/main/java/com/clinic/service/AppointmentService.java:normalizeIdempotencyKey",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/main/java/com/clinic/service/AppointmentService.java",
+      "target": "class:src/main/java/com/clinic/service/AppointmentService.java:AppointmentService",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/main/java/com/clinic/service/AppointmentService.java",
+      "target": "file:src/main/java/com/clinic/dto/request/AdminAppointmentUpdateRequest.java",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/main/java/com/clinic/service/AppointmentService.java",
+      "target": "file:src/main/java/com/clinic/dto/request/AppointmentBookingRequest.java",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/main/java/com/clinic/service/AppointmentService.java",
+      "target": "file:src/main/java/com/clinic/dto/response/AppointmentResponse.java",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/main/java/com/clinic/service/AppointmentService.java",
+      "target": "file:src/main/java/com/clinic/dto/response/PageResponse.java",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/main/java/com/clinic/service/AppointmentService.java",
+      "target": "file:src/main/java/com/clinic/entity/Appointment.java",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/main/java/com/clinic/service/AppointmentService.java",
+      "target": "file:src/main/java/com/clinic/entity/AppointmentStatus.java",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/main/java/com/clinic/service/AppointmentService.java",
+      "target": "file:src/main/java/com/clinic/entity/Patient.java",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/main/java/com/clinic/service/AppointmentService.java",
+      "target": "file:src/main/java/com/clinic/entity/Slot.java",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/main/java/com/clinic/service/AppointmentService.java",
+      "target": "file:src/main/java/com/clinic/exception/BadRequestException.java",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/main/java/com/clinic/service/AppointmentService.java",
+      "target": "file:src/main/java/com/clinic/exception/ConflictException.java",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/main/java/com/clinic/service/AppointmentService.java",
+      "target": "file:src/main/java/com/clinic/exception/ResourceNotFoundException.java",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/main/java/com/clinic/service/AppointmentService.java",
+      "target": "file:src/main/java/com/clinic/exception/SlotFullException.java",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/main/java/com/clinic/service/AppointmentService.java",
+      "target": "file:src/main/java/com/clinic/exception/UnauthorizedException.java",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/main/java/com/clinic/service/AppointmentService.java",
+      "target": "file:src/main/java/com/clinic/mapper/AppointmentMapper.java",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/main/java/com/clinic/service/AppointmentService.java",
+      "target": "file:src/main/java/com/clinic/repository/AppointmentRepository.java",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/main/java/com/clinic/service/AppointmentService.java",
+      "target": "file:src/main/java/com/clinic/repository/PatientRepository.java",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/main/java/com/clinic/service/AppointmentService.java",
+      "target": "file:src/main/java/com/clinic/repository/SlotRepository.java",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/main/java/com/clinic/service/AppointmentSpecifications.java",
+      "target": "function:src/main/java/com/clinic/service/AppointmentSpecifications.java:AppointmentSpecifications",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/main/java/com/clinic/service/AppointmentSpecifications.java",
+      "target": "function:src/main/java/com/clinic/service/AppointmentSpecifications.java:forDoctorAppointments",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/main/java/com/clinic/service/AppointmentSpecifications.java",
+      "target": "class:src/main/java/com/clinic/service/AppointmentSpecifications.java:AppointmentSpecifications",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/main/java/com/clinic/service/AppointmentSpecifications.java",
+      "target": "file:src/main/java/com/clinic/entity/Appointment.java",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/main/java/com/clinic/service/AppointmentSpecifications.java",
+      "target": "file:src/main/java/com/clinic/entity/AppointmentStatus.java",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/main/java/com/clinic/service/AppointmentStatusAutomationService.java",
+      "target": "function:src/main/java/com/clinic/service/AppointmentStatusAutomationService.java:markBookedAsNotVisitedAfterEod",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/main/java/com/clinic/service/AppointmentStatusAutomationService.java",
+      "target": "class:src/main/java/com/clinic/service/AppointmentStatusAutomationService.java:AppointmentStatusAutomationService",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/main/java/com/clinic/service/AppointmentStatusAutomationService.java",
+      "target": "file:src/main/java/com/clinic/entity/AppointmentStatus.java",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/main/java/com/clinic/service/AppointmentStatusAutomationService.java",
+      "target": "file:src/main/java/com/clinic/repository/AppointmentRepository.java",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/test/java/com/clinic/service/AppointmentServiceConcurrencyTest.java",
+      "target": "function:src/test/java/com/clinic/service/AppointmentServiceConcurrencyTest.java:concurrentBooking_onlyOneSucceeds_otherGetsConflict",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/test/java/com/clinic/service/AppointmentServiceConcurrencyTest.java",
+      "target": "class:src/test/java/com/clinic/service/AppointmentServiceConcurrencyTest.java:AppointmentServiceConcurrencyTest",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/test/java/com/clinic/service/AppointmentServiceConcurrencyTest.java",
+      "target": "file:src/main/java/com/clinic/dto/request/AppointmentBookingRequest.java",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/test/java/com/clinic/service/AppointmentServiceConcurrencyTest.java",
+      "target": "file:src/main/java/com/clinic/dto/response/AppointmentResponse.java",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/test/java/com/clinic/service/AppointmentServiceConcurrencyTest.java",
+      "target": "file:src/main/java/com/clinic/entity/Appointment.java",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/test/java/com/clinic/service/AppointmentServiceConcurrencyTest.java",
+      "target": "file:src/main/java/com/clinic/entity/AppointmentStatus.java",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/test/java/com/clinic/service/AppointmentServiceConcurrencyTest.java",
+      "target": "file:src/main/java/com/clinic/entity/Gender.java",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/test/java/com/clinic/service/AppointmentServiceConcurrencyTest.java",
+      "target": "file:src/main/java/com/clinic/entity/Patient.java",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/test/java/com/clinic/service/AppointmentServiceConcurrencyTest.java",
+      "target": "file:src/main/java/com/clinic/entity/Slot.java",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/test/java/com/clinic/service/AppointmentServiceConcurrencyTest.java",
+      "target": "file:src/main/java/com/clinic/exception/ConflictException.java",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/test/java/com/clinic/service/AppointmentServiceConcurrencyTest.java",
+      "target": "file:src/main/java/com/clinic/mapper/AppointmentMapper.java",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/test/java/com/clinic/service/AppointmentServiceConcurrencyTest.java",
+      "target": "file:src/main/java/com/clinic/repository/AppointmentRepository.java",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/test/java/com/clinic/service/AppointmentServiceConcurrencyTest.java",
+      "target": "file:src/main/java/com/clinic/repository/PatientRepository.java",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/test/java/com/clinic/service/AppointmentServiceConcurrencyTest.java",
+      "target": "file:src/main/java/com/clinic/repository/SlotRepository.java",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    }
+  ]
+}

@@ -1,0 +1,465 @@
+{
+  "nodes": [
+    {
+      "id": "file:src/main/java/com/clinic/controller/ClinicController.java",
+      "type": "file",
+      "name": "ClinicController.java",
+      "filePath": "src/main/java/com/clinic/controller/ClinicController.java",
+      "summary": "Spring REST Controller exposing API endpoints for Clinic operations.",
+      "tags": [
+        "code",
+        "java",
+        "api-handler",
+        "controller",
+        "spring-boot"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/main/java/com/clinic/controller/ClinicController.java:getClinics",
+      "type": "function",
+      "name": "getClinics",
+      "filePath": "src/main/java/com/clinic/controller/ClinicController.java",
+      "lineRange": [
+        23,
+        29
+      ],
+      "summary": "Class method implementing getClinics functionality.",
+      "tags": [
+        "function",
+        "method",
+        "java"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:src/main/java/com/clinic/controller/ClinicController.java:ClinicController",
+      "type": "class",
+      "name": "ClinicController",
+      "filePath": "src/main/java/com/clinic/controller/ClinicController.java",
+      "lineRange": [
+        15,
+        30
+      ],
+      "summary": "Java class defining the ClinicController component.",
+      "tags": [
+        "class",
+        "model",
+        "java"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:src/main/java/com/clinic/dto/response/ClinicResponse.java",
+      "type": "file",
+      "name": "ClinicResponse.java",
+      "filePath": "src/main/java/com/clinic/dto/response/ClinicResponse.java",
+      "summary": "Data Transfer Object (DTO) encapsulating request or response payload structure for API calls.",
+      "tags": [
+        "code",
+        "java",
+        "dto",
+        "serialization",
+        "data-transfer-object"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:src/main/java/com/clinic/dto/response/ClinicResponse.java:ClinicResponse",
+      "type": "class",
+      "name": "ClinicResponse",
+      "filePath": "src/main/java/com/clinic/dto/response/ClinicResponse.java",
+      "lineRange": [
+        6,
+        18
+      ],
+      "summary": "Java class defining the ClinicResponse component.",
+      "tags": [
+        "class",
+        "model",
+        "java"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:src/main/java/com/clinic/dto/response/PageResponse.java",
+      "type": "file",
+      "name": "PageResponse.java",
+      "filePath": "src/main/java/com/clinic/dto/response/PageResponse.java",
+      "summary": "Data Transfer Object (DTO) encapsulating request or response payload structure for API calls.",
+      "tags": [
+        "code",
+        "java",
+        "dto",
+        "serialization",
+        "data-transfer-object"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:src/main/java/com/clinic/dto/response/PageResponse.java:PageResponse",
+      "type": "class",
+      "name": "PageResponse",
+      "filePath": "src/main/java/com/clinic/dto/response/PageResponse.java",
+      "lineRange": [
+        7,
+        15
+      ],
+      "summary": "Java class defining the PageResponse component.",
+      "tags": [
+        "class",
+        "model",
+        "java"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:src/main/java/com/clinic/entity/Clinic.java",
+      "type": "file",
+      "name": "Clinic.java",
+      "filePath": "src/main/java/com/clinic/entity/Clinic.java",
+      "summary": "JPA Entity mapping the database table for Clinic.",
+      "tags": [
+        "code",
+        "java",
+        "data-model",
+        "database",
+        "jpa-entity"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "class:src/main/java/com/clinic/entity/Clinic.java:Clinic",
+      "type": "class",
+      "name": "Clinic",
+      "filePath": "src/main/java/com/clinic/entity/Clinic.java",
+      "lineRange": [
+        19,
+        56
+      ],
+      "summary": "Java class defining the Clinic component.",
+      "tags": [
+        "class",
+        "model",
+        "java"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:src/main/java/com/clinic/mapper/ClinicMapper.java",
+      "type": "file",
+      "name": "ClinicMapper.java",
+      "filePath": "src/main/java/com/clinic/mapper/ClinicMapper.java",
+      "summary": "MapStruct mapper interface defining mapping rules between entity models and DTOs.",
+      "tags": [
+        "code",
+        "java",
+        "mapper",
+        "data-mapping",
+        "mapstruct"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:src/main/java/com/clinic/mapper/ClinicMapper.java:ClinicMapper",
+      "type": "class",
+      "name": "ClinicMapper",
+      "filePath": "src/main/java/com/clinic/mapper/ClinicMapper.java",
+      "lineRange": [
+        8,
+        14
+      ],
+      "summary": "Java class defining the ClinicMapper component.",
+      "tags": [
+        "class",
+        "model",
+        "java"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:src/main/java/com/clinic/repository/ClinicRepository.java",
+      "type": "file",
+      "name": "ClinicRepository.java",
+      "filePath": "src/main/java/com/clinic/repository/ClinicRepository.java",
+      "summary": "Spring Data JPA Repository providing database access for Clinic entities.",
+      "tags": [
+        "code",
+        "java",
+        "repository",
+        "database",
+        "data-access"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:src/main/java/com/clinic/repository/ClinicRepository.java:ClinicRepository",
+      "type": "class",
+      "name": "ClinicRepository",
+      "filePath": "src/main/java/com/clinic/repository/ClinicRepository.java",
+      "lineRange": [
+        11,
+        20
+      ],
+      "summary": "Java class defining the ClinicRepository component.",
+      "tags": [
+        "class",
+        "model",
+        "java"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:src/main/java/com/clinic/service/ClinicService.java",
+      "type": "file",
+      "name": "ClinicService.java",
+      "filePath": "src/main/java/com/clinic/service/ClinicService.java",
+      "summary": "Service class implementing business logic and transactional workflows for Clinic.",
+      "tags": [
+        "code",
+        "java",
+        "service-layer",
+        "business-logic",
+        "spring-boot"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/main/java/com/clinic/service/ClinicService.java:getClinics",
+      "type": "function",
+      "name": "getClinics",
+      "filePath": "src/main/java/com/clinic/service/ClinicService.java",
+      "lineRange": [
+        24,
+        30
+      ],
+      "summary": "Class method implementing getClinics functionality.",
+      "tags": [
+        "function",
+        "method",
+        "java"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:src/main/java/com/clinic/service/ClinicService.java:ClinicService",
+      "type": "class",
+      "name": "ClinicService",
+      "filePath": "src/main/java/com/clinic/service/ClinicService.java",
+      "lineRange": [
+        15,
+        31
+      ],
+      "summary": "Java class defining the ClinicService component.",
+      "tags": [
+        "class",
+        "model",
+        "java"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:src/main/java/com/clinic/service/PageResponseFactory.java",
+      "type": "file",
+      "name": "PageResponseFactory.java",
+      "filePath": "src/main/java/com/clinic/service/PageResponseFactory.java",
+      "summary": "Java class implementing helper logic or core functionality for PageResponseFactory.",
+      "tags": [
+        "code",
+        "java",
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/main/java/com/clinic/service/PageResponseFactory.java:fromPage",
+      "type": "function",
+      "name": "fromPage",
+      "filePath": "src/main/java/com/clinic/service/PageResponseFactory.java",
+      "lineRange": [
+        11,
+        20
+      ],
+      "summary": "Class method implementing fromPage functionality.",
+      "tags": [
+        "function",
+        "method",
+        "java"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:src/main/java/com/clinic/service/PageResponseFactory.java:PageResponseFactory",
+      "type": "class",
+      "name": "PageResponseFactory",
+      "filePath": "src/main/java/com/clinic/service/PageResponseFactory.java",
+      "lineRange": [
+        8,
+        21
+      ],
+      "summary": "Java class defining the PageResponseFactory component.",
+      "tags": [
+        "class",
+        "model",
+        "java"
+      ],
+      "complexity": "simple"
+    }
+  ],
+  "edges": [
+    {
+      "source": "file:src/main/java/com/clinic/controller/ClinicController.java",
+      "target": "function:src/main/java/com/clinic/controller/ClinicController.java:getClinics",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/main/java/com/clinic/controller/ClinicController.java",
+      "target": "class:src/main/java/com/clinic/controller/ClinicController.java:ClinicController",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/main/java/com/clinic/controller/ClinicController.java",
+      "target": "file:src/main/java/com/clinic/dto/response/ClinicResponse.java",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/main/java/com/clinic/controller/ClinicController.java",
+      "target": "file:src/main/java/com/clinic/dto/response/PageResponse.java",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/main/java/com/clinic/controller/ClinicController.java",
+      "target": "file:src/main/java/com/clinic/service/ClinicService.java",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/main/java/com/clinic/dto/response/ClinicResponse.java",
+      "target": "class:src/main/java/com/clinic/dto/response/ClinicResponse.java:ClinicResponse",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/main/java/com/clinic/dto/response/PageResponse.java",
+      "target": "class:src/main/java/com/clinic/dto/response/PageResponse.java:PageResponse",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/main/java/com/clinic/entity/Clinic.java",
+      "target": "class:src/main/java/com/clinic/entity/Clinic.java:Clinic",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/main/java/com/clinic/mapper/ClinicMapper.java",
+      "target": "class:src/main/java/com/clinic/mapper/ClinicMapper.java:ClinicMapper",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/main/java/com/clinic/mapper/ClinicMapper.java",
+      "target": "file:src/main/java/com/clinic/dto/response/ClinicResponse.java",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/main/java/com/clinic/mapper/ClinicMapper.java",
+      "target": "file:src/main/java/com/clinic/entity/Clinic.java",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/main/java/com/clinic/repository/ClinicRepository.java",
+      "target": "class:src/main/java/com/clinic/repository/ClinicRepository.java:ClinicRepository",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/main/java/com/clinic/repository/ClinicRepository.java",
+      "target": "file:src/main/java/com/clinic/entity/Clinic.java",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/main/java/com/clinic/service/ClinicService.java",
+      "target": "function:src/main/java/com/clinic/service/ClinicService.java:getClinics",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/main/java/com/clinic/service/ClinicService.java",
+      "target": "class:src/main/java/com/clinic/service/ClinicService.java:ClinicService",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/main/java/com/clinic/service/ClinicService.java",
+      "target": "file:src/main/java/com/clinic/dto/response/ClinicResponse.java",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/main/java/com/clinic/service/ClinicService.java",
+      "target": "file:src/main/java/com/clinic/dto/response/PageResponse.java",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/main/java/com/clinic/service/ClinicService.java",
+      "target": "file:src/main/java/com/clinic/mapper/ClinicMapper.java",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/main/java/com/clinic/service/ClinicService.java",
+      "target": "file:src/main/java/com/clinic/repository/ClinicRepository.java",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/main/java/com/clinic/service/PageResponseFactory.java",
+      "target": "function:src/main/java/com/clinic/service/PageResponseFactory.java:fromPage",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/main/java/com/clinic/service/PageResponseFactory.java",
+      "target": "class:src/main/java/com/clinic/service/PageResponseFactory.java:PageResponseFactory",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/main/java/com/clinic/service/PageResponseFactory.java",
+      "target": "file:src/main/java/com/clinic/dto/response/PageResponse.java",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    }
+  ]
+}

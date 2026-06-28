@@ -7,6 +7,7 @@ import jakarta.persistence.EntityManager;
 import java.time.Duration;
 import java.time.Instant;
 import java.time.LocalDateTime;
+import java.time.format.DateTimeParseException;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Value;
@@ -49,22 +50,42 @@ public class AdminSessionService {
         cacheSession(tokenId, now, expiresAt);
     }
 
+    @Transactional
     public boolean validateSession(String tokenId, Instant tokenExpiresAt) {
         LocalDateTime now = appTime.nowDateTime();
-        if (Boolean.TRUE.equals(redisTemplate.hasKey(revokedKey(tokenId)))) {
-            return false;
-        }
-
         String key = sessionKey(tokenId);
-        String lastActivityRaw = redisTemplate.opsForHash().get(key, "lastActivityAt") instanceof String v ? v : null;
-        String expiresAtRaw = redisTemplate.opsForHash().get(key, "expiresAt") instanceof String v ? v : null;
+        String lastActivityRaw;
+        String expiresAtRaw;
+
+        try {
+            if (Boolean.TRUE.equals(redisTemplate.hasKey(revokedKey(tokenId)))) {
+                return false;
+            }
+
+            lastActivityRaw = redisHashValue(key, "lastActivityAt");
+            expiresAtRaw = redisHashValue(key, "expiresAt");
+        } catch (RuntimeException ex) {
+            log.warn("Redis session cache unavailable; validating from database tokenId={} reason={}",
+                    tokenId, ex.getMessage());
+            log.debug("Redis session cache validation failure", ex);
+            return hydrateFromDatabase(tokenId, now, tokenExpiresAt);
+        }
 
         if (lastActivityRaw == null || expiresAtRaw == null) {
-            return hydrateFromDatabase(tokenId, now);
+            return hydrateFromDatabase(tokenId, now, tokenExpiresAt);
         }
 
-        LocalDateTime lastActivity = LocalDateTime.parse(lastActivityRaw);
-        LocalDateTime expiresAt = LocalDateTime.parse(expiresAtRaw);
+        LocalDateTime lastActivity;
+        LocalDateTime expiresAt;
+        try {
+            lastActivity = LocalDateTime.parse(lastActivityRaw);
+            expiresAt = LocalDateTime.parse(expiresAtRaw);
+        } catch (DateTimeParseException ex) {
+            log.warn("Redis session cache contains invalid timestamps; validating from database tokenId={}",
+                    tokenId);
+            log.debug("Invalid Redis session cache timestamps", ex);
+            return hydrateFromDatabase(tokenId, now, tokenExpiresAt);
+        }
 
         if (!expiresAt.isAfter(now) || !tokenExpiresAt.isAfter(appTime.nowInstant())) {
             revokeSession(tokenId);
@@ -86,18 +107,24 @@ public class AdminSessionService {
         LocalDateTime now = appTime.nowDateTime();
         adminSessionRepository.revokeIfActive(tokenId, now);
 
-        String key = sessionKey(tokenId);
-        String expiresAtRaw = redisTemplate.opsForHash().get(key, "expiresAt") instanceof String v ? v : null;
-        if (expiresAtRaw != null) {
-            LocalDateTime expiresAt = LocalDateTime.parse(expiresAtRaw);
-            Duration ttl = Duration.between(now, expiresAt).plusMinutes(inactivityTimeoutMinutes);
-            if (!ttl.isNegative() && !ttl.isZero()) {
-                redisTemplate.opsForValue().set(revokedKey(tokenId), "1", ttl);
+        try {
+            String key = sessionKey(tokenId);
+            String expiresAtRaw = redisHashValue(key, "expiresAt");
+            if (expiresAtRaw != null) {
+                LocalDateTime expiresAt = LocalDateTime.parse(expiresAtRaw);
+                Duration ttl = Duration.between(now, expiresAt).plusMinutes(inactivityTimeoutMinutes);
+                if (!ttl.isNegative() && !ttl.isZero()) {
+                    redisTemplate.opsForValue().set(revokedKey(tokenId), "1", ttl);
+                }
+            } else {
+                redisTemplate.opsForValue().set(revokedKey(tokenId), "1", Duration.ofMinutes(inactivityTimeoutMinutes));
             }
-        } else {
-            redisTemplate.opsForValue().set(revokedKey(tokenId), "1", Duration.ofMinutes(inactivityTimeoutMinutes));
+            redisTemplate.delete(key);
+        } catch (RuntimeException ex) {
+            log.warn("Redis session cache unavailable during revocation tokenId={} reason={}",
+                    tokenId, ex.getMessage());
+            log.debug("Redis session cache revocation failure", ex);
         }
-        redisTemplate.delete(key);
     }
 
     @Scheduled(cron = "0 */15 * * * *")
@@ -110,7 +137,12 @@ public class AdminSessionService {
         }
     }
 
-    private boolean hydrateFromDatabase(String tokenId, LocalDateTime now) {
+    private boolean hydrateFromDatabase(String tokenId, LocalDateTime now, Instant tokenExpiresAt) {
+        if (!tokenExpiresAt.isAfter(appTime.nowInstant())) {
+            revokeSession(tokenId);
+            return false;
+        }
+
         return adminSessionRepository.findActiveById(tokenId, now)
                 .map(session -> {
                     if (session.getLastActivityAt().plusMinutes(inactivityTimeoutMinutes).isBefore(now)) {
@@ -127,22 +159,38 @@ public class AdminSessionService {
         if (lastActivity.plusSeconds(touchThrottleSeconds).isAfter(now)) {
             return;
         }
-        redisTemplate.opsForHash().put(key, "lastActivityAt", now.toString());
-        Duration ttl = Duration.between(now, expiresAt).plusMinutes(inactivityTimeoutMinutes);
-        if (!ttl.isNegative() && !ttl.isZero()) {
-            redisTemplate.expire(key, ttl);
+        try {
+            redisTemplate.opsForHash().put(key, "lastActivityAt", now.toString());
+            Duration ttl = Duration.between(now, expiresAt).plusMinutes(inactivityTimeoutMinutes);
+            if (!ttl.isNegative() && !ttl.isZero()) {
+                redisTemplate.expire(key, ttl);
+            }
+        } catch (RuntimeException ex) {
+            log.warn("Redis session cache unavailable while touching session key={} reason={}",
+                    key, ex.getMessage());
+            log.debug("Redis session cache touch failure", ex);
         }
     }
 
     private void cacheSession(String tokenId, LocalDateTime lastActivityAt, LocalDateTime expiresAt) {
         LocalDateTime now = appTime.nowDateTime();
         String key = sessionKey(tokenId);
-        redisTemplate.opsForHash().put(key, "lastActivityAt", lastActivityAt.toString());
-        redisTemplate.opsForHash().put(key, "expiresAt", expiresAt.toString());
-        Duration ttl = Duration.between(now, expiresAt).plusMinutes(inactivityTimeoutMinutes);
-        if (!ttl.isNegative() && !ttl.isZero()) {
-            redisTemplate.expire(key, ttl);
+        try {
+            redisTemplate.opsForHash().put(key, "lastActivityAt", lastActivityAt.toString());
+            redisTemplate.opsForHash().put(key, "expiresAt", expiresAt.toString());
+            Duration ttl = Duration.between(now, expiresAt).plusMinutes(inactivityTimeoutMinutes);
+            if (!ttl.isNegative() && !ttl.isZero()) {
+                redisTemplate.expire(key, ttl);
+            }
+        } catch (RuntimeException ex) {
+            log.warn("Redis session cache unavailable while caching session tokenId={} reason={}",
+                    tokenId, ex.getMessage());
+            log.debug("Redis session cache write failure", ex);
         }
+    }
+
+    private String redisHashValue(String key, String field) {
+        return redisTemplate.opsForHash().get(key, field) instanceof String v ? v : null;
     }
 
     private String sessionKey(String tokenId) {

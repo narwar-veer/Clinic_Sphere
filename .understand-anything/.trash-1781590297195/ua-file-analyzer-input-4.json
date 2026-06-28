@@ -1,0 +1,115 @@
+{
+  "projectRoot": "D:\\Desktop\\Clinic_Sphere",
+  "batchFiles": [
+    {
+      "path": "src/main/java/com/clinic/controller/PatientHistoryController.java",
+      "language": "java",
+      "sizeLines": 45,
+      "fileCategory": "code"
+    },
+    {
+      "path": "src/main/java/com/clinic/dto/request/MedicalRecordCreateRequest.java",
+      "language": "java",
+      "sizeLines": 23,
+      "fileCategory": "code"
+    },
+    {
+      "path": "src/main/java/com/clinic/dto/response/MedicalRecordResponse.java",
+      "language": "java",
+      "sizeLines": 20,
+      "fileCategory": "code"
+    },
+    {
+      "path": "src/main/java/com/clinic/entity/MedicalRecord.java",
+      "language": "java",
+      "sizeLines": 57,
+      "fileCategory": "code"
+    },
+    {
+      "path": "src/main/java/com/clinic/exception/BadRequestException.java",
+      "language": "java",
+      "sizeLines": 7,
+      "fileCategory": "code"
+    },
+    {
+      "path": "src/main/java/com/clinic/exception/UnauthorizedException.java",
+      "language": "java",
+      "sizeLines": 7,
+      "fileCategory": "code"
+    },
+    {
+      "path": "src/main/java/com/clinic/mapper/MedicalRecordMapper.java",
+      "language": "java",
+      "sizeLines": 16,
+      "fileCategory": "code"
+    },
+    {
+      "path": "src/main/java/com/clinic/repository/MedicalRecordRepository.java",
+      "language": "java",
+      "sizeLines": 17,
+      "fileCategory": "code"
+    },
+    {
+      "path": "src/main/java/com/clinic/service/BookingWindowValidator.java",
+      "language": "java",
+      "sizeLines": 45,
+      "fileCategory": "code"
+    },
+    {
+      "path": "src/main/java/com/clinic/service/PaginationValidator.java",
+      "language": "java",
+      "sizeLines": 18,
+      "fileCategory": "code"
+    },
+    {
+      "path": "src/main/java/com/clinic/service/PatientHistoryService.java",
+      "language": "java",
+      "sizeLines": 127,
+      "fileCategory": "code"
+    }
+  ],
+  "batchImportData": {
+    "src/main/java/com/clinic/controller/PatientHistoryController.java": [
+      "src/main/java/com/clinic/dto/request/MedicalRecordCreateRequest.java",
+      "src/main/java/com/clinic/dto/response/MedicalRecordResponse.java",
+      "src/main/java/com/clinic/dto/response/PageResponse.java",
+      "src/main/java/com/clinic/service/AdminService.java",
+      "src/main/java/com/clinic/service/PatientHistoryService.java"
+    ],
+    "src/main/java/com/clinic/dto/request/MedicalRecordCreateRequest.java": [],
+    "src/main/java/com/clinic/dto/response/MedicalRecordResponse.java": [],
+    "src/main/java/com/clinic/entity/MedicalRecord.java": [],
+    "src/main/java/com/clinic/exception/BadRequestException.java": [],
+    "src/main/java/com/clinic/exception/UnauthorizedException.java": [],
+    "src/main/java/com/clinic/mapper/MedicalRecordMapper.java": [
+      "src/main/java/com/clinic/dto/response/MedicalRecordResponse.java",
+      "src/main/java/com/clinic/entity/MedicalRecord.java"
+    ],
+    "src/main/java/com/clinic/repository/MedicalRecordRepository.java": [
+      "src/main/java/com/clinic/entity/MedicalRecord.java"
+    ],
+    "src/main/java/com/clinic/service/BookingWindowValidator.java": [
+      "src/main/java/com/clinic/exception/BadRequestException.java"
+    ],
+    "src/main/java/com/clinic/service/PaginationValidator.java": [
+      "src/main/java/com/clinic/exception/BadRequestException.java"
+    ],
+    "src/main/java/com/clinic/service/PatientHistoryService.java": [
+      "src/main/java/com/clinic/dto/request/MedicalRecordCreateRequest.java",
+      "src/main/java/com/clinic/dto/response/MedicalRecordResponse.java",
+      "src/main/java/com/clinic/dto/response/PageResponse.java",
+      "src/main/java/com/clinic/entity/Appointment.java",
+      "src/main/java/com/clinic/entity/AppointmentStatus.java",
+      "src/main/java/com/clinic/entity/MedicalRecord.java",
+      "src/main/java/com/clinic/entity/Patient.java",
+      "src/main/java/com/clinic/exception/BadRequestException.java",
+      "src/main/java/com/clinic/exception/ConflictException.java",
+      "src/main/java/com/clinic/exception/ResourceNotFoundException.java",
+      "src/main/java/com/clinic/exception/UnauthorizedException.java",
+      "src/main/java/com/clinic/mapper/MedicalRecordMapper.java",
+      "src/main/java/com/clinic/repository/AppointmentRepository.java",
+      "src/main/java/com/clinic/repository/MedicalRecordRepository.java",
+      "src/main/java/com/clinic/repository/PatientRepository.java"
+    ]
+  }
+}

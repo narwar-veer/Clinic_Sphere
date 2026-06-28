@@ -67,14 +67,22 @@ stages {
 
     stage('Cleanup') {
         steps {
-            bat 'docker rm -f clinic-booking-test >nul 2>&1'
+            bat 'docker compose down >nul 2>&1'
         }
     }
 }
 
 post {
     always {
-        bat 'docker rm -f clinic-booking-test >nul 2>&1'
+        bat 'docker compose down >nul 2>&1'
+    }
+
+    success {
+        echo 'Build and Smoke Test completed successfully.'
+    }
+
+    failure {
+        echo 'Build or Smoke Test failed. Check logs above.'
     }
 
     success {
