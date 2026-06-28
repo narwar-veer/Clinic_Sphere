@@ -43,12 +43,18 @@ stages {
         }
     }
 
-    stage('Run Docker Test Environment') {
+    stage('Build Docker Image') {
+        steps {
+            bat 'docker build -t %IMAGE_NAME%:%BUILD_NUMBER% .'
+        }
+    }
+
+    stage('Run Docker Container') {
         steps {
             bat '''
-            docker compose down >nul 2>&1
-            docker compose up -d --build
-            timeout /t 25 /nobreak
+            docker rm -f clinic-booking-test >nul 2>&1
+            docker run -d --name clinic-booking-test -p 8082:8082 %IMAGE_NAME%:%BUILD_NUMBER%
+            timeout /t 20 /nobreak
             '''
         }
     }
@@ -77,6 +83,14 @@ post {
 
     failure {
         echo 'Build or Smoke Test failed. Check logs above.'
+    }
+
+    success {
+        echo 'Build completed successfully.'
+    }
+
+    failure {
+        echo 'Build failed. Check logs above.'
     }
 }
 
